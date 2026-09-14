@@ -499,7 +499,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 4px;
+      gap: 2px;
       transition: all 0.15s ease;
       box-shadow: 0 1px 3px rgba(30, 58, 138, 0.2);
     }
@@ -514,7 +514,7 @@
       background: #f8fafc;
       color: #94a3b8;
       font-size: 0.8rem;
-      padding: 5px 8px;
+      padding: 4px 4px;
       border-radius: 6px;
       border: 1px dashed #cbd5e1;
       display: inline-flex;
@@ -523,11 +523,73 @@
       cursor: not-allowed;
     }
 
+    /* 雙模式切換按鈕群組 */
+    .unit-modes-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin: 6px 0;
+    }
+
+    .mode-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      padding: 4px 4px;
+      border-radius: 6px;
+      font-size: 0.76rem; white-space: nowrap;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      line-height: 1.35;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    /* 詳解講義模式：琥珀暖金配色，突顯三色螢光筆與解題精編 */
+    .mode-btn.mode-handout {
+      background: #fffbeb;
+      color: #b45309;
+      border: 1.5px solid #fcd34d;
+      box-shadow: 0 1px 2px rgba(245, 158, 11, 0.08);
+    }
+
+    .mode-btn.mode-handout:hover {
+      background: #fef3c7;
+      border-color: #f59e0b;
+      color: #92400e;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 5px rgba(245, 158, 11, 0.18);
+    }
+
+    /* 自練題目模式：品牌深藍，突顯做題練習 */
+    .mode-btn.mode-practice {
+      background: var(--primary);
+      color: #ffffff;
+      border: 1.5px solid var(--primary);
+      box-shadow: 0 1px 3px rgba(30, 58, 138, 0.2);
+    }
+
+    .mode-btn.mode-practice:hover {
+      background: var(--primary-hover);
+      border-color: var(--primary-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 5px rgba(30, 58, 138, 0.3);
+    }
+
+    .mode-btn .q-badge {
+      font-size: 0.72rem;
+      font-weight: 500;
+      opacity: 0.9;
+    }
+
+
     /* 記錄單互動區 */
     .record-controls {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 2px;
       padding-top: 6px;
       border-top: 1px dashed #e2e8f0;
       margin-top: 4px;
@@ -543,7 +605,7 @@
     .chk-complete-label {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      gap: 2px;
       cursor: pointer;
       color: var(--slate-700);
       font-weight: 600;
@@ -891,6 +953,10 @@
         <p class="sub-title">文本表述方式 × 8堂解題思維專題 × 互動學習記錄單</p>
       </div>
       <div class="header-actions">
+        <a href="文意新8課_第1課主旨篇_全套精編詳解講義.pdf" target="_blank" class="action-btn" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border-color: #f59e0b; text-decoration: none; font-weight: 700; box-shadow: 0 2px 6px rgba(245, 158, 11, 0.25);" title="開啟或下載第 1 課主旨篇 49 題完整精編詳解大合訂本 PDF">
+          <span>📚</span> 全套詳解講義 (合訂本 PDF)
+        </a>
+
         <button class="action-btn" onclick="openFileManagerModal()">
           <span>⚙️</span> 連結管理與檔案探測
         </button>
@@ -1124,11 +1190,11 @@
         title: "第 1 課 主旨篇",
         subtitle: "中心思想在哪裡",
         units: {
-          "記敘文類": { page: "P.8", defaultFile: "01_main_idea_narrative.html", isReadyDefault: true, questionCount: 9 },
-          "抒情文類": { page: "P.11", defaultFile: "02_main_idea_lyric.html", isReadyDefault: true, questionCount: 10 },
-          "議論文類": { page: "P.14", defaultFile: "03_main_idea_argumentative.html", isReadyDefault: true, questionCount: 10 },
-          "說明文類": { page: "P.17", defaultFile: "04_main_idea_expository.html", isReadyDefault: true, questionCount: 10 },
-          "應用文類": { page: "P.20", defaultFile: "05_main_idea_practical.html", isReadyDefault: true, questionCount: 10 }
+          "記敘文類": { page: "P.8", defaultFile: "01_主旨篇_記敘文類.html", defaultHandout: "01_主旨篇_記敘文類_詳解講義.pdf", isReadyDefault: true, questionCount: 9 },
+          "抒情文類": { page: "P.11", defaultFile: "02_主旨篇_抒情文類.html", defaultHandout: "02_主旨篇_抒情文類_詳解講義.pdf", isReadyDefault: true, questionCount: 10 },
+          "議論文類": { page: "P.14", defaultFile: "03_主旨篇_議論文類.html", defaultHandout: "03_主旨篇_議論文類_詳解講義.pdf", isReadyDefault: true, questionCount: 10 },
+          "說明文類": { page: "P.17", defaultFile: "04_主旨篇_說明文類.html", defaultHandout: "04_主旨篇_說明文類_詳解講義.pdf", isReadyDefault: true, questionCount: 10 },
+          "應用文類": { page: "P.20", defaultFile: "05_主旨篇_應用文類.html", defaultHandout: "05_主旨篇_應用文類_詳解講義.pdf", isReadyDefault: true, questionCount: 10 }
         }
       },
       {
@@ -1268,6 +1334,14 @@
     }
 
     // 取得單元檔案路徑
+        function getUnitHandoutFile(chId, genre) {
+      const ch = CHAPTERS_DATA.find(c => c.id === chId);
+      if (ch && ch.units[genre] && ch.units[genre].defaultHandout) {
+        return ch.units[genre].defaultHandout;
+      }
+      return "";
+    }
+
     function getUnitFile(chId, genre) {
       const key = `ch${chId}_${genre}`;
       if (customFileMap[key]) return customFileMap[key];
@@ -1402,6 +1476,7 @@
             const isReady = isUnitReady(ch.id, genre);
             const rec = getUnitRecord(ch.id, genre);
             const file = getUnitFile(ch.id, genre);
+            const handout = getUnitHandoutFile(ch.id, genre);
             const unitKey = `ch${ch.id}_${genre}`;
 
             const boxClass = `unit-box ${isReady ? "is-ready" : ""} ${rec.completed ? "is-completed" : ""}`;
@@ -1416,7 +1491,18 @@
                 </div>
 
                 ${isReady 
-                  ? `<a href="${file}" class="unit-btn-enter" target="_self">▶ 進入課程${unit.questionCount ? ` <span style="font-size:0.75rem;opacity:0.9;">(${unit.questionCount}題)</span>` : ''}</a>`
+                  ? `
+                    <div class="unit-modes-wrap">
+                      ${handout ? `
+                        <a href="${handout}" class="mode-btn mode-handout" target="_blank" title="開啟完整詳解講義 PDF（含三色擬真螢光筆、解題之眼與白話語譯）">
+                          <span>📖</span> 詳解講義模式
+                        </a>
+                      ` : ''}
+                      <a href="${file}" class="mode-btn mode-practice" target="_self" title="進入題目自練模式（即時答題核對與解析）">
+                        <span>✏️</span> 自練題目模式${unit.questionCount ? ` <span class="q-badge">(${unit.questionCount}題)</span>` : ''}
+                      </a>
+                    </div>
+                  `
                   : `<button class="unit-btn-disabled" onclick="handlePendingClick('${ch.title}', '${genre}', '${file}')">待產出</button>`
                 }
 
@@ -1485,6 +1571,7 @@
           const isReady = isUnitReady(ch.id, genre);
           const rec = getUnitRecord(ch.id, genre);
           const file = getUnitFile(ch.id, genre);
+          const handout = getUnitHandoutFile(ch.id, genre);
 
           unitsHtml += `
             <div class="unit-box ${isReady ? "is-ready" : ""} ${rec.completed ? "is-completed" : ""}" style="min-height: 100px;">
@@ -1494,7 +1581,18 @@
               </div>
               <div style="margin: 6px 0;">
                 ${isReady 
-                  ? `<a href="${file}" class="unit-btn-enter" style="width:100%;">▶ 進入課程${unit.questionCount ? ` (${unit.questionCount}題)` : ''}</a>`
+                  ? `
+                    <div class="unit-modes-wrap" style="width:100%;">
+                      ${handout ? `
+                        <a href="${handout}" class="mode-btn mode-handout" target="_blank" title="開啟完整詳解講義 PDF">
+                          <span>📖</span> 詳解講義模式
+                        </a>
+                      ` : ''}
+                      <a href="${file}" class="mode-btn mode-practice" target="_self" style="width:100%;">
+                        <span>✏️</span> 自練題目模式${unit.questionCount ? ` <span class="q-badge">(${unit.questionCount}題)</span>` : ''}
+                      </a>
+                    </div>
+                  `
                   : `<button class="unit-btn-disabled" style="width:100%;" onclick="handlePendingClick('${ch.title}', '${genre}', '${file}')">教材準備中</button>`
                 }
               </div>
@@ -1561,6 +1659,7 @@
           const isReady = isUnitReady(ch.id, genre);
           const rec = getUnitRecord(ch.id, genre);
           const file = getUnitFile(ch.id, genre);
+          const handout = getUnitHandoutFile(ch.id, genre);
 
           unitsHtml += `
             <div class="unit-box ${isReady ? "is-ready" : ""} ${rec.completed ? "is-completed" : ""}" style="min-height:110px;">
@@ -1572,7 +1671,18 @@
                 ${ch.subtitle}
               </div>
               ${isReady 
-                ? `<a href="${file}" class="unit-btn-enter" style="width:100%;">▶ 進入課程${unit.questionCount ? ` (${unit.questionCount}題)` : ''}</a>`
+                ? `
+                  <div class="unit-modes-wrap" style="width:100%;margin: 6px 0;">
+                    ${handout ? `
+                      <a href="${handout}" class="mode-btn mode-handout" target="_blank" title="開啟完整詳解講義 PDF">
+                        <span>📖</span> 詳解講義模式
+                      </a>
+                    ` : ''}
+                    <a href="${file}" class="mode-btn mode-practice" target="_self" style="width:100%;">
+                      <span>✏️</span> 自練題目模式${unit.questionCount ? ` <span class="q-badge">(${unit.questionCount}題)</span>` : ''}
+                    </a>
+                  </div>
+                `
                 : `<button class="unit-btn-disabled" style="width:100%;" onclick="handlePendingClick('${ch.title}', '${genre}', '${file}')">教材準備中</button>`
               }
               <div class="record-controls">
