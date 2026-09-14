@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文意新8課 ｜ 數位互動教材總目錄＆學習記錄單</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-hover: #1d4ed8;
+      --primary-light: #eff6ff;
+      --primary-border: #bfdbfe;
+      --secondary: #0f766e;
+      --secondary-light: #f0fdfa;
+      --accent: #b45309;
+      --accent-light: #fffbeb;
+      --success: #059669;
+      --success-light: #ecfdf5;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-300: #cbd5e1;
+      --slate-400: #94a3b8;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 20px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Serif TC", sans-serif;
+      background-color: #f6f8fb;
+      color: var(--slate-800);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 頂部主標頭 */
+    header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+      color: white;
+      padding: 24px 20px 20px;
+      box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+      position: relative;
+    }
+
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .title-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .brand-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      width: fit-content;
+      backdrop-filter: blur(4px);
+    }
+
+    .main-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sub-title {
+      font-size: 0.95rem;
+      color: #bfdbfe;
+      font-weight: 400;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .action-btn {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .action-btn:hover {
+      background: rgba(255, 255, 255, 0.28);
+      transform: translateY(-1px);
+    }
+
+    .action-btn.btn-accent {
+      background: #f59e0b;
+      border-color: #d97706;
+      color: #78350f;
+    }
+
+    .action-btn.btn-accent:hover {
+      background: #fbbf24;
+      color: #451a03;
+    }
+
+    /* 總覽數據看板 */
+    .dashboard-bar {
+      background: white;
+      border-bottom: 1px solid var(--slate-200);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .dashboard-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .stats-cards {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .stat-pill {
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      border-radius: 10px;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .stat-pill .icon {
+      font-size: 1.3rem;
+    }
+
+    .stat-pill .stat-label {
+      font-size: 0.76rem;
+      color: var(--slate-600);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .stat-pill .stat-val {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      line-height: 1.2;
+    }
+
+    .progress-section {
+      flex: 1;
+      min-width: 260px;
+      max-width: 420px;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--slate-700);
+      margin-bottom: 6px;
+    }
+
+    .progress-track {
+      background: var(--slate-200);
+      height: 10px;
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-fill {
+      background: linear-gradient(90deg, #10b981, #059669);
+      height: 100%;
+      width: 0%;
+      transition: width 0.4s ease;
+      border-radius: 6px;
+    }
+
+    /* 主要操作過濾列 */
+    .controls-strip {
+      max-width: 1280px;
+      margin: 18px auto 0;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .view-switcher {
+      display: flex;
+      background: #e2e8f0;
+      padding: 3px;
+      border-radius: 10px;
+      gap: 2px;
+    }
+
+    .switch-tab {
+      background: transparent;
+      border: none;
+      padding: 6px 14px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--slate-700);
+      border-radius: 7px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .switch-tab.active {
+      background: white;
+      color: var(--primary);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .filter-search-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-select {
+      background: white;
+      border: 1px solid var(--slate-300);
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 0.85rem;
+      color: var(--slate-700);
+      outline: none;
+      cursor: pointer;
+    }
+
+    .search-box {
+      position: relative;
+    }
+
+    .search-box input {
+      background: white;
+      border: 1px solid var(--slate-300);
+      border-radius: 8px;
+      padding: 6px 12px 6px 30px;
+      font-size: 0.85rem;
+      color: var(--slate-800);
+      outline: none;
+      width: 190px;
+      transition: width 0.2s ease, border-color 0.2s ease;
+    }
+
+    .search-box input:focus {
+      width: 230px;
+      border-color: var(--primary);
+    }
+
+    .search-box .search-icon {
+      position: absolute;
+      left: 9px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.85rem;
+      color: var(--slate-400);
+      pointer-events: none;
+    }
+
+    /* 主容器 */
+    main {
+      max-width: 1280px;
+      width: 100%;
+      margin: 16px auto 40px;
+      padding: 0 20px;
+      flex: 1;
+    }
+
+    /* ========================================================
+       1. 矩陣全景檢視 (Matrix Table View)
+    ======================================================== */
+    .matrix-container {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--slate-200);
+      box-shadow: var(--shadow-md);
+      overflow-x: auto;
+      margin-top: 14px;
+    }
+
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 980px;
+    }
+
+    .matrix-table th, .matrix-table td {
+      border: 1px solid var(--slate-200);
+      text-align: center;
+      padding: 10px 8px;
+    }
+
+    .matrix-table thead th {
+      background: #f1f5f9;
+      color: var(--slate-800);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px 10px;
+    }
+
+    .matrix-table thead th.col-chapter {
+      width: 220px;
+      text-align: left;
+      padding-left: 18px;
+      background: #e2e8f0;
+      color: var(--slate-900);
+    }
+
+    .matrix-table thead th.col-genre {
+      width: 15%;
+      letter-spacing: 0.5px;
+    }
+
+    .row-chapter-header {
+      background: #f8fafc;
+      text-align: left;
+      padding: 14px 18px !important;
+      vertical-align: middle;
+    }
+
+    .chapter-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 4px;
+    }
+
+    .chapter-name {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      line-height: 1.3;
+    }
+
+    .chapter-subtitle {
+      font-size: 0.82rem;
+      color: var(--slate-600);
+      margin-top: 3px;
+    }
+
+    /* 單元儲存格 */
+    .unit-cell {
+      padding: 8px !important;
+      vertical-align: top;
+      background: #ffffff;
+      transition: background 0.15s ease;
+      position: relative;
+    }
+
+    .unit-cell:hover {
+      background: #f8fafc;
+    }
+
+    .unit-box {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 115px;
+      justify-content: space-between;
+      border-radius: 8px;
+      padding: 8px;
+      border: 1px solid #e2e8f0;
+      background: white;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+
+    .unit-box.is-ready {
+      border-color: #6ee7b7;
+      background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+      box-shadow: 0 2px 5px rgba(16, 185, 129, 0.08);
+    }
+
+    .unit-box.is-completed {
+      border-color: #3b82f6;
+      background: #eff6ff;
+    }
+
+    .unit-box-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .page-tag {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--slate-600);
+      background: #f1f5f9;
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+
+    .unit-box.is-ready .page-tag {
+      color: #065f46;
+      background: #d1fae5;
+    }
+
+    .status-indicator {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .status-indicator.ready {
+      background: #059669;
+      color: white;
+    }
+
+    .status-indicator.pending {
+      background: #f1f5f9;
+      color: #64748b;
+      border: 1px solid #cbd5e1;
+    }
+
+    .status-indicator.rest {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .unit-btn-enter {
+      margin: 6px 0;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      font-size: 0.84rem;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      transition: all 0.15s ease;
+      box-shadow: 0 1px 3px rgba(30, 58, 138, 0.2);
+    }
+
+    .unit-btn-enter:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .unit-btn-disabled {
+      margin: 6px 0;
+      background: #f8fafc;
+      color: #94a3b8;
+      font-size: 0.8rem;
+      padding: 5px 8px;
+      border-radius: 6px;
+      border: 1px dashed #cbd5e1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: not-allowed;
+    }
+
+    /* 記錄單互動區 */
+    .record-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding-top: 6px;
+      border-top: 1px dashed #e2e8f0;
+      margin-top: 4px;
+    }
+
+    .record-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.74rem;
+    }
+
+    .chk-complete-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      color: var(--slate-700);
+      font-weight: 600;
+    }
+
+    .chk-complete-label input {
+      accent-color: var(--success);
+      cursor: pointer;
+    }
+
+    .date-badge {
+      font-size: 0.7rem;
+      color: var(--slate-500);
+      cursor: pointer;
+      background: #f8fafc;
+      padding: 1px 4px;
+      border-radius: 3px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .date-badge:hover {
+      background: #e2e8f0;
+      color: var(--slate-800);
+    }
+
+    .score-badge {
+      font-size: 0.72rem;
+      color: #b45309;
+      font-weight: 700;
+      background: #fffbeb;
+      padding: 1px 5px;
+      border-radius: 3px;
+      border: 1px solid #fde68a;
+    }
+
+    /* 休息儲存格 */
+    .rest-box {
+      background: #fffdf5;
+      border: 1px dashed #fcd34d;
+      border-radius: 8px;
+      height: 100%;
+      min-height: 110px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      color: #92400e;
+      padding: 10px;
+    }
+
+    .rest-icon {
+      font-size: 1.5rem;
+    }
+
+    .rest-text {
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    /* 底部總結列與附錄 */
+    .appendix-row {
+      background: #f8fafc;
+    }
+
+    .appendix-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      padding: 14px;
+    }
+
+    .appendix-item {
+      background: white;
+      border: 1px solid var(--slate-200);
+      border-radius: 8px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .appendix-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--slate-800);
+    }
+
+    .appendix-page {
+      font-size: 0.78rem;
+      color: var(--slate-500);
+      font-weight: 600;
+    }
+
+    /* ========================================================
+       2. 課次卡片檢視 (Chapter Cards View)
+    ======================================================== */
+    .cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 14px;
+    }
+
+    .chapter-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--slate-200);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .chapter-card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .chapter-card-header {
+      background: #f8fafc;
+      border-bottom: 1px solid var(--slate-200);
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .chapter-card-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .chapter-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 16px;
+      padding: 20px;
+    }
+
+    /* ========================================================
+       3. 文類檢視 (Category View)
+    ======================================================== */
+    .category-container {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .category-section {
+      background: white;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--slate-200);
+      box-shadow: var(--shadow-sm);
+      padding: 20px;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--slate-100);
+    }
+
+    /* 彈窗對話框 (Modal) */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: white;
+      width: 100%;
+      max-width: 580px;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
+      overflow: hidden;
+      animation: modalSlide 0.2s ease-out;
+    }
+
+    @keyframes modalSlide {
+      from { transform: translateY(12px) scale(0.98); opacity: 0; }
+      to { transform: translateY(0) scale(1); opacity: 1; }
+    }
+
+    .modal-header {
+      background: #f8fafc;
+      border-bottom: 1px solid var(--slate-200);
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--slate-900);
+    }
+
+    .modal-close-btn {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--slate-500);
+    }
+
+    .modal-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--slate-700);
+    }
+
+    .form-group input, .form-group textarea, .form-group select {
+      border: 1px solid var(--slate-300);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 0.92rem;
+      color: var(--slate-800);
+      outline: none;
+    }
+
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .modal-footer {
+      background: #f8fafc;
+      border-top: 1px solid var(--slate-200);
+      padding: 14px 20px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .btn-secondary {
+      background: white;
+      border: 1px solid var(--slate-300);
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+    }
+
+    /* 頁尾 */
+    footer {
+      background: white;
+      border-top: 1px solid var(--slate-200);
+      padding: 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--slate-500);
+      margin-top: auto;
+    }
+
+    /* 列印樣式 */
+    @media print {
+      header, .controls-strip, .dashboard-bar, .modal-backdrop, .unit-btn-enter, .unit-btn-disabled, footer {
+        display: none !important;
+      }
+      body {
+        background: white;
+        color: black;
+      }
+      .matrix-container {
+        border: none;
+        box-shadow: none;
+        overflow: visible;
+      }
+      .matrix-table th, .matrix-table td {
+        border-color: #333;
+      }
+      .print-header {
+        display: block !important;
+        text-align: center;
+        margin-bottom: 16px;
+      }
+    }
+
+    .print-header {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 列印時顯示之標頭 -->
+  <div class="print-header">
+    <h1 style="font-size: 1.5rem; margin-bottom: 4px;">《文意新 8 課》目次 & 學習記錄單</h1>
+    <p style="font-size: 0.9rem; color: #555;">姓名：_______________　班級：_________　座號：_____</p>
+  </div>
+
+  <!-- 頂部主導航標頭 -->
+  <header>
+    <div class="header-inner">
+      <div class="title-group">
+        <span class="brand-tag">📖 國中國文閱讀素養解題神器</span>
+        <h1 class="main-title">文意新 8 課 ｜ 數位教材入口導覽</h1>
+        <p class="sub-title">文本表述方式 × 8堂解題思維專題 × 互動學習記錄單</p>
+      </div>
+      <div class="header-actions">
+        <button class="action-btn" onclick="openFileManagerModal()">
+          <span>⚙️</span> 連結管理與檔案探測
+        </button>
+        <button class="action-btn" onclick="window.print()">
+          <span>🖨️</span> 列印記錄單
+        </button>
+        <button class="action-btn" onclick="exportProgress()">
+          <span>📥</span> 匯出記錄
+        </button>
+        <button class="action-btn" onclick="document.getElementById('importFileInput').click()">
+          <span>📤</span> 匯入
+        </button>
+        <input type="file" id="importFileInput" style="display:none;" accept=".json" onchange="importProgress(event)">
+      </div>
+    </div>
+  </header>
+
+  <!-- 總覽數據與學習進度看板 -->
+  <div class="dashboard-bar">
+    <div class="dashboard-inner">
+      <div class="stats-cards">
+        <div class="stat-pill">
+          <span class="icon">📚</span>
+          <div>
+            <div class="stat-label">總測驗單元</div>
+            <div class="stat-val">37 <span style="font-size:0.75rem;font-weight:400;color:var(--slate-500)">單元 + 2回驗收</span></div>
+          </div>
+        </div>
+        <div class="stat-pill">
+          <span class="icon">🟢</span>
+          <div>
+            <div class="stat-label">已上線教材</div>
+            <div class="stat-val" id="readyCountDisplay" style="color:var(--success)">1 <span style="font-size:0.75rem;font-weight:400;color:var(--slate-500)">篇</span></div>
+          </div>
+        </div>
+        <div class="stat-pill">
+          <span class="icon">🎯</span>
+          <div>
+            <div class="stat-label">已完成學習</div>
+            <div class="stat-val" id="completedCountDisplay" style="color:var(--primary)">0 <span style="font-size:0.75rem;font-weight:400;color:var(--slate-500)">篇</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="progress-section">
+        <div class="progress-header">
+          <span>全書研讀完成進度</span>
+          <span id="progressPercentDisplay">0%</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progressBarFill"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 控制篩選與視圖切換列 -->
+  <div class="controls-strip">
+    <div class="view-switcher">
+      <button class="switch-tab active" id="tabMatrix" onclick="switchView('matrix')">
+        <span>📑</span> 課本目次全景
+      </button>
+      <button class="switch-tab" id="tabCards" onclick="switchView('cards')">
+        <span>🗂️</span> 課次闖關卡片
+      </button>
+      <button class="switch-tab" id="tabCategory" onclick="switchView('category')">
+        <span>📖</span> 文類專題縱覽
+      </button>
+    </div>
+
+    <div class="filter-search-group">
+      <select class="filter-select" id="statusFilter" onchange="renderCurrentView()">
+        <option value="all">全部單元</option>
+        <option value="ready">🟢 僅看已上線教材</option>
+        <option value="completed">✓ 僅看已完成學習</option>
+        <option value="uncompleted">⏳ 僅看未完成單元</option>
+      </select>
+
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchInput" placeholder="搜尋篇名、文類或頁碼..." oninput="renderCurrentView()">
+      </div>
+    </div>
+  </div>
+
+  <!-- 主要內容呈現區域 -->
+  <main id="mainContent">
+    <!-- 1. 矩陣全景檢視 -->
+    <section id="viewMatrix" class="matrix-container">
+      <table class="matrix-table" id="matrixTable">
+        <thead>
+          <tr>
+            <th class="col-chapter">課次與篇名</th>
+            <th class="col-genre">記敘文類</th>
+            <th class="col-genre">抒情文類</th>
+            <th class="col-genre">議論文類</th>
+            <th class="col-genre">說明文類</th>
+            <th class="col-genre">應用文類</th>
+          </tr>
+        </thead>
+        <tbody id="matrixTableBody">
+          <!-- 由 JavaScript 動態繪製 8 課表格內容 -->
+        </tbody>
+        <tfoot>
+          <tr class="appendix-row">
+            <td colspan="6">
+              <div class="appendix-card-grid">
+                <div class="appendix-item">
+                  <div>
+                    <div class="appendix-title">📖 解題策略總說</div>
+                    <div class="appendix-page">原書 P.1 ~ P.4</div>
+                  </div>
+                  <span class="status-indicator ready" style="background:#3b82f6;">總綱導讀</span>
+                </div>
+                <div class="appendix-item">
+                  <div>
+                    <div class="appendix-title">🎯 成果驗收（一）</div>
+                    <div class="appendix-page">原書 P.162 ~ P.167</div>
+                  </div>
+                  <span class="status-indicator pending">階段評量</span>
+                </div>
+                <div class="appendix-item">
+                  <div>
+                    <div class="appendix-title">🏆 成果驗收（二）</div>
+                    <div class="appendix-page">原書 P.168 ~ P.176</div>
+                  </div>
+                  <span class="status-indicator pending">總結評量</span>
+                </div>
+                <div class="appendix-item">
+                  <div>
+                    <div class="appendix-title">📝 試題解答篇</div>
+                    <div class="appendix-page">原書 P.177（教用不附）</div>
+                  </div>
+                  <span class="status-indicator pending">答案篇</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <!-- 2. 課次卡片檢視 -->
+    <section id="viewCards" class="cards-container" style="display:none;">
+      <!-- 由 JavaScript 動態繪製課次卡片 -->
+    </section>
+
+    <!-- 3. 文類縱覽檢視 -->
+    <section id="viewCategory" class="category-container" style="display:none;">
+      <!-- 由 JavaScript 動態繪製文類分類 -->
+    </section>
+  </main>
+
+  <!-- 記錄編輯彈窗 -->
+  <div class="modal-backdrop" id="recordModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title" id="recordModalTitle">學習記錄編輯</div>
+        <button class="modal-close-btn" onclick="closeRecordModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="editUnitKey">
+        <div class="form-group">
+          <label>完成狀態：</label>
+          <select id="editCompleteStatus">
+            <option value="false">未完成</option>
+            <option value="true">已完成</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>研讀日期：</label>
+          <input type="date" id="editDateInput">
+        </div>
+        <div class="form-group">
+          <label>得分 / 答對題數（選填）：</label>
+          <input type="text" id="editScoreInput" placeholder="例如：9/9 題 或 100分">
+        </div>
+        <div class="form-group">
+          <label>學習心得 / 錯題備忘：</label>
+          <textarea id="editNotesInput" rows="3" placeholder="記錄重要盲點或複習重點..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-secondary" onclick="closeRecordModal()">取消</button>
+        <button class="btn-primary" onclick="saveRecordModal()">保存記錄</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 檔案連結管理與探測彈窗 -->
+  <div class="modal-backdrop" id="fileManagerModal">
+    <div class="modal-box" style="max-width: 680px;">
+      <div class="modal-header">
+        <div class="modal-title">⚙️ 教材網頁連結管理與探測</div>
+        <button class="modal-close-btn" onclick="closeFileManagerModal()">✕</button>
+      </div>
+      <div class="modal-body" style="max-height: 480px; overflow-y: auto;">
+        <p style="font-size: 0.88rem; color: var(--slate-600); margin-bottom: 8px;">
+          此面板列出所有單元預設對應的 HTML 檔名。當您在 <code>github</code> 資料夾中生成新教材時，系統會自動比對並亮起「已上線」按鈕。您也可以手動微調特定單元的檔名連結：
+        </p>
+        <div style="margin-bottom: 12px; display: flex; gap: 8px;">
+          <button class="btn-primary" onclick="runFileProbe()" style="font-size: 0.84rem;">
+            🔍 重新自動探測本機檔案
+          </button>
+          <button class="btn-secondary" onclick="resetFileLinks()" style="font-size: 0.84rem;">
+            🔄 恢復預設檔名對照
+          </button>
+        </div>
+        <div id="fileLinksList" style="display:flex; flex-direction:column; gap: 8px;">
+          <!-- 由 JS 渲染各課自訂連結欄位 -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-primary" onclick="closeFileManagerModal()">完成</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <footer>
+    <p>《文意新 8 課》互動式網頁教學系統 ｜ 本地離線運行版 ｜ 支援平板、手機、電腦與觸控大螢幕教學</p>
+  </footer>
+
+  <script>
+    // ==========================================
+    // 1. 全書 8 課 × 5 文類 核心架構資料庫
+    // ==========================================
+    const CHAPTERS_DATA = [
+      {
+        id: 1,
+        title: "第 1 課 主旨篇",
+        subtitle: "中心思想在哪裡",
+        units: {
+          "記敘文類": { page: "P.8", defaultFile: "01_main_idea_narrative.html", isReadyDefault: true, questionCount: 9 },
+          "抒情文類": { page: "P.11", defaultFile: "02_main_idea_lyric.html", isReadyDefault: true, questionCount: 10 },
+          "議論文類": { page: "P.14", defaultFile: "03_main_idea_argumentative.html", isReadyDefault: true, questionCount: 10 },
+          "說明文類": { page: "P.17", defaultFile: "04_main_idea_expository.html", isReadyDefault: true, questionCount: 10 },
+          "應用文類": { page: "P.20", defaultFile: "05_main_idea_practical.html", isReadyDefault: true, questionCount: 10 }
+        }
+      },
+      {
+        id: 2,
+        title: "第 2 課 觀點篇",
+        subtitle: "讀懂作者的心",
+        units: {
+          "記敘文類": { page: "P.28", defaultFile: "06_viewpoint_narrative.html" },
+          "抒情文類": { page: "P.31", defaultFile: "07_viewpoint_lyric.html" },
+          "議論文類": { page: "P.34", defaultFile: "08_viewpoint_argumentative.html" },
+          "說明文類": { page: "P.37", defaultFile: "09_viewpoint_expository.html" },
+          "應用文類": { page: "P.40", defaultFile: "10_viewpoint_practical.html" }
+        }
+      },
+      {
+        id: 3,
+        title: "第 3 課 意涵篇",
+        subtitle: "原來文句這麼說",
+        units: {
+          "記敘文類": { page: "P.48", defaultFile: "11_implication_narrative.html" },
+          "抒情文類": { page: "P.51", defaultFile: "12_implication_lyric.html" },
+          "議論文類": { page: "P.54", defaultFile: "13_implication_argumentative.html" },
+          "說明文類": { page: "P.57", defaultFile: "14_implication_expository.html" },
+          "應用文類": { page: "P.60", defaultFile: "15_implication_practical.html" }
+        }
+      },
+      {
+        id: 4,
+        title: "第 4 課 解釋篇",
+        subtitle: "換句話說解文意",
+        units: {
+          "記敘文類": { page: "P.68", defaultFile: "16_interpretation_narrative.html" },
+          "抒情文類": { page: "P.71", defaultFile: "17_interpretation_lyric.html" },
+          "議論文類": { page: "P.74", defaultFile: "18_interpretation_argumentative.html" },
+          "說明文類": { page: "P.77", defaultFile: "19_interpretation_expository.html" },
+          "應用文類": { page: "P.80", defaultFile: "20_interpretation_practical.html" }
+        }
+      },
+      {
+        id: 5,
+        title: "第 5 課 比較篇",
+        subtitle: "大家來找碴",
+        units: {
+          "記敘文類": { page: "P.88", defaultFile: "21_comparison_narrative.html" },
+          "抒情文類": { page: "P.92", defaultFile: "22_comparison_lyric.html" },
+          "議論文類": { page: "P.95", defaultFile: "23_comparison_argumentative.html" },
+          "說明文類": { page: "P.98", defaultFile: "24_comparison_expository.html" },
+          "應用文類": { page: "P.102", defaultFile: "25_comparison_practical.html" }
+        }
+      },
+      {
+        id: 6,
+        title: "第 6 課 推論篇",
+        subtitle: "找出句子的真相",
+        units: {
+          "記敘文類": { page: "P.111", defaultFile: "26_inference_narrative.html" },
+          "抒情文類": { page: "P.114", defaultFile: "27_inference_lyric.html" },
+          "議論文類": { page: "P.117", defaultFile: "28_inference_argumentative.html" },
+          "說明文類": { page: "P.120", defaultFile: "29_inference_expository.html" },
+          "應用文類": { page: "P.123", defaultFile: "30_inference_practical.html" }
+        }
+      },
+      {
+        id: 7,
+        title: "第 7 課 寫作手法篇",
+        subtitle: "拆解寫作伎倆",
+        units: {
+          "記敘文類": { page: "P.131", defaultFile: "31_technique_narrative.html" },
+          "抒情文類": { page: "P.134", defaultFile: "32_technique_lyric.html" },
+          "議論文類": { page: "P.137", defaultFile: "33_technique_argumentative.html" },
+          "說明文類": { page: "P.140", defaultFile: "34_technique_expository.html" },
+          "應用文類": { page: "P.143", defaultFile: "35_technique_practical.html" }
+        }
+      },
+      {
+        id: 8,
+        title: "第 8 課 圖表判讀篇",
+        subtitle: "圖與文的化學作用",
+        units: {
+          "記敘文類": { isRest: true, text: "休息一下吧！" },
+          "抒情文類": { isRest: true, text: "休息一下吧！" },
+          "議論文類": { isRest: true, text: "休息一下吧！" },
+          "說明文類": { page: "P.150", defaultFile: "36_chart_expository.html" },
+          "應用文類": { page: "P.156", defaultFile: "37_chart_practical.html" }
+        }
+      }
+    ];
+
+    const GENRES = ["記敘文類", "抒情文類", "議論文類", "說明文類", "應用文類"];
+
+    // ==========================================
+    // 2. 本地儲存狀態管理 (LocalStorage)
+    // ==========================================
+    const STORAGE_KEY_RECORDS = "wenyi8_study_records_v1";
+    const STORAGE_KEY_FILEMAP = "wenyi8_custom_files_v1";
+    const STORAGE_KEY_READY = "wenyi8_ready_units_v1";
+
+    // 預設已上線之單元清單（包含新加入之第1課全5個單元）
+    const DEFAULT_READY_UNITS = {
+      "ch1_記敘文類": true,
+      "ch1_抒情文類": true,
+      "ch1_議論文類": true,
+      "ch1_說明文類": true,
+      "ch1_應用文類": true
+    };
+
+    let studyRecords = {};
+    let customFileMap = {};
+    let readyUnits = { ...DEFAULT_READY_UNITS };
+    let currentView = "matrix"; // "matrix" | "cards" | "category"
+
+    function loadSavedData() {
+      try {
+        const savedRec = localStorage.getItem(STORAGE_KEY_RECORDS);
+        if (savedRec) studyRecords = JSON.parse(savedRec);
+
+        const savedMap = localStorage.getItem(STORAGE_KEY_FILEMAP);
+        if (savedMap) customFileMap = JSON.parse(savedMap);
+
+        const savedReady = localStorage.getItem(STORAGE_KEY_READY);
+        if (savedReady) readyUnits = JSON.parse(savedReady);
+        // 確保預設已上線之單元全部就緒
+        Object.assign(readyUnits, DEFAULT_READY_UNITS);
+      } catch (e) {
+        console.error("載入本機記錄出錯", e);
+      }
+    }
+
+    function saveAllData() {
+      try {
+        localStorage.setItem(STORAGE_KEY_RECORDS, JSON.stringify(studyRecords));
+        localStorage.setItem(STORAGE_KEY_FILEMAP, JSON.stringify(customFileMap));
+        localStorage.setItem(STORAGE_KEY_READY, JSON.stringify(readyUnits));
+      } catch (e) {
+        console.error("儲存本機記錄出錯", e);
+      }
+    }
+
+    // 取得單元檔案路徑
+    function getUnitFile(chId, genre) {
+      const key = `ch${chId}_${genre}`;
+      if (customFileMap[key]) return customFileMap[key];
+      const ch = CHAPTERS_DATA.find(c => c.id === chId);
+      if (ch && ch.units[genre] && ch.units[genre].defaultFile) {
+        return ch.units[genre].defaultFile;
+      }
+      return "";
+    }
+
+    // 取得單元是否已上線
+    function isUnitReady(chId, genre) {
+      const key = `ch${chId}_${genre}`;
+      return !!readyUnits[key];
+    }
+
+    // 取得單元研讀記錄
+    function getUnitRecord(chId, genre) {
+      const key = `ch${chId}_${genre}`;
+      return studyRecords[key] || { completed: false, date: "", score: "", notes: "" };
+    }
+
+    // ==========================================
+    // 3. 視圖渲染邏輯
+    // ==========================================
+    function switchView(viewName) {
+      currentView = viewName;
+      document.querySelectorAll(".switch-tab").forEach(tab => tab.classList.remove("active"));
+      document.querySelectorAll("#mainContent > section").forEach(sec => sec.style.display = "none");
+
+      if (viewName === "matrix") {
+        document.getElementById("tabMatrix").classList.add("active");
+        document.getElementById("viewMatrix").style.display = "block";
+      } else if (viewName === "cards") {
+        document.getElementById("tabCards").classList.add("active");
+        document.getElementById("viewCards").style.display = "flex";
+      } else if (viewName === "category") {
+        document.getElementById("tabCategory").classList.add("active");
+        document.getElementById("viewCategory").style.display = "flex";
+      }
+      renderCurrentView();
+    }
+
+    function renderCurrentView() {
+      updateDashboardStats();
+      if (currentView === "matrix") {
+        renderMatrixView();
+      } else if (currentView === "cards") {
+        renderCardsView();
+      } else if (currentView === "category") {
+        renderCategoryView();
+      }
+    }
+
+    // 更新儀表板數據
+    function updateDashboardStats() {
+      let totalUnits = 37;
+      let readyCount = 0;
+      let completedCount = 0;
+
+      CHAPTERS_DATA.forEach(ch => {
+        GENRES.forEach(genre => {
+          const u = ch.units[genre];
+          if (!u || u.isRest) return;
+          if (isUnitReady(ch.id, genre)) readyCount++;
+          const rec = getUnitRecord(ch.id, genre);
+          if (rec.completed) completedCount++;
+        });
+      });
+
+      document.getElementById("readyCountDisplay").innerText = readyCount;
+      document.getElementById("completedCountDisplay").innerText = completedCount;
+      
+      const pct = Math.round((completedCount / totalUnits) * 100);
+      document.getElementById("progressPercentDisplay").innerText = `${pct}% (${completedCount}/${totalUnits})`;
+      document.getElementById("progressBarFill").style.width = `${pct}%`;
+    }
+
+    // 符合搜尋與篩選條件
+    function matchesFilter(ch, genre, unitInfo) {
+      if (unitInfo.isRest) return true;
+      const filter = document.getElementById("statusFilter").value;
+      const search = document.getElementById("searchInput").value.trim().toLowerCase();
+      const isReady = isUnitReady(ch.id, genre);
+      const rec = getUnitRecord(ch.id, genre);
+
+      if (filter === "ready" && !isReady) return false;
+      if (filter === "completed" && !rec.completed) return false;
+      if (filter === "uncompleted" && rec.completed) return false;
+
+      if (search) {
+        const text = `${ch.title} ${ch.subtitle} ${genre} ${unitInfo.page || ""} ${rec.notes || ""}`.toLowerCase();
+        if (!text.includes(search)) return false;
+      }
+      return true;
+    }
+
+    // ------------------------------------------
+    // A. 渲染「矩陣全景檢視」
+    // ------------------------------------------
+    function renderMatrixView() {
+      const tbody = document.getElementById("matrixTableBody");
+      tbody.innerHTML = "";
+
+      CHAPTERS_DATA.forEach(ch => {
+        const tr = document.createElement("tr");
+
+        // 左側課次資訊欄
+        const thChapter = document.createElement("th");
+        thChapter.className = "row-chapter-header";
+        thChapter.innerHTML = `
+          <span class="chapter-badge">課次 ${ch.id}</span>
+          <div class="chapter-name">${ch.title.split(" ")[2] || ch.title}</div>
+          <div class="chapter-subtitle">「${ch.subtitle}」</div>
+        `;
+        tr.appendChild(thChapter);
+
+        // 5 個文類欄
+        GENRES.forEach(genre => {
+          const td = document.createElement("td");
+          td.className = "unit-cell";
+          const unit = ch.units[genre];
+
+          if (unit.isRest) {
+            td.innerHTML = `
+              <div class="rest-box">
+                <span class="rest-icon">🚴‍♂️</span>
+                <span class="rest-text">休息一下吧！</span>
+              </div>
+            `;
+          } else {
+            const isReady = isUnitReady(ch.id, genre);
+            const rec = getUnitRecord(ch.id, genre);
+            const file = getUnitFile(ch.id, genre);
+            const unitKey = `ch${ch.id}_${genre}`;
+
+            const boxClass = `unit-box ${isReady ? "is-ready" : ""} ${rec.completed ? "is-completed" : ""}`;
+
+            td.innerHTML = `
+              <div class="${boxClass}" id="box_${unitKey}">
+                <div class="unit-box-top">
+                  <span class="page-tag">${unit.page}</span>
+                  ${isReady 
+                    ? `<span class="status-indicator ready">🟢 已就緒</span>` 
+                    : `<span class="status-indicator pending" title="可點擊上方「連結管理」設定">⚪ 準備中</span>`}
+                </div>
+
+                ${isReady 
+                  ? `<a href="${file}" class="unit-btn-enter" target="_self">▶ 進入課程${unit.questionCount ? ` <span style="font-size:0.75rem;opacity:0.9;">(${unit.questionCount}題)</span>` : ''}</a>`
+                  : `<button class="unit-btn-disabled" onclick="handlePendingClick('${ch.title}', '${genre}', '${file}')">待產出</button>`
+                }
+
+                <div class="record-controls">
+                  <div class="record-row">
+                    <label class="chk-complete-label">
+                      <input type="checkbox" ${rec.completed ? "checked" : ""} onchange="toggleUnitCompleted(${ch.id}, '${genre}', this.checked)">
+                      <span>${rec.completed ? "已研習" : "未完成"}</span>
+                    </label>
+                    <span class="date-badge" onclick="openRecordModal(${ch.id}, '${genre}')" title="點擊登記研讀日期">
+                      ${rec.date ? rec.date.slice(5) : "記日期"}
+                    </span>
+                  </div>
+                  ${rec.score ? `
+                    <div class="record-row" style="margin-top:2px;">
+                      <span class="score-badge" onclick="openRecordModal(${ch.id}, '${genre}')">得分: ${rec.score}</span>
+                    </div>
+                  ` : ""}
+                </div>
+              </div>
+            `;
+          }
+
+          tr.appendChild(td);
+        });
+
+        tbody.appendChild(tr);
+      });
+    }
+
+    // ------------------------------------------
+    // B. 渲染「課次闖關卡片檢視」
+    // ------------------------------------------
+    function renderCardsView() {
+      const container = document.getElementById("viewCards");
+      container.innerHTML = "";
+
+      CHAPTERS_DATA.forEach(ch => {
+        let chTotal = 0;
+        let chDone = 0;
+
+        GENRES.forEach(g => {
+          if (!ch.units[g].isRest) {
+            chTotal++;
+            if (getUnitRecord(ch.id, g).completed) chDone++;
+          }
+        });
+
+        const card = document.createElement("div");
+        card.className = "chapter-card";
+
+        let unitsHtml = "";
+        GENRES.forEach(genre => {
+          const unit = ch.units[genre];
+          if (!matchesFilter(ch, genre, unit)) return;
+
+          if (unit.isRest) {
+            unitsHtml += `
+              <div class="rest-box" style="min-height:90px;">
+                <span class="rest-text">🚴‍♂️ ${genre}：休息一下吧！</span>
+              </div>
+            `;
+            return;
+          }
+
+          const isReady = isUnitReady(ch.id, genre);
+          const rec = getUnitRecord(ch.id, genre);
+          const file = getUnitFile(ch.id, genre);
+
+          unitsHtml += `
+            <div class="unit-box ${isReady ? "is-ready" : ""} ${rec.completed ? "is-completed" : ""}" style="min-height: 100px;">
+              <div class="unit-box-top">
+                <strong style="font-size:0.95rem;color:var(--slate-800)">${genre}</strong>
+                <span class="page-tag">${unit.page}</span>
+              </div>
+              <div style="margin: 6px 0;">
+                ${isReady 
+                  ? `<a href="${file}" class="unit-btn-enter" style="width:100%;">▶ 進入課程${unit.questionCount ? ` (${unit.questionCount}題)` : ''}</a>`
+                  : `<button class="unit-btn-disabled" style="width:100%;" onclick="handlePendingClick('${ch.title}', '${genre}', '${file}')">教材準備中</button>`
+                }
+              </div>
+              <div class="record-controls">
+                <div class="record-row">
+                  <label class="chk-complete-label">
+                    <input type="checkbox" ${rec.completed ? "checked" : ""} onchange="toggleUnitCompleted(${ch.id}, '${genre}', this.checked)">
+                    <span>${rec.completed ? "已掌握" : "標記完成"}</span>
+                  </label>
+                  <span class="date-badge" onclick="openRecordModal(${ch.id}, '${genre}')">
+                    ${rec.date || "填寫日期"}
+                  </span>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+        card.innerHTML = `
+          <div class="chapter-card-header">
+            <div class="chapter-card-title">
+              <span class="chapter-badge">課次 ${ch.id}</span>
+              <span style="font-size:1.2rem;font-weight:800;color:var(--slate-900)">${ch.title}</span>
+              <span style="font-size:0.9rem;color:var(--slate-600)">—「${ch.subtitle}」</span>
+            </div>
+            <div style="font-size:0.85rem;font-weight:700;color:var(--primary)">
+              課次進度：${chDone} / ${chTotal} 完成
+            </div>
+          </div>
+          <div class="chapter-card-grid">
+            ${unitsHtml}
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    // ------------------------------------------
+    // C. 渲染「文類專題縱覽檢視」
+    // ------------------------------------------
+    function renderCategoryView() {
+      const container = document.getElementById("viewCategory");
+      container.innerHTML = "";
+
+      GENRES.forEach(genre => {
+        const sec = document.createElement("div");
+        sec.className = "category-section";
+
+        let unitsHtml = "";
+        CHAPTERS_DATA.forEach(ch => {
+          const unit = ch.units[genre];
+          if (!unit || !matchesFilter(ch, genre, unit)) return;
+
+          if (unit.isRest) {
+            unitsHtml += `
+              <div class="rest-box" style="min-height: 90px;">
+                <span class="rest-text">${ch.title}：休息一下吧！</span>
+              </div>
+            `;
+            return;
+          }
+
+          const isReady = isUnitReady(ch.id, genre);
+          const rec = getUnitRecord(ch.id, genre);
+          const file = getUnitFile(ch.id, genre);
+
+          unitsHtml += `
+            <div class="unit-box ${isReady ? "is-ready" : ""} ${rec.completed ? "is-completed" : ""}" style="min-height:110px;">
+              <div class="unit-box-top">
+                <span style="font-weight:800;font-size:0.92rem;">${ch.title.split(" ")[2]}</span>
+                <span class="page-tag">${unit.page}</span>
+              </div>
+              <div style="font-size:0.78rem;color:var(--slate-600);margin-bottom:6px;">
+                ${ch.subtitle}
+              </div>
+              ${isReady 
+                ? `<a href="${file}" class="unit-btn-enter" style="width:100%;">▶ 進入課程${unit.questionCount ? ` (${unit.questionCount}題)` : ''}</a>`
+                : `<button class="unit-btn-disabled" style="width:100%;" onclick="handlePendingClick('${ch.title}', '${genre}', '${file}')">教材準備中</button>`
+              }
+              <div class="record-controls">
+                <div class="record-row">
+                  <label class="chk-complete-label">
+                    <input type="checkbox" ${rec.completed ? "checked" : ""} onchange="toggleUnitCompleted(${ch.id}, '${genre}', this.checked)">
+                    <span>${rec.completed ? "已掌握" : "完成"}</span>
+                  </label>
+                  <span class="date-badge" onclick="openRecordModal(${ch.id}, '${genre}')">${rec.date || "日期"}</span>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+        sec.innerHTML = `
+          <div class="category-header">
+            <span>🏷️</span>
+            <span>【${genre}】專題貫穿研讀系列</span>
+          </div>
+          <div class="chapter-card-grid">
+            ${unitsHtml}
+          </div>
+        `;
+        container.appendChild(sec);
+      });
+    }
+
+    // ==========================================
+    // 4. 學習記錄與互動彈窗控制
+    // ==========================================
+    function toggleUnitCompleted(chId, genre, isDone) {
+      const key = `ch${chId}_${genre}`;
+      if (!studyRecords[key]) studyRecords[key] = { completed: false, date: "", score: "", notes: "" };
+      studyRecords[key].completed = isDone;
+      if (isDone && !studyRecords[key].date) {
+        const today = new Date().toISOString().split("T")[0];
+        studyRecords[key].date = today;
+      }
+      saveAllData();
+      renderCurrentView();
+    }
+
+    let currentEditingKey = null;
+
+    function openRecordModal(chId, genre) {
+      currentEditingKey = `ch${chId}_${genre}`;
+      const ch = CHAPTERS_DATA.find(c => c.id === chId);
+      const rec = studyRecords[currentEditingKey] || { completed: false, date: "", score: "", notes: "" };
+
+      document.getElementById("recordModalTitle").innerText = `學習記錄：${ch.title} ｜ ${genre}`;
+      document.getElementById("editUnitKey").value = currentEditingKey;
+      document.getElementById("editCompleteStatus").value = rec.completed ? "true" : "false";
+      document.getElementById("editDateInput").value = rec.date || "";
+      document.getElementById("editScoreInput").value = rec.score || "";
+      document.getElementById("editNotesInput").value = rec.notes || "";
+
+      document.getElementById("recordModal").classList.add("active");
+    }
+
+    function closeRecordModal() {
+      document.getElementById("recordModal").classList.remove("active");
+    }
+
+    function saveRecordModal() {
+      if (!currentEditingKey) return;
+      const isCompleted = document.getElementById("editCompleteStatus").value === "true";
+      const date = document.getElementById("editDateInput").value;
+      const score = document.getElementById("editScoreInput").value.trim();
+      const notes = document.getElementById("editNotesInput").value.trim();
+
+      studyRecords[currentEditingKey] = {
+        completed: isCompleted,
+        date: date,
+        score: score,
+        notes: notes
+      };
+
+      saveAllData();
+      closeRecordModal();
+      renderCurrentView();
+    }
+
+    function handlePendingClick(chTitle, genre, defaultFile) {
+      alert(`【${chTitle} - ${genre}】\n預定連結檔案：${defaultFile}\n\n此單元網頁目前正由老師製作中。產出後將此 HTML 放入此目錄即可直接開啟學習！`);
+    }
+
+    // ==========================================
+    // 5. 檔案探測與自訂連結管理
+    // ==========================================
+    function openFileManagerModal() {
+      const listContainer = document.getElementById("fileLinksList");
+      listContainer.innerHTML = "";
+
+      CHAPTERS_DATA.forEach(ch => {
+        GENRES.forEach(genre => {
+          const u = ch.units[genre];
+          if (!u || u.isRest) return;
+          const key = `ch${ch.id}_${genre}`;
+          const currentFile = getUnitFile(ch.id, genre);
+          const isReady = isUnitReady(ch.id, genre);
+
+          const row = document.createElement("div");
+          row.style.cssText = "display:flex; align-items:center; gap:8px; padding:6px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; font-size:0.85rem;";
+          row.innerHTML = `
+            <span style="width:170px; font-weight:700;">${ch.title.split(" ")[1] || ch.title} - ${genre}</span>
+            <input type="text" value="${currentFile}" id="input_${key}" style="flex:1; border:1px solid #cbd5e1; border-radius:4px; padding:4px 8px; font-size:0.85rem;">
+            <label style="display:flex;align-items:center;gap:4px;cursor:pointer;">
+              <input type="checkbox" id="readychk_${key}" ${isReady ? "checked" : ""}>
+              <span>已上線</span>
+            </label>
+          `;
+          listContainer.appendChild(row);
+        });
+      });
+
+      document.getElementById("fileManagerModal").classList.add("active");
+    }
+
+    function closeFileManagerModal() {
+      // 儲存修改的檔名與上線開關
+      CHAPTERS_DATA.forEach(ch => {
+        GENRES.forEach(genre => {
+          const u = ch.units[genre];
+          if (!u || u.isRest) return;
+          const key = `ch${ch.id}_${genre}`;
+          const inputEl = document.getElementById(`input_${key}`);
+          const readyChk = document.getElementById(`readychk_${key}`);
+
+          if (inputEl) {
+            customFileMap[key] = inputEl.value.trim();
+          }
+          if (readyChk) {
+            readyUnits[key] = readyChk.checked;
+          }
+        });
+      });
+
+      // 第1課記敘文永久保持已上線
+      Object.assign(readyUnits, DEFAULT_READY_UNITS);
+
+      saveAllData();
+      document.getElementById("fileManagerModal").classList.remove("active");
+      renderCurrentView();
+    }
+
+    function resetFileLinks() {
+      if (confirm("確定要將所有單元檔名重設為標準預設檔名嗎？")) {
+        customFileMap = {};
+        readyUnits = { ...DEFAULT_READY_UNITS };
+        saveAllData();
+        openFileManagerModal();
+      }
+    }
+
+    // 前端非同步探測本機檔案是否存在
+    async function runFileProbe() {
+      let foundCount = 0;
+      for (const ch of CHAPTERS_DATA) {
+        for (const genre of GENRES) {
+          const u = ch.units[genre];
+          if (!u || u.isRest) continue;
+          const key = `ch${ch.id}_${genre}`;
+          const file = getUnitFile(ch.id, genre);
+
+          try {
+            const resp = await fetch(file, { method: "HEAD" });
+            if (resp.ok || resp.status === 200 || resp.type === "basic" || resp.type === "opaque") {
+              readyUnits[key] = true;
+              foundCount++;
+            }
+          } catch (err) {
+            // file:/// 協議下 fetch 可能受瀏覽器限制，保留現有設定
+          }
+        }
+      }
+      Object.assign(readyUnits, DEFAULT_READY_UNITS);
+      saveAllData();
+      openFileManagerModal();
+      alert(`探測完畢！已更新教材上線狀態。`);
+    }
+
+    // ==========================================
+    // 6. 進度匯出與匯入功能
+    // ==========================================
+    function exportProgress() {
+      const data = {
+        records: studyRecords,
+        files: customFileMap,
+        ready: readyUnits,
+        exportTime: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `文意新8課_學習進度_${new Date().toISOString().split("T")[0]}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function importProgress(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const parsed = JSON.parse(e.target.result);
+          if (parsed.records) studyRecords = parsed.records;
+          if (parsed.files) customFileMap = parsed.files;
+          if (parsed.ready) readyUnits = parsed.ready;
+          Object.assign(readyUnits, DEFAULT_READY_UNITS);
+          saveAllData();
+          renderCurrentView();
+          alert("進度資料匯入成功！");
+        } catch (err) {
+          alert("匯入失敗：請確認檔案為正確的進度備份 JSON 檔。");
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    // 初始化
+    window.addEventListener("DOMContentLoaded", () => {
+      loadSavedData();
+      renderCurrentView();
+    });
+  </script>
+</body>
+</html>
