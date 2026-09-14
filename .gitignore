@@ -1,0 +1,4 @@
+deploy.ps1
+*.tmp
+.DS_Store
+Thumbs.db
