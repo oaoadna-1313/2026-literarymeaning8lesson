@@ -1000,7 +1000,7 @@
           <span class="icon">🟢</span>
           <div>
             <div class="stat-label">已上線教材</div>
-            <div class="stat-val" id="readyCountDisplay" style="color:var(--success)">1 <span style="font-size:0.75rem;font-weight:400;color:var(--slate-500)">篇</span></div>
+            <div class="stat-val" id="readyCountDisplay" style="color:var(--success)">37 <span style="font-size:0.75rem;font-weight:400;color:var(--slate-500)">/ 37 篇</span></div>
           </div>
         </div>
         <div class="stat-pill">
@@ -1303,23 +1303,53 @@
     const STORAGE_KEY_FILEMAP = "wenyi8_custom_files_v1";
     const STORAGE_KEY_READY = "wenyi8_ready_units_v1";
 
-    // 預設已上線之單元清單（包含新加入之第1課全5個單元）
+    // 預設已上線之單元清單（全書 8 課共 37 個單元完整就緒）
     const DEFAULT_READY_UNITS = {
+      // 第 1 課 主旨篇
       "ch1_記敘文類": true,
       "ch1_抒情文類": true,
       "ch1_議論文類": true,
       "ch1_說明文類": true,
       "ch1_應用文類": true,
+      // 第 2 課 觀點篇
       "ch2_記敘文類": true,
       "ch2_抒情文類": true,
       "ch2_議論文類": true,
       "ch2_說明文類": true,
       "ch2_應用文類": true,
+      // 第 3 課 意涵篇
       "ch3_記敘文類": true,
       "ch3_抒情文類": true,
       "ch3_議論文類": true,
       "ch3_說明文類": true,
-      "ch3_應用文類": true
+      "ch3_應用文類": true,
+      // 第 4 課 解釋篇
+      "ch4_記敘文類": true,
+      "ch4_抒情文類": true,
+      "ch4_議論文類": true,
+      "ch4_說明文類": true,
+      "ch4_應用文類": true,
+      // 第 5 課 比較篇
+      "ch5_記敘文類": true,
+      "ch5_抒情文類": true,
+      "ch5_議論文類": true,
+      "ch5_說明文類": true,
+      "ch5_應用文類": true,
+      // 第 6 課 推論篇
+      "ch6_記敘文類": true,
+      "ch6_抒情文類": true,
+      "ch6_議論文類": true,
+      "ch6_說明文類": true,
+      "ch6_應用文類": true,
+      // 第 7 課 寫作手法篇
+      "ch7_記敘文類": true,
+      "ch7_抒情文類": true,
+      "ch7_議論文類": true,
+      "ch7_說明文類": true,
+      "ch7_應用文類": true,
+      // 第 8 課 圖表判讀篇
+      "ch8_說明文類": true,
+      "ch8_應用文類": true
     };
 
     let studyRecords = {};
@@ -1337,8 +1367,9 @@
 
         const savedReady = localStorage.getItem(STORAGE_KEY_READY);
         if (savedReady) readyUnits = JSON.parse(savedReady);
-        // 確保預設已上線之單元全部就緒
+        // 確保預設已上線之全 37 單元全部就緒並同步回存
         Object.assign(readyUnits, DEFAULT_READY_UNITS);
+        localStorage.setItem(STORAGE_KEY_READY, JSON.stringify(readyUnits));
       } catch (e) {
         console.error("載入本機記錄出錯", e);
       }
@@ -1376,7 +1407,9 @@
     // 取得單元是否已上線
     function isUnitReady(chId, genre) {
       const key = `ch${chId}_${genre}`;
-      return !!readyUnits[key];
+      if (readyUnits[key] !== undefined) return !!readyUnits[key];
+      const ch = CHAPTERS_DATA.find(c => c.id === chId);
+      return !!(ch && ch.units[genre] && ch.units[genre].isReadyDefault);
     }
 
     // 取得單元研讀記錄
@@ -1842,7 +1875,7 @@
         });
       });
 
-      // 第1課記敘文永久保持已上線
+      // 全書 37 單元保持已上線
       Object.assign(readyUnits, DEFAULT_READY_UNITS);
 
       saveAllData();
