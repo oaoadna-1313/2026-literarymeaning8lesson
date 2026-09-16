@@ -952,37 +952,7 @@
         <h1 class="main-title">文意新 8 課 ｜ 數位教材入口導覽</h1>
         <p class="sub-title">文本表述方式 × 8堂解題思維專題 × 互動學習記錄單</p>
       </div>
-      <div class="header-actions">
-        <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); border-radius:8px; padding:4px 8px;">
-          <span style="font-weight:700; font-size:0.85rem; color:#fef08a;">📚 Complete Handouts (PDF):</span>
-          <select id="completePdfSelect" style="background:#ffffff; color:#0f172a; border:1px solid #cbd5e1; border-radius:6px; padding:4px 8px; font-weight:700; font-size:0.82rem; cursor:pointer;" onchange="if(this.value){window.open(this.value, '_blank'); this.selectedIndex=0;}">
-            <option value="">-- Select Lesson to View Complete PDF --</option>
-            <option value="01_main_idea_complete_handout.pdf">Lesson 01 Main Idea (49 Qs / 51 Pages)</option>
-            <option value="02_viewpoint_complete_handout.pdf">Lesson 02 Viewpoint (50 Qs / 52 Pages)</option>
-            <option value="03_implication_complete_handout.pdf">Lesson 03 Implication (50 Qs / 52 Pages)</option>
-            <option value="04_interpretation_complete_handout.pdf">Lesson 04 Interpretation (41 Qs / 43 Pages)</option>
-            <option value="05_comparison_complete_handout.pdf">Lesson 05 Comparison (46 Qs / 48 Pages)</option>
-            <option value="06_inference_complete_handout.pdf">Lesson 06 Inference (45 Qs / 47 Pages)</option>
-            <option value="07_technique_complete_handout.pdf">Lesson 07 Technique (43 Qs / 45 Pages)</option>
-            <option value="08_diagram_complete_handout.pdf">Lesson 08 Diagram (20 Qs / 22 Pages)</option>
-            <option value="09_review_complete_handout.pdf">Review Assessments (39 Qs / 41 Pages)</option>
-          </select>
-        </div>
-
-        <button class="action-btn" onclick="openFileManagerModal()">
-          <span>⚙️</span> 連結管理與檔案探測
-        </button>
-        <button class="action-btn" onclick="window.print()">
-          <span>🖨️</span> 列印記錄單
-        </button>
-        <button class="action-btn" onclick="exportProgress()">
-          <span>📥</span> 匯出記錄
-        </button>
-        <button class="action-btn" onclick="document.getElementById('importFileInput').click()">
-          <span>📤</span> 匯入
-        </button>
-        <input type="file" id="importFileInput" style="display:none;" accept=".json" onchange="importProgress(event)">
-      </div>
+      
     </div>
   </header>
 
@@ -1076,13 +1046,6 @@
           <tr class="appendix-row">
             <td colspan="6">
               <div class="appendix-card-grid">
-                <div class="appendix-item">
-                  <div>
-                    <div class="appendix-title">📖 解題策略總說</div>
-                    <div class="appendix-page">原書 P.1 ~ P.4</div>
-                  </div>
-                  <span class="status-indicator ready" style="background:#3b82f6;">總綱導讀</span>
-                </div>
                 <div class="appendix-item is-ready" style="border-left: 4px solid #0f766e; background: #f0fdfa;">
                   <div>
                     <div class="appendix-title" style="color: #0f766e; font-weight: 800;">🎯 成果驗收（一）</div>
@@ -1110,13 +1073,6 @@
                       <span>✏️</span> 自練題目模式 <span class="q-badge">(19題)</span>
                     </a>
                   </div>
-                </div>
-                <div class="appendix-item">
-                  <div>
-                    <div class="appendix-title">📝 試題解答篇</div>
-                    <div class="appendix-page">原書 P.177（教用不附）</div>
-                  </div>
-                  <span class="status-indicator pending">答案篇</span>
                 </div>
               </div>
             </td>
@@ -1522,8 +1478,8 @@
         const thChapter = document.createElement("th");
         thChapter.className = "row-chapter-header";
         thChapter.innerHTML = `
-          <span class="chapter-badge">課次 ${ch.id}</span>
-          <div class="chapter-name">${ch.title.split(" ")[2] || ch.title}</div>
+          <span class="chapter-badge">第${ch.id}課</span>
+          <div class="chapter-name">${ch.title.split(" ").pop()}</div>
           <div class="chapter-subtitle">「${ch.subtitle}」</div>
         `;
         tr.appendChild(thChapter);
@@ -1683,7 +1639,7 @@
         card.innerHTML = `
           <div class="chapter-card-header">
             <div class="chapter-card-title">
-              <span class="chapter-badge">課次 ${ch.id}</span>
+              <span class="chapter-badge">第${ch.id}課</span>
               <span style="font-size:1.2rem;font-weight:800;color:var(--slate-900)">${ch.title}</span>
               <span style="font-size:0.9rem;color:var(--slate-600)">—「${ch.subtitle}」</span>
             </div>
@@ -1733,7 +1689,7 @@
           unitsHtml += `
             <div class="unit-box ${isReady ? "is-ready" : ""} ${rec.completed ? "is-completed" : ""}" style="min-height:110px;">
               <div class="unit-box-top">
-                <span style="font-weight:800;font-size:0.92rem;">${ch.title.split(" ")[2]}</span>
+                <span style="font-weight:800;font-size:0.92rem;">第${ch.id}課・${ch.title.split(" ").pop()}</span>
                 <span class="page-tag">${unit.page}</span>
               </div>
               <div style="font-size:0.78rem;color:var(--slate-600);margin-bottom:6px;">
