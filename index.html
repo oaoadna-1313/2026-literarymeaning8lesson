@@ -965,6 +965,7 @@
             <option value="06_inference_complete_handout.pdf">Lesson 06 Inference (45 Qs / 47 Pages)</option>
             <option value="07_technique_complete_handout.pdf">Lesson 07 Technique (43 Qs / 45 Pages)</option>
             <option value="08_diagram_complete_handout.pdf">Lesson 08 Diagram (20 Qs / 22 Pages)</option>
+            <option value="09_review_complete_handout.pdf">Review Assessments (39 Qs / 41 Pages)</option>
           </select>
         </div>
 
@@ -993,14 +994,14 @@
           <span class="icon">📚</span>
           <div>
             <div class="stat-label">總測驗單元</div>
-            <div class="stat-val">37 <span style="font-size:0.75rem;font-weight:400;color:var(--slate-500)">單元 (全344題)</span></div>
+            <div class="stat-val">39 <span style="font-size:0.75rem;font-weight:400;color:var(--slate-500)">單元 (全383題)</span></div>
           </div>
         </div>
         <div class="stat-pill">
           <span class="icon">🟢</span>
           <div>
             <div class="stat-label">已上線教材</div>
-            <div class="stat-val" id="readyCountDisplay" style="color:var(--success)">37 <span style="font-size:0.75rem;font-weight:400;color:var(--slate-500)">/ 37 篇</span></div>
+            <div class="stat-val" id="readyCountDisplay" style="color:var(--success)">39 <span style="font-size:0.75rem;font-weight:400;color:var(--slate-500)">/ 39 篇</span></div>
           </div>
         </div>
         <div class="stat-pill">
@@ -1082,19 +1083,33 @@
                   </div>
                   <span class="status-indicator ready" style="background:#3b82f6;">總綱導讀</span>
                 </div>
-                <div class="appendix-item">
+                <div class="appendix-item is-ready" style="border-left: 4px solid #0f766e; background: #f0fdfa;">
                   <div>
-                    <div class="appendix-title">🎯 成果驗收（一）</div>
-                    <div class="appendix-page">原書 P.162 ~ P.167</div>
+                    <div class="appendix-title" style="color: #0f766e; font-weight: 800;">🎯 成果驗收（一）</div>
+                    <div class="appendix-page">原書 P.162 ~ P.167 ｜ 全 20 題</div>
                   </div>
-                  <span class="status-indicator pending">階段評量</span>
+                  <div class="unit-modes-wrap" style="margin: 0; min-width: 140px;">
+                    <a href="38_review_assessment_1_handout.pdf" class="mode-btn mode-handout" target="_blank" title="開啟完整詳解講義 PDF（含三色螢光筆・解題之眼・全彩圖表收錄）">
+                      <span>📖</span> 詳解講義模式
+                    </a>
+                    <a href="38_review_assessment_1.html" class="mode-btn mode-practice" target="_self" title="進入題目自練模式（即時答題核對與解析）">
+                      <span>✏️</span> 自練題目模式 <span class="q-badge">(20題)</span>
+                    </a>
+                  </div>
                 </div>
-                <div class="appendix-item">
+                <div class="appendix-item is-ready" style="border-left: 4px solid #4338ca; background: #eef2ff;">
                   <div>
-                    <div class="appendix-title">🏆 成果驗收（二）</div>
-                    <div class="appendix-page">原書 P.168 ~ P.176</div>
+                    <div class="appendix-title" style="color: #4338ca; font-weight: 800;">🏆 成果驗收（二）</div>
+                    <div class="appendix-page">原書 P.168 ~ P.176 ｜ 全 19 題</div>
                   </div>
-                  <span class="status-indicator pending">總結評量</span>
+                  <div class="unit-modes-wrap" style="margin: 0; min-width: 140px;">
+                    <a href="39_review_assessment_2_handout.pdf" class="mode-btn mode-handout" target="_blank" title="開啟完整詳解講義 PDF（含三色螢光筆・解題之眼・全彩圖表收錄）">
+                      <span>📖</span> 詳解講義模式
+                    </a>
+                    <a href="39_review_assessment_2.html" class="mode-btn mode-practice" target="_self" title="進入題目自練模式（即時答題核對與解析）">
+                      <span>✏️</span> 自練題目模式 <span class="q-badge">(19題)</span>
+                    </a>
+                  </div>
                 </div>
                 <div class="appendix-item">
                   <div>
@@ -1452,7 +1467,7 @@
 
     // 更新儀表板數據
     function updateDashboardStats() {
-      let totalUnits = 37;
+      let totalUnits = 39;
       let readyCount = 0;
       let completedCount = 0;
 

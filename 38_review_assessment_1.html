@@ -1,0 +1,2319 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文意新8課 ｜ 成果驗收（一） 綜合評量互動解說教材</title>
+  <style>
+    :root {
+      --primary-color: #0f766e;
+      --primary-hover: #115e59;
+      --primary-light: #f0fdfa;
+      --accent-color: #b91c1c;
+      --success-color: #059669;
+      --success-light: #ecfdf5;
+      --error-color: #dc2626;
+      --error-light: #fef2f2;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --bg-page: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --quote-bg: #fdfbf7;
+      --quote-border: #d97706;
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Serif TC", serif, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 頂部全域導航選單 */
+    .top-navbar {
+      background: #0f172a;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      padding: 8px 20px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .top-navbar-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .top-units-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .unit-link {
+      color: #cbd5e1;
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 6px;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+
+    .unit-link:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+
+    .unit-link.active {
+      background: var(--primary-color);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .home-link {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.1);
+      transition: all 0.2s;
+    }
+    .home-link:hover {
+      background: rgba(56, 189, 248, 0.2);
+      color: #7dd3fc;
+    }
+
+    /* 標頭 Header */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .badge-chapter {
+      background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .title-text {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.5px;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .control-btn {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      padding: 6px 12px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .control-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .control-btn.active {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    /* 進度條與題號切換欄 */
+    .progress-bar-wrapper {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .progress-bar-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .q-tab {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #475569;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .q-tab:hover {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      background: var(--primary-light);
+    }
+
+    .q-tab.current {
+      border-color: var(--primary-color);
+      background: var(--primary-color);
+      color: white;
+      box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
+    }
+
+    .q-tab.correct {
+      border-color: var(--success-color);
+      background: var(--success-light);
+      color: var(--success-color);
+    }
+
+    .q-tab.correct.current {
+      background: var(--success-color);
+      color: white;
+    }
+
+    .q-tab.incorrect {
+      border-color: var(--error-color);
+      background: var(--error-light);
+      color: var(--error-color);
+    }
+
+    .q-tab.incorrect.current {
+      background: var(--error-color);
+      color: white;
+    }
+
+    .stats-badge {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: #f8fafc;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+    }
+
+    /* 主內容容器 */
+    main {
+      max-width: 900px;
+      width: 100%;
+      margin: 24px auto;
+      padding: 0 16px;
+      flex: 1;
+    }
+
+    .question-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      padding: 28px 32px;
+      margin-bottom: 30px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .question-card:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .q-num-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-color);
+    }
+
+    .category-tag {
+      background: var(--primary-light);
+      color: var(--primary-color);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    /* 文本引文區塊 */
+    .passage-box {
+      background: var(--quote-bg);
+      border-left: 5px solid var(--quote-border);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 20px 24px;
+      margin-bottom: 22px;
+      font-size: 1.15rem;
+      line-height: 2.1;
+      letter-spacing: 0.4px;
+      color: #1e293b;
+      position: relative;
+    }
+
+    .passage-author {
+      display: block;
+      margin-top: 10px;
+      text-align: right;
+      font-size: 0.95rem;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    /* 題目題幹問句 */
+    .stem-text {
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #0f172a;
+      line-height: 1.7;
+    }
+
+    /* 注釋框 */
+    .notes-box {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #475569;
+    }
+
+    .notes-title {
+      font-weight: 700;
+      color: #0369a1;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 選項列表 */
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      text-align: left;
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--primary-color);
+      background: #f8fafc;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .option-label {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #475569;
+      min-width: 32px;
+    }
+
+    .option-btn.selected-correct {
+      background: var(--success-light) !important;
+      border-color: var(--success-color) !important;
+      color: #065f46 !important;
+      font-weight: 700;
+    }
+
+    .option-btn.selected-correct .option-label {
+      color: var(--success-color);
+    }
+
+    .option-btn.selected-incorrect {
+      background: var(--error-light) !important;
+      border-color: var(--error-color) !important;
+      color: #991b1b !important;
+      font-weight: 700;
+    }
+
+    .option-btn.selected-incorrect .option-label {
+      color: var(--error-color);
+    }
+
+    .option-btn.reveal-correct {
+      border-color: var(--success-color) !important;
+      background: #f0fdf4 !important;
+      color: #166534 !important;
+      border-style: dashed !important;
+    }
+
+    /* 答題回饋橫幅 */
+    .result-banner {
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .result-banner.correct {
+      background: #ecfdf5;
+      border: 1px solid #6ee7b7;
+      color: #065f46;
+    }
+
+    .result-banner.incorrect {
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      color: #991b1b;
+    }
+
+    .btn-retry {
+      background: white;
+      border: 1px solid #cbd5e1;
+      padding: 6px 14px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-retry:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+
+    /* 詳解摺疊卡片 */
+    .explanation-container {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.4s ease-in-out;
+    }
+
+    .explanation-container.show {
+      max-height: 2500px;
+      opacity: 1;
+      transition: max-height 0.8s ease-in-out, opacity 0.4s ease-in-out;
+    }
+
+    .explanation-card {
+      background: #ffffff;
+      border: 1px solid #fed7aa;
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 15px rgba(251, 146, 60, 0.08);
+      padding: 24px;
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .explanation-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #fef3c7;
+    }
+
+    .explanation-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #9a3412;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hl-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.84rem;
+      background: #fdfbf7;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid #fed7aa;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #78350f;
+      font-weight: 600;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    /* 解題之眼線索框 */
+    .clue-box {
+      background: #fefce8;
+      border-left: 4px solid #facc15;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #854d0e;
+    }
+
+    .clue-label {
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+      color: #a16207;
+    }
+
+    /* 詳解段落 */
+    .exp-paragraph {
+      font-size: 1.1rem;
+      line-height: 2.0;
+      color: #334155;
+      margin-bottom: 18px;
+    }
+
+    /* 螢光筆高亮樣式 */
+    mark.hl-yellow {
+      background: linear-gradient(104deg, rgba(254, 240, 138, 0.2) 0.9%, rgba(254, 240, 138, 0.95) 2.4%, rgba(254, 240, 138, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #1c1917;
+      box-shadow: inset 0 -4px 0 rgba(234, 179, 8, 0.6);
+    }
+
+    mark.hl-pink {
+      background: linear-gradient(104deg, rgba(254, 205, 211, 0.2) 0.9%, rgba(254, 205, 211, 0.95) 2.4%, rgba(254, 205, 211, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #881337;
+      box-shadow: inset 0 -4px 0 rgba(244, 63, 94, 0.45);
+    }
+
+    mark.hl-green {
+      background: linear-gradient(104deg, rgba(187, 247, 208, 0.2) 0.9%, rgba(187, 247, 208, 0.95) 2.4%, rgba(187, 247, 208, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #064e3b;
+      box-shadow: inset 0 -4px 0 rgba(16, 185, 129, 0.45);
+    }
+
+    mark.hl-blue {
+      background: linear-gradient(104deg, rgba(186, 230, 253, 0.2) 0.9%, rgba(186, 230, 253, 0.95) 2.4%, rgba(186, 230, 253, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #075985;
+      box-shadow: inset 0 -4px 0 rgba(14, 165, 233, 0.45);
+    }
+
+    .passage-box.revealed mark.hl-yellow {
+      animation: pulseHighlight 1.5s infinite alternate;
+    }
+
+    @keyframes pulseHighlight {
+      0% { box-shadow: inset 0 -4px 0 rgba(234, 179, 8, 0.6); }
+      100% { box-shadow: inset 0 -10px 0 rgba(234, 179, 8, 0.8); }
+    }
+
+    /* 語譯與注釋卡片 */
+    .translation-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-top: 16px;
+      font-size: 1.02rem;
+      line-height: 1.9;
+    }
+
+    .translation-header {
+      font-weight: 700;
+      color: #0284c7;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 選項逐項剖析 */
+    .option-analysis-box {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px dashed #cbd5e1;
+    }
+
+    .analysis-item {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .analysis-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .analysis-tag.is-correct {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .analysis-tag.is-wrong {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    /* 導航切換列 */
+    .nav-buttons-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .nav-btn {
+      padding: 10px 22px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: white;
+      color: #334155;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    /* 浮動字級工具列 */
+    .floating-font-bar {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 30px;
+      padding: 6px 14px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      z-index: 90;
+    }
+
+    .font-btn {
+      background: #f1f5f9;
+      border: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    .font-btn:hover {
+      background: #e2e8f0;
+    }
+
+    /* 動畫 */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .question-card {
+        padding: 20px 16px;
+      }
+      .passage-box {
+        font-size: 1.05rem;
+        padding: 16px 18px;
+      }
+      .option-btn {
+        padding: 12px 14px;
+        font-size: 1rem;
+      }
+      .hl-legend {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部全域切換列 -->
+  <nav class="top-navbar">
+    <div class="top-navbar-container">
+      <div class="top-units-list">
+        <span style="color:#64748b;font-weight:600;margin-right:4px">單元導覽：</span>
+        <a href="38_review_assessment_1.html" class="unit-link active">🎯 成果驗收（一） (20題)</a><a href="39_review_assessment_2.html" class="unit-link">🏆 成果驗收（二） (19題)</a>
+      </div>
+      <div>
+        <a href="index.html" class="home-link">🏠 回總覽首頁</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 標頭 Header -->
+  <header>
+    <div class="header-container">
+      <div class="brand-title">
+        <a href="index.html" class="control-btn" style="text-decoration: none; margin-right: 6px; background: #e0e7ff; color: #1e3a8a; border-color: #c7d2fe;" title="返回教材入口總目錄">
+          <span>🏠</span> 總目錄
+        </a>
+        <span class="badge-chapter">成果驗收篇</span>
+        <span class="title-text">🎯 成果驗收（一）・互動解說教材</span>
+      </div>
+      <div class="header-controls">
+        <a href="38_review_assessment_1_handout.pdf" target="_blank" class="control-btn" style="text-decoration:none; background:#fffbeb; color:#b45309; border-color:#fcd34d; font-weight:700;" title="開啟本單元精編詳解講義 PDF（三色螢光筆・解題之眼・全彩圖表收錄）">
+          <span>📖</span> 詳解講義模式 (PDF)
+        </a>
+        <button class="control-btn" id="soundToggleBtn" onclick="toggleSound()">
+          <span id="soundIcon">🔔</span> 音效已開啟
+        </button>
+        <button class="control-btn" id="viewModeBtn" onclick="toggleViewMode()">
+          <span>📖</span> <span id="viewModeText">切換為連續模式</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 題號跳轉與統計列 -->
+  <div class="progress-bar-wrapper">
+    <div class="progress-bar-container">
+      <div class="nav-tabs" id="navTabs">
+        <!-- 由 JavaScript 動態生成題號按鈕 -->
+      </div>
+      <div class="stats-badge">
+        <span>完成度：<strong id="completedCount" style="color:var(--primary-color)">0</strong> / <span id="totalQuestionsCount">20</span> 題</span>
+        <span>正確率：<strong id="accuracyRate" style="color:var(--success-color)">-</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 主要答題容器 -->
+  <main id="questionsContainer">
+    <!-- 由 JavaScript 渲染試題內容 -->
+  </main>
+
+  <!-- 浮動輔助功能列（縮放字級、重置） -->
+  <div class="floating-font-bar">
+    <span>字級：</span>
+    <button class="font-btn" onclick="adjustFontSize(-1)" title="縮小字體">A-</button>
+    <span id="fontSizeDisplay">100%</span>
+    <button class="font-btn" onclick="adjustFontSize(1)" title="放大字體">A+</button>
+    <span style="color:#cbd5e1;margin:0 4px">|</span>
+    <button class="control-btn" style="padding:2px 8px;font-size:0.8rem;" onclick="resetAllProgress()">全部重練</button>
+  </div>
+
+  <script>
+    // 試題資料庫：成果驗收（一） 20 題
+    const questionsData = [
+  {
+    "id": 1,
+    "category": "成果驗收（一）",
+    "subCategory": "主旨",
+    "passage": "「凡立國都，非於大山之下，必於廣川之上。高毋近旱，而水用足；下毋近水，而溝防省。因天材，就地利，故城郭不必中規矩，道路不必中準。」",
+    "passageHighlight": "「凡立國都，非於大山之下，必於廣川之上。高毋近旱，而水用足；下毋近水，而溝防省。因天材，就地利，<mark class='hl-pink'>故</mark><mark class='hl-yellow'>城郭不必中規矩，道路不必中準</mark>。」",
+    "author": "《管子·乘馬》",
+    "stem": "根據上文的說法，下列何者不是建立國都的標準？",
+    "notes": "①中規矩：合乎圓規與曲尺的方圓標準。②中準：符合水準儀平直的準則。",
+    "options": [
+      {
+        "key": "A",
+        "text": "要在大山下方，或是大河近處"
+      },
+      {
+        "key": "B",
+        "text": "不可過於乾旱，或是常鬧水災"
+      },
+      {
+        "key": "C",
+        "text": "天然資源豐富，占地形之利"
+      },
+      {
+        "key": "D",
+        "text": "城郭合乎方圓，道路又平又直"
+      }
+    ],
+    "answer": "D",
+    "clue": "文末直指「城郭不必中規矩，道路不必中準」，顯見建造城市無須強求方圓與平直，順應自然地利才是關鍵。",
+    "explanation": "題幹文末提及<mark class='hl-pink'>「故」</mark><mark class='hl-yellow'>「城郭不必中規矩，道路不必中準」</mark>，明確表示營建城廓<mark class='hl-green'>不必刻意合乎方圓的死板規定，道路亦無須拘泥於絕對平直的標準</mark>，首重順應自然水源與地形之利，故選<mark class='hl-green'>(D)</mark>。",
+    "translation": "凡是建立國都，不是依傍在大山腳下，就一定要臨近大河之旁。地勢高不可過於乾旱，以確保用水充足；地勢低不可過於鄰近潮濕低窪處，以省去修築排水溝渠的防護。依託自然資材，順應地勢之利，所以城郭不一定要合乎圓規方矩的形制，道路也不一定要合乎準繩平直的標準。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "符合原文「非於大山之下，必於廣川之上」之原則。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "符合原文「高毋近旱」、「下毋近水」避免旱災水患之考量。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "符合原文「因天材，就地利」依託自然地理之核心。"
+      },
+      {
+        "key": "D",
+        "status": "correct",
+        "reason": "原文強調「城郭不必中規矩，道路不必中準」，非建都標準。"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "成果驗收（一）",
+    "subCategory": "比較",
+    "passage": "(甲) 日食則朔，月食則望。（《潛夫論》）\n(乙) 望日蝕月月光減，朔月掩日日光缺。（盧仝《月蝕詩》）",
+    "passageHighlight": "(甲) <mark class='hl-yellow'>日食則朔，月食則望</mark>。（《潛夫論》）\n(乙) <mark class='hl-yellow'>望日蝕月</mark>月光減，<mark class='hl-yellow'>朔月掩日</mark>日光缺。（盧仝《月蝕詩》）",
+    "author": "天文詩文選段",
+    "stem": "關於上述兩則文字的比較，下列說明何者正確？",
+    "notes": "①朔：農曆每月初一日。②望：農曆每月十五日。",
+    "options": [
+      {
+        "key": "A",
+        "text": "兩者皆說明日食、月食發生的原因"
+      },
+      {
+        "key": "B",
+        "text": "兩者皆說明日食、月食發生的時間"
+      },
+      {
+        "key": "C",
+        "text": "前者說明月光被太陽遮擋產生月食"
+      },
+      {
+        "key": "D",
+        "text": "後者說明陽光被地球遮擋產生日食"
+      }
+    ],
+    "answer": "B",
+    "clue": "甲乙兩文皆精確點出「日食發生在朔（初一）、月食發生在望（十五）」的時間規律。",
+    "explanation": "甲文<mark class='hl-yellow'>「日食則朔，月食則望」</mark>與乙文<mark class='hl-yellow'>「望日蝕月」、「朔月掩日」</mark>，<mark class='hl-green'>兩者皆明確指陳日食必在農曆初一（朔）、月食必在農曆十五（望）發生的規律時間點</mark>，故選<mark class='hl-green'>(B)</mark>。(A)(C)(D)前者僅述時間未論原因，乙文「朔月掩日」是月球掩蓋太陽產生現象。",
+    "translation": "(甲) 日食發生在初一朔日，月食發生在十五望日。(乙) 十五望日發生月蝕時月光減弱消失，初一朔日發生日食時月球遮掩太陽導致日光缺失。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "前者（甲）僅指出發生之時令日期，完全未說明成因。"
+      },
+      {
+        "key": "B",
+        "status": "correct",
+        "reason": "兩者皆點出日食發生於「朔」、月食發生於「望」的時間規律。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "前者未言及成因，且月食乃因地球遮擋太陽照射到月球之光線。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "日食乃月球運行至太陽與地球之間遮掩陽光，非地球遮擋。"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "category": "成果驗收（一）",
+    "subCategory": "主旨",
+    "passage": "「人占據地球一隅，為求生命存續；鳥族在沙磧埋卵，為的也是生生不息。在大自然眼中，兩者平等，故應共享這有限的地球。」",
+    "passageHighlight": "「人占據地球一隅，為求生命存續；鳥族在沙磧埋卵，為的也是生生不息。<mark class='hl-yellow'>在大自然眼中，兩者平等</mark>，<mark class='hl-pink'>故</mark><mark class='hl-green'>應共享這有限的地球</mark>。」",
+    "author": "自然保育論述",
+    "stem": "下列何者符合作者的意旨？",
+    "notes": "磧：音ㄑㄧˋ，沙石積聚的淺灘或沙漠荒地。",
+    "options": [
+      {
+        "key": "A",
+        "text": "強調人類目前面臨棲息地缺乏的困境"
+      },
+      {
+        "key": "B",
+        "text": "斥責人類不保護瀕危絕種的野生動物"
+      },
+      {
+        "key": "C",
+        "text": "說明人類與其他萬物應平等共享資源"
+      },
+      {
+        "key": "D",
+        "text": "讚賞鳥在艱困環境蓄力生存的勇氣"
+      }
+    ],
+    "answer": "C",
+    "clue": "破題結論句「在大自然眼中，兩者平等，故應共享這有限的地球」，直指物我平等的生態倫理。",
+    "explanation": "題幹藉由人類謀生與鳥族繁殖並提，末句以結論詞<mark class='hl-pink'>「故」</mark>引出主旨核心：<mark class='hl-yellow'>「在大自然眼中，兩者平等」</mark>，強調人類與野生動物均為天地造化，<mark class='hl-green'>應當打破人類本位主義，在有限的地球資源中平等共享生存空間</mark>，故選<mark class='hl-green'>(C)</mark>。",
+    "translation": null,
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "文中未提及人類棲息地短缺問題。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "文章著眼於人與鳥族共享地球，語氣客觀陳理而非嚴詞斥責。"
+      },
+      {
+        "key": "C",
+        "status": "correct",
+        "reason": "直接呼應「兩者平等，故應共享這有限的地球」之主旨。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "以鳥族埋卵作例證，重在生生不息，非聚焦於讚美鳥類勇氣。"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "category": "成果驗收（一）",
+    "subCategory": "意涵",
+    "passage": "「早上，看見風和日麗。穿了T恤短褲拿著球拍就走出門去的是年輕人。早上，看見風和日麗，想了想又多帶了件外套是中年人。早上，看見風和日麗，想了又想，終於覺得還是帶把雨傘比較妥當的是老年人。」",
+    "passageHighlight": "「早上，看見風和日麗。穿了T恤短褲拿著球拍就走出門去的是年輕人。早上，看見風和日麗，<mark class='hl-yellow'>想了想又多帶了件外套</mark>是中年人。早上，看見風和日麗，<mark class='hl-yellow'>想了又想</mark>，<mark class='hl-green'>終於覺得還是帶把雨傘比較妥當</mark>的是老年人。」",
+    "author": "日常隨筆選段",
+    "stem": "本文涵義最接近下列何者？",
+    "notes": null,
+    "options": [
+      {
+        "key": "A",
+        "text": "任何年齡的人，都熱愛風和日麗的日子"
+      },
+      {
+        "key": "B",
+        "text": "隨著年紀越大，思考能力就越強"
+      },
+      {
+        "key": "C",
+        "text": "年紀越大，越會事先採取各種的準備"
+      },
+      {
+        "key": "D",
+        "text": "就算年齡相同，其心理年齡也不相同"
+      }
+    ],
+    "answer": "C",
+    "clue": "由中年人「想了想多帶外套」、老年人「想了又想帶雨傘」之層遞對比，可知隨歲月增長，行事越傾向深思熟慮、未雨綢繆。",
+    "explanation": "文段運用層遞對照：年輕人無掛無礙直奔球場；中年人<mark class='hl-yellow'>「想了想」</mark>防範天涼帶外套；老年人更進一步<mark class='hl-yellow'>「想了又想」</mark>，預防天公不作美而帶傘。由此可知<mark class='hl-green'>隨年歲與歷練增長，人們考慮越加周詳，越會預先採取周全準備以防患未然</mark>，故選<mark class='hl-green'>(C)</mark>。",
+    "translation": null,
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "風和日麗僅為情境背景，重點在各世代面對氣候的出門行止差異。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "差異在於行事之周詳顧慮與經驗積累，非指智商思考能力高下。"
+      },
+      {
+        "key": "C",
+        "status": "correct",
+        "reason": "精準概括年紀漸長後凡事反覆思量、周密設防的心態演變。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "文中乃比對「不同年齡層」的典型作為，非談同齡者之心理年齡差異。"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "category": "成果驗收（一）",
+    "subCategory": "主旨",
+    "passage": "「金錢是萬物的外表，而不是核心。可以買到食物，買不到好胃口；可以買到藥品，買不到健康；可以買到相識，買不到知己；可以買到享樂，買不到快樂。」",
+    "passageHighlight": "「<mark class='hl-yellow'>金錢是萬物的外表，而不是核心</mark>。<mark class='hl-pink'>可以</mark>買到食物，<mark class='hl-pink'>買不到</mark><mark class='hl-green'>好胃口</mark>；可以買到藥品，買不到<mark class='hl-green'>健康</mark>；可以買到相識，買不到<mark class='hl-green'>知己</mark>；可以買到享樂，買不到<mark class='hl-green'>快樂</mark>。」",
+    "author": "哲理名言選段",
+    "stem": "這段文句的主旨，下列何者最適切？",
+    "notes": null,
+    "options": [
+      {
+        "key": "A",
+        "text": "金錢是萬惡的淵藪，也是罪孽的根源"
+      },
+      {
+        "key": "B",
+        "text": "錢不是萬能的，沒有錢是萬萬不能"
+      },
+      {
+        "key": "C",
+        "text": "金錢是個天平，能秤出一個人的自我價值"
+      },
+      {
+        "key": "D",
+        "text": "金錢看似萬能，卻無法獲得最重要的事物"
+      }
+    ],
+    "answer": "D",
+    "clue": "首句總綱「金錢是外表而非核心」，配以四組排比反差，說明有價金錢買不到無價之生命本質。",
+    "explanation": "首句提綱挈領：<mark class='hl-yellow'>「金錢是萬物的外表，而不是核心」</mark>，隨後以對比排比展開，表明金錢雖可購得有形物質（食物、藥品、相識、享樂），但<mark class='hl-green'>生命中真正珍貴之核心價值（好胃口、健康、知己、真快樂）卻無法用金錢買得</mark>，故選<mark class='hl-green'>(D)</mark>。",
+    "translation": null,
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "文意並未將金錢全盤否定為罪惡深淵，而是釐清其局限。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "文中全然未強調「沒有錢萬萬不能」的物質現實。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "文中未提及秤量個人尊嚴自我價值之寓意。"
+      },
+      {
+        "key": "D",
+        "status": "correct",
+        "reason": "完美契合外表與核心、買得到物質卻買不到生命實質的對比主旨。"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "category": "成果驗收（一）",
+    "subCategory": "解釋",
+    "passage": "「冰品在中國有悠久的歷史。唐朝時，藏冰由宮廷推展到民間，街市上出現了冷飲店。北宋冰品更多樣化，如冰凍荔枝膏、雪泡金桔、冰珠蜜水等。英宗時更出現了『冰酪』，用牛、羊奶為主料，配以果汁、冰雪調製而成，其形狀、口感，堪稱冰淇淋的雛形了。宋朝詩人楊萬里曾寫詩描繪它『玉來盤底碎，雪到口邊銷』。元朝時，宮廷更多次改良食譜，使其風味更佳，為了保密，還頒令禁止民間製作冰酪。直到旅行家馬可·波羅將其製作方法帶到義大利，遂外傳至歐洲。」",
+    "passageHighlight": "「冰品在中國有悠久的歷史。唐朝時，藏冰由宮廷推展到民間，街市上出現了冷飲店。北宋冰品更多樣化，如冰凍荔枝膏、雪泡金桔、冰珠蜜水等。英宗時更出現了『冰酪』，用牛、羊奶為主料，配以果汁、冰雪調製而成，其形狀、口感，堪稱冰淇淋的雛形了。宋朝詩人楊萬里曾寫詩描繪它『玉來盤底碎，雪到口邊銷』。元朝時，宮廷更多次改良食譜，使其風味更佳，為了保密，還頒令禁止民間製作冰酪。<mark class='hl-pink'>直到</mark><mark class='hl-yellow'>旅行家馬可·波羅將其製作方法帶到義大利</mark>，<mark class='hl-green'>遂外傳至歐洲</mark>。」",
+    "author": "飲食文化札記",
+    "stem": "根據本文，下列何者對於冰品歷史的解釋正確？",
+    "notes": null,
+    "options": [
+      {
+        "key": "A",
+        "text": "直到宋朝才開始隨處可見賣冷飲的店鋪"
+      },
+      {
+        "key": "B",
+        "text": "元朝時改良冰酪食譜，為冰淇淋的雛形"
+      },
+      {
+        "key": "C",
+        "text": "冰淇淋做法傳到歐洲起因於馬可·波羅"
+      },
+      {
+        "key": "D",
+        "text": "冰酪做法自北宋開始到外傳歐洲都相同"
+      }
+    ],
+    "answer": "C",
+    "clue": "由文末「直到旅行家馬可·波羅將其製作方法帶到義大利，遂外傳至歐洲」，可精確定位解答。",
+    "explanation": "依據題幹尾句：<mark class='hl-yellow'>「直到旅行家馬可·波羅將其製作方法帶到義大利，遂外傳至歐洲」</mark>，可知冰品製法傳播至歐洲的關鍵人物是<mark class='hl-green'>馬可·波羅</mark>，故選<mark class='hl-green'>(C)</mark>。(A)唐朝民間街市便已出現冷飲店；(B)北宋英宗時的「冰酪」即為雛形；(D)元朝曾多次改良食譜，配方並非一成不變。",
+    "translation": null,
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "唐朝藏冰推向民間時，街市便已有冷飲店出現。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "冰淇淋雛形是在「北宋英宗時」之冰酪，元朝是進一步改良。"
+      },
+      {
+        "key": "C",
+        "status": "correct",
+        "reason": "符合文末「馬可·波羅帶到義大利，遂外傳至歐洲」之直接敘述。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "文中敘明「元朝時宮廷更多次改良食譜」，非歷代做法均相同。"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "category": "成果驗收（一）",
+    "subCategory": "寫作手法",
+    "passage": "「夏蚊成雷，私擬作群鶴舞空，心之所向，則或千或百，果然鶴也。昂首觀之，項為之強。又留蚊於素帳中，徐噴以煙，使之沖煙飛鳴，作青雲白鶴觀，果如鶴唳雲端，為之怡然稱快。」",
+    "passageHighlight": "「夏蚊成雷，私擬作群鶴舞空，心之所向，則或千或百，果然鶴也。昂首觀之，項為之強。又留蚊於素帳中，徐噴以煙，<mark class='hl-yellow'>使之沖煙飛鳴</mark>，作青雲白鶴觀，<mark class='hl-green'>果如鶴唳雲端</mark>，為之<mark class='hl-pink'>怡然稱快</mark>。」",
+    "author": "沈復《浮生六記·兒時記趣》",
+    "stem": "以上文意寫作重點是「夏蚊的物外之趣」。若以下方表格呈現此段之寫作手法，空格處宜填入何選項？\n【實際景象】留蚊於素帳中，徐噴以煙，使之沖煙飛鳴 ｜ 【想像畫面】 (甲) ｜ 【主角感受】 (乙)",
+    "notes": "①素帳：白絹蚊帳。②徐：緩慢。③唳：音ㄌㄧˋ，鳥類高亢鳴叫。④項為之強：脖子因此僵硬。項，頸項後部；強，通「僵」，僵硬。",
+    "options": [
+      {
+        "key": "A",
+        "text": "(甲)心之所向，(乙)果然鶴也"
+      },
+      {
+        "key": "B",
+        "text": "(甲)鶴唳雲端，(乙)怡然稱快"
+      },
+      {
+        "key": "C",
+        "text": "(甲)昂首觀之，(乙)項為之強"
+      },
+      {
+        "key": "D",
+        "text": "(甲)青雲白鶴，(乙)鶴唳雲端"
+      }
+    ],
+    "answer": "B",
+    "clue": "前後結構工整對應：實際景象「沖煙飛鳴」對應想像「鶴唳雲端」；末尾情緒收束於感受「怡然稱快」。",
+    "explanation": "分析文章前後兩組寫作架構：第一組為實際景象（夏蚊成雷）→想像畫面（群鶴舞空）→主角感受（項為之強）。第二組前半為實際景象（沖煙飛鳴），緊接著想像畫面為<mark class='hl-green'>「果如鶴唳雲端」</mark>，最後帶出當下心情感受<mark class='hl-pink'>「為之怡然稱快」</mark>，故(甲)應填鶴唳雲端，(乙)應填怡然稱快，選<mark class='hl-green'>(B)</mark>。",
+    "translation": "夏天蚊子成群飛鳴，聲音如雷，我私下將牠們比擬為一群白鶴在空中飛舞。心中所想之處，成千上百的蚊子果然都幻化成白鶴了。我抬起頭仰望牠們，脖子都因此僵硬了。又把蚊子留在白絹帳中，用煙慢慢噴燻，讓牠們衝著青煙飛鳴，當作青雲白鶴來觀賞，果然就像白鶴在雲端高鳴一般，我因而心曠神怡、拍手稱快。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "「心之所向、果然鶴也」屬於前一段仰觀群鶴的心理與視覺轉化。"
+      },
+      {
+        "key": "B",
+        "status": "correct",
+        "reason": "(甲)為想像聽覺畫面「鶴唳雲端」，(乙)為愉悅感受「怡然稱快」。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "「昂首觀之」為動作，「項為之強」為第一組之身體感受。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "「鶴唳雲端」為想像畫面，而非主角心理感受(乙)。"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "category": "成果驗收（一）",
+    "subCategory": "觀點",
+    "passage": "「會稽之東，有石氏者。其季女病痞，迎良醫治之，久而不除，謝醫使去。其父思之，以為是良醫也，奈何療之而病不除？他日窺之，見其藥不飲而覆於床下也。乃復迎前醫，進以前藥，三飲之而疾已。」",
+    "passageHighlight": "「會稽之東，有石氏者。其季女病痞，迎良醫治之，久而不除，謝醫使去。其父思之，<mark class='hl-yellow'>以為是良醫也，奈何療之而病不除</mark>？他日<mark class='hl-pink'>窺之</mark>，見其<mark class='hl-yellow'>藥不飲而覆於床下</mark>也。乃復迎前醫，進以前藥，<mark class='hl-green'>三飲之而疾已</mark>。」",
+    "author": "古代醫話寓言",
+    "stem": "下列敘述，何者最接近本文作者所要傳達的觀點？",
+    "notes": "痞：音ㄆㄧˇ，中醫指胸腹間氣血阻滯不舒暢之病症。",
+    "options": [
+      {
+        "key": "A",
+        "text": "再好的藥若未確實服用，亦是枉然"
+      },
+      {
+        "key": "B",
+        "text": "有些良醫浪得虛名，並無真才實學"
+      },
+      {
+        "key": "C",
+        "text": "治病方式不一而足，應多方面嘗試"
+      },
+      {
+        "key": "D",
+        "text": "即使是再古怪的病，都有可治之藥"
+      }
+    ],
+    "answer": "A",
+    "clue": "石父深信醫術無虞，暗中察看才知女兒倒藥床下，重遵醫囑確實服藥即霍然痊癒，強調切實遵方服藥之重要。",
+    "explanation": "石父深思後認定該醫者實為良醫，病不癒必有隱情，故暗中觀察，果見女兒<mark class='hl-yellow'>「藥不飲而覆於床下」</mark>。再次延請名醫重新開具相同藥方，女兒<mark class='hl-green'>切實遵照服用三次後頑疾即告痊癒</mark>。由此證明<mark class='hl-green'>哪怕名醫神方在手，若病患未能切實服藥遵囑配合，依然徒勞枉然</mark>，故選<mark class='hl-green'>(A)</mark>。",
+    "translation": "會稽東邊有一個姓石的人，他的小女兒患了腹中痞塊阻塞之疾，請來良醫診治，過了很久都沒有痊癒，便謝過醫生打發他離去。石父反覆思索：這明明是位名醫，為什麼醫治卻無法除病呢？某天暗中窺看，才發現女兒根本沒喝藥，而是把湯藥倒在床下。於是再次迎回原先的良醫，依循之前的藥方抓藥，讓女兒切實服用了三次，疾病便痊癒了。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "correct",
+        "reason": "切中全文核心關鍵：好藥若不按時服下，再高明的良醫也無能為力。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "事實證明醫生醫術精良，原方服用三次即癒，非浪得虛名。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "石父最後並未更換療法，而是沿用最初名醫的同一藥方。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "重點在病人服藥之配合度，非探討疾病是否古怪或天下無不治之症。"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "category": "成果驗收（一）",
+    "subCategory": "推論",
+    "passage": "「有人說，下一個世代是『自造者』的世代。自造者（Maker）意指動手創造新事物或改造物品的人。動手可以激發潛能、訓練腦力把想法付諸實現，是很有意義的事。雖然許多東西用買的快速方便，但當個自造者不只能得到手作樂趣和成就感，也能培養解決問題、發現創新的能力。」（節錄自《臺灣原YOUNG雙月刊》NO.59）",
+    "passageHighlight": "「有人說，下一個世代是『自造者』的世代。自造者（Maker）意指動手創造新事物或改造物品的人。<mark class='hl-yellow'>動手可以激發潛能、訓練腦力把想法付諸實現</mark>，是很有意義的事。雖然許多東西用買的快速方便，但當個自造者不只能得到<mark class='hl-green'>手作樂趣和成就感</mark>，也能培養解決問題、發現創新的能力。」",
+    "author": "《臺灣原YOUNG雙月刊》",
+    "stem": "根據這段文字，下列推論何者最恰當？",
+    "notes": null,
+    "options": [
+      {
+        "key": "A",
+        "text": "下一個世代中，只有自造者才能創造成功"
+      },
+      {
+        "key": "B",
+        "text": "自造者的興起，與網路快速發展關係密切"
+      },
+      {
+        "key": "C",
+        "text": "享受快速便利的購物，被認為是無意義的"
+      },
+      {
+        "key": "D",
+        "text": "自造者能同時享受到腦力激盪與手作樂趣"
+      }
+    ],
+    "answer": "D",
+    "clue": "文中肯定動手「訓練腦力激發潛能」，又能收穫「手作樂趣與成就感」，文意全然契合(D)。",
+    "explanation": "依據題幹敘述：動手創造能<mark class='hl-yellow'>「激發潛能、訓練腦力把想法付諸實現」</mark>，且能收穫<mark class='hl-green'>「手作樂趣和成就感」</mark>並鍛鍊創新思維，直接推知自造者兼具動腦啟發與動手實踐之雙重價值，故選<mark class='hl-green'>(D)</mark>。(A)言過其實「只有」無據；(B)未提及網路關係；(C)提及買東西快速便利，並未全盤否定購物意義。",
+    "translation": null,
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "文中僅稱是自造者世代，未斷言「唯有」自造者才能成功。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "文段全文均未提及網際網路科技發展之關聯。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "文中肯定自造之益，但不能推論出日常購物即屬無意義。"
+      },
+      {
+        "key": "D",
+        "status": "correct",
+        "reason": "精準整合文中「激發潛能訓練腦力」與「手作樂趣與成就感」。"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "category": "成果驗收（一）",
+    "subCategory": "寫作手法",
+    "passage": "「在中國，那些小小的差錯，那些無心的過失，都有如偏離大道以後的叉路。叉路亦自有其可觀的風景，『曲徑』似乎反而理直氣壯的可以『通幽』。錯有錯著，生命和人世在其嚴苛的大制約和慘烈的大叛逆之外也何妨採取中國式的小差錯小謬誤或小小的不精確。讓叉路可以是另一條大路的起點，容錯是中國故事裡急轉彎道下的美麗情節。」",
+    "passageHighlight": "「在中國，那些小小的差錯，那些無心的過失，<mark class='hl-yellow'>都有如偏離大道以後的叉路。叉路亦自有其可觀的風景</mark>，『曲徑』似乎反而理直氣壯的可以『通幽』。錯有錯著，生命和人世在<mark class='hl-pink'>其嚴苛的大制約和慘烈的大叛逆</mark>之外也<mark class='hl-green'>何妨採取中國式的小差錯小謬誤或小小的不精確</mark>。讓叉路可以是另一條大路的起點，容錯是中國故事裡急轉彎道下的美麗情節。」",
+    "author": "美學哲思散文",
+    "stem": "關於本文的寫作手法，下列何者錯誤？",
+    "notes": null,
+    "options": [
+      {
+        "key": "A",
+        "text": "先抑後揚手法凸顯犯錯確實有其美好之處"
+      },
+      {
+        "key": "B",
+        "text": "將過錯比喻為「自有美麗風景的小叉路」"
+      },
+      {
+        "key": "C",
+        "text": "運用映襯修辭呈現不妨容忍偶爾的小差錯"
+      },
+      {
+        "key": "D",
+        "text": "採用第一人稱觀點涉入其中增加情節張力"
+      }
+    ],
+    "answer": "D",
+    "clue": "全文為客觀冷靜的哲理美學論述，無「我」、「我們」等第一人稱代詞或個人敘事角色。",
+    "explanation": "(A)作者初將過錯視作偏離大道的叉路，隨即讚頌叉路自有可觀風景，運用了欲揚先抑／先抑後揚之筆；(B)「有如偏離大道以後的叉路」為典型譬喻；(C)以「大制約、大叛逆」映襯對照「小差錯、不精確」；全文皆採<mark class='hl-yellow'>第三人稱客觀分析</mark>，<mark class='hl-green'>並未涉入第一人稱「我」的角色敘事</mark>，故(D)錯誤，選<mark class='hl-green'>(D)</mark>。",
+    "translation": null,
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "由看似負面的叉路轉化為通幽之美，確實具備先抑後揚效果。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "確實使用喻詞「有如」將過錯比擬為通向幽境之叉路。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "「大制約、大叛逆」對仗「小差錯、小不精確」，屬鮮明映襯。"
+      },
+      {
+        "key": "D",
+        "status": "correct",
+        "reason": "寫作手法並未使用第一人稱自敘，故此選項敘述為錯誤正解。"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "category": "成果驗收（一）",
+    "subCategory": "觀點",
+    "passage": "「事實就是這麼悲哀，不是所有人都能功成名就，我們之中大部分的人，注定要在日常生活的點滴中，尋找生命的意義。」（改寫自美劇《生活大爆炸》）",
+    "passageHighlight": "「事實就是這麼悲哀，<mark class='hl-yellow'>不是所有人都能功成名就</mark>，<mark class='hl-pink'>我們之中大部分的人</mark>，<mark class='hl-green'>注定要在日常生活的點滴中，尋找生命的意義</mark>。」",
+    "author": "美劇《生活大爆炸》語錄",
+    "stem": "請問上文中對於「成功」抱持著何種看法？",
+    "notes": null,
+    "options": [
+      {
+        "key": "A",
+        "text": "成功是種悲哀，因為會喪失生命意義"
+      },
+      {
+        "key": "B",
+        "text": "只要堅持不懈，多數人還是可以成功"
+      },
+      {
+        "key": "C",
+        "text": "成功僅是少數，多數人只能平凡度日"
+      },
+      {
+        "key": "D",
+        "text": "尋找生命意義，也可視之為一種成功"
+      }
+    ],
+    "answer": "C",
+    "clue": "「不是所有人都能功成名就」點明頂峰成功者僅是少數，「大部分的人注定在日常生活點滴中度過」指明凡人常態。",
+    "explanation": "文句直陳現實之殘酷：<mark class='hl-yellow'>「不是所有人都能功成名就」</mark>，說明功成名就者注定是金字塔頂端的極少數，而<mark class='hl-green'>世上絕大多數的普通人，終其一生都必須在平凡生活的柴米油鹽點滴中尋覓存在的價值</mark，故選<mark class='hl-green'>(C)</mark>。",
+    "translation": null,
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "悲哀的是無法全員成名成功，並非說成功本身是悲哀。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "文中認定大多數人注定無法功成名就，未提供努力必成之樂觀雞湯。"
+      },
+      {
+        "key": "C",
+        "status": "correct",
+        "reason": "精闢詮釋「少數人功成名就，多數人在平凡日常中過日子」之觀點。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "文中「功成名就」特指社會定義之世俗成功，未延伸將日常度日等同於成功。"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "category": "成果驗收（一）",
+    "subCategory": "意涵",
+    "passage": "「唯有在寂寥清靜的環境中，寧靜的情緒中，你才可以有暇使心靈臨流自照，更清楚的認識了自己，悟知『今是而昨非』，或者『今非而昨亦非』，面對做人治事的態度憬然有所改變，以完成自己的人格，完成自己的使命。」（張秀亞〈談靜〉）",
+    "passageHighlight": "「<mark class='hl-yellow'>唯有在寂寥清靜的環境中</mark>，寧靜的情緒中，你才可以有暇<mark class='hl-yellow'>使心靈臨流自照，更清楚的認識了自己</mark>，悟知『今是而昨非』，或者『今非而昨亦非』，面對做人治事的態度憬然有所改變，<mark class='hl-green'>以完成自己的人格，完成自己的使命</mark>。」",
+    "author": "張秀亞〈談靜〉",
+    "stem": "關於上述文字的意涵，下列何者說明正確？",
+    "notes": "①臨流自照：形容心靈澄澈，如面對清水照見自己真實面貌。②憬然：憬，音ㄐㄧㄥˇ，覺悟明白的樣子。",
+    "options": [
+      {
+        "key": "A",
+        "text": "追尋安靜的心靈狀態，就不會有所欠缺"
+      },
+      {
+        "key": "B",
+        "text": "安靜可以使人反觀自省，同時自我成長"
+      },
+      {
+        "key": "C",
+        "text": "完美的人格都是從寂靜環境中修鍊而來"
+      },
+      {
+        "key": "D",
+        "text": "安靜無法解釋，是種要親自體會的狀態"
+      }
+    ],
+    "answer": "B",
+    "clue": "文段強調「靜」能讓人「心靈臨流自照、清楚認識自己、態度改變以完成人格」，核心即為內省自照與人格健全成長。",
+    "explanation": "題幹闡發「靜」之內在修為作用：在寧靜中心靈得以有餘裕自我審視（臨流自照）、覺察過往是非與盲點，進而在為人處世上有所幡然體悟改變，最終達成<mark class='hl-green'>「反觀自省」與「完善人格使命之自我成長」</mark>，故選<mark class='hl-green'>(B)</mark>。",
+    "translation": null,
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "靜能促使人發現自身昨非之欠缺，並非追求平靜便無欠缺。"
+      },
+      {
+        "key": "B",
+        "status": "correct",
+        "reason": "精準對應「臨流自照自我反省」與「完成人格自我成長」之意涵。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "說法過於極端武斷，安靜是修身之助緣，非人格唯一修鍊法門。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "文中已極為詳盡透徹地解釋了安靜對於反省察己之心理功能。"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "category": "成果驗收（一）",
+    "subCategory": "比較",
+    "passage": "(甲) 江南好，風景舊曾諳；日出江花紅勝火，春來江水綠如藍。能不憶江南？（白居易〈憶江南〉）\n(乙) 多少恨，昨夜夢魂中。還似舊時游上苑，車如流水馬如龍。花月正春風。（李煜〈望江南〉）",
+    "passageHighlight": "(甲) 江南好，<mark class='hl-yellow'>風景舊曾諳</mark>；日出江花紅勝火，春來江水綠如藍。<mark class='hl-green'>能不憶江南</mark>？\n(乙) 多少恨，昨夜夢魂中。<mark class='hl-yellow'>還似舊時游上苑</mark>，車如流水馬如龍。花月正春風。",
+    "author": "唐宋經典詞選",
+    "stem": "以上兩闋詞題材皆與江南有關，下列分析何者正確？",
+    "notes": "①諳：音ㄢ，熟悉、熟習。②游上苑：指帝王在皇家園林遊樂巡覽。",
+    "options": [
+      {
+        "key": "A",
+        "text": "兩者的寫作背景皆為懷念記憶中的江南"
+      },
+      {
+        "key": "B",
+        "text": "前者抒寫亡國悔恨，後者抒寫江南春景"
+      },
+      {
+        "key": "C",
+        "text": "「江南好」與「多少恨」皆有悔恨之意"
+      },
+      {
+        "key": "D",
+        "text": "兩者皆用映襯修辭描述江南景象"
+      }
+    ],
+    "answer": "A",
+    "clue": "甲詞「風景舊曾諳、能不憶江南」，乙詞「還似舊時游上苑」，兩者皆是撫今追昔、深情追懷昔日記憶中的江南盛景。",
+    "explanation": "由甲詞<mark class='hl-yellow'>「風景舊曾諳」</mark>、<mark class='hl-green'>「能不憶江南」</mark>，與乙詞<mark class='hl-yellow'>「還似舊時游上苑」</mark>可知，兩位詞人<mark class='hl-green'>皆以深沉記憶中曾經親歷的江南美好歲月為抒寫底色</mark>，故選<mark class='hl-green'>(A)</mark>。(B)前後顛倒，白詞純寫江南春景之美，李詞乃亡國降宋後撫今追昔之血淚痛悔；(C)「江南好」為純然讚嘆無悔恨；(D)甲詞用「紅勝火、綠如藍」之博喻摹色，乙詞用「如流水、如龍」之明喻，非映襯。",
+    "translation": "(甲) 江南的風景多麼美好，那裡的景色我久已熟諳。朝陽升起時，江邊紅花比烈火更加鮮豔；春天來臨時，江水碧綠勝過青藍染料。怎能不令人懷念江南？(乙) 懷抱著多少亡國之恨，昨夜又重入夢魂之中。夢中彷彿又像當年帝王出遊上苑時一般，車子如流水穿梭，駿馬如游龍奔馳。花開月圓，正是滿目和煦春風。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "correct",
+        "reason": "兩者寫作焦點皆立足於回憶追懷過往江南勝景。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "前後敘述互換：白詞抒寫江南春色，李詞則藉故國美景反襯亡國傷痛。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "「江南好」為直接正面之讚頌，並無任何痛悔或悵惘之意。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "兩詞寫景句皆主要運用精妙的「譬喻」修辭，並非映襯。"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "category": "成果驗收（一）",
+    "subCategory": "解釋",
+    "passage": "「萬物有好醜，各一姿質分。唯人即不爾，學與不學云。學非探其花，要自拔其根。孝友與誠實，而不忘爾言。根本既深實，柯葉自滋繁。念爾無忽此，期以慶吾門。」（杜牧〈留贈曹師等詩〉）",
+    "passageHighlight": "「萬物有好醜，各一姿質分。唯人即不爾，學與不學云。<mark class='hl-yellow'>學非探其花，要自拔其根</mark>。<mark class='hl-green'>孝友與誠實，而不忘爾言</mark>。<mark class='hl-yellow'>根本既深實，柯葉自滋繁</mark>。念爾無忽此，期以慶吾門。」",
+    "author": "杜牧〈留贈曹師等詩〉",
+    "stem": "根據本詩，下列何者說明最恰當？",
+    "notes": "①姿質：天賦體貌與素質。②探其花：只摘取表面美麗的花朵，比喻只追求表面浮華文采。③柯：樹枝。④慶吾門：使家族光耀吉慶。",
+    "options": [
+      {
+        "key": "A",
+        "text": "「萬物有好醜，各一姿質分」強調不美好的事物仍有存在價值"
+      },
+      {
+        "key": "B",
+        "text": "「唯人即不爾，學與不學云」建議用學習成果來判斷人的好壞"
+      },
+      {
+        "key": "C",
+        "text": "「學非探其花，要自拔其根」說明求學應要有刨根究底的精神"
+      },
+      {
+        "key": "D",
+        "text": "「念爾無忽此，期以慶吾門」勸勉後代子孫要做大官光耀門楣"
+      }
+    ],
+    "answer": "C",
+    "clue": "「學非探其花，要自拔其根」喻求學治事不可只留戀浮華辭藻花飾，必須深究追尋道德行誼的根本源頭。",
+    "explanation": "詩人告誡子姪：<mark class='hl-yellow'>「學非探其花，要自拔其根」</mark>，求學不能只滿足於摘取枝頭嬌豔的花朵（只看文章浮華表面），而必須<mark class='hl-green'>由根本追尋（孝友、誠實、信守諾言）</mark>，根本穩固茂盛，學問枝葉自能蔥鬱，此即求學立身應有<mark class='hl-green'>追根究底、探求實質本源之真功夫</mark>，故選<mark class='hl-green'>(C)</mark>。(A)指天地萬物形貌資質天生各有不同；(B)指人的高下取決於肯學與否，而非先驗美醜；(D)勉勵篤行道德以使門第吉慶，非追求世俗做大官。",
+    "translation": "世間萬物各有美醜，皆由天賦的資質與形貌所決定。只有人不同於萬物，完全取決於後天的學與不學。求學不是只摘取外表漂亮的花朵（浮華文采），而是必須從它的根基處著手深探。孝敬父母、友愛兄弟與誠實守信，切莫遺忘自己的諾言。根本既然扎得深厚堅實，枝幹枝葉自然就會繁盛茂密。切念你們不可輕忽這番道理，期許能以此光耀興旺我們的家門。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "旨在說明萬物好醜各有定分，非強調醜者之特殊價值。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "強調決定人的關鍵在於個人是否「肯學奮進」，非以成果論好壞。"
+      },
+      {
+        "key": "C",
+        "status": "correct",
+        "reason": "精闢詮釋捨棄浮華形式（探花）、深耕本源道德學問（拔根）之精神。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "期盼子孫藉孝悌篤行庇佑家道平安順利，無一字談及追求做官顯宦。"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "category": "成果驗收（一）",
+    "subCategory": "意涵",
+    "passage": "愛因斯坦曾說：「想像力比知識更重要，因為知識是有限的，而想像力概括著世界上的一切，推動著進步，並且是知識進步的源泉。嚴格地說，想像力是科學研究中的實在因素。提出一個問題往往比解決一個更重要。因為解決問題也許僅是一個數學上或實驗上的技能而已，而提出新的問題，需要有創造性的想像力，而且標誌著科學的真正進步。」",
+    "passageHighlight": "愛因斯坦曾說：「<mark class='hl-yellow'>想像力比知識更重要，因為知識是有限的，而想像力概括著世界上的一切</mark>，推動著進步，並且是知識進步的源泉。<mark class='hl-pink'>提出一個問題往往比解決一個更重要</mark>。因為解決問題也許僅是一個技能而已，而<mark class='hl-green'>提出新的問題，需要有創造性的想像力，而且標誌著科學的真正進步</mark>。」",
+    "author": "愛因斯坦科學哲思",
+    "stem": "下列選項中，何者意涵與其最相近？",
+    "notes": null,
+    "options": [
+      {
+        "key": "A",
+        "text": "凡事都以求真的態度做踏實的工作，不流於空想"
+      },
+      {
+        "key": "B",
+        "text": "抓住現實中的一分一秒，勝過想像中的一月一年"
+      },
+      {
+        "key": "C",
+        "text": "缺乏知識就無法思考，缺乏思考也就得不到知識"
+      },
+      {
+        "key": "D",
+        "text": "邏輯能帶你從A到B，想像力能帶你遨遊四方"
+      }
+    ],
+    "answer": "D",
+    "clue": "愛因斯坦名言核心論點：「知識與技能有限，而想像力能突破疆界、催生新問題並推動進步」，(D)為同義名言。",
+    "explanation": "全文論述核心落於開宗明義首句：<mark class='hl-yellow'>「想像力比知識更重要，因為知識是有限的，而想像力概括著世界上的一切」</mark>，說明既有的知識邏輯僅能按部就班解決特定問題，而<mark class='hl-green'>唯有奔放的創造性想像力，方能打破固有邊界、引領人類遨遊無限宇宙與開創全新科學疆界</mark>，故選<mark class='hl-green'>(D)</mark>。",
+    "translation": null,
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "強調務實求真、排斥空想，與原文尊崇想像力之意旨背道而馳。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "強調把握當下時光，並非探討想像力對於科學探索之引領價值。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "探討知識與思考的相輔相成關係，未觸及想像力之核心超拔性。"
+      },
+      {
+        "key": "D",
+        "status": "correct",
+        "reason": "完美呼應愛因斯坦關於邏輯（有限技能）與想像力（無限馳騁）的經典體悟。"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "category": "成果驗收（一）",
+    "subCategory": "解釋",
+    "passage": "「王緒數譖殷荊州於王國寶，殷甚患之，求術於王東亭。曰：『卿但數往，見王，往輒屏人，因道它事；如此，則二王之好離矣。』殷從之。國寶見王緒，問曰：『比與仲堪屏人何所道？』緒云：『故是常往來，無它所道。』國寶謂緒於己有隱，果情好日疏，譖言以息。」（《世說新語》）",
+    "passageHighlight": "「王緒數譖殷荊州於王國寶，殷甚患之，求術於王東亭。曰：『<mark class='hl-yellow'>卿但數往，見王，往輒屏人，因道它事；如此，則二王之好離矣</mark>。』殷從之。國寶見王緒，問曰：『比與仲堪屏人何所道？』緒云：『故是常往來，無它所道。』國寶謂緒於己有隱，果情好日疏，<mark class='hl-green'>譖言以息</mark>。」",
+    "author": "《世說新語·規箴》",
+    "stem": "有關本文文意的解讀，下列何者正確？",
+    "notes": "①數：音ㄕㄨㄛˋ，屢次、頻繁。②譖：音ㄗㄣˋ，說壞話誣陷中傷。③患：憂慮苦惱。④屏人：屏，音ㄅㄧㄥˇ，使左右隨從退避退下。⑤比：近來。",
+    "options": [
+      {
+        "key": "A",
+        "text": "殷荊州因為太過擔心王緒說自己壞話因此生病"
+      },
+      {
+        "key": "B",
+        "text": "王東亭建議殷荊州故意製造與王緒往來密切的假象"
+      },
+      {
+        "key": "C",
+        "text": "王緒因殷仲堪將機密告訴自己便對王國寶有所隱瞞"
+      },
+      {
+        "key": "D",
+        "text": "王國寶認為王緒居心叵測便主動替殷荊州澄清流言"
+      }
+    ],
+    "answer": "B",
+    "clue": "王東亭獻離間計：教殷荊州屢訪王緒並刻意屏退眾人閒聊，藉由看似竊竊私語之假象，引發王國寶疑竇從而離間二王。",
+    "explanation": "由王東亭所獻計策：<mark class='hl-yellow'>「卿但數往，見王，往輒屏人，因道它事；如此，則二王之好離矣」</mark>可知，王東亭指點殷仲堪故意頻頻造訪王緒，且每次見面都大費周章屏退旁人、營造深談密謀之假象，<mark class='hl-green'>以此巧妙計策令生性多疑的王國寶起疑疏遠王緒，終止毀謗</mark>，故選<mark class='hl-green'>(B)</mark>。(A)患之是指深感困擾，未生重病；(C)王緒實話實說未隱瞞，但王國寶心中已滋生嫌隙懷疑；(D)流言平息係因二王關係破裂疏遠，非王國寶主動為殷澄清。",
+    "translation": "王緒屢次在權貴王國寶面前誣陷中傷荊州刺史殷仲堪，殷仲堪十分憂心這件事，便向東亭侯王珣討教應對之術。王珣說：「你只要頻繁去拜訪王緒，一去就要求退避左右侍從，接著隨便談些無關緊要的閒事；這樣一來，他們兩人的情誼就會破裂了。」殷仲堪照著這計策去做。後來王國寶見到王緒，問道：「你近來和殷仲堪屏退眾人，都私下談了些什麼？」王緒答道：「只不過是尋常走動拜訪，並沒有談什麼特別的事。」王國寶便認定王緒對自己有所隱瞞戒備，兩人交情果然日益疏遠，對殷仲堪的毀謗之言也就因此平息了。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "「殷甚患之」意為非常苦惱憂慮，並非因此罹患重病。"
+      },
+      {
+        "key": "B",
+        "status": "correct",
+        "reason": "王東亭正是指導殷仲堪製造兩相親密密謀之假象，破壞二王同盟。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "王緒坦承只是尋常往來並無他言，是王國寶主觀猜忌認定王緒有隱瞞。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "流言是因王國寶與王緒感情日疏而自然熄滅，非王國寶為殷仲堪雪冤。"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "category": "成果驗收（一）",
+    "subCategory": "圖表判讀",
+    "passage": "<div style='text-align:center;margin:12px 0;'><img src='images/u38_q17_night_market.png' alt='夜市抵用券圖表' style='max-width:100%;height:auto;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.12);'></div>",
+    "passageHighlight": "<div style='text-align:center;margin:12px 0;'><img src='images/u38_q17_night_market.png' alt='夜市抵用券圖表' style='max-width:100%;height:auto;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.12);'></div>",
+    "author": "經濟部觀光活動公告",
+    "stem": "花媽一家人正在討論這張關於夜市抵用券的圖表，請問誰的說法正確？",
+    "notes": null,
+    "options": [
+      {
+        "key": "A",
+        "text": "花媽：在指定日期內自由行且入住有旅遊補助的旅店就可獲得"
+      },
+      {
+        "key": "B",
+        "text": "花爸：夜市抵用券需要先由出遊民眾申請，再由旅宿業者發放"
+      },
+      {
+        "key": "C",
+        "text": "橘子：拿著夜市抵用券到宜蘭的合法夜市，所有攤商皆可使用"
+      },
+      {
+        "key": "D",
+        "text": "柚子：如果住一間四人房，我們一行共四個人即可領到800元"
+      }
+    ],
+    "answer": "A",
+    "clue": "圖表「資格」明載自由行入住秋冬補助之旅宿店即發放，「使用期限」為108年9月16日至12月31日。",
+    "explanation": "比對圖表各區塊資訊：\n(A)<mark class='hl-green'>資格欄明確載明「本國國人自由行入住秋冬旅遊補助之旅宿店，由旅宿業者協助發放」</mark>，期限內入住即符資格，說法正確，選<mark class='hl-green'>(A)</mark>。\n(B)抵用券由旅宿業者直接協助發放，無須民眾事先自行申請。\n(C)使用範圍載明僅限「有標示『歡迎使用夜市消費抵用券』」之合法夜市攤商，非所有攤商皆可。\n(D)資格欄載明「每房200元抵用券（50元4張）」，不論入住人數多寡，每房上限一律為200元。",
+    "translation": null,
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "correct",
+        "reason": "符合資格欄「自由行入住秋冬補助旅店由業者發放」及期限規範。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "由旅宿業者在入住時直接協助發放，無須出遊民眾事前提出申請。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "僅限張貼有「歡迎使用夜市消費抵用券」標章之特定合作攤商。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "補助規定以「每房」為單位發給200元，四人同住一房亦僅領200元。"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "category": "成果驗收（一）",
+    "subCategory": "推論",
+    "passage": "「我們約了一起去天母找一片藏在城市裡的荷花田，城市裡怎會有荷花田？是啊，幾乎是不可能的，但是如果真的有，我們就該相信，人與人的心靈不會因為空間距離而疏遠，反而可能更純粹堅固。午後欲雨的微風裡，我們沉默的站立，面對城市最後一片荷花田，覺得安心，如同受到撫慰。」",
+    "passageHighlight": "「我們約了一起去天母找一片藏在城市裡的荷花田，城市裡怎會有荷花田？是啊，幾乎是不可能的，<mark class='hl-pink'>但是如果真的有</mark>，<mark class='hl-yellow'>我們就該相信，人與人的心靈不會因為空間距離而疏遠，反而可能更純粹堅固</mark>。午後欲雨的微風裡，我們沉默的站立，面對城市最後一片荷花田，<mark class='hl-green'>覺得安心，如同受到撫慰</mark>。」",
+    "author": "現代心靈隨筆",
+    "stem": "關於上文內容的敘述，下列推論何者正確？",
+    "notes": null,
+    "options": [
+      {
+        "key": "A",
+        "text": "作者認為城市中不可能有荷花田的存在，如同人與人之間沒有絕對的信賴"
+      },
+      {
+        "key": "B",
+        "text": "藏在城市中的荷花田，象徵在作者心中人與人的真摯感情不因距離改變"
+      },
+      {
+        "key": "C",
+        "text": "作者覺得比起繁密親近的關係，隔著遙遠的距離產生的感情更加純粹堅固"
+      },
+      {
+        "key": "D",
+        "text": "沉默的站立感到安心的原因，是因為午後的微風將對於下雨的憂慮吹散"
+      }
+    ],
+    "answer": "B",
+    "clue": "破折號後的寄託：「如果真的有（荷花田），我們就該相信，心靈不會因距離疏遠，反而更純粹堅固」，荷花田是真情永存的象徵。",
+    "explanation": "作者以不可能存在於喧囂都市的荷花田作為情感寄託的象徵物：<mark class='hl-yellow'>「如果真的有，我們就該相信，人與人的心靈不會因為空間距離而疏遠，反而可能更純粹堅固」</mark>。最終親眼尋得這片城市荷花田，便獲得了信念的證實與精神撫慰，<mark class='hl-green'>證實了人與人間真摯情誼能夠跨越客觀時空距離而長存</mark>，故選<mark class='hl-green'>(B)</mark>。",
+    "translation": null,
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "作者最終親身尋獲荷花田，且自始至終懷抱信念與信任。"
+      },
+      {
+        "key": "B",
+        "status": "correct",
+        "reason": "荷花田的實體存在，完美象徵人心真情不隨空間距離而變質褪色。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "作者並非鼓吹刻意拉開距離，而是深信真情「不畏懼」空間相隔。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "安心之因在於如願覓得最後荷花田、證實了內心信念，而非微風吹散憂雨。"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "category": "成果驗收（一）",
+    "subCategory": "寫作手法",
+    "passage": "「觀賞魚出現在人類的歷史當中不比食用魚晚太多，中國大約在一千年前就有人收集紅色的野生鯽魚作為觀賞用途，其後還培養出不同品種的金魚。時至今日，在家中的水族缸中養些小魚，就和養其他寵物一樣普遍。目前全世界被當作觀賞魚的海、淡水魚類共1,539種，另外還有102種珊瑚和293種無脊椎動物。根據聯合國2005年的資料，全球有超過100個國家進行觀賞魚貿易，每年輸入各國的觀賞魚價值大約2.78億美元，而且持續呈現成長的趨勢。」",
+    "passageHighlight": "「觀賞魚出現在人類的歷史當中不比食用魚晚太多，中國大約在一千年前就有人收集紅色的野生鯽魚作為觀賞用途，其後還培養出不同品種的金魚。時至今日，在家中的水族缸中養些小魚，就和養其他寵物一樣普遍。<mark class='hl-yellow'>目前全世界被當作觀賞魚的海、淡水魚類共1,539種，另外還有102種珊瑚和293種無脊椎動物</mark>。根據聯合國2005年的資料，<mark class='hl-yellow'>全球有超過100個國家進行觀賞魚貿易，每年輸入各國的觀賞魚價值大約2.78億美元</mark>，而且<mark class='hl-green'>持續呈現成長的趨勢</mark>。」",
+    "author": "海洋生態產業論述",
+    "stem": "有關此段文字的寫作手法，下列何人的分析正確？",
+    "notes": null,
+    "options": [
+      {
+        "key": "A",
+        "text": "子瑜：將食用魚與觀賞魚做比較，以凸顯觀賞魚種類繁多"
+      },
+      {
+        "key": "B",
+        "text": "泰亨：以歷史資料說明觀賞魚出現在人類生活的起迄時間"
+      },
+      {
+        "key": "C",
+        "text": "娜璉：運用各種數據，說明觀賞魚貿易產業所呈現的趨勢"
+      },
+      {
+        "key": "D",
+        "text": "志效：以最有名的紅色鯽魚為例，強調養魚觀賞的普遍性"
+      }
+    ],
+    "answer": "C",
+    "clue": "文末密集引用確鑿統計數據：「共1,539種、102種珊瑚、293種、超過100個國家、2.78億美元、持續成長」，以數據展現全球貿易趨勢。",
+    "explanation": "檢視各選項：\n(A)首句僅比對觀賞魚與食用魚出現歷史之先後，未就兩者種類數量進行對比；\n(B)歷史資料僅提及約一千年前之「起源」，並非交代「起迄結束時間」；\n(C)<mark class='hl-green'>文中大量羅列1,539種、102種珊瑚、293種無脊椎動物、逾100國、2.78億美元等數據，具體論證觀賞魚貿易規模之龐大與持續增長之勢</mark>，分析精準，選<mark class='hl-green'>(C)</mark>；\n(D)舉野生鯽魚為例係說明古人收集觀賞之歷史淵源，強調當代養魚普遍則是藉家中水族缸比擬。",
+    "translation": null,
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "首句比較的是兩者在人類歷史出現的早晚時間，而非種類繁簡。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "只陳述千年前起源歷史，現代觀賞產業仍在延續，無「迄止」時間。"
+      },
+      {
+        "key": "C",
+        "status": "correct",
+        "reason": "精準點出引用魚種、國家數、貿易金額等數據佐證產業蓬勃之筆法。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "以紅色鯽魚證明觀賞起源歷史，非用以證明當代普遍性。"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "category": "成果驗收（一）",
+    "subCategory": "圖表判讀",
+    "passage": "<div style='text-align:center;margin:12px 0;'><img src='images/u38_q20_diet.png' alt='地中海飲食在地化金字塔' style='max-width:100%;height:auto;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.12);'></div>",
+    "passageHighlight": "<div style='text-align:center;margin:12px 0;'><img src='images/u38_q20_diet.png' alt='地中海飲食在地化金字塔' style='max-width:100%;height:auto;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.12);'></div>",
+    "author": "健康營養科普指南",
+    "stem": "國際上證實有效預防失智症的飲食型態就是「地中海式飲食」，因此被視為是健康的飲食方式，也是一種金字塔結構的飲食方式。根據下圖提供的資訊，下列何人的飲食風格符合「地中海式飲食」？",
+    "notes": null,
+    "options": [
+      {
+        "key": "A",
+        "text": "泰亨：我每週中有2～3天下午茶都吃蛋糕跟泡芙，較少吃牛肉"
+      },
+      {
+        "key": "B",
+        "text": "南俊：我每天都會吃大量的蔬菜搭配五穀飯，偶爾吃牛肉或羊肉"
+      },
+      {
+        "key": "C",
+        "text": "智旻：我每天都吃一顆蛋搭配大量雞胸肉，但我不吃澱粉類食物"
+      },
+      {
+        "key": "D",
+        "text": "碩珍：我不太吃蔬菜，但也不太吃甜食，每天都會吃海鮮加水果"
+      }
+    ],
+    "answer": "B",
+    "clue": "金字塔底層基礎（天天吃且分量最多）為蔬菜、水果、全穀類；紅肉（牛肉、羊肉）位於偏頂層，僅為「每週偶爾吃」。",
+    "explanation": "依據地中海飲食金字塔結構解析：\n- <mark class='hl-yellow'>底層（天天吃、攝取量最多）</mark>：全穀類（五穀黑米等）、蔬菜、水果、豆類及堅果、油。\n- <mark class='hl-yellow'>中層（每天適量吃）</mark>：海鮮類、魚、禽肉、蛋。\n- <mark class='hl-yellow'>頂層（每週偶爾吃／每月偶爾吃）</mark>：紅肉（牛、豬、羊，每週偶爾吃）；甜食（糕餅冰淇淋，每月偶爾吃）。\n(B)<mark class='hl-green'>南俊每天吃大量蔬菜搭配五穀飯（底層天天吃），且偶爾吃牛羊等紅肉（每週偶爾吃），完全符合金字塔比例標準</mark>，故選<mark class='hl-green'>(B)</mark>。(A)甜食應「每月偶爾吃」，每週吃2-3天超標；(C)完全不吃全穀類澱粉違反底層原則；(D)不吃蔬菜違反底層核心。",
+    "translation": null,
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "蛋糕泡芙屬頂層甜食，依圖表規定應「每月偶爾吃」，每週吃2-3天已超量。"
+      },
+      {
+        "key": "B",
+        "status": "correct",
+        "reason": "大量蔬菜五穀飯符合最底層天天吃，偶爾吃牛羊符合每週偶爾吃。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "全穀類澱粉居於金字塔最底層應每日充足攝取，完全不吃不符原則。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "蔬菜為最基底日常必備來源，不太吃蔬菜違背地中海飲食核心。"
+      }
+    ]
+  }
+];
+
+    let currentQuestionIndex = 0;
+    let userAnswers = {};
+    let isContinuousView = false;
+    let soundEnabled = true;
+    let currentZoom = 100;
+
+    // 音效產生器（利用 Web Audio API 合成，免載入外部 mp3）
+    const audioCtx = (window.AudioContext || window.webkitAudioContext) ? new (window.AudioContext || window.webkitAudioContext)() : null;
+
+    function playSound(type) {
+      if (!soundEnabled || !audioCtx) return;
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      if (type === 'correct') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(587.33, now); // D5
+        osc.frequency.setValueAtTime(880, now + 0.1); // A5
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+        osc.start(now);
+        osc.stop(now + 0.5);
+      } else if (type === 'incorrect') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(329.63, now); // E4
+        osc.frequency.setValueAtTime(261.63, now + 0.15); // C4
+        gain.gain.setValueAtTime(0.25, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+        osc.start(now);
+        osc.stop(now + 0.45);
+      } else if (type === 'click') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(440, now);
+        gain.gain.setValueAtTime(0.08, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+        osc.start(now);
+        osc.stop(now + 0.08);
+      }
+    }
+
+    function toggleSound() {
+      soundEnabled = !soundEnabled;
+      const btn = document.getElementById("soundToggleBtn");
+      if (soundEnabled) {
+        btn.classList.add("active");
+        btn.innerHTML = `<span id="soundIcon">🔔</span> 音效已開啟`;
+      } else {
+        btn.classList.remove("active");
+        btn.innerHTML = `<span id="soundIcon">🔕</span> 音效已靜音`;
+      }
+    }
+
+    // 切換檢視模式（單題專注 vs 連續清單）
+    function toggleViewMode() {
+      isContinuousView = !isContinuousView;
+      const btn = document.getElementById("viewModeBtn");
+      const text = document.getElementById("viewModeText");
+      if (isContinuousView) {
+        btn.classList.add("active");
+        text.innerText = "切換為專注模式";
+      } else {
+        btn.classList.remove("active");
+        text.innerText = "切換為連續模式";
+      }
+      renderView();
+    }
+
+    // 縮放字級
+    function adjustFontSize(delta) {
+      currentZoom += delta * 10;
+      if (currentZoom < 80) currentZoom = 80;
+      if (currentZoom > 140) currentZoom = 140;
+      document.getElementById("fontSizeDisplay").innerText = currentZoom + "%";
+      document.getElementById("questionsContainer").style.fontSize = (currentZoom / 100) + "rem";
+    }
+
+    // 渲染導航 Tab
+    function renderNavTabs() {
+      const container = document.getElementById("navTabs");
+      container.innerHTML = "";
+      questionsData.forEach((q, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "q-tab";
+        btn.id = `navTab_${q.id}`;
+        btn.innerText = q.id;
+        
+        if (!isContinuousView && idx === currentQuestionIndex) {
+          btn.classList.add("current");
+        }
+
+        if (userAnswers[q.id]) {
+          if (userAnswers[q.id].isCorrect) {
+            btn.classList.add("correct");
+          } else {
+            btn.classList.add("incorrect");
+          }
+        }
+
+        btn.onclick = () => {
+          playSound('click');
+          if (isContinuousView) {
+            const card = document.getElementById(`qcard_${q.id}`);
+            if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else {
+            currentQuestionIndex = idx;
+            renderView();
+          }
+        };
+
+        container.appendChild(btn);
+      });
+
+      updateStats();
+    }
+
+    // 更新統計資訊
+    function updateStats() {
+      const answeredKeys = Object.keys(userAnswers);
+      const count = answeredKeys.length;
+      document.getElementById("completedCount").innerText = count;
+      document.getElementById("totalQuestionsCount").innerText = questionsData.length;
+
+      if (count === 0) {
+        document.getElementById("accuracyRate").innerText = "-";
+        document.getElementById("accuracyRate").style.color = "var(--text-muted)";
+      } else {
+        const correctCount = answeredKeys.filter(k => userAnswers[k].isCorrect).length;
+        const rate = Math.round((correctCount / count) * 100);
+        const rateEl = document.getElementById("accuracyRate");
+        rateEl.innerText = rate + "%";
+        rateEl.style.color = rate >= 80 ? "var(--success-color)" : (rate >= 60 ? "#d97706" : "var(--error-color)");
+      }
+    }
+
+    // 產生單一題目 HTML
+    function buildQuestionCardHtml(q, idx) {
+      const userState = userAnswers[q.id];
+      const hasAnswered = !!userState;
+      const isCorrect = hasAnswered && userState.isCorrect;
+
+      const passageHtml = hasAnswered ? q.passageHighlight : q.passage;
+      const revealedClass = hasAnswered ? "revealed" : "";
+
+      let optionsHtml = q.options.map(opt => {
+        let extraClasses = "";
+        let markTag = "";
+        if (hasAnswered) {
+          if (opt.key === q.answer) {
+            if (userState.choice === opt.key) {
+              extraClasses = "selected-correct";
+              markTag = `<span style="margin-left:auto;font-weight:700;color:var(--success-color)">✓ 答對了！</span>`;
+            } else {
+              extraClasses = "reveal-correct";
+              markTag = `<span style="margin-left:auto;font-weight:700;color:var(--success-color)">✓ 正確答案</span>`;
+            }
+          } else if (userState.choice === opt.key) {
+            extraClasses = "selected-incorrect";
+            markTag = `<span style="margin-left:auto;font-weight:700;color:var(--error-color)">✗ 你的選擇</span>`;
+          }
+        }
+
+        return `
+          <button class="option-btn ${extraClasses}" 
+                  id="optBtn_${q.id}_${opt.key}" 
+                  onclick="selectAnswer(${q.id}, '${opt.key}')" 
+                  ${hasAnswered ? 'disabled' : ''}>
+            <span class="option-label">(${opt.key})</span>
+            <span class="option-content">${opt.text}</span>
+            ${markTag}
+          </button>
+        `;
+      }).join("");
+
+      let bannerHtml = "";
+      if (hasAnswered) {
+        if (isCorrect) {
+          bannerHtml = `
+            <div class="result-banner correct">
+              <span>🎉 <strong>恭喜答對！</strong> 正確答案為 (${q.answer})，精準掌握了題目文意與核心關鍵。</span>
+              <button class="btn-retry" onclick="retryQuestion(${q.id})">🔄 重新挑戰</button>
+            </div>
+          `;
+        } else {
+          bannerHtml = `
+            <div class="result-banner incorrect">
+              <span>💡 <strong>答錯了！</strong> 你的答案是 (${userState.choice})，正確解答應為 <strong>(${q.answer})</strong>。請詳閱下方解題之眼與螢光筆分析。</span>
+              <button class="btn-retry" onclick="retryQuestion(${q.id})">🔄 重新挑戰</button>
+            </div>
+          `;
+        }
+      }
+
+      let notesHtml = "";
+      if (q.notes) {
+        notesHtml = `
+          <div class="notes-box">
+            <div class="notes-title">📌 重要詞彙注釋</div>
+            <div>${q.notes}</div>
+          </div>
+        `;
+      }
+
+      let transHtml = "";
+      if (q.translation) {
+        transHtml = `
+          <div class="translation-box">
+            <div class="translation-header">📖 題幹文言白話語譯</div>
+            <div>${q.translation}</div>
+          </div>
+        `;
+      }
+
+      let optAnalysisHtml = "";
+      if (q.optionAnalysis) {
+        optAnalysisHtml = `
+          <div class="option-analysis-box">
+            <div style="font-weight:700;color:#334155;margin-bottom:8px">🔍 各選項深入剖析：</div>
+            ${q.optionAnalysis.map(a => `
+              <div class="analysis-item">
+                <span class="analysis-tag ${a.status === 'correct' ? 'is-correct' : 'is-wrong'}">(${a.key}) ${a.status === 'correct' ? '正解' : '誤'}</span>
+                <span>${a.reason}</span>
+              </div>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      let explanationHtml = `
+        <div class="explanation-container ${hasAnswered ? 'show' : ''}" id="expContainer_${q.id}">
+          <div class="explanation-card">
+            <div class="explanation-header">
+              <div class="explanation-title">
+                <span>📚 詳解與核心文意解析</span>
+              </div>
+              <div class="hl-legend">
+                <div class="legend-item"><span class="legend-dot" style="background:#facc15"></span> 黃色：解題關鍵詞</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#f43f5e"></span> 粉紅：轉折詞／特殊標點</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#10b981"></span> 綠色：推論核心／主旨歸納</div>
+              </div>
+            </div>
+            <div class="explanation-body">
+              <div class="clue-box">
+                <div class="clue-label">🎯 【解題之眼・關鍵線索】</div>
+                <div>${q.clue}</div>
+              </div>
+
+              <div class="exp-paragraph">
+                ${q.explanation}
+              </div>
+
+              ${transHtml}
+              ${optAnalysisHtml}
+            </div>
+          </div>
+        </div>
+      `;
+
+      let navButtonsHtml = "";
+      if (!isContinuousView) {
+        const isFirst = idx === 0;
+        const isLast = idx === questionsData.length - 1;
+        navButtonsHtml = `
+          <div class="nav-buttons-container">
+            <button class="nav-btn" onclick="prevQuestion()" ${isFirst ? 'disabled' : ''}>
+              <span>⬅</span> 上一題
+            </button>
+            <div style="font-size:0.92rem;color:var(--text-muted);display:flex;align-items:center;">
+              第 <strong>${q.id}</strong> / ${questionsData.length} 題
+            </div>
+            <button class="nav-btn" onclick="nextQuestion()" ${isLast ? 'disabled' : ''}>
+              下一題 <span>➡</span>
+            </button>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="question-card" id="qcard_${q.id}">
+          <div class="question-header">
+            <div class="q-num-badge">
+              <span>第 ${q.id} 題</span>
+              <span class="category-tag">${q.category}</span>
+            </div>
+            <div style="font-size:0.88rem;color:var(--text-muted)">${q.category}・${q.subCategory || "全冊成果驗收"}</div>
+          </div>
+
+          <div class="passage-box ${revealedClass}" id="passage_${q.id}">
+            ${passageHtml}
+            ${q.author ? `<span class="passage-author">—— ${q.author}</span>` : ''}
+          </div>
+
+          <div class="stem-text">${q.stem}</div>
+
+          ${notesHtml}
+
+          <div class="options-grid">
+            ${optionsHtml}
+          </div>
+
+          ${bannerHtml}
+          ${explanationHtml}
+          ${navButtonsHtml}
+        </div>
+      `;
+    }
+
+    function renderView() {
+      const container = document.getElementById("questionsContainer");
+      if (isContinuousView) {
+        container.innerHTML = questionsData.map((q, idx) => buildQuestionCardHtml(q, idx)).join("");
+      } else {
+        const currentQ = questionsData[currentQuestionIndex];
+        container.innerHTML = buildQuestionCardHtml(currentQ, currentQuestionIndex);
+      }
+      renderNavTabs();
+    }
+
+    function selectAnswer(qid, choiceKey) {
+      const q = questionsData.find(item => item.id === qid);
+      if (!q) return;
+
+      const isCorrect = (choiceKey === q.answer);
+      userAnswers[qid] = {
+        choice: choiceKey,
+        isCorrect: isCorrect
+      };
+
+      playSound(isCorrect ? 'correct' : 'incorrect');
+      renderView();
+
+      setTimeout(() => {
+        const expEl = document.getElementById(`expContainer_${qid}`);
+        if (expEl) {
+          expEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }, 100);
+    }
+
+    function retryQuestion(qid) {
+      playSound('click');
+      delete userAnswers[qid];
+      renderView();
+    }
+
+    function resetAllProgress() {
+      if (confirm("確定要清除所有作答紀錄並重新開始嗎？")) {
+        playSound('click');
+        userAnswers = {};
+        currentQuestionIndex = 0;
+        renderView();
+      }
+    }
+
+    function prevQuestion() {
+      if (currentQuestionIndex > 0) {
+        playSound('click');
+        currentQuestionIndex--;
+        renderView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIndex < questionsData.length - 1) {
+        playSound('click');
+        currentQuestionIndex++;
+        renderView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderView();
+    });
+  </script>
+</body>
+</html>
