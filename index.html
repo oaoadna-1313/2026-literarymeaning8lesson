@@ -954,7 +954,10 @@
       </div>
       <div class="header-actions">
         <a href="01_main_idea_complete_handout.pdf" target="_blank" class="action-btn" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border-color: #f59e0b; text-decoration: none; font-weight: 700; box-shadow: 0 2px 6px rgba(245, 158, 11, 0.25);" title="開啟或下載第 1 課主旨篇 49 題完整精編詳解大合訂本 PDF">
-          <span>📚</span> 全套詳解講義 (合訂本 PDF)
+          <span>📚</span> 第1課全套講義 (PDF)
+        </a>
+        <a href="02_viewpoint_complete_handout.pdf" target="_blank" class="action-btn" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; border-color: #2563eb; text-decoration: none; font-weight: 700; box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);" title="開啟或下載第 2 課觀點篇 50 題完整精編詳解大合訂本 PDF">
+          <span>📚</span> 第2課全套講義 (PDF)
         </a>
 
         <button class="action-btn" onclick="openFileManagerModal()">
@@ -1202,11 +1205,11 @@
         title: "第 2 課 觀點篇",
         subtitle: "讀懂作者的心",
         units: {
-          "記敘文類": { page: "P.28", defaultFile: "06_viewpoint_narrative.html" },
-          "抒情文類": { page: "P.31", defaultFile: "07_viewpoint_lyric.html" },
-          "議論文類": { page: "P.34", defaultFile: "08_viewpoint_argumentative.html" },
-          "說明文類": { page: "P.37", defaultFile: "09_viewpoint_expository.html" },
-          "應用文類": { page: "P.40", defaultFile: "10_viewpoint_practical.html" }
+          "記敘文類": { page: "P.28", defaultFile: "06_viewpoint_narrative.html", defaultHandout: "06_viewpoint_narrative_handout.pdf", isReadyDefault: true, questionCount: 10 },
+          "抒情文類": { page: "P.31", defaultFile: "07_viewpoint_lyric.html", defaultHandout: "07_viewpoint_lyric_handout.pdf", isReadyDefault: true, questionCount: 10 },
+          "議論文類": { page: "P.34", defaultFile: "08_viewpoint_argumentative.html", defaultHandout: "08_viewpoint_argumentative_handout.pdf", isReadyDefault: true, questionCount: 10 },
+          "說明文類": { page: "P.37", defaultFile: "09_viewpoint_expository.html", defaultHandout: "09_viewpoint_expository_handout.pdf", isReadyDefault: true, questionCount: 10 },
+          "應用文類": { page: "P.40", defaultFile: "10_viewpoint_practical.html", defaultHandout: "10_viewpoint_practical_handout.pdf", isReadyDefault: true, questionCount: 10 }
         }
       },
       {
@@ -1298,7 +1301,12 @@
       "ch1_抒情文類": true,
       "ch1_議論文類": true,
       "ch1_說明文類": true,
-      "ch1_應用文類": true
+      "ch1_應用文類": true,
+      "ch2_記敘文類": true,
+      "ch2_抒情文類": true,
+      "ch2_議論文類": true,
+      "ch2_說明文類": true,
+      "ch2_應用文類": true
     };
 
     let studyRecords = {};

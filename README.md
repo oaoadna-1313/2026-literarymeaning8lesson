@@ -11,11 +11,20 @@
 ## 📚 單元教材架構
 
 ### 第 1 課 主旨篇（中心思想在哪裡）
-1. [📖 記敘文類 (9題)](01_main_idea_narrative.html)
-2. [🌸 抒情文類 (10題)](02_main_idea_lyric.html)
-3. [⚖️ 議論文類 (10題)](03_main_idea_argumentative.html)
-4. [🔬 說明文類 (10題)](04_main_idea_expository.html)
-5. [✉️ 應用文類 (10題)](05_main_idea_practical.html)
+- 📚 [全套精編詳解講義 (合訂本 51 頁 PDF)](01_main_idea_complete_handout.pdf)
+1. [📖 記敘文類 (9題)](01_main_idea_narrative.html) ｜ [A4 詳解講義 (PDF)](01_main_idea_narrative_handout.pdf)
+2. [🌸 抒情文類 (10題)](02_main_idea_lyric.html) ｜ [A4 詳解講義 (PDF)](02_main_idea_lyric_handout.pdf)
+3. [⚖️ 議論文類 (10題)](03_main_idea_argumentative.html) ｜ [A4 詳解講義 (PDF)](03_main_idea_argumentative_handout.pdf)
+4. [🔬 說明文類 (10題)](04_main_idea_expository.html) ｜ [A4 詳解講義 (PDF)](04_main_idea_expository_handout.pdf)
+5. [✉️ 應用文類 (10題)](05_main_idea_practical.html) ｜ [A4 詳解講義 (PDF)](05_main_idea_practical_handout.pdf)
+
+### 第 2 課 觀點篇（讀懂作者的心）
+- 📚 [全套精編詳解講義 (合訂本 52 頁 PDF)](02_viewpoint_complete_handout.pdf)
+1. [📖 記敘文類 (10題)](06_viewpoint_narrative.html) ｜ [A4 詳解講義 (PDF)](06_viewpoint_narrative_handout.pdf)
+2. [🌸 抒情文類 (10題)](07_viewpoint_lyric.html) ｜ [A4 詳解講義 (PDF)](07_viewpoint_lyric_handout.pdf)
+3. [⚖️ 議論文類 (10題)](08_viewpoint_argumentative.html) ｜ [A4 詳解講義 (PDF)](08_viewpoint_argumentative_handout.pdf)
+4. [🔬 說明文類 (10題)](09_viewpoint_expository.html) ｜ [A4 詳解講義 (PDF)](09_viewpoint_expository_handout.pdf)
+5. [✉️ 應用文類 (10題)](10_viewpoint_practical.html) ｜ [A4 詳解講義 (PDF)](10_viewpoint_practical_handout.pdf)
 
 ---
 
