@@ -959,6 +959,9 @@
         <a href="02_viewpoint_complete_handout.pdf" target="_blank" class="action-btn" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; border-color: #2563eb; text-decoration: none; font-weight: 700; box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);" title="開啟或下載第 2 課觀點篇 50 題完整精編詳解大合訂本 PDF">
           <span>📚</span> 第2課全套講義 (PDF)
         </a>
+        <a href="03_implication_complete_handout.pdf" target="_blank" class="action-btn" style="background: linear-gradient(135deg, #059669, #047857); color: white; border-color: #059669; text-decoration: none; font-weight: 700; box-shadow: 0 2px 6px rgba(5, 150, 105, 0.25);" title="開啟或下載第 3 課意涵篇 50 題完整精編詳解大合訂本 PDF">
+          <span>📚</span> 第3課全套講義 (PDF)
+        </a>
 
         <button class="action-btn" onclick="openFileManagerModal()">
           <span>⚙️</span> 連結管理與檔案探測
@@ -1217,11 +1220,11 @@
         title: "第 3 課 意涵篇",
         subtitle: "原來文句這麼說",
         units: {
-          "記敘文類": { page: "P.48", defaultFile: "11_implication_narrative.html" },
-          "抒情文類": { page: "P.51", defaultFile: "12_implication_lyric.html" },
-          "議論文類": { page: "P.54", defaultFile: "13_implication_argumentative.html" },
-          "說明文類": { page: "P.57", defaultFile: "14_implication_expository.html" },
-          "應用文類": { page: "P.60", defaultFile: "15_implication_practical.html" }
+          "記敘文類": { page: "P.48", defaultFile: "11_implication_narrative.html", defaultHandout: "11_implication_narrative_handout.pdf", isReadyDefault: true, questionCount: 10 },
+          "抒情文類": { page: "P.51", defaultFile: "12_implication_lyric.html", defaultHandout: "12_implication_lyric_handout.pdf", isReadyDefault: true, questionCount: 10 },
+          "議論文類": { page: "P.54", defaultFile: "13_implication_argumentative.html", defaultHandout: "13_implication_argumentative_handout.pdf", isReadyDefault: true, questionCount: 10 },
+          "說明文類": { page: "P.57", defaultFile: "14_implication_expository.html", defaultHandout: "14_implication_expository_handout.pdf", isReadyDefault: true, questionCount: 10 },
+          "應用文類": { page: "P.60", defaultFile: "15_implication_practical.html", defaultHandout: "15_implication_practical_handout.pdf", isReadyDefault: true, questionCount: 10 }
         }
       },
       {
@@ -1306,7 +1309,12 @@
       "ch2_抒情文類": true,
       "ch2_議論文類": true,
       "ch2_說明文類": true,
-      "ch2_應用文類": true
+      "ch2_應用文類": true,
+      "ch3_記敘文類": true,
+      "ch3_抒情文類": true,
+      "ch3_議論文類": true,
+      "ch3_說明文類": true,
+      "ch3_應用文類": true
     };
 
     let studyRecords = {};

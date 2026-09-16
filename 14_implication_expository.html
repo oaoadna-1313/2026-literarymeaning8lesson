@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文意新8課 ｜ 第3課 意涵篇（說明文類）解說教材</title>
+  <style>
+    :root {
+      --primary-color: #7c2d12;
+      --primary-hover: #9a3412;
+      --primary-light: #fff7ed;
+      --accent-color: #b91c1c;
+      --success-color: #059669;
+      --success-light: #ecfdf5;
+      --error-color: #dc2626;
+      --error-light: #fef2f2;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --bg-page: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --quote-bg: #fdfbf7;
+      --quote-border: #d97706;
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Serif TC", serif, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 頂部全域導航選單 */
+    .top-navbar {
+      background: #0f172a;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      padding: 8px 20px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .top-navbar-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .top-units-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .unit-link {
+      color: #cbd5e1;
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 6px;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+
+    .unit-link:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+
+    .unit-link.active {
+      background: var(--primary-color);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .home-link {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.1);
+      transition: all 0.2s;
+    }
+    .home-link:hover {
+      background: rgba(56, 189, 248, 0.2);
+      color: #7dd3fc;
+    }
+
+    /* 標頭 Header */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .badge-chapter {
+      background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .title-text {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.5px;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .control-btn {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      padding: 6px 12px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .control-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .control-btn.active {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    /* 進度條與題號切換欄 */
+    .progress-bar-wrapper {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .progress-bar-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .q-tab {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #475569;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .q-tab:hover {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      background: var(--primary-light);
+    }
+
+    .q-tab.current {
+      border-color: var(--primary-color);
+      background: var(--primary-color);
+      color: white;
+      box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
+    }
+
+    .q-tab.correct {
+      border-color: var(--success-color);
+      background: var(--success-light);
+      color: var(--success-color);
+    }
+
+    .q-tab.correct.current {
+      background: var(--success-color);
+      color: white;
+    }
+
+    .q-tab.incorrect {
+      border-color: var(--error-color);
+      background: var(--error-light);
+      color: var(--error-color);
+    }
+
+    .q-tab.incorrect.current {
+      background: var(--error-color);
+      color: white;
+    }
+
+    .stats-badge {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: #f8fafc;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+    }
+
+    /* 主內容容器 */
+    main {
+      max-width: 900px;
+      width: 100%;
+      margin: 24px auto;
+      padding: 0 16px;
+      flex: 1;
+    }
+
+    .question-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      padding: 28px 32px;
+      margin-bottom: 30px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .question-card:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .q-num-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-color);
+    }
+
+    .category-tag {
+      background: var(--primary-light);
+      color: var(--primary-color);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    /* 文本引文區塊 */
+    .passage-box {
+      background: var(--quote-bg);
+      border-left: 5px solid var(--quote-border);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 20px 24px;
+      margin-bottom: 22px;
+      font-size: 1.15rem;
+      line-height: 2.1;
+      letter-spacing: 0.4px;
+      color: #1e293b;
+      position: relative;
+    }
+
+    .passage-author {
+      display: block;
+      margin-top: 10px;
+      text-align: right;
+      font-size: 0.95rem;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    /* 題目題幹問句 */
+    .stem-text {
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #0f172a;
+      line-height: 1.7;
+    }
+
+    /* 注釋框 */
+    .notes-box {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #475569;
+    }
+
+    .notes-title {
+      font-weight: 700;
+      color: #0369a1;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 選項列表 */
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      text-align: left;
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--primary-color);
+      background: #f8fafc;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .option-label {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #475569;
+      min-width: 32px;
+    }
+
+    .option-btn.selected-correct {
+      background: var(--success-light) !important;
+      border-color: var(--success-color) !important;
+      color: #065f46 !important;
+      font-weight: 700;
+    }
+
+    .option-btn.selected-correct .option-label {
+      color: var(--success-color);
+    }
+
+    .option-btn.selected-incorrect {
+      background: var(--error-light) !important;
+      border-color: var(--error-color) !important;
+      color: #991b1b !important;
+      font-weight: 700;
+    }
+
+    .option-btn.selected-incorrect .option-label {
+      color: var(--error-color);
+    }
+
+    .option-btn.reveal-correct {
+      border-color: var(--success-color) !important;
+      background: #f0fdf4 !important;
+      color: #166534 !important;
+      border-style: dashed !important;
+    }
+
+    /* 答題回饋橫幅 */
+    .result-banner {
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .result-banner.correct {
+      background: #ecfdf5;
+      border: 1px solid #6ee7b7;
+      color: #065f46;
+    }
+
+    .result-banner.incorrect {
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      color: #991b1b;
+    }
+
+    .btn-retry {
+      background: white;
+      border: 1px solid #cbd5e1;
+      padding: 6px 14px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-retry:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+
+    /* 詳解摺疊卡片 */
+    .explanation-container {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.4s ease-in-out;
+    }
+
+    .explanation-container.show {
+      max-height: 2500px;
+      opacity: 1;
+      transition: max-height 0.8s ease-in-out, opacity 0.4s ease-in-out;
+    }
+
+    .explanation-card {
+      background: #ffffff;
+      border: 1px solid #fed7aa;
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 15px rgba(251, 146, 60, 0.08);
+      padding: 24px;
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .explanation-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #fef3c7;
+    }
+
+    .explanation-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #9a3412;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hl-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.84rem;
+      background: #fdfbf7;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid #fed7aa;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #78350f;
+      font-weight: 600;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    /* 解題之眼線索框 */
+    .clue-box {
+      background: #fefce8;
+      border-left: 4px solid #facc15;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #854d0e;
+    }
+
+    .clue-label {
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+      color: #a16207;
+    }
+
+    /* 詳解段落 */
+    .exp-paragraph {
+      font-size: 1.1rem;
+      line-height: 2.0;
+      color: #334155;
+      margin-bottom: 18px;
+    }
+
+    /* 螢光筆高亮樣式 */
+    mark.hl-yellow {
+      background: linear-gradient(104deg, rgba(254, 240, 138, 0.2) 0.9%, rgba(254, 240, 138, 0.95) 2.4%, rgba(254, 240, 138, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #1c1917;
+      box-shadow: inset 0 -4px 0 rgba(234, 179, 8, 0.6);
+    }
+
+    mark.hl-pink {
+      background: linear-gradient(104deg, rgba(254, 205, 211, 0.2) 0.9%, rgba(254, 205, 211, 0.95) 2.4%, rgba(254, 205, 211, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #881337;
+      box-shadow: inset 0 -4px 0 rgba(244, 63, 94, 0.45);
+    }
+
+    mark.hl-green {
+      background: linear-gradient(104deg, rgba(187, 247, 208, 0.2) 0.9%, rgba(187, 247, 208, 0.95) 2.4%, rgba(187, 247, 208, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #064e3b;
+      box-shadow: inset 0 -4px 0 rgba(16, 185, 129, 0.45);
+    }
+
+    mark.hl-blue {
+      background: linear-gradient(104deg, rgba(186, 230, 253, 0.2) 0.9%, rgba(186, 230, 253, 0.95) 2.4%, rgba(186, 230, 253, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #075985;
+      box-shadow: inset 0 -4px 0 rgba(14, 165, 233, 0.45);
+    }
+
+    .passage-box.revealed mark.hl-yellow {
+      animation: pulseHighlight 1.5s infinite alternate;
+    }
+
+    @keyframes pulseHighlight {
+      0% { box-shadow: inset 0 -4px 0 rgba(234, 179, 8, 0.6); }
+      100% { box-shadow: inset 0 -10px 0 rgba(234, 179, 8, 0.8); }
+    }
+
+    /* 語譯與注釋卡片 */
+    .translation-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-top: 16px;
+      font-size: 1.02rem;
+      line-height: 1.9;
+    }
+
+    .translation-header {
+      font-weight: 700;
+      color: #0284c7;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 選項逐項剖析 */
+    .option-analysis-box {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px dashed #cbd5e1;
+    }
+
+    .analysis-item {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .analysis-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .analysis-tag.is-correct {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .analysis-tag.is-wrong {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    /* 導航切換列 */
+    .nav-buttons-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .nav-btn {
+      padding: 10px 22px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: white;
+      color: #334155;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    /* 浮動字級工具列 */
+    .floating-font-bar {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 30px;
+      padding: 6px 14px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      z-index: 90;
+    }
+
+    .font-btn {
+      background: #f1f5f9;
+      border: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    .font-btn:hover {
+      background: #e2e8f0;
+    }
+
+    /* 動畫 */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .question-card {
+        padding: 20px 16px;
+      }
+      .passage-box {
+        font-size: 1.05rem;
+        padding: 16px 18px;
+      }
+      .option-btn {
+        padding: 12px 14px;
+        font-size: 1rem;
+      }
+      .hl-legend {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部全域切換列 -->
+  <nav class="top-navbar">
+    <div class="top-navbar-container">
+      <div class="top-units-list">
+        <span style="color:#64748b;font-weight:600;margin-right:4px">單元導覽：</span>
+        <a href="11_implication_narrative.html" class="unit-link">📖 記敘文類 (10題)</a><a href="12_implication_lyric.html" class="unit-link">🌸 抒情文類 (10題)</a><a href="13_implication_argumentative.html" class="unit-link">⚖️ 議論文類 (10題)</a><a href="14_implication_expository.html" class="unit-link active">🔬 說明文類 (10題)</a><a href="15_implication_practical.html" class="unit-link">✉️ 應用文類 (10題)</a>
+      </div>
+      <div>
+        <a href="index.html" class="home-link">🏠 回總覽首頁</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 標頭 Header -->
+  <header>
+    <div class="header-container">
+      <div class="brand-title">
+        <a href="index.html" class="control-btn" style="text-decoration: none; margin-right: 6px; background: #e0e7ff; color: #1e3a8a; border-color: #c7d2fe;" title="返回教材入口總目錄">
+          <span>🏠</span> 總目錄
+        </a>
+        <span class="badge-chapter">第 3 課 意涵篇</span>
+        <span class="title-text">🔬 說明文類・互動解說教材</span>
+      </div>
+      <div class="header-controls">
+        <a href="14_implication_expository_handout.pdf" target="_blank" class="control-btn" style="text-decoration:none; background:#fffbeb; color:#b45309; border-color:#fcd34d; font-weight:700;" title="開啟本單元精編詳解講義 PDF（三色螢光筆・解題之眼・語譯全收錄）">
+          <span>📖</span> 詳解講義模式 (PDF)
+        </a>
+        <button class="control-btn" id="soundToggleBtn" onclick="toggleSound()">
+          <span id="soundIcon">🔔</span> 音效已開啟
+        </button>
+        <button class="control-btn" id="viewModeBtn" onclick="toggleViewMode()">
+          <span>📖</span> <span id="viewModeText">切換為連續模式</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 題號跳轉與統計列 -->
+  <div class="progress-bar-wrapper">
+    <div class="progress-bar-container">
+      <div class="nav-tabs" id="navTabs">
+        <!-- 由 JavaScript 動態生成題號按鈕 -->
+      </div>
+      <div class="stats-badge">
+        <span>完成度：<strong id="completedCount" style="color:var(--primary-color)">0</strong> / <span id="totalQuestionsCount">10</span> 題</span>
+        <span>正確率：<strong id="accuracyRate" style="color:var(--success-color)">-</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 主要答題容器 -->
+  <main id="questionsContainer">
+    <!-- 由 JavaScript 渲染試題內容 -->
+  </main>
+
+  <!-- 浮動輔助功能列（縮放字級、重置） -->
+  <div class="floating-font-bar">
+    <span>字級：</span>
+    <button class="font-btn" onclick="adjustFontSize(-1)" title="縮小字體">A-</button>
+    <span id="fontSizeDisplay">100%</span>
+    <button class="font-btn" onclick="adjustFontSize(1)" title="放大字體">A+</button>
+    <span style="color:#cbd5e1;margin:0 4px">|</span>
+    <button class="control-btn" style="padding:2px 8px;font-size:0.8rem;" onclick="resetAllProgress()">全部重練</button>
+  </div>
+
+  <script>
+    // 試題資料庫：說明文類 10 題
+    const questionsData = [
+  {
+    "id": 1,
+    "category": "說明文類",
+    "passage": "「宵盜，值百一十，其妻、子知，與食肉，當同罪。」",
+    "passageHighlight": "「宵盜，值百一十，<mark class='hl-yellow'>其妻、子知，與食肉</mark>，<mark class='hl-green'>當同罪</mark>。」",
+    "author": "《睡虎地秦墓竹簡・法律答問》",
+    "stem": "有關上述古代法律條文的說明，何者正確？",
+    "notes": "①宵盜：夜間行竊盜竊。②值百一十：所盜贓物價值一百一十錢。③與食肉：一起拿贓款買肉烹食。④當同罪：依法應當判處與主犯相同之罪責。",
+    "options": [
+      {
+        "key": "A",
+        "text": "賊在光天化日下行竊"
+      },
+      {
+        "key": "B",
+        "text": "賊將贓款拿去買肉吃"
+      },
+      {
+        "key": "C",
+        "text": "賊的妻兒不知其行竊"
+      },
+      {
+        "key": "D",
+        "text": "賊的妻兒不知者無罪"
+      }
+    ],
+    "answer": "B",
+    "clue": "竊盜贓款買肉共食，妻兒明知實情仍分潤贓物，依法判定與竊賊共同治罪。",
+    "explanation": "依秦簡法律條文原意：夫夜間行竊得贓款百一十錢，<mark class='hl-yellow'>「與食肉」</mark>指其丈夫將行竊所得贓物變賣或直接購置肉品，與妻子和兒女共同享用吃肉，因此選<mark class='hl-green'>(B)</mark>。(A)「宵」指夜間行竊，非光天化日；(C)(D)「其妻、子知」表明其妻兒對其盜竊行為知情，且「當同罪」明確規定妻兒與其同罪論處。",
+    "translation": "男子在夜間進行偷盜竊取財物，贓物價值一百一十錢，他的妻子和兒女明知這是偷來的贓款，卻依然與他一同拿贓款買肉烹食，依照秦國法律，妻子和兒女應當與竊賊本人共同判處相同的罪名。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "「宵」字意為夜間、黑夜，指在深夜暗中行竊，並非白晝光天化日。"
+      },
+      {
+        "key": "B",
+        "status": "correct",
+        "reason": "「與食肉」直言竊賊將行竊不義之財拿去買肉並與妻兒共同進食。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "「其妻、子知」明確記錄妻兒對偷盜內情完全知悉知情。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "條文明載妻兒知情且分贓共食，「當同罪」認定共同治罪，並非不知者無罪。"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "說明文類",
+    "passage": "「藏書畫者，多取空名。偶傳為鍾、王、顧、陸之筆，見者爭售，所謂『耳鑒』。」",
+    "passageHighlight": "「藏書畫者，<mark class='hl-yellow'>多取空名</mark>。偶傳為鍾、王、顧、陸之筆，<mark class='hl-pink'>見者爭售</mark>，所謂『<mark class='hl-green'>耳鑒</mark>』。」",
+    "author": "沈括《夢溪筆談》",
+    "stem": "依上文所述，「耳鑒」的意思為何？",
+    "notes": "①鍾王顧陸：指魏晉南北朝書畫名家鍾繇、王羲之（書法），顧愷之、陸探微（繪畫）。②爭售：爭先恐後搶購。③耳鑒：只用耳朵聽信虛名傳言，不用眼睛與心靈去鑑賞評斷實質優劣。",
+    "options": [
+      {
+        "key": "A",
+        "text": "只重實質，不務虛名"
+      },
+      {
+        "key": "B",
+        "text": "不懂內涵，只看名頭"
+      },
+      {
+        "key": "C",
+        "text": "仔細品味，分辨優劣"
+      },
+      {
+        "key": "D",
+        "text": "投資名家，獲取利潤"
+      }
+    ],
+    "answer": "B",
+    "clue": "憑傳聞虛名盲從搶購，未經慧眼精鑒作品優劣，譏刺世人只用耳朵聽名氣的「耳鑒」陋習。",
+    "explanation": "本段採「總→分結構」論述，首句破題<mark class='hl-yellow'>「藏書畫者，多取空名」</mark>，批評收藏家大多只貪圖附庸風雅的虛幻名頭，根本缺乏辨別藝術內涵真偽優劣的眼力。一旦道聽途說某畫是鍾繇、王羲之等大師手筆，便<mark class='hl-pink'>「見者爭售」</mark>搶購。作者譏誚這種僅憑耳朵聽名氣而非親眼鑑別藝術水準的盲從行為為<mark class='hl-green'>「耳鑒」</mark>，意即<mark class='hl-green'>(B)「不懂內涵，只看名頭」</mark>，故選<mark class='hl-green'>(B)</mark>。",
+    "translation": "收藏古代書法名畫的人，絕大多數都只一味追逐虛浮的名氣。偶爾聽說某幅作品出自鍾繇、王羲之、顧愷之或陸探微等大師名家之手，看到的人便不辨真偽爭先恐後搶著出高價購買，這就是世俗所說的『只憑耳朵聽名氣來鑑定（耳鑒）』。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "文段在嚴詞批判「取空名」之弊，與只重實質、不務虛名恰恰相反。"
+      },
+      {
+        "key": "B",
+        "status": "correct",
+        "reason": "「耳鑒」以耳代目，形象譏諷收藏者缺乏藝術鑑賞素養，只憑傳聞名頭盲目跟風。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "文中批評購買者「不辨真偽優劣」，並無細心品味之舉。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "重心在譏刺鑑賞審美品味的虛偽盲從，並非分析商業投資獲利之道。"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "category": "說明文類",
+    "passage": "「國際氣象組織以霍華德的分類法為基礎，按雲的形狀、組成、形成原因等把雲分為十大雲屬。而這十大雲屬則可按其雲底高度把它們劃入三個雲族：高雲族、中雲族、低雲族。另一種分類法則將積雲、積雨雲從低雲族中分出，稱為直展雲族。」",
+    "passageHighlight": "「……這十大雲屬則可按其雲底高度把它們劃入<mark class='hl-yellow'>三個雲族：高雲族、中雲族、低雲族</mark>。<mark class='hl-pink'>另一種分類法則</mark>將積雲、積雨雲從低雲族中分出，<mark class='hl-green'>稱為直展雲族</mark>。」",
+    "author": "科普說明文",
+    "stem": "根據上述文句，下列說明何者正確？",
+    "notes": "①十大雲屬：氣象學中卷雲、卷層雲、卷積雲、高積雲、高層雲、雨層雲、層積雲、層雲、積雲、積雨雲。②雲族：依雲底高度與垂直發展特性歸類之族系。",
+    "options": [
+      {
+        "key": "A",
+        "text": "雲族的分類非僅有一種原則"
+      },
+      {
+        "key": "B",
+        "text": "國際氣象組織將雲分成三雲屬"
+      },
+      {
+        "key": "C",
+        "text": "依據雲底高度可以分成十雲族"
+      },
+      {
+        "key": "D",
+        "text": "形成原因不在雲屬分類法則中"
+      }
+    ],
+    "answer": "A",
+    "clue": "雲族依雲底高度分三族，亦有另立直展雲族之劃分法，證實雲族分類並非僅有單一標準。",
+    "explanation": "由文本後兩句可知，雲族的分類一種是「按其雲底高度劃入三個雲族」，但接著又提出<mark class='hl-pink'>「另一種分類法則」</mark>將直展雲獨立出來，可見<mark class='hl-green'>雲族的分類法則並非只有固定的一種原則</mark>，故選<mark class='hl-green'>(A)</mark>。(B)國際氣象組織是把雲分為「十大雲屬」，劃入「三個雲族」，非分成三雲屬；(C)依雲底高度是劃分為「三個雲族」，非十雲族；(D)文本首句明寫「按雲的形狀、組成、形成原因等」，形成原因確實包含在內。",
+    "translation": "世界氣象組織以英國氣象學家霍華德所創立的分類法為根本基礎，綜合考量雲層的幾何形狀、內部微物理組成以及生成動力原因等要素，將自然界中的雲嚴格歸類劃分為十大雲屬。而這十大雲屬又可以依據其雲底距離地面的高度，分別歸入三個主要雲族：高雲族、中雲族以及低雲族。至於另一種實務分類體系，則將垂直伸展旺盛的積雲與積雨雲特地從低雲族中獨立劃分出來，另行命名設立為『直展雲族』。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "correct",
+        "reason": "文段先列舉按雲底高度劃分三族，又列舉另一種獨立劃分出直展雲族之法則，證實原則多元非僅一種。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "國際氣象組織是劃分為「十大雲屬」，選項將雲屬數量誤植為三個。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "按雲底高度劃分的是「三個雲族」，並非十雲族。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "首句即明確寫出「形成原因等把雲分為十大雲屬」，此項與原文直接矛盾。"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "category": "說明文類",
+    "passage": "「香港國際機場內各式商舖林立，店舖主要分為五大類：飲食、日用品、紀念品、書刊及外幣找換等，提供快捷及周全的服務。」",
+    "passageHighlight": "「……店舖主要分為五大類：<mark class='hl-yellow'>飲食、日用品、紀念品、書刊及外幣找換等</mark>，提供快捷及周全的服務。」",
+    "author": "應用說明文",
+    "stem": "請問上文中香港機場店鋪的分類，採用何種方式？",
+    "notes": "①外幣找換：外幣兌換業務。②功能性分類：依據滿足消費者特定生活需求與服務機能進行分類。",
+    "options": [
+      {
+        "key": "A",
+        "text": "從位置來分類"
+      },
+      {
+        "key": "B",
+        "text": "從功能性分類"
+      },
+      {
+        "key": "C",
+        "text": "從需求量分類"
+      },
+      {
+        "key": "D",
+        "text": "從價格上分類"
+      }
+    ],
+    "answer": "B",
+    "clue": "飲食、日用品、紀念品等皆以旅客所需服務與商品屬性劃分，純屬「功能性」分類法。",
+    "explanation": "文本關鍵句為<mark class='hl-yellow'>「飲食、日用品、紀念品、書刊及外幣找換」</mark>，分析這五大類別：飲食滿足餐飲腹慾、日用品提供隨身急需物資、紀念品供送禮留念、書刊提供候機消遣、外幣找換提供金融匯兌。此種劃分完全是依據店家所提供的服務用途與滿足顧客何種實用目的來設定，純屬標準的<mark class='hl-green'>「功能性分類」</mark>，故選<mark class='hl-green'>(B)</mark>。",
+    "translation": "香港國際客運機場內部各式各樣的商業店舖密集林立，所有商舖主要有條不紊地劃分為五大核心類別：餐飲美食、日常生活用品、特色旅遊紀念品、各類書報刊物以及外幣兌換金融櫃檯等，為穿梭於全球的各國旅客提供極致快捷而周全完備的貼心服務。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "文中未提及一號客運大樓、接機大堂或離境區等地理空間位置劃分。"
+      },
+      {
+        "key": "B",
+        "status": "correct",
+        "reason": "飲食、日用、伴手禮、書報、換匯，各類別皆依所發揮的實質服務機能歸類，為道地之「功能性分類」。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "文中未依大眾高頻熱銷或冷門小眾等消費需求量高低做分類區隔。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "未依商品奢華平價或高檔定價區間進行分類。"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "category": "說明文類",
+    "passage": "「其實西北雨這一名詞是夕暴雨的連音。西北雨，說起就起，說歇就歇，自下午二點起至四點，是它的天下。……西北雨，是雷雨，急驟的雨，沒有拖泥帶水。」",
+    "passageHighlight": "「其實<mark class='hl-yellow'>西北雨這一名詞是夕暴雨的連音</mark>。西北雨，說起就起，說歇就歇，自下午二點起至四點，是它的天下。……」",
+    "author": "陳冠學《西北雨》",
+    "stem": "有關上文的意涵，下列何人敘述正確？",
+    "notes": "①夕暴雨：傍晚發生的狂暴雷陣雨。②連音：語言學中相鄰兩字快讀時語音相融訛變之現象。③拖泥帶水：比喻做事牽絆遲緩、不乾不脆。",
+    "options": [
+      {
+        "key": "A",
+        "text": "谷阿莫：西北雨一定是暴雨伴隨著隆隆雷聲"
+      },
+      {
+        "key": "B",
+        "text": "蔡阿嘎：西北雨所下時間最長可達四個小時"
+      },
+      {
+        "key": "C",
+        "text": "聖結石：西北雨意涵著來自西北方所下的雨"
+      },
+      {
+        "key": "D",
+        "text": "安啾咪：西北雨的得名是由於讀音誤差而來"
+      }
+    ],
+    "answer": "D",
+    "clue": "閩南語「夕暴雨」語音連讀訛轉為「西北雨」，點出名稱緣起於語音流變而非地理方位。",
+    "explanation": "由文本開宗明義破題句：<mark class='hl-yellow'>「其實西北雨這一名詞是夕暴雨的連音」</mark>可知，在閩南語發音中，「夕暴（sī-pō）」連讀快唸，聲母韻母自然訛變諧音為「西北（sai-pak）」，因此「西北雨」一詞的誕生純屬方言讀音連讀流變的語音現象，並非指下雨的地理方位，故<mark class='hl-green'>安啾咪的說法「西北雨的得名是由於讀音誤差而來」</mark>完全正確，選<mark class='hl-green'>(D)</mark>。(A)文中寫「是雷雨」非一定伴隨隆隆雷聲；(B)「自下午二點至四點」指總共歷時約二小時，非長達四小時；(C)與地理西北方無涉。",
+    "translation": "追根究柢，臺灣民間俗稱的『西北雨』這個詞彙，在語言源流上乃是閩南語中『夕暴雨（傍晚驟降的狂暴雨）』快讀時產生的連音語音訛轉。西北雨的脾氣極為迅疾，說開始下就滂沱而至，說停歇就瞬間雨過天晴；從午後兩點直到傍晚四點，正是它稱霸天地的舞台……西北雨是標準的熱對流雷陣雨，下得迅猛急驟，乾脆俐落絲毫不拖泥帶水。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "文中側重描寫其急驟乾脆之特性，未斷言每一次皆必然附帶隆隆雷聲轟鳴。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "自午後兩點到四點，期間時程長度僅為兩小時，蔡阿嘎誤讀為四小時。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "作者開篇即嚴正辨正其為語音連讀諧音，與來自西北方的氣流方位完全無關。"
+      },
+      {
+        "key": "D",
+        "status": "correct",
+        "reason": "「夕暴雨」連音快讀訛變為「西北雨」，安啾咪指其得名源於讀音流變誤差，與文旨完全吻合。"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "category": "說明文類",
+    "passage": "「凡金質至重，每銅方寸重一兩者，銀照依其則，寸增重三錢。銀方寸重一兩者，金照依其則，寸增重二錢。」",
+    "passageHighlight": "「凡金質至重，<mark class='hl-yellow'>每銅方寸重一兩者，銀照依其則，寸增重三錢</mark>。<mark class='hl-yellow'>銀方寸重一兩者，金照依其則，寸增重二錢</mark>。」",
+    "author": "宋應星《天工開物・五金》",
+    "stem": "根據上述說明，請問下列敘述何者正確？",
+    "notes": "①方寸：一立方寸，古代體積計量單位。②銀照依其則，寸增重三錢：相同體積下，銀的比重大於銅，一立方寸銀比一立方寸銅重三錢。③寸增重二錢：相同體積下，金又比銀重二錢。④古代計重：一兩等於十錢。",
+    "options": [
+      {
+        "key": "A",
+        "text": "金的體積比銀大，銀的體積又比銅大"
+      },
+      {
+        "key": "B",
+        "text": "金的價格比銀高，銀的價格又比銅高"
+      },
+      {
+        "key": "C",
+        "text": "文中以相同面積的物質來作為重量的比較"
+      },
+      {
+        "key": "D",
+        "text": "一立方寸的金比一立方寸的銅重量多五錢"
+      }
+    ],
+    "answer": "D",
+    "clue": "銅立寸基準若為一兩，銀增三錢（1.3兩），金再以銀為基準增二錢（1.56兩或累積比銅重5錢），同體積比重金遠勝於銅。",
+    "explanation": "本段古代科學文獻以控制變因之思維探討金屬比重：設定立方體積相同（「方寸」為一立方寸之立體體積）。若每立方寸銅重1兩（10錢），則同體積的銀「增重三錢」（為13錢）；而同體積的金又比銀「增重二錢」，因此在每立方寸基準上，金的增量比銅多出3錢+2錢=<mark class='hl-green'>5錢</mark>，故選<mark class='hl-green'>(D)</mark>。(A)(C)文中比較的是相同體積（方寸）下的「重量比重」，非比較體積大小或平面面積；(B)文中討論物質物理重量，完全未涉及貨幣市場價格。",
+    "translation": "大凡在所有常見金屬材質之中，黃金的比重是最為沉重的。假定每一立方寸的銅重量為一兩（十錢），那麼依照同樣比例換算，每一立方寸的白銀就要比銅增加三錢的重量；再假定每一立方寸的白銀重量為一兩，那麼每一立方寸的黃金又要比白銀再增加二錢的重量。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "文段在固定立方寸（相同體積）的前提下比較重量密度，並非金屬物理體積的大小。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "全段為度量衡物理密度的定量表述，並未提及市面金銀銅之交易價格高低。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "「方寸」指立體的立方寸（體積），並非平面的面積。"
+      },
+      {
+        "key": "D",
+        "status": "correct",
+        "reason": "相同一立方寸下，銀比銅重三錢，金比銀又增二錢，故一立方寸金累計比一立方寸銅重五錢，推論嚴謹準確。"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "category": "說明文類",
+    "passage": "「何謂九族？高、曾、祖、考、己身、子、孫、曾、玄。」",
+    "passageHighlight": "「何謂九族？<mark class='hl-yellow'>高、曾、祖、考、己身</mark>、<mark class='hl-green'>子、孫、曾、玄</mark>。」",
+    "author": "《幼學瓊林・祖孫父子》",
+    "stem": "請問依上述說明，黃先生的孫子要如何稱呼黃先生的祖父？",
+    "notes": "①九族：自高祖至玄孫九個世代之直系親屬。②高：高祖父（父之曾祖）。③曾：曾祖父（父之祖父）。④祖：祖父（父之父）。⑤考：父親。⑥曾：曾孫（孫之子）。⑦玄：玄孫（曾孫之子）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "高祖"
+      },
+      {
+        "key": "B",
+        "text": "曾祖"
+      },
+      {
+        "key": "C",
+        "text": "祖父"
+      },
+      {
+        "key": "D",
+        "text": "父親"
+      }
+    ],
+    "answer": "A",
+    "clue": "孫子稱己為孫，向上一代為父（黃先生之子），向上二代為祖（黃先生），向上三代為曾祖（黃先生之父），向上四代為高祖（黃先生之祖父）。",
+    "explanation": "依宗族世系代數推算：以「黃先生的孫子」作為【己身】出發點：\n1. 往上一代為「父親」（即黃先生的兒子）；\n2. 往上二代為「祖父」（即黃先生本人）；\n3. 往上三代為「曾祖父」（即黃先生的父親）；\n4. 往上四代為<mark class='hl-green'>「高祖父」</mark>（即黃先生的祖父）。\n因此，黃先生的孫子應稱呼黃先生的祖父為<mark class='hl-green'>(A)「高祖」</mark>，故選<mark class='hl-green'>(A)</mark>。",
+    "translation": "什麼叫做同姓直系的九族血親呢？那就是向上追溯與向下延伸的九個世代：高祖父、曾祖父、祖父、父親、自身本輩，以及自身的兒子、孫子、曾孫與玄孫。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "correct",
+        "reason": "黃先生為孫子的祖父（相差二代），黃先生的祖父又比黃先生長二代，累計相隔四代，直系向上第四代尊稱「高祖」。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "「曾祖」為向上相差三代（即黃先生的父親）。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "「祖父」為向上相差二代（即黃先生本人）。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "「父親」為向上相差一代（即黃先生之子）。"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "category": "說明文類",
+    "passage": "「月本無光，猶銀丸，日耀之乃光耳。」",
+    "passageHighlight": "「<mark class='hl-yellow'>月本無光</mark>，猶銀丸，<mark class='hl-green'>日耀之乃光耳</mark>。」",
+    "author": "沈括《夢溪筆談》",
+    "stem": "請問上文可得知何項訊息？",
+    "notes": "①銀丸：純銀鑄造的彈丸，比喻本身不發光但能反射光線之圓形球體。②日耀之：太陽光輝照射映照在月球表面。③乃光耳：才產生明亮光澤罷了。",
+    "options": [
+      {
+        "key": "A",
+        "text": "月亮本身不會發光"
+      },
+      {
+        "key": "B",
+        "text": "月亮大小如彈珠般"
+      },
+      {
+        "key": "C",
+        "text": "日光來自月光反射"
+      },
+      {
+        "key": "D",
+        "text": "月光比日光還清亮"
+      }
+    ],
+    "answer": "A",
+    "clue": "月如素質銀球本無光明，全賴太陽日光映照反射方生輝澤，直陳月體不發光的天文物理常識。",
+    "explanation": "本段古代天文科普記載開篇即以四字真言破題：<mark class='hl-yellow'>「月本無光」</mark>，明確指出月球天體本身並不具備自主發光的能力；隨後以「猶銀丸，日耀之乃光耳」解釋月光之物理成因——純粹是如同銀球般接受太陽照射後產生的反射光線，因此能直接獲取的科學訊息即為<mark class='hl-green'>(A)「月亮本身不會發光」</mark>，故選<mark class='hl-green'>(A)</mark>。(B)「銀丸」指其如球體且表面具反光質地，非指其物理尺寸真如彈珠；(C)是日光照射月球，非日光來自月光反射；(D)文中完全未比較兩者誰更清亮。",
+    "translation": "月亮本身原本是不會自主發出任何光芒的，它就如同一個純銀打磨的圓形彈丸一樣，完全是因為太陽耀眼的光芒照射在它的球體表面上，它才反射出柔和皎潔的光輝罷了。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "correct",
+        "reason": "「月本無光」開宗明義揭示月球作為衛星不自主發光的天文科學事實。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "「銀丸」乃圓球天體外貌與反光特質的比擬，並非形容其大小尺度縮如彈丸。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "文中明確寫「日耀之乃光」，即太陽主動照耀月亮，選項將因果主從完全顛倒。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "文中未涉及月光與日光視覺亮度清潤程度之主觀比較。"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "category": "說明文類",
+    "passage": "「凡珍珠必產蚌腹，映月成胎，經年最久，乃為至寶。其云蛇、龍、鮫皮有珠者，妄也。」",
+    "passageHighlight": "「凡珍珠必產蚌腹，映月成胎，<mark class='hl-yellow'>經年最久，乃為至寶</mark>。<mark class='hl-pink'>其云蛇、龍、鮫皮有珠者，妄也</mark>。」",
+    "author": "宋應星《天工開物・珠》",
+    "stem": "請問上文的意涵應為何？",
+    "notes": "①映月成胎：古代相傳蚌蛤感應夜月清輝而孕育珠胎。②經年最久：在蚌殼腹內歷經最漫長之孕育歲月。③乃為至寶：方才成為最珍貴罕世之寶物。④虺：毒蛇。⑤鮫：鯊魚。⑥妄也：虛妄不實荒謬之談。",
+    "options": [
+      {
+        "key": "A",
+        "text": "蚌腹之中一定會生產珍珠"
+      },
+      {
+        "key": "B",
+        "text": "珍珠費時一個月才成形"
+      },
+      {
+        "key": "C",
+        "text": "蚌腹內的珍珠越久越值錢"
+      },
+      {
+        "key": "D",
+        "text": "蛇、龍及鯊魚也有產珍珠"
+      }
+    ],
+    "answer": "C",
+    "clue": "「經年最久，乃為至寶」，孕育時日越長之珠形質越珍稀昂貴，破除神異異獸產珠之荒誕流言。",
+    "explanation": "由文本關鍵句<mark class='hl-yellow'>「經年最久，乃為至寶」</mark>可知，珍珠在蚌腹中孕育成長的時間年限越加長久，珠體積累得越碩大圓潤，其價值與珍罕度便越高，成為人間無價至寶，故選<mark class='hl-green'>(C)「蚌腹內的珍珠越久越值錢」</mark>。(A)「必產蚌腹」是說珍珠必出自蚌腹，但絕非所有蚌腹皆百分之百產珠；(B)「映月」指感應月光清輝，非歷時一個月；(D)末句「其云蛇、龍、鮫皮有珠者，妄也」明確斥責蛇龍鯊皮產珠乃荒誕無稽之妄說。",
+    "translation": "凡是人間所有的天然珍珠，必定都是出產自河蚌與海蚌的腹體內，感應月夜清輝而逐漸凝聚受胎成形；其中在蚌腹內歷經最為漫長久遠歲月淘洗滋長出來的珍珠，才會成為世上最珍貴頂級的罕見珍寶。至於世俗相傳在虺蛇腹中、神龍頷下以及鯊魚皮鱗中也有孕育珍珠的說法，全都是荒謬不可信的虛妄流言。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "「珍珠必產蚌腹」界定其生成宿主唯有蚌類，但絕非指每一隻蚌腹內都必然長有珍珠。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "「映月」為借月華孕胎之修辭傳說，「月」指月光而非時間的一個月。"
+      },
+      {
+        "key": "C",
+        "status": "correct",
+        "reason": "「經年最久，乃為至寶」直接說明珍珠孕育生長的年限時日越久遠，品質越出眾昂貴。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "作者末尾痛斥蛇龍鮫皮產珠為「妄也」，明確全盤否定其產珠之迷信。"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "category": "說明文類",
+    "passage": "「兩扇門當中夾個太陽，是中間的『間』；換成一個人影，是一閃而過的『閃』。也有些字很抽象，譬如：上面寫個『中』，下面畫隻手，正好抓住上面『中』那一豎，是代表歷史須公正無私的『史』；把良心放在最中央的『忠』。」",
+    "passageHighlight": "「……上面寫個『中』，下面畫隻手，<mark class='hl-yellow'>正好抓住上面『中』那一豎</mark>，是<mark class='hl-green'>代表歷史須公正無私的『史』</mark>；把良心放在最中央的『忠』。」",
+    "author": "劉墉《漢字有意思2：跟著劉墉一家趣味玩漢字》",
+    "stem": "根據上述說明，下列何者正確？",
+    "notes": "①間：門中見日，原指門縫透光，引申為空間與中間。②閃：人在門中一窺即逝，會意一閃而過。③史：甲骨文與金文從又（手）持中（簡冊或中正之算籌），象徵持中秉正記史之史官。④忠：中心，心居其正，矢志不渝。",
+    "options": [
+      {
+        "key": "A",
+        "text": "忠是由代表窗戶的中與良心的心組成，形容忠心耿耿日月可鑑"
+      },
+      {
+        "key": "B",
+        "text": "間是由門及依據太陽模樣畫成的日組成，其代表著明亮的房間"
+      },
+      {
+        "key": "C",
+        "text": "閃是由兩個日以及一個人影所組成，是指有光的地方必有陰影"
+      },
+      {
+        "key": "D",
+        "text": "史是由中與代表手的記號組成，表示歷史的紀錄必須公正無私"
+      }
+    ],
+    "answer": "D",
+    "clue": "「史」字乃右手執中持正，秉筆直書不偏不倚，生動拆解漢字象形會意所蘊含的史家剛正精神。",
+    "explanation": "文本中詳述漢字造字的六書象形會意之妙：特別指出「史」字的構型：<mark class='hl-yellow'>「上面寫個『中』，下面畫隻手，正好抓住上面『中』那一豎」</mark>，寓意史官執筆秉中持正、不偏不倚、秉公直書，結尾點明<mark class='hl-green'>「代表歷史須公正無私的『史』」</mark>，與選項<mark class='hl-green'>(D)</mark>敘述完全相符，故選<mark class='hl-green'>(D)</mark>。(A)「中」是代表中央核心，非窗戶；(B)「間」是兩門夾日，指門縫透進日光，非明亮的房間；(C)「閃」是由「門」與「人影」組成，非兩個日。",
+    "translation": "在兩扇緊閉的門戶當中夾著一輪金色的太陽，這便是代表中縫間隔的『間』字；若是把太陽換成一個匆匆探頭的人影，便成了形容一掠而過的『閃』字。此外，還有許多漢字蘊含著極其高妙抽象的精神哲理，譬如：上方端端正正寫一個象徵不偏不倚的『中』，下方則畫一隻剛勁有力的右手，五指正好穩穩抓住上方『中』字正中央的那一垂直豎筆，這便是代表歷史紀錄必須永遠秉公客觀、無私持中的『史』字；而將真誠良善的心靈安放在胸膛最中央，便是至死不渝的『忠』字。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "文中明確說「把良心放在最中央」，「中」代表中央內心，並非象徵窗戶。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "「間」乃兩扇門縫中見日光，代表縫隙空間，非形容明亮的房間。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "「閃」是由「門」與「人」會意組成，並非由兩個日組成。"
+      },
+      {
+        "key": "D",
+        "status": "correct",
+        "reason": "手持中正之筆錄史，直截呼應原文「正好抓住中那一豎，代表歷史須公正無私」，剖析入木三分。"
+      }
+    ]
+  }
+];
+
+    let currentQuestionIndex = 0;
+    let userAnswers = {};
+    let isContinuousView = false;
+    let soundEnabled = true;
+    let currentZoom = 100;
+
+    // 音效產生器（利用 Web Audio API 合成，免載入外部 mp3）
+    const audioCtx = (window.AudioContext || window.webkitAudioContext) ? new (window.AudioContext || window.webkitAudioContext)() : null;
+
+    function playSound(type) {
+      if (!soundEnabled || !audioCtx) return;
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      if (type === 'correct') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(587.33, now); // D5
+        osc.frequency.setValueAtTime(880, now + 0.1); // A5
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+        osc.start(now);
+        osc.stop(now + 0.5);
+      } else if (type === 'incorrect') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(329.63, now); // E4
+        osc.frequency.setValueAtTime(261.63, now + 0.15); // C4
+        gain.gain.setValueAtTime(0.25, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+        osc.start(now);
+        osc.stop(now + 0.45);
+      } else if (type === 'click') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(440, now);
+        gain.gain.setValueAtTime(0.08, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+        osc.start(now);
+        osc.stop(now + 0.08);
+      }
+    }
+
+    function toggleSound() {
+      soundEnabled = !soundEnabled;
+      const btn = document.getElementById("soundToggleBtn");
+      if (soundEnabled) {
+        btn.classList.add("active");
+        btn.innerHTML = `<span id="soundIcon">🔔</span> 音效已開啟`;
+      } else {
+        btn.classList.remove("active");
+        btn.innerHTML = `<span id="soundIcon">🔕</span> 音效已靜音`;
+      }
+    }
+
+    // 切換檢視模式（單題專注 vs 連續清單）
+    function toggleViewMode() {
+      isContinuousView = !isContinuousView;
+      const btn = document.getElementById("viewModeBtn");
+      const text = document.getElementById("viewModeText");
+      if (isContinuousView) {
+        btn.classList.add("active");
+        text.innerText = "切換為專注模式";
+      } else {
+        btn.classList.remove("active");
+        text.innerText = "切換為連續模式";
+      }
+      renderView();
+    }
+
+    // 縮放字級
+    function adjustFontSize(delta) {
+      currentZoom += delta * 10;
+      if (currentZoom < 80) currentZoom = 80;
+      if (currentZoom > 140) currentZoom = 140;
+      document.getElementById("fontSizeDisplay").innerText = currentZoom + "%";
+      document.getElementById("questionsContainer").style.fontSize = (currentZoom / 100) + "rem";
+    }
+
+    // 渲染導航 Tab
+    function renderNavTabs() {
+      const container = document.getElementById("navTabs");
+      container.innerHTML = "";
+      questionsData.forEach((q, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "q-tab";
+        btn.id = `navTab_${q.id}`;
+        btn.innerText = q.id;
+        
+        if (!isContinuousView && idx === currentQuestionIndex) {
+          btn.classList.add("current");
+        }
+
+        if (userAnswers[q.id]) {
+          if (userAnswers[q.id].isCorrect) {
+            btn.classList.add("correct");
+          } else {
+            btn.classList.add("incorrect");
+          }
+        }
+
+        btn.onclick = () => {
+          playSound('click');
+          if (isContinuousView) {
+            const card = document.getElementById(`qcard_${q.id}`);
+            if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else {
+            currentQuestionIndex = idx;
+            renderView();
+          }
+        };
+
+        container.appendChild(btn);
+      });
+
+      updateStats();
+    }
+
+    // 更新統計資訊
+    function updateStats() {
+      const answeredKeys = Object.keys(userAnswers);
+      const count = answeredKeys.length;
+      document.getElementById("completedCount").innerText = count;
+      document.getElementById("totalQuestionsCount").innerText = questionsData.length;
+
+      if (count === 0) {
+        document.getElementById("accuracyRate").innerText = "-";
+        document.getElementById("accuracyRate").style.color = "var(--text-muted)";
+      } else {
+        const correctCount = answeredKeys.filter(k => userAnswers[k].isCorrect).length;
+        const rate = Math.round((correctCount / count) * 100);
+        const rateEl = document.getElementById("accuracyRate");
+        rateEl.innerText = rate + "%";
+        rateEl.style.color = rate >= 80 ? "var(--success-color)" : (rate >= 60 ? "#d97706" : "var(--error-color)");
+      }
+    }
+
+    // 產生單一題目 HTML
+    function buildQuestionCardHtml(q, idx) {
+      const userState = userAnswers[q.id];
+      const hasAnswered = !!userState;
+      const isCorrect = hasAnswered && userState.isCorrect;
+
+      const passageHtml = hasAnswered ? q.passageHighlight : q.passage;
+      const revealedClass = hasAnswered ? "revealed" : "";
+
+      let optionsHtml = q.options.map(opt => {
+        let extraClasses = "";
+        let markTag = "";
+        if (hasAnswered) {
+          if (opt.key === q.answer) {
+            if (userState.choice === opt.key) {
+              extraClasses = "selected-correct";
+              markTag = `<span style="margin-left:auto;font-weight:700;color:var(--success-color)">✓ 答對了！</span>`;
+            } else {
+              extraClasses = "reveal-correct";
+              markTag = `<span style="margin-left:auto;font-weight:700;color:var(--success-color)">✓ 正確答案</span>`;
+            }
+          } else if (userState.choice === opt.key) {
+            extraClasses = "selected-incorrect";
+            markTag = `<span style="margin-left:auto;font-weight:700;color:var(--error-color)">✗ 你的選擇</span>`;
+          }
+        }
+
+        return `
+          <button class="option-btn ${extraClasses}" 
+                  id="optBtn_${q.id}_${opt.key}" 
+                  onclick="selectAnswer(${q.id}, '${opt.key}')" 
+                  ${hasAnswered ? 'disabled' : ''}>
+            <span class="option-label">(${opt.key})</span>
+            <span class="option-content">${opt.text}</span>
+            ${markTag}
+          </button>
+        `;
+      }).join("");
+
+      let bannerHtml = "";
+      if (hasAnswered) {
+        if (isCorrect) {
+          bannerHtml = `
+            <div class="result-banner correct">
+              <span>🎉 <strong>恭喜答對！</strong> 正確答案為 (${q.answer})，精準掌握了文章的主旨核心。</span>
+              <button class="btn-retry" onclick="retryQuestion(${q.id})">🔄 重新挑戰</button>
+            </div>
+          `;
+        } else {
+          bannerHtml = `
+            <div class="result-banner incorrect">
+              <span>💡 <strong>答錯了！</strong> 你的答案是 (${userState.choice})，正確解答應為 <strong>(${q.answer})</strong>。請詳閱下方解題之眼與螢光筆分析。</span>
+              <button class="btn-retry" onclick="retryQuestion(${q.id})">🔄 重新挑戰</button>
+            </div>
+          `;
+        }
+      }
+
+      let notesHtml = "";
+      if (q.notes) {
+        notesHtml = `
+          <div class="notes-box">
+            <div class="notes-title">📌 重要詞彙注釋</div>
+            <div>${q.notes}</div>
+          </div>
+        `;
+      }
+
+      let transHtml = "";
+      if (q.translation) {
+        transHtml = `
+          <div class="translation-box">
+            <div class="translation-header">📖 題幹文言白話語譯</div>
+            <div>${q.translation}</div>
+          </div>
+        `;
+      }
+
+      let optAnalysisHtml = "";
+      if (q.optionAnalysis) {
+        optAnalysisHtml = `
+          <div class="option-analysis-box">
+            <div style="font-weight:700;color:#334155;margin-bottom:8px">🔍 各選項深入剖析：</div>
+            ${q.optionAnalysis.map(a => `
+              <div class="analysis-item">
+                <span class="analysis-tag ${a.status === 'correct' ? 'is-correct' : 'is-wrong'}">(${a.key}) ${a.status === 'correct' ? '正解' : '誤'}</span>
+                <span>${a.reason}</span>
+              </div>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      let explanationHtml = `
+        <div class="explanation-container ${hasAnswered ? 'show' : ''}" id="expContainer_${q.id}">
+          <div class="explanation-card">
+            <div class="explanation-header">
+              <div class="explanation-title">
+                <span>📚 詳解與核心文意解析</span>
+              </div>
+              <div class="hl-legend">
+                <div class="legend-item"><span class="legend-dot" style="background:#facc15"></span> 黃色：解題關鍵詞</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#f43f5e"></span> 粉紅：轉折詞／特殊標點</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#10b981"></span> 綠色：推論核心／主旨歸納</div>
+              </div>
+            </div>
+            <div class="explanation-body">
+              <div class="clue-box">
+                <div class="clue-label">🎯 【解題之眼・關鍵線索】</div>
+                <div>${q.clue}</div>
+              </div>
+
+              <div class="exp-paragraph">
+                ${q.explanation}
+              </div>
+
+              ${transHtml}
+              ${optAnalysisHtml}
+            </div>
+          </div>
+        </div>
+      `;
+
+      let navButtonsHtml = "";
+      if (!isContinuousView) {
+        const isFirst = idx === 0;
+        const isLast = idx === questionsData.length - 1;
+        navButtonsHtml = `
+          <div class="nav-buttons-container">
+            <button class="nav-btn" onclick="prevQuestion()" ${isFirst ? 'disabled' : ''}>
+              <span>⬅</span> 上一題
+            </button>
+            <div style="font-size:0.92rem;color:var(--text-muted);display:flex;align-items:center;">
+              第 <strong>${q.id}</strong> / ${questionsData.length} 題
+            </div>
+            <button class="nav-btn" onclick="nextQuestion()" ${isLast ? 'disabled' : ''}>
+              下一題 <span>➡</span>
+            </button>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="question-card" id="qcard_${q.id}">
+          <div class="question-header">
+            <div class="q-num-badge">
+              <span>第 ${q.id} 題</span>
+              <span class="category-tag">${q.category}</span>
+            </div>
+            <div style="font-size:0.88rem;color:var(--text-muted)">意涵篇・文意好試多</div>
+          </div>
+
+          <div class="passage-box ${revealedClass}" id="passage_${q.id}">
+            ${passageHtml}
+            ${q.author ? `<span class="passage-author">—— ${q.author}</span>` : ''}
+          </div>
+
+          <div class="stem-text">${q.stem}</div>
+
+          ${notesHtml}
+
+          <div class="options-grid">
+            ${optionsHtml}
+          </div>
+
+          ${bannerHtml}
+          ${explanationHtml}
+          ${navButtonsHtml}
+        </div>
+      `;
+    }
+
+    function renderView() {
+      const container = document.getElementById("questionsContainer");
+      if (isContinuousView) {
+        container.innerHTML = questionsData.map((q, idx) => buildQuestionCardHtml(q, idx)).join("");
+      } else {
+        const currentQ = questionsData[currentQuestionIndex];
+        container.innerHTML = buildQuestionCardHtml(currentQ, currentQuestionIndex);
+      }
+      renderNavTabs();
+    }
+
+    function selectAnswer(qid, choiceKey) {
+      const q = questionsData.find(item => item.id === qid);
+      if (!q) return;
+
+      const isCorrect = (choiceKey === q.answer);
+      userAnswers[qid] = {
+        choice: choiceKey,
+        isCorrect: isCorrect
+      };
+
+      playSound(isCorrect ? 'correct' : 'incorrect');
+      renderView();
+
+      setTimeout(() => {
+        const expEl = document.getElementById(`expContainer_${qid}`);
+        if (expEl) {
+          expEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }, 100);
+    }
+
+    function retryQuestion(qid) {
+      playSound('click');
+      delete userAnswers[qid];
+      renderView();
+    }
+
+    function resetAllProgress() {
+      if (confirm("確定要清除所有作答紀錄並重新開始嗎？")) {
+        playSound('click');
+        userAnswers = {};
+        currentQuestionIndex = 0;
+        renderView();
+      }
+    }
+
+    function prevQuestion() {
+      if (currentQuestionIndex > 0) {
+        playSound('click');
+        currentQuestionIndex--;
+        renderView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIndex < questionsData.length - 1) {
+        playSound('click');
+        currentQuestionIndex++;
+        renderView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderView();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文意新8課 ｜ 第3課 意涵篇（應用文類）解說教材</title>
+  <style>
+    :root {
+      --primary-color: #4c1d95;
+      --primary-hover: #5b21b6;
+      --primary-light: #f5f3ff;
+      --accent-color: #b91c1c;
+      --success-color: #059669;
+      --success-light: #ecfdf5;
+      --error-color: #dc2626;
+      --error-light: #fef2f2;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --bg-page: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --quote-bg: #fdfbf7;
+      --quote-border: #d97706;
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Serif TC", serif, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 頂部全域導航選單 */
+    .top-navbar {
+      background: #0f172a;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      padding: 8px 20px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .top-navbar-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .top-units-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .unit-link {
+      color: #cbd5e1;
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 6px;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+
+    .unit-link:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+
+    .unit-link.active {
+      background: var(--primary-color);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .home-link {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.1);
+      transition: all 0.2s;
+    }
+    .home-link:hover {
+      background: rgba(56, 189, 248, 0.2);
+      color: #7dd3fc;
+    }
+
+    /* 標頭 Header */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .badge-chapter {
+      background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .title-text {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.5px;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .control-btn {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      padding: 6px 12px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .control-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .control-btn.active {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    /* 進度條與題號切換欄 */
+    .progress-bar-wrapper {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .progress-bar-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .q-tab {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #475569;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .q-tab:hover {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      background: var(--primary-light);
+    }
+
+    .q-tab.current {
+      border-color: var(--primary-color);
+      background: var(--primary-color);
+      color: white;
+      box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
+    }
+
+    .q-tab.correct {
+      border-color: var(--success-color);
+      background: var(--success-light);
+      color: var(--success-color);
+    }
+
+    .q-tab.correct.current {
+      background: var(--success-color);
+      color: white;
+    }
+
+    .q-tab.incorrect {
+      border-color: var(--error-color);
+      background: var(--error-light);
+      color: var(--error-color);
+    }
+
+    .q-tab.incorrect.current {
+      background: var(--error-color);
+      color: white;
+    }
+
+    .stats-badge {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: #f8fafc;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+    }
+
+    /* 主內容容器 */
+    main {
+      max-width: 900px;
+      width: 100%;
+      margin: 24px auto;
+      padding: 0 16px;
+      flex: 1;
+    }
+
+    .question-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      padding: 28px 32px;
+      margin-bottom: 30px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .question-card:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .q-num-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-color);
+    }
+
+    .category-tag {
+      background: var(--primary-light);
+      color: var(--primary-color);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    /* 文本引文區塊 */
+    .passage-box {
+      background: var(--quote-bg);
+      border-left: 5px solid var(--quote-border);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 20px 24px;
+      margin-bottom: 22px;
+      font-size: 1.15rem;
+      line-height: 2.1;
+      letter-spacing: 0.4px;
+      color: #1e293b;
+      position: relative;
+    }
+
+    .passage-author {
+      display: block;
+      margin-top: 10px;
+      text-align: right;
+      font-size: 0.95rem;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    /* 題目題幹問句 */
+    .stem-text {
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #0f172a;
+      line-height: 1.7;
+    }
+
+    /* 注釋框 */
+    .notes-box {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #475569;
+    }
+
+    .notes-title {
+      font-weight: 700;
+      color: #0369a1;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 選項列表 */
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      text-align: left;
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--primary-color);
+      background: #f8fafc;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .option-label {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #475569;
+      min-width: 32px;
+    }
+
+    .option-btn.selected-correct {
+      background: var(--success-light) !important;
+      border-color: var(--success-color) !important;
+      color: #065f46 !important;
+      font-weight: 700;
+    }
+
+    .option-btn.selected-correct .option-label {
+      color: var(--success-color);
+    }
+
+    .option-btn.selected-incorrect {
+      background: var(--error-light) !important;
+      border-color: var(--error-color) !important;
+      color: #991b1b !important;
+      font-weight: 700;
+    }
+
+    .option-btn.selected-incorrect .option-label {
+      color: var(--error-color);
+    }
+
+    .option-btn.reveal-correct {
+      border-color: var(--success-color) !important;
+      background: #f0fdf4 !important;
+      color: #166534 !important;
+      border-style: dashed !important;
+    }
+
+    /* 答題回饋橫幅 */
+    .result-banner {
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .result-banner.correct {
+      background: #ecfdf5;
+      border: 1px solid #6ee7b7;
+      color: #065f46;
+    }
+
+    .result-banner.incorrect {
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      color: #991b1b;
+    }
+
+    .btn-retry {
+      background: white;
+      border: 1px solid #cbd5e1;
+      padding: 6px 14px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-retry:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+
+    /* 詳解摺疊卡片 */
+    .explanation-container {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.4s ease-in-out;
+    }
+
+    .explanation-container.show {
+      max-height: 2500px;
+      opacity: 1;
+      transition: max-height 0.8s ease-in-out, opacity 0.4s ease-in-out;
+    }
+
+    .explanation-card {
+      background: #ffffff;
+      border: 1px solid #fed7aa;
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 15px rgba(251, 146, 60, 0.08);
+      padding: 24px;
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .explanation-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #fef3c7;
+    }
+
+    .explanation-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #9a3412;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hl-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.84rem;
+      background: #fdfbf7;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid #fed7aa;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #78350f;
+      font-weight: 600;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    /* 解題之眼線索框 */
+    .clue-box {
+      background: #fefce8;
+      border-left: 4px solid #facc15;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #854d0e;
+    }
+
+    .clue-label {
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+      color: #a16207;
+    }
+
+    /* 詳解段落 */
+    .exp-paragraph {
+      font-size: 1.1rem;
+      line-height: 2.0;
+      color: #334155;
+      margin-bottom: 18px;
+    }
+
+    /* 螢光筆高亮樣式 */
+    mark.hl-yellow {
+      background: linear-gradient(104deg, rgba(254, 240, 138, 0.2) 0.9%, rgba(254, 240, 138, 0.95) 2.4%, rgba(254, 240, 138, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #1c1917;
+      box-shadow: inset 0 -4px 0 rgba(234, 179, 8, 0.6);
+    }
+
+    mark.hl-pink {
+      background: linear-gradient(104deg, rgba(254, 205, 211, 0.2) 0.9%, rgba(254, 205, 211, 0.95) 2.4%, rgba(254, 205, 211, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #881337;
+      box-shadow: inset 0 -4px 0 rgba(244, 63, 94, 0.45);
+    }
+
+    mark.hl-green {
+      background: linear-gradient(104deg, rgba(187, 247, 208, 0.2) 0.9%, rgba(187, 247, 208, 0.95) 2.4%, rgba(187, 247, 208, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #064e3b;
+      box-shadow: inset 0 -4px 0 rgba(16, 185, 129, 0.45);
+    }
+
+    mark.hl-blue {
+      background: linear-gradient(104deg, rgba(186, 230, 253, 0.2) 0.9%, rgba(186, 230, 253, 0.95) 2.4%, rgba(186, 230, 253, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #075985;
+      box-shadow: inset 0 -4px 0 rgba(14, 165, 233, 0.45);
+    }
+
+    .passage-box.revealed mark.hl-yellow {
+      animation: pulseHighlight 1.5s infinite alternate;
+    }
+
+    @keyframes pulseHighlight {
+      0% { box-shadow: inset 0 -4px 0 rgba(234, 179, 8, 0.6); }
+      100% { box-shadow: inset 0 -10px 0 rgba(234, 179, 8, 0.8); }
+    }
+
+    /* 語譯與注釋卡片 */
+    .translation-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-top: 16px;
+      font-size: 1.02rem;
+      line-height: 1.9;
+    }
+
+    .translation-header {
+      font-weight: 700;
+      color: #0284c7;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 選項逐項剖析 */
+    .option-analysis-box {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px dashed #cbd5e1;
+    }
+
+    .analysis-item {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .analysis-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .analysis-tag.is-correct {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .analysis-tag.is-wrong {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    /* 導航切換列 */
+    .nav-buttons-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .nav-btn {
+      padding: 10px 22px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: white;
+      color: #334155;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    /* 浮動字級工具列 */
+    .floating-font-bar {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 30px;
+      padding: 6px 14px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      z-index: 90;
+    }
+
+    .font-btn {
+      background: #f1f5f9;
+      border: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    .font-btn:hover {
+      background: #e2e8f0;
+    }
+
+    /* 動畫 */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .question-card {
+        padding: 20px 16px;
+      }
+      .passage-box {
+        font-size: 1.05rem;
+        padding: 16px 18px;
+      }
+      .option-btn {
+        padding: 12px 14px;
+        font-size: 1rem;
+      }
+      .hl-legend {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部全域切換列 -->
+  <nav class="top-navbar">
+    <div class="top-navbar-container">
+      <div class="top-units-list">
+        <span style="color:#64748b;font-weight:600;margin-right:4px">單元導覽：</span>
+        <a href="11_implication_narrative.html" class="unit-link">📖 記敘文類 (10題)</a><a href="12_implication_lyric.html" class="unit-link">🌸 抒情文類 (10題)</a><a href="13_implication_argumentative.html" class="unit-link">⚖️ 議論文類 (10題)</a><a href="14_implication_expository.html" class="unit-link">🔬 說明文類 (10題)</a><a href="15_implication_practical.html" class="unit-link active">✉️ 應用文類 (10題)</a>
+      </div>
+      <div>
+        <a href="index.html" class="home-link">🏠 回總覽首頁</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 標頭 Header -->
+  <header>
+    <div class="header-container">
+      <div class="brand-title">
+        <a href="index.html" class="control-btn" style="text-decoration: none; margin-right: 6px; background: #e0e7ff; color: #1e3a8a; border-color: #c7d2fe;" title="返回教材入口總目錄">
+          <span>🏠</span> 總目錄
+        </a>
+        <span class="badge-chapter">第 3 課 意涵篇</span>
+        <span class="title-text">✉️ 應用文類・互動解說教材</span>
+      </div>
+      <div class="header-controls">
+        <a href="15_implication_practical_handout.pdf" target="_blank" class="control-btn" style="text-decoration:none; background:#fffbeb; color:#b45309; border-color:#fcd34d; font-weight:700;" title="開啟本單元精編詳解講義 PDF（三色螢光筆・解題之眼・語譯全收錄）">
+          <span>📖</span> 詳解講義模式 (PDF)
+        </a>
+        <button class="control-btn" id="soundToggleBtn" onclick="toggleSound()">
+          <span id="soundIcon">🔔</span> 音效已開啟
+        </button>
+        <button class="control-btn" id="viewModeBtn" onclick="toggleViewMode()">
+          <span>📖</span> <span id="viewModeText">切換為連續模式</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 題號跳轉與統計列 -->
+  <div class="progress-bar-wrapper">
+    <div class="progress-bar-container">
+      <div class="nav-tabs" id="navTabs">
+        <!-- 由 JavaScript 動態生成題號按鈕 -->
+      </div>
+      <div class="stats-badge">
+        <span>完成度：<strong id="completedCount" style="color:var(--primary-color)">0</strong> / <span id="totalQuestionsCount">10</span> 題</span>
+        <span>正確率：<strong id="accuracyRate" style="color:var(--success-color)">-</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 主要答題容器 -->
+  <main id="questionsContainer">
+    <!-- 由 JavaScript 渲染試題內容 -->
+  </main>
+
+  <!-- 浮動輔助功能列（縮放字級、重置） -->
+  <div class="floating-font-bar">
+    <span>字級：</span>
+    <button class="font-btn" onclick="adjustFontSize(-1)" title="縮小字體">A-</button>
+    <span id="fontSizeDisplay">100%</span>
+    <button class="font-btn" onclick="adjustFontSize(1)" title="放大字體">A+</button>
+    <span style="color:#cbd5e1;margin:0 4px">|</span>
+    <button class="control-btn" style="padding:2px 8px;font-size:0.8rem;" onclick="resetAllProgress()">全部重練</button>
+  </div>
+
+  <script>
+    // 試題資料庫：應用文類 10 題
+    const questionsData = [
+  {
+    "id": 1,
+    "category": "應用文類",
+    "passage": "【悔過書】\n本人野原新之助不慎弄壞風間徹先生的AKB48寫真書，承蒙風間先生大量，大人不計小人過，本人特別寫下一張悔過書，表達我一百萬分的歉意，且負責購買一本新的賠償，絕不食言。\n此致 風間先生\n立悔過書人：野原新之助\n中華民國109年7月8日",
+    "passageHighlight": "【悔過書】\n本人野原新之助不慎弄壞風間徹先生的AKB48寫真書，<mark class='hl-yellow'>承蒙風間先生大量，大人不計小人過</mark>，本人特別寫下一張悔過書，表達我一百萬分的歉意，且負責購買一本新的賠償，絕不食言。\n此致 風間先生\n立悔過書人：野原新之助\n中華民國109年7月8日",
+    "author": "實用應用文（悔過書）",
+    "stem": "我們從上述悔過書中，無法得知下列何項訊息？",
+    "notes": "①悔過書：自承過失、懇求原諒之正式書面申明。②大人不計小人過：社交與致歉時自謙自抑並懇請對方寬宥的客套套語。③此致：專門用於書信、公文或便條結尾之敬辭，意為「本件內容呈致給……」。",
+    "options": [
+      {
+        "key": "A",
+        "text": "新之助不小心弄壞了風間的寫真書"
+      },
+      {
+        "key": "B",
+        "text": "新之助犯錯後，對風間充滿了歉意"
+      },
+      {
+        "key": "C",
+        "text": "風間個性寬容，不喜歡與他人計較"
+      },
+      {
+        "key": "D",
+        "text": "新之助願意購買一本新書作為賠償"
+      }
+    ],
+    "answer": "C",
+    "clue": "「大人不計小人過」乃肇事者自我懇求寬恕之套語，無法以此推論受害人平日性情必不計較。",
+    "explanation": "文中所稱<mark class='hl-yellow'>「承蒙風間先生大量，大人不計小人過」</mark>，純粹是野原新之助在惹出禍端後，自我放低身段懇求對方不要深究的客套致歉套語，或是針對此單一事件風間暫時隱忍不發，<mark class='hl-green'>根本無從由此武斷推論出風間徹「平日為人性格必定寬宏大量、從不與任何人計較」</mark>。本題要求選出「無法得知」者，故選<mark class='hl-green'>(C)</mark>。(A)由首句「不慎弄壞」可知；(B)由「表達我一百萬分的歉意」可知；(D)由「負責購買一本新的賠償，絕不食言」可知。",
+    "translation": "【野原新之助的鄭重悔過聲明】\n本人野原新之助日前因疏忽不慎，損壞了風間徹先生所珍藏的AKB48偶像寫真畫冊。承蒙風間先生寬宏大量包容，不與小人一般見識計較，本人特此親筆立下這份正式悔過書，向風間先生致上百分之百最深切誠懇的歉意；同時承諾必定負責購買一本全新完好的寫真集作為如數賠償，言出必行，絕不食言違諾。\n專此呈致 風間徹先生\n立悔過書具結人：野原新之助\n中華民國109年7月8日",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "文中開宗明義「不慎弄壞風間徹先生的AKB48寫真書」，明確提及事故起因。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "內文「表達我一百萬分的歉意」明確表達誠摯道歉之意。"
+      },
+      {
+        "key": "C",
+        "status": "correct",
+        "reason": "題目問何者「無法得知」。「大人不計小人過」為致歉套辭，不足以作為論證受害人天生個性寬宏豁達之客觀證據。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "文中承諾「負責購買一本新的賠償，絕不食言」，責任承擔明確清晰。"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "應用文類",
+    "passage": "艾美看見一家店門口，擺滿了祝賀的花籃，其中一張賀卡題辭如左：\n「相逢視萍水，小住勝親人」",
+    "passageHighlight": "艾美看見一家店門口，擺滿了祝賀的花籃，其中一張賀卡題辭如左：\n「<mark class='hl-yellow'>相逢視萍水</mark>，<mark class='hl-green'>小住勝親人</mark>」",
+    "author": "實用題辭應用文",
+    "stem": "請問這家店應為下列何者？",
+    "notes": "①萍水：水上浮萍隨波相逢，比喻素不相識、偶然聚首的過客。②小住：短暫客宿停留。③勝親人：服務溫馨周到，勝似親人照顧。④題辭用途：專用於旅館、飯店、賓館之開業誌慶。",
+    "options": [
+      {
+        "key": "A",
+        "text": "克莉絲汀花藝店"
+      },
+      {
+        "key": "B",
+        "text": "大放光明眼鏡行"
+      },
+      {
+        "key": "C",
+        "text": "50蘭手搖飲料店"
+      },
+      {
+        "key": "D",
+        "text": "王子愛旅行飯店"
+      }
+    ],
+    "answer": "D",
+    "clue": "「萍水相逢、小住勝親」，專門招待四方旅人安頓休憩，正是旅館飯店落成開幕的典雅題辭。",
+    "explanation": "分析題辭對聯的關鍵詞：前半句<mark class='hl-yellow'>「相逢視萍水」</mark>點出往來造訪此處的顧客多為萍水相逢、來自四面八方的異鄉旅人；後半句<mark class='hl-green'>「小住勝親人」</mark>中「小住」明確點出顧客在此停留「住宿宿歇」，並以熱情周到的體貼服務讓投宿旅客有賓至如歸、親切勝似家人的溫馨感。綜合詞意，此聯專用於旅館、飯店之開業祝賀，故應為<mark class='hl-green'>(D) 王子愛旅行飯店</mark>。(A)花店常用「萬花競艷」；(B)眼鏡行常用「重光之星」；(C)飲料店常用「甘露生津」。",
+    "translation": "【開業誌慶花籃賀聯】\n上聯：四方遠客在此萍水相逢，皆是難能可貴的行旅機緣；\n下聯：旅人在此短暫投宿小憩，體會到勝似至親家人般的溫暖照料。\n——專門敬賀飯店旅舍隆重開幕。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "花藝店專門販售鮮花盆景，題辭多用「春風化雨」、「繁花似錦」，與「小住」住宿毫無關聯。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "眼鏡行主營驗光配鏡，題辭多用「大放光明」、「明察秋毫」。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "手搖飲料店提供即飲茶飲，題辭多用「生津止渴」、「茶香四溢」。"
+      },
+      {
+        "key": "D",
+        "status": "correct",
+        "reason": "「小住」二字直接指向旅客投宿留宿功能，「勝親人」彰顯頂級賓至如歸之款待，精準契合飯店業。"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "category": "應用文類",
+    "passage": "簽於教務處\n主旨：擬請婚假並請賜准指派人員代理職務。請核示。\n說明：\n一、職訂於109年11月12日（星期四）與王語嫣小姐結婚。\n二、請准假十個工作天，時間自11月12日至11月□日止；\n三、所負責之職務，請遴派人員代理。\n四、檢附結婚喜帖乙份。\n敬陳 校長\n職 段譽 謹陳\n109年8月17日",
+    "passageHighlight": "說明：\n一、職訂於109年11月12日（<mark class='hl-pink'>星期四</mark>）與王語嫣小姐結婚。\n二、請准假<mark class='hl-yellow'>十個工作天</mark>，時間自11月12日至11月<mark class='hl-green'>□</mark>日止；",
+    "author": "公文簽呈應用文",
+    "stem": "請問上文的缺空處，應填入下列何者？",
+    "notes": "①公文簽呈：機關內部承辦人員向上級長官簽請裁示之正式公文。②工作天：扣除例假日與國定假日（如週六、週日）後之實際上班日。③假期推算：週四11/12（第1天）、週五11/13（第2天）、週一11/16~週五11/20（第3~7天）、週一11/23~週三11/25（第8~10天）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "21"
+      },
+      {
+        "key": "B",
+        "text": "22"
+      },
+      {
+        "key": "C",
+        "text": "23"
+      },
+      {
+        "key": "D",
+        "text": "25"
+      }
+    ],
+    "answer": "D",
+    "clue": "婚假10個「工作天」遇週休二日自動順延4天，自週四11/12起算至第10工作天恰為11/25。",
+    "explanation": "依公務勞動法規計算婚假「工作天」日數：\n1. 起算日為109年11月12日（星期四），請假額度為<mark class='hl-yellow'>「十個工作天」</mark>，週六日之例假日依法不計入；\n2. 第1週工作天：11/12(四)、11/13(五)，累計2天；（11/14六、11/15日例休不計）\n3. 第2週工作天：11/16(一)至11/20(五)，累計5天，總計達到7天；（11/21六、11/22日例休不計）\n4. 第3週工作天：尚需補足3天，分別為11/23(一)、11/24(二)、<mark class='hl-green'>11/25(三)</mark>，當日剛好為第10個工作天。\n因此假期的截止日應填入<mark class='hl-green'>(D) 25</mark>日，故選<mark class='hl-green'>(D)</mark>。",
+    "translation": "【段譽申請婚假的公文簽呈】\n主旨：屬下擬依法申請法定婚假，並請校長核准指派合適同仁代理日常職務。請核示。\n說明：\n一、屬下業已擇定於民國109年11月12日（星期四）與王語嫣小姐隆重舉行結婚典禮。\n二、依人事規定請准婚假十個連續工作日，請假期間自11月12日起算，扣除兩次週末週休四日後，順延至11月25日截止。\n三、婚假期間個人承辦之教務職責，懇請長官指派代理人代為處理。\n四、隨函檢附結婚喜帖正本乙份以茲證明。\n謹呈 校長\n教務處承辦人 段譽 敬呈\n中華民國109年8月17日",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "若算至11月21日僅相當於連續日曆天（歷經10日），完全未扣除週末非工作日。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "若算至11月22日逢星期日，非行政機關正常上班工作日。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "至11月23日（星期一）僅累計完成8個工作天，尚未達10個工作天之額度。"
+      },
+      {
+        "key": "D",
+        "status": "correct",
+        "reason": "自11/12(四)扣除11/14-15及11/21-22兩週休共4日，第10個工作日精準落在11月25日(三)。"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "category": "應用文類",
+    "passage": "【109年10月2日 校園瘋捐血活動海報】\n活動時間：中午12點～下午4點\n活動地點：演藝廳前方捐血車\n注意事項：\n前一週：至健康中心領取家長同意書、線上填寫電子捐血登記表。\n當天：飽食後，徵得任課老師同意，攜帶同意書及身分證。\n捐血後：稍事休息，返班上課，由健康中心統一請假及敘獎。\n參加資格：民國92年10月1日（含）以前出生者；男生50公斤以上，女生45公斤以上。",
+    "passageHighlight": "注意事項：\n……\n捐血後：稍事休息，返班上課，<mark class='hl-green'>由健康中心統一請假及敘獎</mark>。\n參加資格：<mark class='hl-yellow'>民國92年10月1日（含）以前出生者</mark>；<mark class='hl-yellow'>男生50公斤以上，女生45公斤以上</mark>。",
+    "author": "實用校園文告海報",
+    "stem": "關於上述海報的說明，下列何者正確？",
+    "notes": "①敘獎：學校依學生嘉行頒給嘉獎或記功獎勵。②年齡計算：活動日109年10月2日減去92年10月1日，滿17足歲即可參加，未強制滿18歲。③同意書：未成年學生依規定須由監護人家長親筆簽署同意書。",
+    "options": [
+      {
+        "key": "A",
+        "text": "捐血者最低年齡須年滿十八歲"
+      },
+      {
+        "key": "B",
+        "text": "捐血者有身高體重上面的限制"
+      },
+      {
+        "key": "C",
+        "text": "捐血者親自填寫家長同意書"
+      },
+      {
+        "key": "D",
+        "text": "捐血者將獲得健康中心的敘獎"
+      }
+    ],
+    "answer": "D",
+    "clue": "海報明訂「由健康中心統一請假及敘獎」，捐血助人學生可獲記功嘉獎之敘獎回饋。",
+    "explanation": "海報「注意事項」之「捐血後」明確註明：<mark class='hl-green'>「由健康中心統一請假及敘獎」</mark>，證實完成捐血熱心助人之學生將會獲得校方記功敘獎，故選<mark class='hl-green'>(D)</mark>。(A)參加資格明載「民國92年10月1日前出生」，以活動日109年10月推算，年滿17歲即可，非十八歲；(B)海報僅規定男女體重門檻，並未設立身高限制；(C)家長同意書必須由家長親自填寫簽章，學生不得越俎代庖自己填寫。",
+    "translation": "【學校熱血校園捐血公益海報】\n活動日期：民國109年10月2日（週五）中午12:00～下午16:00\n服務地點：學校演藝廳正門前臨時停泊之大型捐血車\n重要宣導事項：\n1. 活動前一週：請學生主動前往健康中心領取監護人家長同意書，並依限上線填妥電子登記名冊。\n2. 捐血當天：務必正常進食充足飽餐，經當節任課教師核准後，隨身攜帶家長簽署之同意書及身分證件赴會。\n3. 捐血完成後：稍作止血休息，隨即返回原班上課，免自行奔波，將由健康中心統整造冊辦理公假並依校規專案辦理嘉獎敘獎。\n資格標準：凡民國92年10月1日前出生滿17歲之在校生，且男生體重達50公斤以上、女生體重達45公斤以上者，皆歡迎踴躍挽袖響應。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "以109年10月扣除92年10月，實際年滿17歲即可符合捐血門檻，非須年滿18歲。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "海報條款僅針對體重（男50kg、女45kg）設限，完全未設定身高高矮限制。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "「家長同意書」法律上必須由監護人家長查閱同意後親簽，非由學生本人逕行自填代簽。"
+      },
+      {
+        "key": "D",
+        "status": "correct",
+        "reason": "海報明定「由健康中心統一請假及敘獎」，學生熱心參與捐血確定享有校方記功敘獎獎勵。"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "category": "應用文類",
+    "passage": "小護士曼秀第一次到醫院醫療大樓實習，在廊道看到這副對聯：\n「打一針便可手足麻木，吹口氣立刻人事不醒」",
+    "passageHighlight": "小護士曼秀第一次到醫院醫療大樓實習，在廊道看到這副對聯：\n「<mark class='hl-yellow'>打一針便可手足麻木</mark>，<mark class='hl-green'>吹口氣立刻人事不醒</mark>」",
+    "author": "實用行業對聯應用文",
+    "stem": "請問她走到了何處？",
+    "notes": "①手足麻木：局部神經阻斷麻醉之生理效應。②吹口氣：透過面罩吸入麻醉氣體之吸入性全身麻醉。③人事不醒：意識完全沉睡喪失知覺，免除手術劇痛。",
+    "options": [
+      {
+        "key": "A",
+        "text": "麻醉科"
+      },
+      {
+        "key": "B",
+        "text": "戒菸門診"
+      },
+      {
+        "key": "C",
+        "text": "放射腫瘤科"
+      },
+      {
+        "key": "D",
+        "text": "流感疫苗施打門診"
+      }
+    ],
+    "answer": "A",
+    "clue": "針刺局部浸潤麻醉使手足無覺，吸入氣體全身麻醉令意識入眠，精妙道出麻醉科專屬職能。",
+    "explanation": "對聯上聯<mark class='hl-yellow'>「打一針便可手足麻木」</mark>描寫手術前施打局部注射麻醉劑，使特定肢體部位神經阻滯喪失痛覺；下聯<mark class='hl-green'>「吹口氣立刻人事不醒」</mark>描繪全身麻醉時讓病人吸入麻醉氣體，迅速誘導其進入安睡昏迷狀態以利重大外科手術開展。兩句對聯無比精準且詼諧地概括了「局部麻醉」與「吸入性全身麻醉」的兩大醫學手段，此科室必然為<mark class='hl-green'>(A) 麻醉科</mark>。(B)戒菸門診旨在戒除菸癮；(C)腫瘤科負責放射線放療；(D)流感門診僅施打防疫疫苗，不會致手足麻木或昏睡。",
+    "translation": "【醫院特定診室趣味嵌名對聯】\n上聯：針管輕輕注入藥劑，片刻間肢體手足便感知麻痺無覺；\n下聯：面罩吹入一襲氣體，瞬息間意識沉睡便安然不省人事。\n——橫額題贊：仁術安神（麻醉科專屬題聯）。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "correct",
+        "reason": "「打一針手足麻木」精描局部注射麻醉，「吹口氣人事不醒」生動刻畫氣體吸入全身麻醉，純屬麻醉科標籤。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "戒菸門診提供尼古丁替代藥物與諮商衛教，絕無致人手足麻木或昏厥不醒之療程。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "放射腫瘤科利用直線加速器射線殺死癌細胞，非以針劑與吸入氣體麻痺知覺。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "流感疫苗預防注射僅使人體產生免疫抗體，若導致人事不省或四肢麻木純屬危急不良反應，非診治宗旨。"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "category": "應用文類",
+    "passage": "【訃告】\n我○○○於中華民國一○九年三月四日走完今生最後一步。火化後葬於文山區富德公墓樹葬區。\n遺囑：不驚動家人朋友，如輕煙遁世。知我者，昔日旅行的朋友，若你們想念我，請來此敘舊。\n從此夜晚星星月亮相伴，清晨隨鳥起舞；興之所至，乘清風駕白雲，遨遊寰宇。",
+    "passageHighlight": "【訃告】\n……遺囑：<mark class='hl-yellow'>不驚動家人朋友，如輕煙遁世</mark>。知我者，昔日旅行的朋友，若你們想念我，請來此敘舊。\n從此夜晚星星月亮相伴，清晨隨鳥起舞；<mark class='hl-green'>興之所至，乘清風駕白雲，遨遊寰宇</mark>。",
+    "author": "生前預立個人訃告應用文",
+    "stem": "從左列訃告中判斷，往生者最可能具有下列何項人格特質？",
+    "notes": "①樹葬：環保自然葬法，將骨灰植於樹木根部回歸自然，不立碑、不造墳。②不驚動：體貼顧念，不願給至親好友增添治喪負擔與哀傷奔波。③如輕煙遁世：曠達超脫，將生死視為回歸天地的自然化境。",
+    "options": [
+      {
+        "key": "A",
+        "text": "平易近人，熱情善良"
+      },
+      {
+        "key": "B",
+        "text": "心胸豁達，體恤他人"
+      },
+      {
+        "key": "C",
+        "text": "謹言慎行，莊重典雅"
+      },
+      {
+        "key": "D",
+        "text": "心直口快，任性自負"
+      }
+    ],
+    "answer": "B",
+    "clue": "樹葬安眠不驚擾親朋，將死亡寄寓清風明月之逍遙，充分展現體貼顧念與豁達曠達的襟懷。",
+    "explanation": "從文本遺囑要求<mark class='hl-yellow'>「不驚動家人朋友，如輕煙遁世」</mark>，可以看出往生者至死不願因喪事繁文縟節叨擾勞累親友，具備無私體恤關照他人的溫柔慈悲；而文末描繪死後世界是「夜晚星星月亮相伴，清晨隨鳥起舞；<mark class='hl-green'>興之所至，乘清風駕白雲，遨遊寰宇</mark>」，超越了傳統死亡的陰暗哀戚與恐懼執念，將肉身歸寂昇華為與日月清風長相往還的精神逍遙，淋漓展現其坦然無懼的超拔曠達，故其特質最符合<mark class='hl-green'>(B)「心胸豁達，體恤他人」</mark>。",
+    "translation": "【瀟灑告別塵世的個人親撰訃白】\n我本人已於中華民國一○九年三月四日平靜從容地走完了漫長今生的最後一段旅程。身後遺體經火化後，將安息歸葬於臺北市文山區富德公墓的綠茵樹葬園區。\n我的遺願：後事一切從簡，萬勿大肆鋪張通告驚擾各方家人與知己朋友，且讓我如同一縷渺渺輕煙般安靜從容地遁隱於塵世之外。真正懂我的故友與舊日一同浪跡天涯的旅伴們，倘若你們在往後的歲月裡偶然想念起我，便請漫步來這片蒼翠樹林探我敘敘舊吧。\n自此而後，浩瀚的夜空有皎潔星月長相依傍，破曉的清晨有清脆啼鳥伴我起舞；若是興致所至，我便將乘著陣陣清風、駕著片片白雲，任情肆志地遨遊於整片無垠廣袤的宇宙寰宇之間。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "「如輕煙遁世、不驚動人」偏向超凡孤高清淡，並非主打大眾化之「熱情社交」。"
+      },
+      {
+        "key": "B",
+        "status": "correct",
+        "reason": "體恤親朋「不願多加驚擾」，寄託星月「乘風駕雲遨遊」，生動體現兼具溫柔體貼與曠達超逸的高貴人格。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "文風浪漫空靈、跳脫封建禮教傳統，絕非墨守成規拘謹言行的儒家莊重。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "處處以溫情善解親友，文字優美通達，與任性傲慢或口無遮攔自負之氣質完全無涉。"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "category": "應用文類",
+    "passage": "【辭呈】\n宋喬安副總：\n我帶著非常複雜的心情寫這封辭職信。在電視台工作的這段時間，您對我能力的認可和無比的信任，為我提供了無數的機遇和挑戰。\n雖然在電視台的工作壓力很大，導致我經常犯錯，您一再給我機會，有時我們少不了言語上的衝突，您也一再包容，讓我感激不盡。但由於本身對教書工作一直很嚮往，如今有機會我想去試試，故決定辭去副控室主控的工作。\n感謝在共同工作的時間裡，您給予我許多的支持和鼓勵。\n李大芝 敬上",
+    "passageHighlight": "【辭呈】\n……但<mark class='hl-yellow'>由於本身對教書工作一直很嚮往，如今有機會我想去試試</mark>，<mark class='hl-green'>故決定辭去副控室主控的工作</mark>。\n感謝在共同工作的時間裡，您給予我許多的支持和鼓勵。\n李大芝 敬上",
+    "author": "職場實用辭呈應用文",
+    "stem": "請問在上列辭呈中，李大芝辭職的主因為何？",
+    "notes": "①主控室：電視台播出播映核心管制中心。②轉折句：辭呈中客套感謝與自責壓力為鋪墊，轉折詞「但由於……」後方為真實離職動機。",
+    "options": [
+      {
+        "key": "A",
+        "text": "自己能力無法勝任此項工作"
+      },
+      {
+        "key": "B",
+        "text": "與上級主管的互動關係不佳"
+      },
+      {
+        "key": "C",
+        "text": "龐大的工作量讓人不堪負荷"
+      },
+      {
+        "key": "D",
+        "text": "想要去嘗試更有興趣的工作"
+      }
+    ],
+    "answer": "D",
+    "clue": "辭呈坦言「對教書工作一直很嚮往，如今有機會我想去試試」，轉職初衷全出於個人職涯興趣所趨。",
+    "explanation": "辭呈前半段雖陳述工作壓力大、偶有言語摩擦等職場過程，但那皆是感念主管包容之背景敘述；全文離職之真正核心轉折在於：<mark class='hl-yellow'>「但由於本身對教書工作一直很嚮往，如今有機會我想去試試」</mark>，此語清晰表明李大芝離開電視台並非因為被迫或挫折，而是出於個人長期的教育志向，<mark class='hl-green'>渴望追求個人更有熱忱、更感興趣的教師工作</mark>，故選<mark class='hl-green'>(D)</mark>。(A)(C)壓力與犯錯是鋪陳主管之包容，非離職主因；(B)文中對宋副總充滿感激推崇，主管互動極具知遇之恩，非關係不佳。",
+    "translation": "【李大芝致宋喬安副總監之辭職信函】\n尊敬的宋副總經理：\n我懷抱著極為感念而百感交集的心情，執筆寫下這封辭呈。在品味新聞台共同奮戰的日子裡，承蒙您對我專業能力的一貫肯定與莫大信賴，更為我敞開了無數得以歷練茁壯的寶貴舞台與艱鉅挑戰。\n雖然電視台副控室步調緊繃、壓力龐大，期間我也曾因生疏而屢次犯下疏失，但您總是寬容地一再賦予我改過自新的契機；儘管彼此在新聞理念上難免曾有過針鋒相對的言詞摩擦，您亦始終以無比的雅量給予海涵，令我銘感五內。然而，由於我內心深處對投入教職春風化雨始終懷抱著無比熱忱的嚮往，如今恰逢難得的機緣，我由衷希望能勇敢跨步前往一試，因而深思熟慮後決定辭去副控室主控之現職。深謝並感念這段共同奮鬥的歲月裡，您賦予屬下的所有提攜、支撐與溫暖砥礪。\n屬下 李大芝 謹呈",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "雖然坦承犯錯，但主管持續給予機會肯定其潛力，未構成因能力無法勝任而主動請辭之主因。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "文中滿懷感恩提及主管一再包容保護，關係深厚互信，並非職場人際衝突問題。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "工作壓力大僅為電視台行業客觀生態鋪陳，並非促使其遞出辭呈的決定性原由。"
+      },
+      {
+        "key": "D",
+        "status": "correct",
+        "reason": "「對教書工作一直很嚮往，如今有機會我想去試試」明確錨定其離職動機是為實現教育理想興趣。"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "category": "應用文類",
+    "passage": "【感謝函】\n小馬哥您好：\n我是創意文化協會的李大同，昨天我在美術館聽您精彩的演講，頓時我發現，原來我以前花那麼多精力與時間在開發新的銷售管道，其實若是採用正確的方法及正確的工具就可以事半功倍，我可以節省下許多時間，去做更多的事情。感謝您願意分享您的經驗，這場演講讓我受益良多。\n李大同 謹上",
+    "passageHighlight": "【感謝函】\n……頓時我發現，原來我以前花那麼多精力與時間在開發新的銷售管道，<mark class='hl-yellow'>其實若是採用正確的方法及正確的工具就可以事半功倍</mark>，<mark class='hl-green'>我可以節省下許多時間，去做更多的事情</mark>。……",
+    "author": "社交書信應用文（感謝函）",
+    "stem": "請從上列感謝函判斷，文中所提及的演講主題應該為何？",
+    "notes": "①事半功倍：費力較少而收效極大。②銷售管道：商品通往消費者之物流或商業渠道。③主題推論：由聽講者所獲得之核心啟發與關鍵頓悟反推講者之演講主旨。",
+    "options": [
+      {
+        "key": "A",
+        "text": "創意是無奇不有"
+      },
+      {
+        "key": "B",
+        "text": "方法比努力更重要"
+      },
+      {
+        "key": "C",
+        "text": "分享比獨享更快樂"
+      },
+      {
+        "key": "D",
+        "text": "時間管理的黃金法則"
+      }
+    ],
+    "answer": "B",
+    "clue": "盲目投入心力遠不如找對路徑，「正確方法與工具可事半功倍」，演講核心即在論證方法重於盲幹。",
+    "explanation": "李大同聽講後最震撼的頓悟在於：反思自己過去雖耗費巨大精力與時間埋頭苦幹，成效卻差強人意；聽講後赫然省悟<mark class='hl-yellow'>「採用正確的方法及正確的工具就可以事半功倍」</mark>，從而省下大把時間。由此可知，小馬哥這場演講的靈魂核心，正是藉由實戰經驗論證：單憑蠻力拚搏遠遠不夠，懂得運用智慧、找尋正確途徑與工具才是制勝關鍵，即<mark class='hl-green'>(B)「方法比努力更重要」</mark>。(A)「創意無奇不有」未抓住「方法與工具」之關鍵；(C)分享心得為禮貌客套；(D)節省時間僅是得法之後的自然成果，非核心主題。",
+    "translation": "【致講師小馬哥的研習感謝信箋】\n尊敬的小馬哥先生道席：\n您好！我是任職於中華創意文化交流發展協會的李大同。昨日下午有幸在市立美術館聆聽了您深入淺出、鞭闢入裡的專題演說，頓時令我醍醐灌頂豁然開朗。我這才如夢初醒地意識到：過往自己在開拓市場新零售通路時，一味盲目砸入浩繁的心血精力與漫長工時，實則往往淪為事倍功半之徒勞；殊不知只要掌握了真正契合之『正確方法』並善用前沿高效之『恰當工具』，便能輕而易舉達成事半功倍的卓越績效，更能為自己省下大量充裕的時間餘裕，去開展更多具備戰略價值的宏圖大計。萬分感戴您傾囊相授寶貴實務智慧，此番演講著實令我受益無窮、勝讀十年書。\n學員 李大同 謹啟",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "信中重在探討開拓通路的「方法與工具運用」，未探討創意天馬行空奇思妙想。"
+      },
+      {
+        "key": "B",
+        "status": "correct",
+        "reason": "「正確的方法及工具可事半功倍」對比「過去耗費精力時間之蠻幹」，強烈印證演講主軸即在闡發方法凌駕於盲目努力。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "「感謝您願意分享經驗」為書信末尾禮貌應酬辭，並非演說所欲傳遞之核心商務哲理。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "省下時間是掌握正確方法後的伴隨效應，通篇論述立足點在於「方法途徑」的抉擇與工具突破。"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "category": "應用文類",
+    "passage": "【廣告對白】\n甲：「像你這麼高，男友也長得很高吧？」\n乙：「他身高168公分，風趣10公分，自信再加10公分，我看他不只180公分。」",
+    "passageHighlight": "【廣告對白】\n甲：「像你這麼高，男友也長得很高吧？」\n乙：「<mark class='hl-yellow'>他身高168公分，風趣10公分，自信再加10公分</mark>，<mark class='hl-green'>我看他不只180公分</mark>。」",
+    "author": "大眾傳播廣告應用文",
+    "stem": "請問從上則廣告中，我們從女生的回答，可以領略到何項道理？",
+    "notes": "①風趣10公分、自信10公分：巧妙將精神上的幽默風趣與從容自信，轉化為物理量度之身高長度。②象徵寓意：人格修養與內在魅力能完全彌補並超越外貌先天的短板。",
+    "options": [
+      {
+        "key": "A",
+        "text": "內在的優點，可彌補外表的不足"
+      },
+      {
+        "key": "B",
+        "text": "外表太出色，常讓人忽略其內在"
+      },
+      {
+        "key": "C",
+        "text": "同樣沒內在，不如外表好點的"
+      },
+      {
+        "key": "D",
+        "text": "內在很重要，但是外表才是根本"
+      }
+    ],
+    "answer": "A",
+    "clue": "以幽默與自信之精神尺規增添身量，生動說明人格魅力與涵養足以超越先天形貌之缺憾。",
+    "explanation": "廣告對白中，面對外人對男友生理身高（168公分）的傳統世俗偏見，女友以充滿哲理與深情的妙語回應：將男友談吐的幽默「風趣」加算10公分、成熟的「自信」再加算10公分，使得在自己心中男友的氣宇巍然超過180公分。此一巧喻生動說明：<mark class='hl-green'>人的內在談吐魅力、精神內涵與人格自信等卓越優點，足以深層彌補乃至超越生理外表條件的缺憾與限制</mark>，故選<mark class='hl-green'>(A)</mark>。(B)在談外表太出色之弊，與題意無涉；(C)(D)過度推崇外表皮囊，完全扭曲否定了女友肯定內在修養之讚詞。",
+    "translation": "【電視文創廣告幽默機智對白】\n高挑女伴甲（好奇發問）：「像你身材這般亭亭玉立高挑出眾，交的男朋友個頭也一定生得相當偉岸高大吧？」\n智慧女友乙（莞爾巧答）：「他現實量測的生理淨身高是168公分，不過若是加上他待人處世的風趣幽默算10公分，再疊加上他由內而外散發的昂揚自信算10公分，在我眼裡看來，他整個人展現出來的氣場高度，早就遠遠超過180公分啦！」",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "correct",
+        "reason": "將幽默風趣與自信量化為身高度數，完美宣示深厚的內在人格魅力能徹底彌補並昇華外在形貌的不足。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "文段在讚揚外表雖不甚高拔但內在無比充實，非談論外貌太俊美掩蓋內在才能之煩惱。"
+      },
+      {
+        "key": "C",
+        "status": "wrong",
+        "reason": "赤裸裸宣揚膚淺外貌至上論，與廣告彰顯心靈光彩之初衷背道而馳。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "錯誤宣稱「外表才是根本」，徹底顛覆女主角以精神高度重新定義男子身量之立意。"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "category": "應用文類",
+    "passage": "【臺北市政府衛生局答覆議員質詢資料】\n質詢摘要：敬請貴局說明市民如廁後的衛生紙應該要丟入馬桶還是垃圾桶，何種方式才是正確的衛生習慣？\n答覆內容：有關市民如廁後的衛生紙要丟入馬桶還是垃圾桶，需考量相關配套措施，說明如下：\n（一）將如廁後的衛生紙丟於馬桶內：現行廁所管理要求不可將衛生紙丟入馬桶內，考量衛生紙質不易溶解及個人衛生習慣不良，將非衛生紙類垃圾一併丟入馬桶內，容易造成堵塞，影響廁所功能發揮。\n（二）將如廁後的衛生紙丟於馬桶旁垃圾桶：廁所有可能成為疾病傳染場地，排泄物中有很多細菌，廁所內垃圾如未適當、適時妥善處理，隨意丟棄，有可能影響環境衛生。因此，衛生紙是否丟入馬桶或垃圾桶，需視配套措施完善與否，且均需加強生活教育，培養個人衛生、提升個人如廁習慣，才能維護廁所的環境衛生。",
+    "passageHighlight": "答覆內容：\n……因此，<mark class='hl-yellow'>衛生紙是否丟入馬桶或垃圾桶，需視配套措施完善與否</mark>，且均需加強生活教育，培養個人衛生、提升個人如廁習慣，才能維護廁所的環境衛生。",
+    "author": "公務機關答覆議會質詢公文書",
+    "stem": "請問針對議員質詢，有關衛生紙的正確處理方式，衛生局於上文中做出何種結論？",
+    "notes": "①議員質詢：地方民意代表監督行政首長與局處業務之正式問政程序。②答覆公文：公務機關秉持政策評估、依法陳述現行利弊與配套措施之官方正式文書。③結論研析：分析公文是否做出一刀切的單一強制性決策，或保留彈性視環境配套動態調整。",
+    "options": [
+      {
+        "key": "A",
+        "text": "如廁後的衛生紙應丟於馬桶內"
+      },
+      {
+        "key": "B",
+        "text": "如廁後的衛生紙應丟於垃圾桶"
+      },
+      {
+        "key": "C",
+        "text": "文中未言明如廁後的衛生紙該如何處理"
+      },
+      {
+        "key": "D",
+        "text": "文中表示如廁後的衛生紙丟於何處皆可"
+      }
+    ],
+    "answer": "C",
+    "clue": "衛生局羅列兩方案之利弊配套，強調視配套完善而定，通篇審慎評估而未作絕對性之定論。",
+    "explanation": "詳讀衛生局答覆內容：文中在（一）點出丟馬桶可能因紙質不溶或混入異物而造成管線堵塞，在（二）點出丟垃圾桶若未及時清理則容易滋生病菌污染環境；最後在總結處謹慎重申：<mark class='hl-yellow'>「衛生紙是否丟入馬桶或垃圾桶，需視配套措施完善與否」</mark>。由此可知，行政主管機關客觀分析了兩者之利弊得失，強調政策實施必須依賴軟硬體配套成熟度與國民衛生素養，<mark class='hl-green'>通篇文字並未做出究竟必須丟馬桶或丟垃圾桶的單一排他性強制裁決，亦即「文中未明確言明如廁後的衛生紙該如何處理」</mark>，故選<mark class='hl-green'>(C)</mark>。(A)(B)皆屬片面截取單一方案而忽略局方但書；(D)「丟何處皆可」乃隨意敷衍之曲解，與官方嚴謹要求端視配套之立論相違。",
+    "translation": "【臺北市政府衛生局答覆議會質詢公務報告】\n議員質詢要旨：敬請貴局從流行病學與公共環境衛生專業立場，明確釐清廣大首都市民在如廁完畢之後，所使用之衛生紙究竟應全面推廣直接投擲沖入馬桶、抑或投入馬桶旁之集污垃圾桶？何者方屬合宜標準之現代衛生生活規範？\n主管局處答覆報告：關於市民如廁排遺後衛生紙之妥善去向處置，因涉及建築排水工程與公共衛生等多重維度，必須周全盤點整體市政配套體系，茲剖析報告如后：\n一、若採行『衛生紙直接投入馬桶沖解方案』：就現行公廁管理維護實務而言，過往多明令禁止丟入，主因在於市售部分紙質難以遇水自溶，加之少數民眾公德心欠佳，動輒將濕紙巾、衛生棉等難溶異物一併混雜丟入馬桶，極易釀成下水排污管道嚴重堵塞逆流，進而癱瘓公共廁所之正常排污機能。\n二、若採行『衛生紙丟置馬桶旁垃圾桶方案』：封閉之洗手間極易淪為各類病原微生物孳生散播之高風險熱點，排泄廢棄物中夾帶大量致病菌群，若桶內垃圾未能落實密閉封蓋或定時清運消毒，極易外溢散發惡臭、滋生蚊蠅，進而嚴重危害公眾呼吸與接觸衛生。\n綜上所述，衛生紙最終應全面導向投入馬桶抑或留置垃圾桶，實需審慎視各場域排污管線口徑、水壓、紙品水溶標示以及清潔清運頻率等整體配套措施是否達標完備而定；且現階段兩者皆亟需透過社會教育深化市民公德素養，從根本提振如廁自律習慣，方能真正確保全方位之廁間環境品質。",
+    "optionAnalysis": [
+      {
+        "key": "A",
+        "status": "wrong",
+        "reason": "文中列舉其恐致管路堵塞之風險，並非衛生局拍板定案之唯一處置結論。"
+      },
+      {
+        "key": "B",
+        "status": "wrong",
+        "reason": "文中同樣警示其隱含病菌散布污染之弊病，並未定論命令一律丟垃圾桶。"
+      },
+      {
+        "key": "C",
+        "status": "correct",
+        "reason": "官方公文兩案並陳、權衡利弊，結論強調「端視配套措施完善與否」，並未做出單一絕對之明確指令，故「未言明」最符公文實相。"
+      },
+      {
+        "key": "D",
+        "status": "wrong",
+        "reason": "局方強調必須結合嚴謹配套與習慣教育，絕非容許市民隨性「丟何處皆可」之放任主義。"
+      }
+    ]
+  }
+];
+
+    let currentQuestionIndex = 0;
+    let userAnswers = {};
+    let isContinuousView = false;
+    let soundEnabled = true;
+    let currentZoom = 100;
+
+    // 音效產生器（利用 Web Audio API 合成，免載入外部 mp3）
+    const audioCtx = (window.AudioContext || window.webkitAudioContext) ? new (window.AudioContext || window.webkitAudioContext)() : null;
+
+    function playSound(type) {
+      if (!soundEnabled || !audioCtx) return;
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      if (type === 'correct') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(587.33, now); // D5
+        osc.frequency.setValueAtTime(880, now + 0.1); // A5
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+        osc.start(now);
+        osc.stop(now + 0.5);
+      } else if (type === 'incorrect') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(329.63, now); // E4
+        osc.frequency.setValueAtTime(261.63, now + 0.15); // C4
+        gain.gain.setValueAtTime(0.25, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+        osc.start(now);
+        osc.stop(now + 0.45);
+      } else if (type === 'click') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(440, now);
+        gain.gain.setValueAtTime(0.08, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+        osc.start(now);
+        osc.stop(now + 0.08);
+      }
+    }
+
+    function toggleSound() {
+      soundEnabled = !soundEnabled;
+      const btn = document.getElementById("soundToggleBtn");
+      if (soundEnabled) {
+        btn.classList.add("active");
+        btn.innerHTML = `<span id="soundIcon">🔔</span> 音效已開啟`;
+      } else {
+        btn.classList.remove("active");
+        btn.innerHTML = `<span id="soundIcon">🔕</span> 音效已靜音`;
+      }
+    }
+
+    // 切換檢視模式（單題專注 vs 連續清單）
+    function toggleViewMode() {
+      isContinuousView = !isContinuousView;
+      const btn = document.getElementById("viewModeBtn");
+      const text = document.getElementById("viewModeText");
+      if (isContinuousView) {
+        btn.classList.add("active");
+        text.innerText = "切換為專注模式";
+      } else {
+        btn.classList.remove("active");
+        text.innerText = "切換為連續模式";
+      }
+      renderView();
+    }
+
+    // 縮放字級
+    function adjustFontSize(delta) {
+      currentZoom += delta * 10;
+      if (currentZoom < 80) currentZoom = 80;
+      if (currentZoom > 140) currentZoom = 140;
+      document.getElementById("fontSizeDisplay").innerText = currentZoom + "%";
+      document.getElementById("questionsContainer").style.fontSize = (currentZoom / 100) + "rem";
+    }
+
+    // 渲染導航 Tab
+    function renderNavTabs() {
+      const container = document.getElementById("navTabs");
+      container.innerHTML = "";
+      questionsData.forEach((q, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "q-tab";
+        btn.id = `navTab_${q.id}`;
+        btn.innerText = q.id;
+        
+        if (!isContinuousView && idx === currentQuestionIndex) {
+          btn.classList.add("current");
+        }
+
+        if (userAnswers[q.id]) {
+          if (userAnswers[q.id].isCorrect) {
+            btn.classList.add("correct");
+          } else {
+            btn.classList.add("incorrect");
+          }
+        }
+
+        btn.onclick = () => {
+          playSound('click');
+          if (isContinuousView) {
+            const card = document.getElementById(`qcard_${q.id}`);
+            if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else {
+            currentQuestionIndex = idx;
+            renderView();
+          }
+        };
+
+        container.appendChild(btn);
+      });
+
+      updateStats();
+    }
+
+    // 更新統計資訊
+    function updateStats() {
+      const answeredKeys = Object.keys(userAnswers);
+      const count = answeredKeys.length;
+      document.getElementById("completedCount").innerText = count;
+      document.getElementById("totalQuestionsCount").innerText = questionsData.length;
+
+      if (count === 0) {
+        document.getElementById("accuracyRate").innerText = "-";
+        document.getElementById("accuracyRate").style.color = "var(--text-muted)";
+      } else {
+        const correctCount = answeredKeys.filter(k => userAnswers[k].isCorrect).length;
+        const rate = Math.round((correctCount / count) * 100);
+        const rateEl = document.getElementById("accuracyRate");
+        rateEl.innerText = rate + "%";
+        rateEl.style.color = rate >= 80 ? "var(--success-color)" : (rate >= 60 ? "#d97706" : "var(--error-color)");
+      }
+    }
+
+    // 產生單一題目 HTML
+    function buildQuestionCardHtml(q, idx) {
+      const userState = userAnswers[q.id];
+      const hasAnswered = !!userState;
+      const isCorrect = hasAnswered && userState.isCorrect;
+
+      const passageHtml = hasAnswered ? q.passageHighlight : q.passage;
+      const revealedClass = hasAnswered ? "revealed" : "";
+
+      let optionsHtml = q.options.map(opt => {
+        let extraClasses = "";
+        let markTag = "";
+        if (hasAnswered) {
+          if (opt.key === q.answer) {
+            if (userState.choice === opt.key) {
+              extraClasses = "selected-correct";
+              markTag = `<span style="margin-left:auto;font-weight:700;color:var(--success-color)">✓ 答對了！</span>`;
+            } else {
+              extraClasses = "reveal-correct";
+              markTag = `<span style="margin-left:auto;font-weight:700;color:var(--success-color)">✓ 正確答案</span>`;
+            }
+          } else if (userState.choice === opt.key) {
+            extraClasses = "selected-incorrect";
+            markTag = `<span style="margin-left:auto;font-weight:700;color:var(--error-color)">✗ 你的選擇</span>`;
+          }
+        }
+
+        return `
+          <button class="option-btn ${extraClasses}" 
+                  id="optBtn_${q.id}_${opt.key}" 
+                  onclick="selectAnswer(${q.id}, '${opt.key}')" 
+                  ${hasAnswered ? 'disabled' : ''}>
+            <span class="option-label">(${opt.key})</span>
+            <span class="option-content">${opt.text}</span>
+            ${markTag}
+          </button>
+        `;
+      }).join("");
+
+      let bannerHtml = "";
+      if (hasAnswered) {
+        if (isCorrect) {
+          bannerHtml = `
+            <div class="result-banner correct">
+              <span>🎉 <strong>恭喜答對！</strong> 正確答案為 (${q.answer})，精準掌握了文章的主旨核心。</span>
+              <button class="btn-retry" onclick="retryQuestion(${q.id})">🔄 重新挑戰</button>
+            </div>
+          `;
+        } else {
+          bannerHtml = `
+            <div class="result-banner incorrect">
+              <span>💡 <strong>答錯了！</strong> 你的答案是 (${userState.choice})，正確解答應為 <strong>(${q.answer})</strong>。請詳閱下方解題之眼與螢光筆分析。</span>
+              <button class="btn-retry" onclick="retryQuestion(${q.id})">🔄 重新挑戰</button>
+            </div>
+          `;
+        }
+      }
+
+      let notesHtml = "";
+      if (q.notes) {
+        notesHtml = `
+          <div class="notes-box">
+            <div class="notes-title">📌 重要詞彙注釋</div>
+            <div>${q.notes}</div>
+          </div>
+        `;
+      }
+
+      let transHtml = "";
+      if (q.translation) {
+        transHtml = `
+          <div class="translation-box">
+            <div class="translation-header">📖 題幹文言白話語譯</div>
+            <div>${q.translation}</div>
+          </div>
+        `;
+      }
+
+      let optAnalysisHtml = "";
+      if (q.optionAnalysis) {
+        optAnalysisHtml = `
+          <div class="option-analysis-box">
+            <div style="font-weight:700;color:#334155;margin-bottom:8px">🔍 各選項深入剖析：</div>
+            ${q.optionAnalysis.map(a => `
+              <div class="analysis-item">
+                <span class="analysis-tag ${a.status === 'correct' ? 'is-correct' : 'is-wrong'}">(${a.key}) ${a.status === 'correct' ? '正解' : '誤'}</span>
+                <span>${a.reason}</span>
+              </div>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      let explanationHtml = `
+        <div class="explanation-container ${hasAnswered ? 'show' : ''}" id="expContainer_${q.id}">
+          <div class="explanation-card">
+            <div class="explanation-header">
+              <div class="explanation-title">
+                <span>📚 詳解與核心文意解析</span>
+              </div>
+              <div class="hl-legend">
+                <div class="legend-item"><span class="legend-dot" style="background:#facc15"></span> 黃色：解題關鍵詞</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#f43f5e"></span> 粉紅：轉折詞／特殊標點</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#10b981"></span> 綠色：推論核心／主旨歸納</div>
+              </div>
+            </div>
+            <div class="explanation-body">
+              <div class="clue-box">
+                <div class="clue-label">🎯 【解題之眼・關鍵線索】</div>
+                <div>${q.clue}</div>
+              </div>
+
+              <div class="exp-paragraph">
+                ${q.explanation}
+              </div>
+
+              ${transHtml}
+              ${optAnalysisHtml}
+            </div>
+          </div>
+        </div>
+      `;
+
+      let navButtonsHtml = "";
+      if (!isContinuousView) {
+        const isFirst = idx === 0;
+        const isLast = idx === questionsData.length - 1;
+        navButtonsHtml = `
+          <div class="nav-buttons-container">
+            <button class="nav-btn" onclick="prevQuestion()" ${isFirst ? 'disabled' : ''}>
+              <span>⬅</span> 上一題
+            </button>
+            <div style="font-size:0.92rem;color:var(--text-muted);display:flex;align-items:center;">
+              第 <strong>${q.id}</strong> / ${questionsData.length} 題
+            </div>
+            <button class="nav-btn" onclick="nextQuestion()" ${isLast ? 'disabled' : ''}>
+              下一題 <span>➡</span>
+            </button>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="question-card" id="qcard_${q.id}">
+          <div class="question-header">
+            <div class="q-num-badge">
+              <span>第 ${q.id} 題</span>
+              <span class="category-tag">${q.category}</span>
+            </div>
+            <div style="font-size:0.88rem;color:var(--text-muted)">意涵篇・文意好試多</div>
+          </div>
+
+          <div class="passage-box ${revealedClass}" id="passage_${q.id}">
+            ${passageHtml}
+            ${q.author ? `<span class="passage-author">—— ${q.author}</span>` : ''}
+          </div>
+
+          <div class="stem-text">${q.stem}</div>
+
+          ${notesHtml}
+
+          <div class="options-grid">
+            ${optionsHtml}
+          </div>
+
+          ${bannerHtml}
+          ${explanationHtml}
+          ${navButtonsHtml}
+        </div>
+      `;
+    }
+
+    function renderView() {
+      const container = document.getElementById("questionsContainer");
+      if (isContinuousView) {
+        container.innerHTML = questionsData.map((q, idx) => buildQuestionCardHtml(q, idx)).join("");
+      } else {
+        const currentQ = questionsData[currentQuestionIndex];
+        container.innerHTML = buildQuestionCardHtml(currentQ, currentQuestionIndex);
+      }
+      renderNavTabs();
+    }
+
+    function selectAnswer(qid, choiceKey) {
+      const q = questionsData.find(item => item.id === qid);
+      if (!q) return;
+
+      const isCorrect = (choiceKey === q.answer);
+      userAnswers[qid] = {
+        choice: choiceKey,
+        isCorrect: isCorrect
+      };
+
+      playSound(isCorrect ? 'correct' : 'incorrect');
+      renderView();
+
+      setTimeout(() => {
+        const expEl = document.getElementById(`expContainer_${qid}`);
+        if (expEl) {
+          expEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }, 100);
+    }
+
+    function retryQuestion(qid) {
+      playSound('click');
+      delete userAnswers[qid];
+      renderView();
+    }
+
+    function resetAllProgress() {
+      if (confirm("確定要清除所有作答紀錄並重新開始嗎？")) {
+        playSound('click');
+        userAnswers = {};
+        currentQuestionIndex = 0;
+        renderView();
+      }
+    }
+
+    function prevQuestion() {
+      if (currentQuestionIndex > 0) {
+        playSound('click');
+        currentQuestionIndex--;
+        renderView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIndex < questionsData.length - 1) {
+        playSound('click');
+        currentQuestionIndex++;
+        renderView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderView();
+    });
+  </script>
+</body>
+</html>

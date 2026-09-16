@@ -26,6 +26,14 @@
 4. [🔬 說明文類 (10題)](09_viewpoint_expository.html) ｜ [A4 詳解講義 (PDF)](09_viewpoint_expository_handout.pdf)
 5. [✉️ 應用文類 (10題)](10_viewpoint_practical.html) ｜ [A4 詳解講義 (PDF)](10_viewpoint_practical_handout.pdf)
 
+### 第 3 課 意涵篇（原來文句這麼說）
+- 📚 [全套精編詳解講義 (合訂本 52 頁 PDF)](03_implication_complete_handout.pdf)
+1. [📖 記敘文類 (10題)](11_implication_narrative.html) ｜ [A4 詳解講義 (PDF)](11_implication_narrative_handout.pdf)
+2. [🌸 抒情文類 (10題)](12_implication_lyric.html) ｜ [A4 詳解講義 (PDF)](12_implication_lyric_handout.pdf)
+3. [⚖️ 議論文類 (10題)](13_implication_argumentative.html) ｜ [A4 詳解講義 (PDF)](13_implication_argumentative_handout.pdf)
+4. [🔬 說明文類 (10題)](14_implication_expository.html) ｜ [A4 詳解講義 (PDF)](14_implication_expository_handout.pdf)
+5. [✉️ 應用文類 (10題)](15_implication_practical.html) ｜ [A4 詳解講義 (PDF)](15_implication_practical_handout.pdf)
+
 ---
 
 ## 💡 特色亮點
