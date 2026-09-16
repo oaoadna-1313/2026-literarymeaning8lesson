@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文意新8課 ｜ 第7課 寫作手法篇（說明文類）解說教材</title>
+  <style>
+    :root {
+      --primary-color: #7c2d12;
+      --primary-hover: #9a3412;
+      --primary-light: #fff7ed;
+      --accent-color: #b91c1c;
+      --success-color: #059669;
+      --success-light: #ecfdf5;
+      --error-color: #dc2626;
+      --error-light: #fef2f2;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --bg-page: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --quote-bg: #fdfbf7;
+      --quote-border: #d97706;
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Serif TC", serif, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 頂部全域導航選單 */
+    .top-navbar {
+      background: #0f172a;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      padding: 8px 20px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .top-navbar-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .top-units-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .unit-link {
+      color: #cbd5e1;
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 6px;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+
+    .unit-link:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+
+    .unit-link.active {
+      background: var(--primary-color);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .home-link {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.1);
+      transition: all 0.2s;
+    }
+    .home-link:hover {
+      background: rgba(56, 189, 248, 0.2);
+      color: #7dd3fc;
+    }
+
+    /* 標頭 Header */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .badge-chapter {
+      background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .title-text {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.5px;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .control-btn {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      padding: 6px 12px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .control-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .control-btn.active {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    /* 進度條與題號切換欄 */
+    .progress-bar-wrapper {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .progress-bar-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .q-tab {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #475569;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .q-tab:hover {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      background: var(--primary-light);
+    }
+
+    .q-tab.current {
+      border-color: var(--primary-color);
+      background: var(--primary-color);
+      color: white;
+      box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
+    }
+
+    .q-tab.correct {
+      border-color: var(--success-color);
+      background: var(--success-light);
+      color: var(--success-color);
+    }
+
+    .q-tab.correct.current {
+      background: var(--success-color);
+      color: white;
+    }
+
+    .q-tab.incorrect {
+      border-color: var(--error-color);
+      background: var(--error-light);
+      color: var(--error-color);
+    }
+
+    .q-tab.incorrect.current {
+      background: var(--error-color);
+      color: white;
+    }
+
+    .stats-badge {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: #f8fafc;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+    }
+
+    /* 主內容容器 */
+    main {
+      max-width: 900px;
+      width: 100%;
+      margin: 24px auto;
+      padding: 0 16px;
+      flex: 1;
+    }
+
+    .question-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      padding: 28px 32px;
+      margin-bottom: 30px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .question-card:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .q-num-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-color);
+    }
+
+    .category-tag {
+      background: var(--primary-light);
+      color: var(--primary-color);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    /* 文本引文區塊 */
+    .passage-box {
+      background: var(--quote-bg);
+      border-left: 5px solid var(--quote-border);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 20px 24px;
+      margin-bottom: 22px;
+      font-size: 1.15rem;
+      line-height: 2.1;
+      letter-spacing: 0.4px;
+      color: #1e293b;
+      position: relative;
+    }
+
+    .passage-author {
+      display: block;
+      margin-top: 10px;
+      text-align: right;
+      font-size: 0.95rem;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    /* 題目題幹問句 */
+    .stem-text {
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #0f172a;
+      line-height: 1.7;
+    }
+
+    /* 注釋框 */
+    .notes-box {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #475569;
+    }
+
+    .notes-title {
+      font-weight: 700;
+      color: #0369a1;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 選項列表 */
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      text-align: left;
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--primary-color);
+      background: #f8fafc;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .option-label {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #475569;
+      min-width: 32px;
+    }
+
+    .option-btn.selected-correct {
+      background: var(--success-light) !important;
+      border-color: var(--success-color) !important;
+      color: #065f46 !important;
+      font-weight: 700;
+    }
+
+    .option-btn.selected-correct .option-label {
+      color: var(--success-color);
+    }
+
+    .option-btn.selected-incorrect {
+      background: var(--error-light) !important;
+      border-color: var(--error-color) !important;
+      color: #991b1b !important;
+      font-weight: 700;
+    }
+
+    .option-btn.selected-incorrect .option-label {
+      color: var(--error-color);
+    }
+
+    .option-btn.reveal-correct {
+      border-color: var(--success-color) !important;
+      background: #f0fdf4 !important;
+      color: #166534 !important;
+      border-style: dashed !important;
+    }
+
+    /* 答題回饋橫幅 */
+    .result-banner {
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .result-banner.correct {
+      background: #ecfdf5;
+      border: 1px solid #6ee7b7;
+      color: #065f46;
+    }
+
+    .result-banner.incorrect {
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      color: #991b1b;
+    }
+
+    .btn-retry {
+      background: white;
+      border: 1px solid #cbd5e1;
+      padding: 6px 14px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-retry:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+
+    /* 詳解摺疊卡片 */
+    .explanation-container {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.4s ease-in-out;
+    }
+
+    .explanation-container.show {
+      max-height: 2500px;
+      opacity: 1;
+      transition: max-height 0.8s ease-in-out, opacity 0.4s ease-in-out;
+    }
+
+    .explanation-card {
+      background: #ffffff;
+      border: 1px solid #fed7aa;
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 15px rgba(251, 146, 60, 0.08);
+      padding: 24px;
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .explanation-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #fef3c7;
+    }
+
+    .explanation-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #9a3412;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hl-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.84rem;
+      background: #fdfbf7;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid #fed7aa;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #78350f;
+      font-weight: 600;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    /* 解題之眼線索框 */
+    .clue-box {
+      background: #fefce8;
+      border-left: 4px solid #facc15;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #854d0e;
+    }
+
+    .clue-label {
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+      color: #a16207;
+    }
+
+    /* 詳解段落 */
+    .exp-paragraph {
+      font-size: 1.1rem;
+      line-height: 2.0;
+      color: #334155;
+      margin-bottom: 18px;
+    }
+
+    /* 螢光筆高亮樣式 */
+    mark.hl-yellow {
+      background: linear-gradient(104deg, rgba(254, 240, 138, 0.2) 0.9%, rgba(254, 240, 138, 0.95) 2.4%, rgba(254, 240, 138, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #1c1917;
+      box-shadow: inset 0 -4px 0 rgba(234, 179, 8, 0.6);
+    }
+
+    mark.hl-pink {
+      background: linear-gradient(104deg, rgba(254, 205, 211, 0.2) 0.9%, rgba(254, 205, 211, 0.95) 2.4%, rgba(254, 205, 211, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #881337;
+      box-shadow: inset 0 -4px 0 rgba(244, 63, 94, 0.45);
+    }
+
+    mark.hl-green {
+      background: linear-gradient(104deg, rgba(187, 247, 208, 0.2) 0.9%, rgba(187, 247, 208, 0.95) 2.4%, rgba(187, 247, 208, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #064e3b;
+      box-shadow: inset 0 -4px 0 rgba(16, 185, 129, 0.45);
+    }
+
+    mark.hl-blue {
+      background: linear-gradient(104deg, rgba(186, 230, 253, 0.2) 0.9%, rgba(186, 230, 253, 0.95) 2.4%, rgba(186, 230, 253, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #075985;
+      box-shadow: inset 0 -4px 0 rgba(14, 165, 233, 0.45);
+    }
+
+    .passage-box.revealed mark.hl-yellow {
+      animation: pulseHighlight 1.5s infinite alternate;
+    }
+
+    @keyframes pulseHighlight {
+      0% { box-shadow: inset 0 -4px 0 rgba(234, 179, 8, 0.6); }
+      100% { box-shadow: inset 0 -10px 0 rgba(234, 179, 8, 0.8); }
+    }
+
+    /* 語譯與注釋卡片 */
+    .translation-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-top: 16px;
+      font-size: 1.02rem;
+      line-height: 1.9;
+    }
+
+    .translation-header {
+      font-weight: 700;
+      color: #0284c7;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 選項逐項剖析 */
+    .option-analysis-box {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px dashed #cbd5e1;
+    }
+
+    .analysis-item {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .analysis-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .analysis-tag.is-correct {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .analysis-tag.is-wrong {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    /* 導航切換列 */
+    .nav-buttons-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .nav-btn {
+      padding: 10px 22px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: white;
+      color: #334155;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    /* 浮動字級工具列 */
+    .floating-font-bar {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 30px;
+      padding: 6px 14px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      z-index: 90;
+    }
+
+    .font-btn {
+      background: #f1f5f9;
+      border: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    .font-btn:hover {
+      background: #e2e8f0;
+    }
+
+    /* 動畫 */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .question-card {
+        padding: 20px 16px;
+      }
+      .passage-box {
+        font-size: 1.05rem;
+        padding: 16px 18px;
+      }
+      .option-btn {
+        padding: 12px 14px;
+        font-size: 1rem;
+      }
+      .hl-legend {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部全域切換列 -->
+  <nav class="top-navbar">
+    <div class="top-navbar-container">
+      <div class="top-units-list">
+        <span style="color:#64748b;font-weight:600;margin-right:4px">單元導覽：</span>
+        <a href="31_technique_narrative.html" class="unit-link">📖 記敘文類 (8題)</a><a href="32_technique_lyric.html" class="unit-link">🌸 抒情文類 (9題)</a><a href="33_technique_argumentative.html" class="unit-link">⚖️ 議論文類 (10題)</a><a href="34_technique_expository.html" class="unit-link active">🔬 說明文類 (8題)</a><a href="35_technique_practical.html" class="unit-link">✉️ 應用文類 (8題)</a>
+      </div>
+      <div>
+        <a href="index.html" class="home-link">🏠 回總覽首頁</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 標頭 Header -->
+  <header>
+    <div class="header-container">
+      <div class="brand-title">
+        <a href="index.html" class="control-btn" style="text-decoration: none; margin-right: 6px; background: #e0e7ff; color: #1e3a8a; border-color: #c7d2fe;" title="返回教材入口總目錄">
+          <span>🏠</span> 總目錄
+        </a>
+        <span class="badge-chapter">第 7 課 寫作手法篇</span>
+        <span class="title-text">🔬 說明文類・互動解說教材</span>
+      </div>
+      <div class="header-controls">
+        <a href="34_technique_expository_handout.pdf" target="_blank" class="control-btn" style="text-decoration:none; background:#fffbeb; color:#b45309; border-color:#fcd34d; font-weight:700;" title="開啟本單元精編詳解講義 PDF（三色螢光筆・解題之眼・語譯全收錄）">
+          <span>📖</span> 詳解講義模式 (PDF)
+        </a>
+        <button class="control-btn" id="soundToggleBtn" onclick="toggleSound()">
+          <span id="soundIcon">🔔</span> 音效已開啟
+        </button>
+        <button class="control-btn" id="viewModeBtn" onclick="toggleViewMode()">
+          <span>📖</span> <span id="viewModeText">切換為連續模式</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 題號跳轉與統計列 -->
+  <div class="progress-bar-wrapper">
+    <div class="progress-bar-container">
+      <div class="nav-tabs" id="navTabs">
+        <!-- 由 JavaScript 動態生成題號按鈕 -->
+      </div>
+      <div class="stats-badge">
+        <span>完成度：<strong id="completedCount" style="color:var(--primary-color)">0</strong> / <span id="totalQuestionsCount">8</span> 題</span>
+        <span>正確率：<strong id="accuracyRate" style="color:var(--success-color)">-</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 主要答題容器 -->
+  <main id="questionsContainer">
+    <!-- 由 JavaScript 渲染試題內容 -->
+  </main>
+
+  <!-- 浮動輔助功能列（縮放字級、重置） -->
+  <div class="floating-font-bar">
+    <span>字級：</span>
+    <button class="font-btn" onclick="adjustFontSize(-1)" title="縮小字體">A-</button>
+    <span id="fontSizeDisplay">100%</span>
+    <button class="font-btn" onclick="adjustFontSize(1)" title="放大字體">A+</button>
+    <span style="color:#cbd5e1;margin:0 4px">|</span>
+    <button class="control-btn" style="padding:2px 8px;font-size:0.8rem;" onclick="resetAllProgress()">全部重練</button>
+  </div>
+
+  <script>
+    // 試題資料庫：說明文類 8 題
+    const questionsData = [
+  {
+    "id": 1,
+    "source": "余光中《娓娓與喋喋》",
+    "year": "會考精選",
+    "passage": "「有人說話如參禪，有人說話如嘶叫，有人說話如行雲流水，有人說話如打嗝。說話，不一定要說什麼，只是無意識的口腔運動而已。說話，有時只是掀脣搖舌，有時是為了表情達意，有時，也是一種藝術。」（余光中《娓娓與喋喋》）",
+    "passageHighlight": "「<mark class=\"hl-yellow\">有人說話如參禪，有人說話如嘶叫，有人說話如行雲流水，有人說話如打嗝。</mark><mark class=\"hl-pink\">說話，有時只是掀脣搖舌，有時是為了表情達意，有時，也是一種藝術。</mark>」",
+    "clue": "解題之眼：作者列舉「如參禪」的少言寡語與「如嘶叫/掀脣搖舌」的多言聒噪相互對照，透過「比較兩種說話方式」達到說明說話藝術之目的。",
+    "stem": "關於這段文字的寫作手法，下列敘述何者正確？",
+    "options": [
+      "(A) 利用明確的定義說明，介紹各種口腔運動",
+      "(B) 透過比較兩種說話方式，達到說明的目的",
+      "(C) 將說話方式比喻為藝術作品，凸顯說話容易變得浮誇",
+      "(D) 作者引用相關文獻，指出說話必須有理有據才能服人"
+    ],
+    "answer": "B",
+    "explanation": "文中以生動譬喻將說話者分成各種類型（如參禪之靜穆深遠 vs 如嘶叫之聒噪喧譁；如行雲流水之流暢 vs 如打嗝之斷續乏味），透過不同說話風格與層次的對照與比較，深入淺出說明說話的本質與境界，故選(B)。(A)本文非醫學或生理學論文，未給口腔運動下科學定義；(C)作者肯定說話能昇華為表情達意的崇高藝術，非批評其浮誇；(D)文章為抒情論說隨筆，並無引用學術文獻或古代典籍。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "「口腔運動」僅為反諷閒談無聊之詼諧語，非嚴謹定義說明。"
+      },
+      {
+        "option": "B",
+        "status": "正確",
+        "desc": "以少言（參禪）與聒噪（嘶叫）等多種言說型態相互映襯比較，深化說明。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "文末指出說話也是一種藝術，旨在推崇說話美感，無貶損浮誇之意。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "全文皆為余光中先生獨特之隨筆感發，並未引證古今文獻。"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "source": "唐·白居易《荔枝圖序》",
+    "year": "會考精選",
+    "passage": "「荔枝生巴峽間，樹形團團如帷蓋。葉如桂，冬青；華如橘，春榮；實如丹，夏熟。朵如葡萄，核如枇杷，殼如紅繒，膜如紫綃，肉瑩白如冰雪，液甘酸如醴酪。」（白居易《荔枝圖序》）",
+    "passageHighlight": "「<mark class=\"hl-yellow\">荔枝生巴峽間，樹形團團如帷蓋。</mark><mark class=\"hl-pink\">葉如桂……華如橘……實如丹</mark>。朵如葡萄，核如枇杷，殼如紅繒，膜如紫綃，<mark class=\"hl-green\">肉瑩白如冰雪，液甘酸如醴酪</mark>。」",
+    "clue": "解題之眼：文章觀察說明順序為——由全體到局部（樹形 → 葉、花、果實 → 朵、核、殼、膜、肉、漿液），由大到小、由外至內層層剖析。(A)稱「由小到大，由細部到全面」恰好相反，故不正確。",
+    "stem": "關於這段荔枝的介紹手法，下列何者不正確？",
+    "options": [
+      "(A) 先總結後分述，層次由小到大，由細部到全面",
+      "(B) 運用大量譬喻修辭，描述荔枝樹與果實的形狀",
+      "(C) 詳細說明荔枝的產地、葉片、果實及果熟季節",
+      "(D) 運用視覺及味覺摹寫，描寫荔枝的外形跟口感"
+    ],
+    "answer": "A",
+    "explanation": "白居易《荔枝圖序》在說明順序上極富條理：首先由整體樹貌著眼（樹形團團如帷蓋），接著局部描寫枝葉（葉如桂）、花朵（華如橘）與果實（實如丹），再步步聚焦微觀剖析果實結構（朵、核、殼、膜、肉、漿液）。其觀察是由宏觀至微觀、由大到小、由整體到局部、由外表到內部。選項(A)稱「層次由小到大，由細部到全面」顛倒了說明次序，故(A)不正確，符合題意選(A)。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤(選此)",
+        "desc": "實際寫作順序是由大樹整體（帷蓋）縮小聚焦至果核、果肉、漿液，由大到小。"
+      },
+      {
+        "option": "B",
+        "status": "正確",
+        "desc": "如帷蓋、如桂、如橘、如丹、如葡萄、如枇杷、如紅繒、如紫綃等比喻連綴。"
+      },
+      {
+        "option": "C",
+        "status": "正確",
+        "desc": "產地（巴峽）、葉（如桂冬青）、果（夏熟）皆有詳盡介紹。"
+      },
+      {
+        "option": "D",
+        "status": "正確",
+        "desc": "「肉瑩白如冰雪」為視覺，「液甘酸如醴酪」為味覺摹寫。"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "source": "說明文說明方法・俄羅斯套娃",
+    "year": "會考精選",
+    "passage": "「俄羅斯套娃通常由幾個木製空心娃娃一個套著一個組成，一般在六個以上。娃娃通常為圓柱形，底部平坦可以直立。最普通的圖案是一個穿著俄羅斯服裝的姑娘，叫做『瑪特廖什卡』，這也成為這種娃娃的通稱。」",
+    "passageHighlight": "「<mark class=\"hl-yellow\">俄羅斯套娃通常由幾個木製空心娃娃一個套著一個組成</mark>，一般在六個以上。娃娃通常為圓柱形，底部平坦可以直立。<mark class=\"hl-pink\">最普通的圖案是一個穿著俄羅斯服裝的姑娘，叫做『瑪特廖什卡』</mark>。」",
+    "clue": "解題之眼：文字以簡明扼要的方式總括介紹俄羅斯套娃之材質、結構、外形與命名由來，屬於標準的「概括說明」。",
+    "stem": "下列何者為此段文字所運用的說明方法？",
+    "options": [
+      "(A) 概括說明：針對事物或事理的內容、特徵，作出簡明且扼要的介紹",
+      "(B) 分類說明：將一組事物、現象，按一定的標準分門別類地加以說明",
+      "(C) 舉例說明：選取事物中最具代表性的實例，用以說明事物的共同性",
+      "(D) 故事說明：通過講故事的形式，對某個事物或事理進行說明的方法"
+    ],
+    "answer": "A",
+    "explanation": "本段文字開宗明義介紹俄羅斯套娃的組成材質（木製空心）、組合結構（大套小，六個以上）、外觀幾何形狀（圓柱形直立）及最典型的服飾圖案與通稱由來。文字不長，卻能提綱挈領、全面涵蓋該工藝品的核心外觀特質，完全符合「概括說明：針對事物或事理的內容、特徵，作出簡明且扼要的介紹」之定義，故選(A)。文中並未將娃娃分類別逐一列出（非分類說明），亦未鋪排情節因果（非故事說明）。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "正確",
+        "desc": "簡明扼要囊括材質、結構、形貌及由來，符合概括說明特徵。"
+      },
+      {
+        "option": "B",
+        "status": "錯誤",
+        "desc": "未依特定準則進行系統性類別劃分。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "瑪特廖什卡是通稱介紹，並非從眾多名家作品中抽樣單一案例舉例。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "文句為純客觀客體介紹，無起承轉合情節故事性。"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "source": "蔣勳《美與美學》",
+    "year": "會考精選",
+    "passage": "「美跟美學不一樣。如果美是一個美麗的女子的身體，美學就是一把殘酷的解剖刀。美學會把這個美麗的、令人陶醉的身體，解剖得血淋淋。經過一番透視解剖，最後你覺得美的東西，可能就變得不美了。美學存在的意義在於經由分析，能對自己的感官有更深一層的了解。它幫助我們用分析的方法，重新理解人與美的關係。因為我們一旦陶醉其中，就沒有能力去分析了。」",
+    "passageHighlight": "「<mark class=\"hl-yellow\">如果美是一個美麗的女子的身體，美學就是一把殘酷的解剖刀。</mark>美學存在的意義在於<mark class=\"hl-pink\">經由分析，能對自己的感官有更深一層的了解</mark>。它幫助我們用分析的方法，<mark class=\"hl-green\">重新理解人與美的關係</mark>。」",
+    "clue": "解題之眼：作者把抽象的「美」比作「美女身體」，把理性的「美學」比作「解剖刀」，以生動鮮明的「譬喻手法」把兩者的本質差異具體化呈現。",
+    "stem": "有關此段文字的寫作手法，下列何者敘述正確？",
+    "options": [
+      "(A) 以美麗女子的身體為例，說明美學不具有存在意義",
+      "(B) 運用譬喻手法，把美與美學的差異簡單且具體說明",
+      "(C) 使用「總 → 分 → 總」結構，首尾呼應美學的重要性",
+      "(D) 以虛擬的故事為題材，強調美與美學皆能使人陶醉"
+    ],
+    "answer": "B",
+    "explanation": "美與美學屬於抽象哲學概念：美是感性的審美客體，美學則是理性的哲學分析學科。作者巧借「美麗女子身體」比喻「美」，借「殘酷解剖刀」比喻「美學」，以極具視覺衝擊力的具象比喻，將兩者一感性一理性、一陶醉一解構的本質差異闡述得生動透徹，故選(B)。(A)後文明確肯定美學「能對自己感官有更深了解、重新理解人與美的關係」，具有深遠價值；(C)並非首尾反覆強調重要性的總分總結構；(D)純為哲學隨筆譬喻，並無虛構故事角色情節。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "文中肯定美學具備理性分析與反思感官之重大價值。"
+      },
+      {
+        "option": "B",
+        "status": "正確",
+        "desc": "化抽象為具體，以「女子身軀 vs 解剖刀」之絕妙譬喻直擊核心差異。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "開端破題立論，中段比喻推演，末段申論分析意義，非嚴格總分總首尾照應。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "內文無寓言或童話故事，且指出陶醉的是美，解構的是美學。"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "source": "清·袁枚《黃生借書說》",
+    "year": "會考精選",
+    "passage": "「書非借不能讀也。子不聞藏書者乎？七略、四庫，天子之書，然天子讀書者有幾？汗牛塞屋，富貴家之書，然富貴人讀書者有幾？其他祖父積、子孫棄者無論焉。非獨書為然，天下物皆然。」（袁枚《黃生借書說》）",
+    "passageHighlight": "「<mark class=\"hl-yellow\">書非借不能讀也。</mark><mark class=\"hl-pink\">子不聞藏書者乎？七略、四庫，天子之書，然天子讀書者有幾？汗牛塞屋，富貴家之書，然富貴人讀書者有幾？</mark><mark class=\"hl-green\">非獨書為然，天下物皆然。</mark>」",
+    "clue": "解題之眼：首句「書非借不能讀也」開門見山破題立論；接著列舉天子、富貴人家擁書自重卻不讀之反例，說明人往往對輕易擁有的不知珍惜，反而借來的書才會珍惜精讀。",
+    "stem": "關於此段文字，下列分析說明，何者正確？",
+    "options": [
+      "(A) 首句破題，說明人更珍惜借來的物品",
+      "(B) 透過多個問句，質疑古典典籍不具閱讀性",
+      "(C) 運用舉例方式，肯定富人藏書的習慣",
+      "(D) 以一問一答形式，說明讀書應先藏書"
+    ],
+    "answer": "A",
+    "explanation": "袁枚在文章第一句以「書非借不能讀也」突兀開篇、開門見山直接破題，指出世人普遍的心理盲點——自己的藏書往往束之高閣，反倒是向他人借來、有歸還期限的書才能激發急迫專注的閱讀動力。後文進一步推論到「天下物皆然」，證明人皆容易怠慢已擁有的事物、倍加珍惜借得之物，故選(A)。(B)反問句是質疑天子與富人「有書不讀」的怠惰心態，非質疑典籍內容；(C)提及富貴人家汗牛塞屋卻無人讀，是在諷刺批評，非肯定讚揚；(D)並非一問一答對話，論點更是強調藏書者常不讀、借書者才勤讀。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "正確",
+        "desc": "首句開宗明義直揭題旨，深刻揭示人珍惜借得物品之心理機制。"
+      },
+      {
+        "option": "B",
+        "status": "錯誤",
+        "desc": "問句旨在詰問藏書者不思閱讀之陋習，非否定四庫七略之學術價值。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "列舉天子與富家藏書乃反面例證，旨在抨擊買書裝潢門面之荒謬。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "文章主張不必等待家中藏書萬卷才讀，重在把握借書機緣切實苦讀。"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "source": "科普說明文・聽覺與知識吸收",
+    "year": "會考精選",
+    "passage": "「我們吸取外界知識一般來說有兩個管道：聽和看，因為聽覺是時間性的，時間流過去，聲波就消失。因此，除非大腦中已有背景知識的架構，可以捕捉這些聲波，使它的意義出現，不然有沒有聽見，好像在聽外國人講外國語一樣，雖然很努力仍然無法重複。一般俗語所說的『鴨子聽雷』指的便是這個現象，因為不了解意義，聽過聲波消失後，無法在大腦留下記憶的痕跡。」",
+    "passageHighlight": "「因為聽覺是時間性的，時間流過去，聲波就消失。<mark class=\"hl-yellow\">除非大腦中已有背景知識的架構，可以捕捉這些聲波，使它的意義出現</mark>……一般俗語所說的<mark class=\"hl-pink\">『鴨子聽雷』</mark>指的便是這個現象。」",
+    "clue": "解題之眼：「大腦捕捉聲波，使它的意義出現」是把無形飄渺的「聲波與意義」想像為可以被「捕捉」的實體獵物/物件，屬於「轉化修辭中的形象化」。",
+    "stem": "有關本段文字的寫作手法，何者正確？",
+    "options": [
+      "(A) 先總論，後分論，分別說明「聽」和「看」兩種吸取知識的管道",
+      "(B) 使用誇飾修辭，以「鴨子聽雷」指出聲音過大對耳朵造成的傷害",
+      "(C) 運用轉化修辭將聲波形象化得以被大腦所捕捉，使文句淺顯生動",
+      "(D) 加入學理及相關研究，將吸收知識的流程具體化且說明清楚"
+    ],
+    "answer": "C",
+    "explanation": "句中將看不見、摸不著的抽象「聲波」與「意義」，描寫成可以由大腦「捕捉」入網的具象物體，將無形化為有形，此種化抽象為具體之手法屬於標準的「轉化（形象化）修辭」，使大腦處理語言聽覺之神經認知過程變得躍然紙上、淺顯易懂，故選(C)。(A)文章開端提了聽和看，但全文重點完全集中在「聽」的分析，並未分論「看」；(B)「鴨子聽雷」是俗語譬喻，形容茫然不解其意，非指聲音太大震傷耳膜；(D)文中純以生活現象與俗語舉例解說，並未羅列實驗數據或具體學術論文引證。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "後文通篇深入剖析聽覺機制，並未對等分論「看」之管道。"
+      },
+      {
+        "option": "B",
+        "status": "錯誤",
+        "desc": "「鴨子聽雷」比喻聽不懂他人所言，非誇大音量傷害耳道。"
+      },
+      {
+        "option": "C",
+        "status": "正確",
+        "desc": "以「捕捉聲波」化抽象為具體（形象化），生動解構認知運作。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "行文為通俗科普隨筆，未引述特定實驗數據或論文研究報告。"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "source": "生態保育說明文・石虎生存困境",
+    "year": "會考精選",
+    "passage": "「石虎主要生活在低海拔的淺山地區，與人類的活動範圍高度重疊，受到大量開發的影響，石虎的棲息地面臨嚴重破碎化的問題。石虎是夜行動物，通常會在夜晚與晨昏時外出活動，但夜行車輛的強光常讓石虎無法反應，成為輪下冤魂。此外還有毒殺、捕獸夾、流浪犬貓的攻擊或疾病傳染，威脅牠們的生命安全。」",
+    "passageHighlight": "「受大量開發影響，<mark class=\"hl-yellow\">石虎的棲息地面臨嚴重破碎化</mark>……<mark class=\"hl-pink\">夜行車輛的強光常讓石虎無法反應，成為輪下冤魂</mark>……還有<mark class=\"hl-green\">毒殺、捕獸夾、流浪犬貓攻擊或疾病傳染</mark>，威脅生命安全。」",
+    "clue": "解題之眼：作者未假借繁複煽情修辭或複雜總分架構，而是以平實直白的文字客觀條列石虎在淺山面臨之「棲地破碎、路殺、獵捕、遊蕩動物與疾病」等多重危機。",
+    "stem": "關於這段文字的寫作脈絡分析，下列敘述何者最恰當？",
+    "options": [
+      "(A) 使用擬人修辭，說明石虎對於棲息地破碎化的感受",
+      "(B) 運用對比手法呈現過往及現今社會對待石虎的差異",
+      "(C) 以淺白直接的文字，敘述石虎目前面對的生存危機",
+      "(D) 採用「先分述、後總結」結構說明石虎遇到的困境"
+    ],
+    "answer": "C",
+    "explanation": "這段科普保育短文採用客觀寫實的說明手法：從石虎習性（淺山棲居、夜行）切入，以直截明瞭、不事雕琢的文字，依次點明石虎當前面臨的諸多致命困境——棲地破碎化、夜間路殺車禍、毒餌與獸夾、遊蕩犬貓威脅與疫病侵襲等。筆調淺顯直接、客觀嚴謹，精準勾勒出石虎的生存浩劫，故選(C)。(A)文中陳述棲地破碎事實，並無代擬石虎心理感受之擬人句；(B)未比較過去與現在之待遇演變；(D)文章是開篇陳述生活空間重疊，隨即依序條列各項威脅，並非先細部剖析再於末尾收攏總結。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "通篇客觀說明生態現狀，未曾擬託石虎的主觀心理恐懼或悲喜。"
+      },
+      {
+        "option": "B",
+        "status": "錯誤",
+        "desc": "並無歷史縱深比較，僅探討當代社會之生態危機。"
+      },
+      {
+        "option": "C",
+        "status": "正確",
+        "desc": "語句平鋪直敘、條理清晰，具體羅列各項威脅石虎之致命因子。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "並非先列各項細節最後作通盤總括，而是循序並列逐項說明。"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "source": "體育說明文・巴西足球夢工廠",
+    "year": "會考精選",
+    "passage": "「在世界足壇，巴西無疑是足球明星的『夢工廠』，比如球王比利，世界足球先生羅納度、羅納迪諾、卡卡、內馬爾等……比起德國、法國、英格蘭、義大利等歐洲強隊明顯更勝一籌。」漢民老師上課時，向同學介紹巴西足球隊，並請同學說出上文的寫作方法，何人的說法正確？",
+    "passageHighlight": "「巴西無疑是足球明星的『夢工廠』，<mark class=\"hl-yellow\">比如球王比利，世界足球先生羅納度、羅納迪諾、卡卡、內馬爾等</mark>……」",
+    "clue": "解題之眼：「比如...」接連列舉比利、羅納度、卡卡、內馬爾等馳名全球的代表性球星，正是標準的「舉例說明」（以最具代表性實例印證人才濟濟）。",
+    "stem": "關於上文的寫作方法，何人的說法正確？",
+    "options": [
+      "(A) 小翰：比較說明，引用夢工廠動畫公司故事描述巴西足球隊",
+      "(B) 小洋：比喻說明，描述巴西足球隊有全世界最大量的球迷",
+      "(C) 阿廷：分類說明，表達巴西足球隊獲得世界盃冠軍次數最多",
+      "(D) 大俊：舉例說明，指出巴西足球隊人才濟濟，明星球員眾多"
+    ],
+    "answer": "D",
+    "explanation": "題幹中透過「比如...」一詞，接連列舉球王比利、羅納度、羅納迪諾、卡卡、內馬爾等多位在世界足壇具備極高代表性的殿堂級巨星，目的在於實質佐證巴西足球隊孕育明星球員的強大培育能量與人才底蘊。此種選取最具代表性個別實例以印證主旨的手法即為典型之「舉例說明」，故大俊的說法完全正確，選(D)。(A)「夢工廠」為借喻培育基地之比喻詞，文中未引用好萊塢動畫公司歷史故事；(B)未提及球迷人數多寡；(C)未分析世界盃奪冠次數，亦非分類說明。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "「夢工廠」僅為成名搖籃之詞語譬喻，並無動畫電影公司之背景故事。"
+      },
+      {
+        "option": "B",
+        "status": "錯誤",
+        "desc": "重點在於優秀球員輩出，完全未觸及全球球迷人數規模。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "未將足球隊進行類別劃分，亦未羅列歷屆世界盃捧盃統計。"
+      },
+      {
+        "option": "D",
+        "status": "正確",
+        "desc": "列舉比利、羅納度等傳奇球星實例，完美體現舉例說明之實證效力。"
+      }
+    ]
+  }
+];
+
+    let currentQuestionIndex = 0;
+    let userAnswers = {};
+    let isContinuousView = false;
+    let soundEnabled = true;
+    let currentZoom = 100;
+
+    // 音效產生器（利用 Web Audio API 合成，免載入外部 mp3）
+    const audioCtx = (window.AudioContext || window.webkitAudioContext) ? new (window.AudioContext || window.webkitAudioContext)() : null;
+
+    function playSound(type) {
+      if (!soundEnabled || !audioCtx) return;
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      if (type === 'correct') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(587.33, now); // D5
+        osc.frequency.setValueAtTime(880, now + 0.1); // A5
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+        osc.start(now);
+        osc.stop(now + 0.5);
+      } else if (type === 'incorrect') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(329.63, now); // E4
+        osc.frequency.setValueAtTime(261.63, now + 0.15); // C4
+        gain.gain.setValueAtTime(0.25, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+        osc.start(now);
+        osc.stop(now + 0.45);
+      } else if (type === 'click') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(440, now);
+        gain.gain.setValueAtTime(0.08, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+        osc.start(now);
+        osc.stop(now + 0.08);
+      }
+    }
+
+    function toggleSound() {
+      soundEnabled = !soundEnabled;
+      const btn = document.getElementById("soundToggleBtn");
+      if (soundEnabled) {
+        btn.classList.add("active");
+        btn.innerHTML = `<span id="soundIcon">🔔</span> 音效已開啟`;
+      } else {
+        btn.classList.remove("active");
+        btn.innerHTML = `<span id="soundIcon">🔕</span> 音效已靜音`;
+      }
+    }
+
+    // 切換檢視模式（單題專注 vs 連續清單）
+    function toggleViewMode() {
+      isContinuousView = !isContinuousView;
+      const btn = document.getElementById("viewModeBtn");
+      const text = document.getElementById("viewModeText");
+      if (isContinuousView) {
+        btn.classList.add("active");
+        text.innerText = "切換為專注模式";
+      } else {
+        btn.classList.remove("active");
+        text.innerText = "切換為連續模式";
+      }
+      renderView();
+    }
+
+    // 縮放字級
+    function adjustFontSize(delta) {
+      currentZoom += delta * 10;
+      if (currentZoom < 80) currentZoom = 80;
+      if (currentZoom > 140) currentZoom = 140;
+      document.getElementById("fontSizeDisplay").innerText = currentZoom + "%";
+      document.getElementById("questionsContainer").style.fontSize = (currentZoom / 100) + "rem";
+    }
+
+    // 渲染導航 Tab
+    function renderNavTabs() {
+      const container = document.getElementById("navTabs");
+      container.innerHTML = "";
+      questionsData.forEach((q, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "q-tab";
+        btn.id = `navTab_${q.id}`;
+        btn.innerText = q.id;
+        
+        if (!isContinuousView && idx === currentQuestionIndex) {
+          btn.classList.add("current");
+        }
+
+        if (userAnswers[q.id]) {
+          if (userAnswers[q.id].isCorrect) {
+            btn.classList.add("correct");
+          } else {
+            btn.classList.add("incorrect");
+          }
+        }
+
+        btn.onclick = () => {
+          playSound('click');
+          if (isContinuousView) {
+            const card = document.getElementById(`qcard_${q.id}`);
+            if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else {
+            currentQuestionIndex = idx;
+            renderView();
+          }
+        };
+
+        container.appendChild(btn);
+      });
+
+      updateStats();
+    }
+
+    // 更新統計資訊
+    function updateStats() {
+      const answeredKeys = Object.keys(userAnswers);
+      const count = answeredKeys.length;
+      document.getElementById("completedCount").innerText = count;
+      document.getElementById("totalQuestionsCount").innerText = questionsData.length;
+
+      if (count === 0) {
+        document.getElementById("accuracyRate").innerText = "-";
+        document.getElementById("accuracyRate").style.color = "var(--text-muted)";
+      } else {
+        const correctCount = answeredKeys.filter(k => userAnswers[k].isCorrect).length;
+        const rate = Math.round((correctCount / count) * 100);
+        const rateEl = document.getElementById("accuracyRate");
+        rateEl.innerText = rate + "%";
+        rateEl.style.color = rate >= 80 ? "var(--success-color)" : (rate >= 60 ? "#d97706" : "var(--error-color)");
+      }
+    }
+
+    // 產生單一題目 HTML
+    function buildQuestionCardHtml(q, idx) {
+      const userState = userAnswers[q.id];
+      const hasAnswered = !!userState;
+      const isCorrect = hasAnswered && userState.isCorrect;
+
+      const passageHtml = hasAnswered ? q.passageHighlight : q.passage;
+      const revealedClass = hasAnswered ? "revealed" : "";
+
+      let optionsHtml = q.options.map(opt => {
+        let extraClasses = "";
+        let markTag = "";
+        if (hasAnswered) {
+          if (opt.key === q.answer) {
+            if (userState.choice === opt.key) {
+              extraClasses = "selected-correct";
+              markTag = `<span style="margin-left:auto;font-weight:700;color:var(--success-color)">✓ 答對了！</span>`;
+            } else {
+              extraClasses = "reveal-correct";
+              markTag = `<span style="margin-left:auto;font-weight:700;color:var(--success-color)">✓ 正確答案</span>`;
+            }
+          } else if (userState.choice === opt.key) {
+            extraClasses = "selected-incorrect";
+            markTag = `<span style="margin-left:auto;font-weight:700;color:var(--error-color)">✗ 你的選擇</span>`;
+          }
+        }
+
+        return `
+          <button class="option-btn ${extraClasses}" 
+                  id="optBtn_${q.id}_${opt.key}" 
+                  onclick="selectAnswer(${q.id}, '${opt.key}')" 
+                  ${hasAnswered ? 'disabled' : ''}>
+            <span class="option-label">(${opt.key})</span>
+            <span class="option-content">${opt.text}</span>
+            ${markTag}
+          </button>
+        `;
+      }).join("");
+
+      let bannerHtml = "";
+      if (hasAnswered) {
+        if (isCorrect) {
+          bannerHtml = `
+            <div class="result-banner correct">
+              <span>🎉 <strong>恭喜答對！</strong> 正確答案為 (${q.answer})，精準掌握了文章的主旨核心。</span>
+              <button class="btn-retry" onclick="retryQuestion(${q.id})">🔄 重新挑戰</button>
+            </div>
+          `;
+        } else {
+          bannerHtml = `
+            <div class="result-banner incorrect">
+              <span>💡 <strong>答錯了！</strong> 你的答案是 (${userState.choice})，正確解答應為 <strong>(${q.answer})</strong>。請詳閱下方解題之眼與螢光筆分析。</span>
+              <button class="btn-retry" onclick="retryQuestion(${q.id})">🔄 重新挑戰</button>
+            </div>
+          `;
+        }
+      }
+
+      let notesHtml = "";
+      if (q.notes) {
+        notesHtml = `
+          <div class="notes-box">
+            <div class="notes-title">📌 重要詞彙注釋</div>
+            <div>${q.notes}</div>
+          </div>
+        `;
+      }
+
+      let transHtml = "";
+      if (q.translation) {
+        transHtml = `
+          <div class="translation-box">
+            <div class="translation-header">📖 題幹文言白話語譯</div>
+            <div>${q.translation}</div>
+          </div>
+        `;
+      }
+
+      let optAnalysisHtml = "";
+      if (q.optionAnalysis) {
+        optAnalysisHtml = `
+          <div class="option-analysis-box">
+            <div style="font-weight:700;color:#334155;margin-bottom:8px">🔍 各選項深入剖析：</div>
+            ${q.optionAnalysis.map(a => `
+              <div class="analysis-item">
+                <span class="analysis-tag ${a.status === 'correct' ? 'is-correct' : 'is-wrong'}">(${a.key}) ${a.status === 'correct' ? '正解' : '誤'}</span>
+                <span>${a.reason}</span>
+              </div>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      let explanationHtml = `
+        <div class="explanation-container ${hasAnswered ? 'show' : ''}" id="expContainer_${q.id}">
+          <div class="explanation-card">
+            <div class="explanation-header">
+              <div class="explanation-title">
+                <span>📚 詳解與核心文意解析</span>
+              </div>
+              <div class="hl-legend">
+                <div class="legend-item"><span class="legend-dot" style="background:#facc15"></span> 黃色：解題關鍵詞</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#f43f5e"></span> 粉紅：轉折詞／特殊標點</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#10b981"></span> 綠色：推論核心／主旨歸納</div>
+              </div>
+            </div>
+            <div class="explanation-body">
+              <div class="clue-box">
+                <div class="clue-label">🎯 【解題之眼・關鍵線索】</div>
+                <div>${q.clue}</div>
+              </div>
+
+              <div class="exp-paragraph">
+                ${q.explanation}
+              </div>
+
+              ${transHtml}
+              ${optAnalysisHtml}
+            </div>
+          </div>
+        </div>
+      `;
+
+      let navButtonsHtml = "";
+      if (!isContinuousView) {
+        const isFirst = idx === 0;
+        const isLast = idx === questionsData.length - 1;
+        navButtonsHtml = `
+          <div class="nav-buttons-container">
+            <button class="nav-btn" onclick="prevQuestion()" ${isFirst ? 'disabled' : ''}>
+              <span>⬅</span> 上一題
+            </button>
+            <div style="font-size:0.92rem;color:var(--text-muted);display:flex;align-items:center;">
+              第 <strong>${q.id}</strong> / ${questionsData.length} 題
+            </div>
+            <button class="nav-btn" onclick="nextQuestion()" ${isLast ? 'disabled' : ''}>
+              下一題 <span>➡</span>
+            </button>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="question-card" id="qcard_${q.id}">
+          <div class="question-header">
+            <div class="q-num-badge">
+              <span>第 ${q.id} 題</span>
+              <span class="category-tag">${q.category}</span>
+            </div>
+            <div style="font-size:0.88rem;color:var(--text-muted)">寫作手法篇・文意好試多</div>
+          </div>
+
+          <div class="passage-box ${revealedClass}" id="passage_${q.id}">
+            ${passageHtml}
+            ${q.author ? `<span class="passage-author">—— ${q.author}</span>` : ''}
+          </div>
+
+          <div class="stem-text">${q.stem}</div>
+
+          ${notesHtml}
+
+          <div class="options-grid">
+            ${optionsHtml}
+          </div>
+
+          ${bannerHtml}
+          ${explanationHtml}
+          ${navButtonsHtml}
+        </div>
+      `;
+    }
+
+    function renderView() {
+      const container = document.getElementById("questionsContainer");
+      if (isContinuousView) {
+        container.innerHTML = questionsData.map((q, idx) => buildQuestionCardHtml(q, idx)).join("");
+      } else {
+        const currentQ = questionsData[currentQuestionIndex];
+        container.innerHTML = buildQuestionCardHtml(currentQ, currentQuestionIndex);
+      }
+      renderNavTabs();
+    }
+
+    function selectAnswer(qid, choiceKey) {
+      const q = questionsData.find(item => item.id === qid);
+      if (!q) return;
+
+      const isCorrect = (choiceKey === q.answer);
+      userAnswers[qid] = {
+        choice: choiceKey,
+        isCorrect: isCorrect
+      };
+
+      playSound(isCorrect ? 'correct' : 'incorrect');
+      renderView();
+
+      setTimeout(() => {
+        const expEl = document.getElementById(`expContainer_${qid}`);
+        if (expEl) {
+          expEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }, 100);
+    }
+
+    function retryQuestion(qid) {
+      playSound('click');
+      delete userAnswers[qid];
+      renderView();
+    }
+
+    function resetAllProgress() {
+      if (confirm("確定要清除所有作答紀錄並重新開始嗎？")) {
+        playSound('click');
+        userAnswers = {};
+        currentQuestionIndex = 0;
+        renderView();
+      }
+    }
+
+    function prevQuestion() {
+      if (currentQuestionIndex > 0) {
+        playSound('click');
+        currentQuestionIndex--;
+        renderView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIndex < questionsData.length - 1) {
+        playSound('click');
+        currentQuestionIndex++;
+        renderView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderView();
+    });
+  </script>
+</body>
+</html>

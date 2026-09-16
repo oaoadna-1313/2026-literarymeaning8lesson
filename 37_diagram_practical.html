@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文意新8課 ｜ 第8課 圖表判讀篇（應用文類）解說教材</title>
+  <style>
+    :root {
+      --primary-color: #4c1d95;
+      --primary-hover: #5b21b6;
+      --primary-light: #f5f3ff;
+      --accent-color: #b91c1c;
+      --success-color: #059669;
+      --success-light: #ecfdf5;
+      --error-color: #dc2626;
+      --error-light: #fef2f2;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --bg-page: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --quote-bg: #fdfbf7;
+      --quote-border: #d97706;
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Serif TC", serif, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 頂部全域導航選單 */
+    .top-navbar {
+      background: #0f172a;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      padding: 8px 20px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .top-navbar-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .top-units-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .unit-link {
+      color: #cbd5e1;
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 6px;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+
+    .unit-link:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+
+    .unit-link.active {
+      background: var(--primary-color);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .home-link {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.1);
+      transition: all 0.2s;
+    }
+    .home-link:hover {
+      background: rgba(56, 189, 248, 0.2);
+      color: #7dd3fc;
+    }
+
+    /* 標頭 Header */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .badge-chapter {
+      background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .title-text {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.5px;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .control-btn {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      padding: 6px 12px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .control-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .control-btn.active {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    /* 進度條與題號切換欄 */
+    .progress-bar-wrapper {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .progress-bar-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .q-tab {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #475569;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .q-tab:hover {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      background: var(--primary-light);
+    }
+
+    .q-tab.current {
+      border-color: var(--primary-color);
+      background: var(--primary-color);
+      color: white;
+      box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
+    }
+
+    .q-tab.correct {
+      border-color: var(--success-color);
+      background: var(--success-light);
+      color: var(--success-color);
+    }
+
+    .q-tab.correct.current {
+      background: var(--success-color);
+      color: white;
+    }
+
+    .q-tab.incorrect {
+      border-color: var(--error-color);
+      background: var(--error-light);
+      color: var(--error-color);
+    }
+
+    .q-tab.incorrect.current {
+      background: var(--error-color);
+      color: white;
+    }
+
+    .stats-badge {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: #f8fafc;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+    }
+
+    /* 主內容容器 */
+    main {
+      max-width: 900px;
+      width: 100%;
+      margin: 24px auto;
+      padding: 0 16px;
+      flex: 1;
+    }
+
+    .question-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      padding: 28px 32px;
+      margin-bottom: 30px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .question-card:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .q-num-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-color);
+    }
+
+    .category-tag {
+      background: var(--primary-light);
+      color: var(--primary-color);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    /* 文本引文區塊 */
+    .passage-box {
+      background: var(--quote-bg);
+      border-left: 5px solid var(--quote-border);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 20px 24px;
+      margin-bottom: 22px;
+      font-size: 1.15rem;
+      line-height: 2.1;
+      letter-spacing: 0.4px;
+      color: #1e293b;
+      position: relative;
+    }
+
+    .passage-author {
+      display: block;
+      margin-top: 10px;
+      text-align: right;
+      font-size: 0.95rem;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    /* 題目題幹問句 */
+    .stem-text {
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #0f172a;
+      line-height: 1.7;
+    }
+
+    /* 注釋框 */
+    .notes-box {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #475569;
+    }
+
+    .notes-title {
+      font-weight: 700;
+      color: #0369a1;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 選項列表 */
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      text-align: left;
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--primary-color);
+      background: #f8fafc;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .option-label {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #475569;
+      min-width: 32px;
+    }
+
+    .option-btn.selected-correct {
+      background: var(--success-light) !important;
+      border-color: var(--success-color) !important;
+      color: #065f46 !important;
+      font-weight: 700;
+    }
+
+    .option-btn.selected-correct .option-label {
+      color: var(--success-color);
+    }
+
+    .option-btn.selected-incorrect {
+      background: var(--error-light) !important;
+      border-color: var(--error-color) !important;
+      color: #991b1b !important;
+      font-weight: 700;
+    }
+
+    .option-btn.selected-incorrect .option-label {
+      color: var(--error-color);
+    }
+
+    .option-btn.reveal-correct {
+      border-color: var(--success-color) !important;
+      background: #f0fdf4 !important;
+      color: #166534 !important;
+      border-style: dashed !important;
+    }
+
+    /* 答題回饋橫幅 */
+    .result-banner {
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .result-banner.correct {
+      background: #ecfdf5;
+      border: 1px solid #6ee7b7;
+      color: #065f46;
+    }
+
+    .result-banner.incorrect {
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      color: #991b1b;
+    }
+
+    .btn-retry {
+      background: white;
+      border: 1px solid #cbd5e1;
+      padding: 6px 14px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-retry:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+
+    /* 詳解摺疊卡片 */
+    .explanation-container {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.4s ease-in-out;
+    }
+
+    .explanation-container.show {
+      max-height: 2500px;
+      opacity: 1;
+      transition: max-height 0.8s ease-in-out, opacity 0.4s ease-in-out;
+    }
+
+    .explanation-card {
+      background: #ffffff;
+      border: 1px solid #fed7aa;
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 15px rgba(251, 146, 60, 0.08);
+      padding: 24px;
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .explanation-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #fef3c7;
+    }
+
+    .explanation-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #9a3412;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hl-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.84rem;
+      background: #fdfbf7;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid #fed7aa;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #78350f;
+      font-weight: 600;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    /* 解題之眼線索框 */
+    .clue-box {
+      background: #fefce8;
+      border-left: 4px solid #facc15;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #854d0e;
+    }
+
+    .clue-label {
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+      color: #a16207;
+    }
+
+    /* 詳解段落 */
+    .exp-paragraph {
+      font-size: 1.1rem;
+      line-height: 2.0;
+      color: #334155;
+      margin-bottom: 18px;
+    }
+
+    /* 螢光筆高亮樣式 */
+    mark.hl-yellow {
+      background: linear-gradient(104deg, rgba(254, 240, 138, 0.2) 0.9%, rgba(254, 240, 138, 0.95) 2.4%, rgba(254, 240, 138, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #1c1917;
+      box-shadow: inset 0 -4px 0 rgba(234, 179, 8, 0.6);
+    }
+
+    mark.hl-pink {
+      background: linear-gradient(104deg, rgba(254, 205, 211, 0.2) 0.9%, rgba(254, 205, 211, 0.95) 2.4%, rgba(254, 205, 211, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #881337;
+      box-shadow: inset 0 -4px 0 rgba(244, 63, 94, 0.45);
+    }
+
+    mark.hl-green {
+      background: linear-gradient(104deg, rgba(187, 247, 208, 0.2) 0.9%, rgba(187, 247, 208, 0.95) 2.4%, rgba(187, 247, 208, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #064e3b;
+      box-shadow: inset 0 -4px 0 rgba(16, 185, 129, 0.45);
+    }
+
+    mark.hl-blue {
+      background: linear-gradient(104deg, rgba(186, 230, 253, 0.2) 0.9%, rgba(186, 230, 253, 0.95) 2.4%, rgba(186, 230, 253, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #075985;
+      box-shadow: inset 0 -4px 0 rgba(14, 165, 233, 0.45);
+    }
+
+    .passage-box.revealed mark.hl-yellow {
+      animation: pulseHighlight 1.5s infinite alternate;
+    }
+
+    @keyframes pulseHighlight {
+      0% { box-shadow: inset 0 -4px 0 rgba(234, 179, 8, 0.6); }
+      100% { box-shadow: inset 0 -10px 0 rgba(234, 179, 8, 0.8); }
+    }
+
+    /* 語譯與注釋卡片 */
+    .translation-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-top: 16px;
+      font-size: 1.02rem;
+      line-height: 1.9;
+    }
+
+    .translation-header {
+      font-weight: 700;
+      color: #0284c7;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 選項逐項剖析 */
+    .option-analysis-box {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px dashed #cbd5e1;
+    }
+
+    .analysis-item {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .analysis-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .analysis-tag.is-correct {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .analysis-tag.is-wrong {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    /* 導航切換列 */
+    .nav-buttons-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .nav-btn {
+      padding: 10px 22px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: white;
+      color: #334155;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    /* 浮動字級工具列 */
+    .floating-font-bar {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 30px;
+      padding: 6px 14px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      z-index: 90;
+    }
+
+    .font-btn {
+      background: #f1f5f9;
+      border: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    .font-btn:hover {
+      background: #e2e8f0;
+    }
+
+    /* 動畫 */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .question-card {
+        padding: 20px 16px;
+      }
+      .passage-box {
+        font-size: 1.05rem;
+        padding: 16px 18px;
+      }
+      .option-btn {
+        padding: 12px 14px;
+        font-size: 1rem;
+      }
+      .hl-legend {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部全域切換列 -->
+  <nav class="top-navbar">
+    <div class="top-navbar-container">
+      <div class="top-units-list">
+        <span style="color:#64748b;font-weight:600;margin-right:4px">單元導覽：</span>
+        <a href="36_diagram_expository.html" class="unit-link">🔬 說明文類 (10題)</a><a href="37_diagram_practical.html" class="unit-link active">✉️ 應用文類 (10題)</a>
+      </div>
+      <div>
+        <a href="index.html" class="home-link">🏠 回總覽首頁</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 標頭 Header -->
+  <header>
+    <div class="header-container">
+      <div class="brand-title">
+        <a href="index.html" class="control-btn" style="text-decoration: none; margin-right: 6px; background: #e0e7ff; color: #1e3a8a; border-color: #c7d2fe;" title="返回教材入口總目錄">
+          <span>🏠</span> 總目錄
+        </a>
+        <span class="badge-chapter">第 8 課 圖表判讀篇</span>
+        <span class="title-text">✉️ 應用文類・互動解說教材</span>
+      </div>
+      <div class="header-controls">
+        <a href="37_diagram_practical_handout.pdf" target="_blank" class="control-btn" style="text-decoration:none; background:#fffbeb; color:#b45309; border-color:#fcd34d; font-weight:700;" title="開啟本單元精編詳解講義 PDF（三色螢光筆・解題之眼・全彩圖表收錄）">
+          <span>📖</span> 詳解講義模式 (PDF)
+        </a>
+        <button class="control-btn" id="soundToggleBtn" onclick="toggleSound()">
+          <span id="soundIcon">🔔</span> 音效已開啟
+        </button>
+        <button class="control-btn" id="viewModeBtn" onclick="toggleViewMode()">
+          <span>📖</span> <span id="viewModeText">切換為連續模式</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 題號跳轉與統計列 -->
+  <div class="progress-bar-wrapper">
+    <div class="progress-bar-container">
+      <div class="nav-tabs" id="navTabs">
+        <!-- 由 JavaScript 動態生成題號按鈕 -->
+      </div>
+      <div class="stats-badge">
+        <span>完成度：<strong id="completedCount" style="color:var(--primary-color)">0</strong> / <span id="totalQuestionsCount">10</span> 題</span>
+        <span>正確率：<strong id="accuracyRate" style="color:var(--success-color)">-</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 主要答題容器 -->
+  <main id="questionsContainer">
+    <!-- 由 JavaScript 渲染試題內容 -->
+  </main>
+
+  <!-- 浮動輔助功能列（縮放字級、重置） -->
+  <div class="floating-font-bar">
+    <span>字級：</span>
+    <button class="font-btn" onclick="adjustFontSize(-1)" title="縮小字體">A-</button>
+    <span id="fontSizeDisplay">100%</span>
+    <button class="font-btn" onclick="adjustFontSize(1)" title="放大字體">A+</button>
+    <span style="color:#cbd5e1;margin:0 4px">|</span>
+    <button class="control-btn" style="padding:2px 8px;font-size:0.8rem;" onclick="resetAllProgress()">全部重練</button>
+  </div>
+
+  <script>
+    // 試題資料庫：應用文類 10 題
+    const questionsData = [
+  {
+    "id": 1,
+    "source": "海洋生態保育指南・綠島浮潛宣導須知",
+    "year": "會考精選",
+    "passage": "<div style=\"text-align:center; margin:12px 0;\"><img src=\"images/u37_q1_turtle.png\" alt=\"綠島浮潛海龜保育須知\" style=\"max-width:100%; max-height:340px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.12);\"></div>\n【進行水中活動，你該注意的五件事】：\n1. 不觸摸、踩踏、碰撞海龜，這會傷害到牠們。\n2. 禁止餵食海龜，避免牠們過於親人失去野外覓食能力。\n3. 與海龜保持五公尺以上距離，減少牠們的壓迫感。\n4. 不要游在海龜上方，保留空間供牠們浮上水面換氣。\n5. 使用海洋友善防晒乳，或選擇不使用。",
+    "passageHighlight": "「第 5 點：<mark class=\"hl-green\">使用海洋友善防晒乳，或選擇不使用。</mark>」",
+    "clue": "解題之眼：對照五大保育原則——萬萬雖然怕晒傷，但遵循第5點「選擇不使用任何防晒乳液」，完全符合海洋友善規範，做法正確。",
+    "stem": "莎莎跟朋友一起去綠島浮潛，根據此則圖片的說明，下列誰的做法才正確？",
+    "options": [
+      "(A) 看到非常可愛的小海龜，忍不住用手輕輕觸碰牠的莎莎",
+      "(B) 雖然很怕晒黑跟晒傷，但仍未使用任何防晒乳液的萬萬",
+      "(C) 想要拍下精彩的照片，故拿出自備食物誘惑海龜接近的阿員",
+      "(D) 為了要跟海龜合照，一直游在海龜上方不肯離去的小波"
+    ],
+    "answer": "B",
+    "explanation": "比對五大守則逐一核實各人舉止：\n(A) 違反第1點「嚴禁觸摸、踩踏、碰撞海龜」，輕碰亦屬違法干擾，莎莎做法錯誤；\n(B) 第5點明確呼籲「使用海洋友善防晒乳，或選擇不使用」，萬萬寧可承受日晒亦完全不塗抹化學乳液，徹底保護珊瑚與海龜生態，做法完全正確，故選(B)；\n(C) 違反第2點「禁止餵食海龜，避免牠們過於親人」，阿員做法錯誤；\n(D) 違反第4點「不要游在海龜上方，保留空間供牠們浮上水面換氣」，小波阻礙海龜呼吸通道，做法錯誤。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "違反第1條，觸摸海龜會造成驚嚇並損害其保護黏膜。"
+      },
+      {
+        "option": "B",
+        "status": "正確",
+        "desc": "符合第5條「選擇不使用防晒乳」，杜絕化學溶劑汙染海洋。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "違反第2條禁止餵食，破壞野生動物自然覓食天性。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "違反第4條，游在上方會阻礙海龜浮出水面換氣生息。"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "source": "衛福部衛教海報・每日飲食指南金字塔",
+    "year": "會考精選",
+    "passage": "<div style=\"text-align:center; margin:12px 0;\"><img src=\"images/u37_q2_food.png\" alt=\"每日飲食指南金字塔\" style=\"max-width:100%; max-height:360px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.12);\"></div>\n【每日飲食指南金字塔海報】：\n- 頂層（吃最少）：脂肪、油及糖類。\n- 第二層（吃適量）：瘦肉、家禽類、魚類、豆類及蛋類（每天2-3份）；奶類及相關製品（每日2-3份）。\n- 第三層（吃多些）：水果類（每天2-4份）；蔬菜及瓜類（每日最少3-5份）。\n- 底層（吃最多）：穀類、麵包、米、麵（每日6-11份）。",
+    "passageHighlight": "「海報依金字塔分層，標示各類別每日具體的<mark class=\"hl-yellow\">『建議攝取份數（如每日6-11份、2-4份等）』</mark>。」",
+    "clue": "解題之眼：海報核心在於各類食物分層之「每日份數配額」（吃最多、吃多些、吃適量、吃最少），其主旨即為「建議國人每日各類食物之飲食攝取量」。",
+    "stem": "關於左列海報的主旨，下列何者正確？",
+    "options": [
+      "(A) 建議每日飲食攝取量",
+      "(B) 統計國人的飲食習慣",
+      "(C) 比較各營養素的優劣",
+      "(D) 說明食物中營養素之含量"
+    ],
+    "answer": "A",
+    "explanation": "檢視這張經典健康教育海報：由底層到塔尖依序為五穀雜糧（每日6-11份）、蔬果（蔬菜3-5份、水果2-4份）、蛋白質與奶類（2-3份）、油脂糖類（吃最少）。每層皆附帶權威之每日「份數指引」，目的在引導大眾建立均衡飲食的生活守則，因此其核心主旨為「建議每日飲食攝取量」，故選(A)。(B)非全民飲食問卷調查結果；(C)各類營養素人體皆不可或缺，未評斷脂肪劣於蛋白質；(D)未標示100克食材含幾卡或幾克維生素之營養成分細節。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "正確",
+        "desc": "以金字塔量化各類食材每日應攝取之建議份量比例。"
+      },
+      {
+        "option": "B",
+        "status": "錯誤",
+        "desc": "非針對民眾既有飲食偏好之實態統計調查報告。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "人體需六大營養素協同平衡，未評價優劣好壞。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "無個別食材之卡路里或微量元素精確化驗數值。"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "source": "交通法規宣導・電動自行車納管規畫",
+    "year": "會考精選",
+    "passage": "<div style=\"text-align:center; margin:12px 0;\"><img src=\"images/u37_q3_ebike.png\" alt=\"電動自行車納管規畫表格\" style=\"max-width:100%; max-height:220px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.12);\"></div>\n【電動自行車納管規畫（現行規定 vs 未來規畫）】：\n1. 牌照：現行不需申請和掛牌照，違規車輛難以取締 → 未來上路前須申請牌照，無牌照不得上路，若違規也能找到車主開罰。\n2. 駕照：現行不需駕照即可騎乘 → 未來需凝聚社會共識後再考量推動。\n3. 安全帽：現行規定必須配戴安全帽，但無罰則 → 未來增列罰則，推估可能為300元至600元罰鍰。",
+    "passageHighlight": "「安全帽項目未來規畫：<mark class=\"hl-yellow\">『增列罰則，推估可能為300元至600元』</mark>。」",
+    "clue": "解題之眼：安全帽現行規定「雖規定配戴但無罰則」，未來規畫「增列罰則，開罰300至600元」。因此(D)「未來未帶安全帽騎乘電動自行車，可罰600元」在法規預告範圍內，完全符合。",
+    "stem": "關於上列表格的說明，以下何者正確？",
+    "options": [
+      "(A) 目前電動自行車因為不需駕照，故難以取締",
+      "(B) 目前必須要國中畢業，才可騎乘電動自行車",
+      "(C) 未來騎乘電動自行車，必須要先行考取駕照",
+      "(D) 未來未帶安全帽騎乘電動自行車，可罰600元"
+    ],
+    "answer": "D",
+    "explanation": "依表格條文比對：\n(A) 表格第1項指出目前難以取締的癥結在於「不需申請和掛牌照」，而非駕照問題，錯誤；\n(B) 全文完全未提及任何「國中畢業」之學歷門檻規定，純屬無稽之談，錯誤；\n(C) 第2項駕照未來規畫寫明「需凝聚社會共識後再考量推動」，代表目前尚無強制考照時間表，並非已定案必須考駕照，錯誤；\n(D) 第3項安全帽未來規畫明訂「增列罰則，推估可能為300元至600元」，因此若未戴安全帽違規上路，將可依法處以300至600元罰鍰，選項(D)符合規範，故選(D)。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "難以取締之關鍵肇因在於未掛車牌，無法追查車主。"
+      },
+      {
+        "option": "B",
+        "status": "錯誤",
+        "desc": "表格從未限制任何學歷畢業資格。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "考駕照尚在研議凝聚共識階段，並未立法強制實施。"
+      },
+      {
+        "option": "D",
+        "status": "正確",
+        "desc": "未來增列安全帽罰則預估為300~600元，罰600元在法定裁罰額度內。"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "source": "防災應變公共海報・防颱「6要3不」原則",
+    "year": "會考精選",
+    "passage": "<div style=\"text-align:center; margin:12px 0;\"><img src=\"images/u37_q4_typhoon.png\" alt=\"防颱6要3不海報\" style=\"max-width:100%; max-height:360px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.12);\"></div>\n【防颱6要3不，颱風不怕】：\n【6要】：\n1. 土石流危險區民眾要及早撤離\n2. 低窪地區民眾要速往高處\n3. 招牌門窗要固定\n4. 防颱訊息要注意\n5. 防災用品要備齊\n6. 社區水溝要疏通\n【3不】：\n1. 觀潮、戲水、釣魚不要去\n2. 登山溯溪不要去\n3. 危險河床不要去",
+    "passageHighlight": "「【3不】嚴格禁止：<mark class=\"hl-yellow\">『觀潮、戲水、釣魚不要去！』</mark>」",
+    "clue": "解題之眼：檢視海報「3不原則」——第一條就是「觀潮、戲水、釣魚不要去」。莊爸爸趁颱風風大浪大提議「去海邊觀潮」，正好觸犯此一禁令。",
+    "stem": "颱風快來了，請問莊家哪個成員的行為違反了圖中「6要3不」原則？",
+    "options": [
+      "(A) 莊爸爸：颱風海浪大，最適合去海邊觀潮了",
+      "(B) 莊媽媽：趕快到超市補充礦泉水、泡麵等物資",
+      "(C) 莊可愛：聯絡同學取消明天的戶外登山溯溪活動",
+      "(D) 莊大方：多看電視與網路，密切注意最新防颱消息"
+    ],
+    "answer": "A",
+    "explanation": "對照防颱「6要3不」原則：\n(A) 海報在【3不】第一項明確嚴正警告「觀潮、戲水、釣魚不要去」，因為颱風暴潮極易引發瘋狗浪將人捲入大海，危及生命。莊爸爸說海浪大最適合觀潮，公然違背防災第一禁令，行為極為不當且違規，故選(A)；\n(B) 媽媽採買糧水物資，符合【6要】之「防災用品要備齊」，正確；\n(C) 可愛主動取消登山活動，符合【3不】之「登山溯溪不要去」，正確；\n(D) 大方追蹤氣象情報，符合【6要】之「防颱訊息要注意」，正確。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "違反(選此)",
+        "desc": "海報3不第一條即明令「觀潮戲水釣魚不要去」，嚴禁觀潮。"
+      },
+      {
+        "option": "B",
+        "status": "符合",
+        "desc": "落實「防災用品要備齊」，儲備糧水以防斷電停水。"
+      },
+      {
+        "option": "C",
+        "status": "符合",
+        "desc": "落實「登山溯溪不要去」，預防山洪暴發受困山區。"
+      },
+      {
+        "option": "D",
+        "status": "符合",
+        "desc": "落實「防颱訊息要注意」，即時掌握颱風行徑與停班課通知。"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "source": "法律條文圖解計算・2019酒駕新法累犯罰則",
+    "year": "會考精選",
+    "passage": "<div style=\"text-align:center; margin:12px 0;\"><img src=\"images/u37_q5_drunk_driving.png\" alt=\"酒駕新法累犯罰則\" style=\"max-width:100%; max-height:340px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.12);\"></div>\n【2019酒駕新法・酒駕再犯加重處罰圖表】：\n- 5年內第2次：\n  ・汽車酒駕：罰12萬元（第2次違規的運具為汽車）\n  ・機車酒駕：罰9萬元（第2次違規的運具為機車）\n- 5年內第3次以上：罰「前次處罰金額 + 9萬元」（累計無上限）\n  例如：第2次為汽車（12萬），第3次再違規（+9萬）= 21萬元；第4次再違規（+9萬）= 30萬元。",
+    "passageHighlight": "「第2次汽車罰<mark class=\"hl-yellow\">12萬</mark>；第3次再犯加<mark class=\"hl-pink\">9萬（=21萬）</mark>；第4次再犯再加<mark class=\"hl-green\">9萬（=30萬）</mark>。」",
+    "clue": "解題之眼：公式精確計算——花爸「五年內四次都汽車酒駕」：第2次基準為12萬，第3次為 12+9=21萬，第4次為 21+9=30萬。花爸說罰30萬完全正確。",
+    "stem": "花媽一家人正在討論今天看到的酒駕新法說明，下列誰的說法正確？",
+    "options": [
+      "(A) 花媽：五年內三次都機車酒駕，第三次違規將罰21萬",
+      "(B) 花爸：五年內四次都汽車酒駕，第四次違規將罰30萬",
+      "(C) 橘子：五年內第一次為機車酒駕，第二次為汽車酒駕，則第二次將罰18萬",
+      "(D) 柚子：五年內第二次為汽車酒駕，第三次為機車酒駕，則第三次將罰24萬"
+    ],
+    "answer": "B",
+    "explanation": "依新法計算公式逐一驗算：\n(A) 五年內三次皆機車：第2次為機車基準罰9萬；第3次為前次加9萬 = 9萬 + 9萬 = 18萬元（非21萬），花媽算錯；\n(B) 五年內四次皆汽車：第2次為汽車基準罰12萬；第3次為 12 + 9 = 21萬；第4次為 21 + 9 = 30萬元，花爸計算完全精確，故選(B)；\n(C) 第一次不論車種，第2次違規運具為汽車，法定基準即為12萬元（非18萬），橘子算錯；\n(D) 第2次汽車為12萬；第3次再犯為前次處罰金額加9萬 = 12萬 + 9萬 = 21萬元（非24萬），柚子算錯。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "第2次機車為9萬，第3次為9+9=18萬元。"
+      },
+      {
+        "option": "B",
+        "status": "正確",
+        "desc": "第2次12萬，第3次21萬，第4次 21+9=30萬元，公式吻合。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "第2次運具為汽車，基準金額即為12萬元。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "第3次為前次(12萬)+9萬=21萬元。"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "source": "數位應用介面・運動健身APP紀錄分析",
+    "year": "會考精選",
+    "passage": "<div style=\"text-align:center; margin:12px 0;\"><img src=\"images/u37_q6_running.png\" alt=\"運動APP紀錄畫面\" style=\"max-width:100%; max-height:360px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.12);\"></div>\n漢民下載了一個APP來記錄自己的運動狀況，運動紀錄如下：\n- 日期時間：2020年4月16日 13:36:20\n- 地圖軌跡：從綠色起點標記一路沿著路線跑到紅色終點標記\n- 總距離：4.51公里\n- 總步數：10451步\n- 總耗時：56分29秒\n- 平均配速：12'44\"（分鐘/公里）\n- 總消耗熱量：468大卡",
+    "passageHighlight": "「平均配速欄位標示：<mark class=\"hl-yellow\">12'44\"（分鐘/公里）</mark>，代表每跑完 1 公里需花費 <mark class=\"hl-green\">12 分 44 秒</mark>。」",
+    "clue": "解題之眼：讀懂運動App指標單位——「配速（Pace）」之國際標準單位為「分鐘/公里」，圖中「12'44\"」即代表「平均每跑一公里耗費12分鐘44秒」。",
+    "stem": "針對漢民此次運動紀錄的說明，正確者為何？",
+    "options": [
+      "(A) 可看出漢民地圖中是從紅點起跑跑到綠點結束",
+      "(B) 漢民跑步平均每公里耗時12分44秒",
+      "(C) 漢民此次跑步平均速度為每分鐘跑12.44公里",
+      "(D) 漢民跑步每小時平均消耗468大卡"
+    ],
+    "answer": "B",
+    "explanation": "依據健身APP專有名詞與數值判讀：\n(A) 運動地圖軌跡通則中，綠色標記為起點（Start），紅色標記為終點（Finish），漢民是從「綠點跑到紅點」，選項指反了，錯誤；\n(B) 圖中配速欄清楚標示「12'44\"」，其單位為「分鐘/公里」，代表跑步平均每公里所耗費的時間為12分44秒，解讀完全精確，故選(B)；\n(C) 「12'44\"」是配速（每公里幾分幾秒），並非速度（每分鐘幾公里），一分鐘跑12公里相當於時速720公里（噴射機速度），明顯混淆物理量單位，錯誤；\n(D) 「468大卡」是本次跑步總耗時56分29秒所消耗之「總熱量」，並非每小時平均消耗率，錯誤。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "地圖導航與運動記錄綠點皆為起點，紅點為終點。"
+      },
+      {
+        "option": "B",
+        "status": "正確",
+        "desc": "12'44\"為跑步配速Pace，意指平均每跑1公里耗用12分44秒。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "單位為分鐘/公里(配速)，非公里/分鐘(速度)。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "468大卡為本次56分半鐘運動之總消耗卡路里。"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "source": "競賽簡章規程・寶寶爬行趣活動海報",
+    "year": "會考精選",
+    "passage": "<div style=\"text-align:center; margin:12px 0;\"><img src=\"images/u37_q7_baby.png\" alt=\"寶寶爬行比賽海報\" style=\"max-width:100%; max-height:340px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.12);\"></div>\n【寶寶爬行趣活動簡章】：\n1. 對象：108年8月~109年2月出生的寶寶，設籍新北市。\n2. 限額：60名。\n3. 比賽規則：\n  (1) 時間限制90秒，最快抵達終點者為該組優勝（站立步行者將取消比賽資格），若皆未抵達，則以距離終點最近者為優勝。\n  (2) 共分6組，每組取其第一名進行總排名，依完成時間排出第1名至第6名。",
+    "passageHighlight": "「比賽規則第(2)點：<mark class=\"hl-yellow\">共分 6 組，每組取其第一名進行總排名，依完成時間排出第 1 名至第 6 名。</mark>」",
+    "clue": "解題之眼：比賽賽制設計——全場分6組，先在各組取第一名出線，再將這6位分組第一依完賽時間排序總成績。因此「第1名至第6名皆為各組第一名」。",
+    "stem": "關於上列海報，下列何者可以明確得知？",
+    "options": [
+      "(A) 參賽寶寶年齡的最大差距為一歲",
+      "(B) 這屬於全國賽事中的新北市初賽",
+      "(C) 優勝者必須於九十秒內爬到終點",
+      "(D) 第一名至第六名皆為各組第一名"
+    ],
+    "answer": "D",
+    "explanation": "依規章細則逐一核驗：\n(A) 參賽年齡範圍為108年8月至109年2月，跨越7個月（約半年），最大月齡差距為6-7個月，未達一歲（12個月），錯誤；\n(B) 海報僅要求設籍新北市，並未提及此為全省或全國性大賽之區域初賽，錯誤；\n(C) 第(1)條明確規定「若皆未抵達，則以距離終點最近者為優勝」，代表若該組皆未在90秒內爬到終點，依然能以爬行距離最遠者獲勝，並非必須破線完賽，錯誤；\n(D) 第(2)條載明「共分6組，每組取其第一名進行總排名，依完成時間排出第1名至第6名」，因此能進入總排名第1至6名者，每位必定都是各自組別的小組冠軍，完全精確，故選(D)。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "108年8月至109年2月差距約半年(6-7個月)，不到一整歲。"
+      },
+      {
+        "option": "B",
+        "status": "錯誤",
+        "desc": "純為新北市在地親子活動，無全國選拔賽之晉級規定。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "若無人完賽，以距終點最近者優勝，不強制90秒內爬達。"
+      },
+      {
+        "option": "D",
+        "status": "正確",
+        "desc": "大會分6組各取第一名晉級決選，故總名前六名皆為分組冠軍。"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "source": "商業活動報名簡章・2020藝術夏令營費用方案",
+    "year": "會考精選",
+    "passage": "<div style=\"text-align:center; margin:12px 0;\"><img src=\"images/u37_q8_camp.png\" alt=\"藝術夏令營費用海報\" style=\"max-width:100%; max-height:340px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.12);\"></div>\n【2020藝術夏令營・活動費用說明】：\n- 孩童（含住宿）：9,900元/人（含住宿、早餐、中餐、課程、材料費、意外保險、遊覽車費、旅遊平安險）\n- 孩童（不含住宿）：6,500元/人（含中餐、課程、材料費、意外保險、遊覽車費、旅遊平安險）\n- 陪同家長：6,900元/人（含住宿、早餐、中餐、意外保險、遊覽車費、旅遊平安險）\n- 早鳥優惠：即日起至5/31前報名繳費者，可折抵現金400元/人。",
+    "passageHighlight": "「家長含住宿（6,900元）+ 孩童含住宿（9,900元）= <mark class=\"hl-yellow\">16,800元</mark>；早鳥折抵兩人共 400×2 = <mark class=\"hl-pink\">800元</mark>；應付 16,800 - 800 = <mark class=\"hl-green\">16,000元</mark>。」",
+    "clue": "解題之眼：家長陪同方案已含住宿，故一同前往之孩童必須選擇「含住宿（9,900元）」方案，總額 6,900 + 9,900 = 16,800元。早鳥每人折400元，兩人折800元，實付剛好16,000元！",
+    "stem": "關於夏令營活動費用的說明，哪個正確？",
+    "options": [
+      "(A) 孩童的住宿及早餐費用為3,000元",
+      "(B) 家長額外加購課程與材料的費用為3,000元",
+      "(C) 陪同家長及其孩童各一人的費用給付13,400元",
+      "(D) 陪同家長及其孩童各一人的早鳥優惠只需付16,000元"
+    ],
+    "answer": "D",
+    "explanation": "依據費用清單進行精確會計試算：\n(A) 孩童含住宿（9,900元）與不含住宿（6,500元）差價為 9,900 - 6,500 = 3,400元，此3,400元即為住宿及早餐費，非3,000元，錯誤；\n(B) 簡章未提供家長加購課程之服務與計價，錯誤；\n(C) 陪同家長方案已包含住宿（6,900元），其隨行孩童必然亦同住過夜，故孩童應採計含住宿方案（9,900元），兩人原價應為 6,900 + 9,900 = 16,800元（非13,400元，13,400是誤將家長與不含住宿孩童 6,900+6,500 錯拼而得），錯誤；\n(D) 原價總和為 16,800元。若於5/31前享早鳥優惠，兩人皆可各折抵400元（共扣折800元），結算為 16,800 - 800 = 16,000元，精確無誤，故選(D)。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "9900扣除6500為3400元，非3000元。"
+      },
+      {
+        "option": "B",
+        "status": "錯誤",
+        "desc": "海報無家長加購課程材料之定價條款。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "家長住宿孩童亦需住宿，應為16800元而非13400元。"
+      },
+      {
+        "option": "D",
+        "status": "正確",
+        "desc": "原價16800元扣除早鳥2人優惠800元，實付剛好16000元整。"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "source": "公共藝文海報・中國古典文學專題系列講座",
+    "year": "會考精選",
+    "passage": "<div style=\"text-align:center; margin:12px 0;\"><img src=\"images/u37_q9_lecture.png\" alt=\"研習講座海報\" style=\"max-width:100%; max-height:340px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.12);\"></div>\n【109年度研習計畫・文學系列講座】：\n- 主題：中國古典四大小說——《中國經典與現代人生》\n- 講座編號：文學系列講座 3\n- 主講人：楚漢民主持\n- 場次資訊：\n  ・7月8日（今日）星期三晚上 7:30~9:30 於 南一出版社國際會議廳\n  ・7月9號（明日）星期四晚上 7:30~9:30 於 孝德補習班游藝廳",
+    "passageHighlight": "「海報第一場次明確打印：<mark class=\"hl-yellow\">『7月8日（今日）星期三晚上 7:30~9:30』</mark>。」",
+    "clue": "解題之眼：比對海報內文括弧註記——7月8日後方特別括弧註記「（今日）」，印證海報發布刊登之當天即為「109年7月8日」。黃老師說法與事實完全相符。",
+    "stem": "幾位老師在校園內看到這張海報，請問哪位老師所說的與事實相符？",
+    "options": [
+      "(A) 趙老師：講座內容比較了中國經典與現代文學的流變",
+      "(B) 錢老師：主辦單位為南一出版社及孝德補習班",
+      "(C) 黃老師：這張海報的刊登日期為109年7月8日",
+      "(D) 李老師：這是主講者楚漢民第三次講述相同的題目"
+    ],
+    "answer": "C",
+    "explanation": "仔細推敲海報文意：\n(A) 標題為「中國經典與現代人生」，探討古代小說如何啟發當代生活修養，並非評比「現代文學」作品，趙老師說法不符；\n(B) 南一出版社與孝德補習班是提供國際會議廳與游藝廳之「演講場地」，主辦單位為教育部或文化部主導之研習計畫，錢老師混淆場地與主辦者，不符；\n(C) 海報第一場次明確寫著「7月8日（今日）」，以「今日」指稱7月8日，明示海報刊登張貼生效日期正是109年7月8日無誤，黃老師說法與事實完全相符，故選(C)；\n(D) 「文學系列講座 3」代表此場演講是該年度系列講座之「第三個主題單元」，並非同一題目重複講第三遍，李老師解讀錯誤。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "主題為現代人生處世智慧，非比較文學論述。"
+      },
+      {
+        "option": "B",
+        "status": "錯誤",
+        "desc": "南一與孝德僅為提供會議廳場地之協辦場所。"
+      },
+      {
+        "option": "C",
+        "status": "正確",
+        "desc": "文中標註7月8日(今日)，直接印證刊出發布日為7月8日。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "編號3為系列講座第3講次，非重複演講三回。"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "source": "公共體育招生簡章・暑期游泳密集班招生傳單",
+    "year": "會考精選",
+    "passage": "<div style=\"text-align:center; margin:12px 0;\"><img src=\"images/u37_q10_swimming.png\" alt=\"游泳訓練班招生簡章\" style=\"max-width:100%; max-height:360px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.12);\"></div>\n【暑假游泳密集班招生簡章】：\n1. 兒童泳訓密集班（一年級至六年級）：週一至週五，6人開班/10人滿班，費用2,800元/人（共10堂）。開課時段涵蓋早、中、晚共9個時段。\n2. 成人泳訓密集班（七年級以上）：週一至週五，6人開班/10人滿班，費用2,800元/人（共10堂）。時段僅有 06:30-07:40 及 20:00-21:10（早、晚兩時段，無午間）。\n3. 幼兒泳訓密集班（學齡前）：週一至週五，3人開班/5人滿班，費用4,600元/人（共10堂）。\n【注意事項】：\n1. 請假者請提前告知櫃臺人員預約登記補課時段。\n2. 兒童班及幼兒班學員一名學生可由一名家長免費陪同入場（不下水）。",
+    "passageHighlight": "「兒童班對象為<mark class=\"hl-yellow\">國小一年級至六年級</mark>；注意事項第 2 點：<mark class=\"hl-green\">兒童班一名學生可由一名家長免費陪同入場</mark>。」",
+    "clue": "解題之眼：比對招生規定與注意事項——小學生屬於一至六年級，可報名「兒童班」；注意事項第2點明文保障「兒童班可由一名家長免費陪同入場」。(D)完全符合。",
+    "stem": "下列哪一個說法，符合上列傳單的內容？",
+    "options": [
+      "(A) 幼兒泳訓密集班的費用是兒童泳訓密集班的兩倍",
+      "(B) 三個班級一天中各有早、中、晚三個時段可供選擇",
+      "(C) 倘若事先請假，可利用補課時段將10堂課都補齊",
+      "(D) 小學生可報名兒童班，一位家長可免費陪同進場"
+    ],
+    "answer": "D",
+    "explanation": "依傳單條款逐條對質：\n(A) 兒童班2,800元，其兩倍為5,600元；幼兒班費用為4,600元，不到兩倍，說法不符；\n(B) 成人班僅有清晨 06:30-07:40 及夜間 20:00-21:10 兩個時段，並無中午時段，並非各班皆有早中晚三時段，說法不符；\n(C) 簡章下方規定梯次與週末補課時段有限（如第四梯次8/12開課後僅餘零星補課日），且受限於師資滿班限制，無法保證若缺席10堂能全數補滿，且常理上不可能整期10堂都靠補課，說法不符；\n(D) 兒童班明確標示招收「一年級至六年級（國小學童）」，注意事項第2條亦白紙黑字寫明「兒童班及幼兒班學員一名學生可由一名家長免費陪同入場（不下水）」，完全符合傳單內容，故選(D)。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "幼兒班4600元，不到兒童班2800元兩倍(5600元)。"
+      },
+      {
+        "option": "B",
+        "status": "錯誤",
+        "desc": "成人班只有早晚兩時段，缺少午間梯次。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "簡章補課梯次日數有限，無法承諾全期10堂悉數補回。"
+      },
+      {
+        "option": "D",
+        "status": "正確",
+        "desc": "小學生符合兒童班資格，且享有1名家長免門票陪同入場權益。"
+      }
+    ]
+  }
+];
+
+    let currentQuestionIndex = 0;
+    let userAnswers = {};
+    let isContinuousView = false;
+    let soundEnabled = true;
+    let currentZoom = 100;
+
+    // 音效產生器（利用 Web Audio API 合成，免載入外部 mp3）
+    const audioCtx = (window.AudioContext || window.webkitAudioContext) ? new (window.AudioContext || window.webkitAudioContext)() : null;
+
+    function playSound(type) {
+      if (!soundEnabled || !audioCtx) return;
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      if (type === 'correct') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(587.33, now); // D5
+        osc.frequency.setValueAtTime(880, now + 0.1); // A5
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+        osc.start(now);
+        osc.stop(now + 0.5);
+      } else if (type === 'incorrect') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(329.63, now); // E4
+        osc.frequency.setValueAtTime(261.63, now + 0.15); // C4
+        gain.gain.setValueAtTime(0.25, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+        osc.start(now);
+        osc.stop(now + 0.45);
+      } else if (type === 'click') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(440, now);
+        gain.gain.setValueAtTime(0.08, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+        osc.start(now);
+        osc.stop(now + 0.08);
+      }
+    }
+
+    function toggleSound() {
+      soundEnabled = !soundEnabled;
+      const btn = document.getElementById("soundToggleBtn");
+      if (soundEnabled) {
+        btn.classList.add("active");
+        btn.innerHTML = `<span id="soundIcon">🔔</span> 音效已開啟`;
+      } else {
+        btn.classList.remove("active");
+        btn.innerHTML = `<span id="soundIcon">🔕</span> 音效已靜音`;
+      }
+    }
+
+    // 切換檢視模式（單題專注 vs 連續清單）
+    function toggleViewMode() {
+      isContinuousView = !isContinuousView;
+      const btn = document.getElementById("viewModeBtn");
+      const text = document.getElementById("viewModeText");
+      if (isContinuousView) {
+        btn.classList.add("active");
+        text.innerText = "切換為專注模式";
+      } else {
+        btn.classList.remove("active");
+        text.innerText = "切換為連續模式";
+      }
+      renderView();
+    }
+
+    // 縮放字級
+    function adjustFontSize(delta) {
+      currentZoom += delta * 10;
+      if (currentZoom < 80) currentZoom = 80;
+      if (currentZoom > 140) currentZoom = 140;
+      document.getElementById("fontSizeDisplay").innerText = currentZoom + "%";
+      document.getElementById("questionsContainer").style.fontSize = (currentZoom / 100) + "rem";
+    }
+
+    // 渲染導航 Tab
+    function renderNavTabs() {
+      const container = document.getElementById("navTabs");
+      container.innerHTML = "";
+      questionsData.forEach((q, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "q-tab";
+        btn.id = `navTab_${q.id}`;
+        btn.innerText = q.id;
+        
+        if (!isContinuousView && idx === currentQuestionIndex) {
+          btn.classList.add("current");
+        }
+
+        if (userAnswers[q.id]) {
+          if (userAnswers[q.id].isCorrect) {
+            btn.classList.add("correct");
+          } else {
+            btn.classList.add("incorrect");
+          }
+        }
+
+        btn.onclick = () => {
+          playSound('click');
+          if (isContinuousView) {
+            const card = document.getElementById(`qcard_${q.id}`);
+            if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else {
+            currentQuestionIndex = idx;
+            renderView();
+          }
+        };
+
+        container.appendChild(btn);
+      });
+
+      updateStats();
+    }
+
+    // 更新統計資訊
+    function updateStats() {
+      const answeredKeys = Object.keys(userAnswers);
+      const count = answeredKeys.length;
+      document.getElementById("completedCount").innerText = count;
+      document.getElementById("totalQuestionsCount").innerText = questionsData.length;
+
+      if (count === 0) {
+        document.getElementById("accuracyRate").innerText = "-";
+        document.getElementById("accuracyRate").style.color = "var(--text-muted)";
+      } else {
+        const correctCount = answeredKeys.filter(k => userAnswers[k].isCorrect).length;
+        const rate = Math.round((correctCount / count) * 100);
+        const rateEl = document.getElementById("accuracyRate");
+        rateEl.innerText = rate + "%";
+        rateEl.style.color = rate >= 80 ? "var(--success-color)" : (rate >= 60 ? "#d97706" : "var(--error-color)");
+      }
+    }
+
+    // 產生單一題目 HTML
+    function buildQuestionCardHtml(q, idx) {
+      const userState = userAnswers[q.id];
+      const hasAnswered = !!userState;
+      const isCorrect = hasAnswered && userState.isCorrect;
+
+      const passageHtml = hasAnswered ? q.passageHighlight : q.passage;
+      const revealedClass = hasAnswered ? "revealed" : "";
+
+      let optionsHtml = q.options.map(opt => {
+        let extraClasses = "";
+        let markTag = "";
+        if (hasAnswered) {
+          if (opt.key === q.answer) {
+            if (userState.choice === opt.key) {
+              extraClasses = "selected-correct";
+              markTag = `<span style="margin-left:auto;font-weight:700;color:var(--success-color)">✓ 答對了！</span>`;
+            } else {
+              extraClasses = "reveal-correct";
+              markTag = `<span style="margin-left:auto;font-weight:700;color:var(--success-color)">✓ 正確答案</span>`;
+            }
+          } else if (userState.choice === opt.key) {
+            extraClasses = "selected-incorrect";
+            markTag = `<span style="margin-left:auto;font-weight:700;color:var(--error-color)">✗ 你的選擇</span>`;
+          }
+        }
+
+        return `
+          <button class="option-btn ${extraClasses}" 
+                  id="optBtn_${q.id}_${opt.key}" 
+                  onclick="selectAnswer(${q.id}, '${opt.key}')" 
+                  ${hasAnswered ? 'disabled' : ''}>
+            <span class="option-label">(${opt.key})</span>
+            <span class="option-content">${opt.text}</span>
+            ${markTag}
+          </button>
+        `;
+      }).join("");
+
+      let bannerHtml = "";
+      if (hasAnswered) {
+        if (isCorrect) {
+          bannerHtml = `
+            <div class="result-banner correct">
+              <span>🎉 <strong>恭喜答對！</strong> 正確答案為 (${q.answer})，精準掌握了文章的主旨核心。</span>
+              <button class="btn-retry" onclick="retryQuestion(${q.id})">🔄 重新挑戰</button>
+            </div>
+          `;
+        } else {
+          bannerHtml = `
+            <div class="result-banner incorrect">
+              <span>💡 <strong>答錯了！</strong> 你的答案是 (${userState.choice})，正確解答應為 <strong>(${q.answer})</strong>。請詳閱下方解題之眼與螢光筆分析。</span>
+              <button class="btn-retry" onclick="retryQuestion(${q.id})">🔄 重新挑戰</button>
+            </div>
+          `;
+        }
+      }
+
+      let notesHtml = "";
+      if (q.notes) {
+        notesHtml = `
+          <div class="notes-box">
+            <div class="notes-title">📌 重要詞彙注釋</div>
+            <div>${q.notes}</div>
+          </div>
+        `;
+      }
+
+      let transHtml = "";
+      if (q.translation) {
+        transHtml = `
+          <div class="translation-box">
+            <div class="translation-header">📖 題幹文言白話語譯</div>
+            <div>${q.translation}</div>
+          </div>
+        `;
+      }
+
+      let optAnalysisHtml = "";
+      if (q.optionAnalysis) {
+        optAnalysisHtml = `
+          <div class="option-analysis-box">
+            <div style="font-weight:700;color:#334155;margin-bottom:8px">🔍 各選項深入剖析：</div>
+            ${q.optionAnalysis.map(a => `
+              <div class="analysis-item">
+                <span class="analysis-tag ${a.status === 'correct' ? 'is-correct' : 'is-wrong'}">(${a.key}) ${a.status === 'correct' ? '正解' : '誤'}</span>
+                <span>${a.reason}</span>
+              </div>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      let explanationHtml = `
+        <div class="explanation-container ${hasAnswered ? 'show' : ''}" id="expContainer_${q.id}">
+          <div class="explanation-card">
+            <div class="explanation-header">
+              <div class="explanation-title">
+                <span>📚 詳解與核心文意解析</span>
+              </div>
+              <div class="hl-legend">
+                <div class="legend-item"><span class="legend-dot" style="background:#facc15"></span> 黃色：解題關鍵詞</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#f43f5e"></span> 粉紅：轉折詞／特殊標點</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#10b981"></span> 綠色：推論核心／主旨歸納</div>
+              </div>
+            </div>
+            <div class="explanation-body">
+              <div class="clue-box">
+                <div class="clue-label">🎯 【解題之眼・關鍵線索】</div>
+                <div>${q.clue}</div>
+              </div>
+
+              <div class="exp-paragraph">
+                ${q.explanation}
+              </div>
+
+              ${transHtml}
+              ${optAnalysisHtml}
+            </div>
+          </div>
+        </div>
+      `;
+
+      let navButtonsHtml = "";
+      if (!isContinuousView) {
+        const isFirst = idx === 0;
+        const isLast = idx === questionsData.length - 1;
+        navButtonsHtml = `
+          <div class="nav-buttons-container">
+            <button class="nav-btn" onclick="prevQuestion()" ${isFirst ? 'disabled' : ''}>
+              <span>⬅</span> 上一題
+            </button>
+            <div style="font-size:0.92rem;color:var(--text-muted);display:flex;align-items:center;">
+              第 <strong>${q.id}</strong> / ${questionsData.length} 題
+            </div>
+            <button class="nav-btn" onclick="nextQuestion()" ${isLast ? 'disabled' : ''}>
+              下一題 <span>➡</span>
+            </button>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="question-card" id="qcard_${q.id}">
+          <div class="question-header">
+            <div class="q-num-badge">
+              <span>第 ${q.id} 題</span>
+              <span class="category-tag">${q.category}</span>
+            </div>
+            <div style="font-size:0.88rem;color:var(--text-muted)">圖表判讀篇・文意好試多</div>
+          </div>
+
+          <div class="passage-box ${revealedClass}" id="passage_${q.id}">
+            ${passageHtml}
+            ${q.author ? `<span class="passage-author">—— ${q.author}</span>` : ''}
+          </div>
+
+          <div class="stem-text">${q.stem}</div>
+
+          ${notesHtml}
+
+          <div class="options-grid">
+            ${optionsHtml}
+          </div>
+
+          ${bannerHtml}
+          ${explanationHtml}
+          ${navButtonsHtml}
+        </div>
+      `;
+    }
+
+    function renderView() {
+      const container = document.getElementById("questionsContainer");
+      if (isContinuousView) {
+        container.innerHTML = questionsData.map((q, idx) => buildQuestionCardHtml(q, idx)).join("");
+      } else {
+        const currentQ = questionsData[currentQuestionIndex];
+        container.innerHTML = buildQuestionCardHtml(currentQ, currentQuestionIndex);
+      }
+      renderNavTabs();
+    }
+
+    function selectAnswer(qid, choiceKey) {
+      const q = questionsData.find(item => item.id === qid);
+      if (!q) return;
+
+      const isCorrect = (choiceKey === q.answer);
+      userAnswers[qid] = {
+        choice: choiceKey,
+        isCorrect: isCorrect
+      };
+
+      playSound(isCorrect ? 'correct' : 'incorrect');
+      renderView();
+
+      setTimeout(() => {
+        const expEl = document.getElementById(`expContainer_${qid}`);
+        if (expEl) {
+          expEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }, 100);
+    }
+
+    function retryQuestion(qid) {
+      playSound('click');
+      delete userAnswers[qid];
+      renderView();
+    }
+
+    function resetAllProgress() {
+      if (confirm("確定要清除所有作答紀錄並重新開始嗎？")) {
+        playSound('click');
+        userAnswers = {};
+        currentQuestionIndex = 0;
+        renderView();
+      }
+    }
+
+    function prevQuestion() {
+      if (currentQuestionIndex > 0) {
+        playSound('click');
+        currentQuestionIndex--;
+        renderView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIndex < questionsData.length - 1) {
+        playSound('click');
+        currentQuestionIndex++;
+        renderView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderView();
+    });
+  </script>
+</body>
+</html>

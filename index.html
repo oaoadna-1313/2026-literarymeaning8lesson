@@ -953,15 +953,20 @@
         <p class="sub-title">文本表述方式 × 8堂解題思維專題 × 互動學習記錄單</p>
       </div>
       <div class="header-actions">
-        <a href="01_main_idea_complete_handout.pdf" target="_blank" class="action-btn" style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border-color: #f59e0b; text-decoration: none; font-weight: 700; box-shadow: 0 2px 6px rgba(245, 158, 11, 0.25);" title="開啟或下載第 1 課主旨篇 49 題完整精編詳解大合訂本 PDF">
-          <span>📚</span> 第1課全套講義 (PDF)
-        </a>
-        <a href="02_viewpoint_complete_handout.pdf" target="_blank" class="action-btn" style="background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; border-color: #2563eb; text-decoration: none; font-weight: 700; box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);" title="開啟或下載第 2 課觀點篇 50 題完整精編詳解大合訂本 PDF">
-          <span>📚</span> 第2課全套講義 (PDF)
-        </a>
-        <a href="03_implication_complete_handout.pdf" target="_blank" class="action-btn" style="background: linear-gradient(135deg, #059669, #047857); color: white; border-color: #059669; text-decoration: none; font-weight: 700; box-shadow: 0 2px 6px rgba(5, 150, 105, 0.25);" title="開啟或下載第 3 課意涵篇 50 題完整精編詳解大合訂本 PDF">
-          <span>📚</span> 第3課全套講義 (PDF)
-        </a>
+        <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); border-radius:8px; padding:4px 8px;">
+          <span style="font-weight:700; font-size:0.85rem; color:#fef08a;">📚 Complete Handouts (PDF):</span>
+          <select id="completePdfSelect" style="background:#ffffff; color:#0f172a; border:1px solid #cbd5e1; border-radius:6px; padding:4px 8px; font-weight:700; font-size:0.82rem; cursor:pointer;" onchange="if(this.value){window.open(this.value, '_blank'); this.selectedIndex=0;}">
+            <option value="">-- Select Lesson to View Complete PDF --</option>
+            <option value="01_main_idea_complete_handout.pdf">Lesson 01 Main Idea (49 Qs / 51 Pages)</option>
+            <option value="02_viewpoint_complete_handout.pdf">Lesson 02 Viewpoint (50 Qs / 52 Pages)</option>
+            <option value="03_implication_complete_handout.pdf">Lesson 03 Implication (50 Qs / 52 Pages)</option>
+            <option value="04_interpretation_complete_handout.pdf">Lesson 04 Interpretation (41 Qs / 43 Pages)</option>
+            <option value="05_comparison_complete_handout.pdf">Lesson 05 Comparison (46 Qs / 48 Pages)</option>
+            <option value="06_inference_complete_handout.pdf">Lesson 06 Inference (45 Qs / 47 Pages)</option>
+            <option value="07_technique_complete_handout.pdf">Lesson 07 Technique (43 Qs / 45 Pages)</option>
+            <option value="08_diagram_complete_handout.pdf">Lesson 08 Diagram (20 Qs / 22 Pages)</option>
+          </select>
+        </div>
 
         <button class="action-btn" onclick="openFileManagerModal()">
           <span>⚙️</span> 連結管理與檔案探測
@@ -988,7 +993,7 @@
           <span class="icon">📚</span>
           <div>
             <div class="stat-label">總測驗單元</div>
-            <div class="stat-val">37 <span style="font-size:0.75rem;font-weight:400;color:var(--slate-500)">單元 + 2回驗收</span></div>
+            <div class="stat-val">37 <span style="font-size:0.75rem;font-weight:400;color:var(--slate-500)">單元 (全344題)</span></div>
           </div>
         </div>
         <div class="stat-pill">
@@ -1232,11 +1237,11 @@
         title: "第 4 課 解釋篇",
         subtitle: "換句話說解文意",
         units: {
-          "記敘文類": { page: "P.68", defaultFile: "16_interpretation_narrative.html" },
-          "抒情文類": { page: "P.71", defaultFile: "17_interpretation_lyric.html" },
-          "議論文類": { page: "P.74", defaultFile: "18_interpretation_argumentative.html" },
-          "說明文類": { page: "P.77", defaultFile: "19_interpretation_expository.html" },
-          "應用文類": { page: "P.80", defaultFile: "20_interpretation_practical.html" }
+          "記敘文類": { page: "P.68", defaultFile: "16_interpretation_narrative.html", defaultHandout: "16_interpretation_narrative_handout.pdf", isReadyDefault: true, questionCount: 10 },
+          "抒情文類": { page: "P.71", defaultFile: "17_interpretation_lyric.html", defaultHandout: "17_interpretation_lyric_handout.pdf", isReadyDefault: true, questionCount: 8 },
+          "議論文類": { page: "P.74", defaultFile: "18_interpretation_argumentative.html", defaultHandout: "18_interpretation_argumentative_handout.pdf", isReadyDefault: true, questionCount: 8 },
+          "說明文類": { page: "P.77", defaultFile: "19_interpretation_expository.html", defaultHandout: "19_interpretation_expository_handout.pdf", isReadyDefault: true, questionCount: 6 },
+          "應用文類": { page: "P.80", defaultFile: "20_interpretation_practical.html", defaultHandout: "20_interpretation_practical_handout.pdf", isReadyDefault: true, questionCount: 9 }
         }
       },
       {
@@ -1244,11 +1249,11 @@
         title: "第 5 課 比較篇",
         subtitle: "大家來找碴",
         units: {
-          "記敘文類": { page: "P.88", defaultFile: "21_comparison_narrative.html" },
-          "抒情文類": { page: "P.92", defaultFile: "22_comparison_lyric.html" },
-          "議論文類": { page: "P.95", defaultFile: "23_comparison_argumentative.html" },
-          "說明文類": { page: "P.98", defaultFile: "24_comparison_expository.html" },
-          "應用文類": { page: "P.102", defaultFile: "25_comparison_practical.html" }
+          "記敘文類": { page: "P.88", defaultFile: "21_comparison_narrative.html", defaultHandout: "21_comparison_narrative_handout.pdf", isReadyDefault: true, questionCount: 8 },
+          "抒情文類": { page: "P.92", defaultFile: "22_comparison_lyric.html", defaultHandout: "22_comparison_lyric_handout.pdf", isReadyDefault: true, questionCount: 10 },
+          "議論文類": { page: "P.95", defaultFile: "23_comparison_argumentative.html", defaultHandout: "23_comparison_argumentative_handout.pdf", isReadyDefault: true, questionCount: 10 },
+          "說明文類": { page: "P.98", defaultFile: "24_comparison_expository.html", defaultHandout: "24_comparison_expository_handout.pdf", isReadyDefault: true, questionCount: 8 },
+          "應用文類": { page: "P.102", defaultFile: "25_comparison_practical.html", defaultHandout: "25_comparison_practical_handout.pdf", isReadyDefault: true, questionCount: 10 }
         }
       },
       {
@@ -1256,11 +1261,11 @@
         title: "第 6 課 推論篇",
         subtitle: "找出句子的真相",
         units: {
-          "記敘文類": { page: "P.111", defaultFile: "26_inference_narrative.html" },
-          "抒情文類": { page: "P.114", defaultFile: "27_inference_lyric.html" },
-          "議論文類": { page: "P.117", defaultFile: "28_inference_argumentative.html" },
-          "說明文類": { page: "P.120", defaultFile: "29_inference_expository.html" },
-          "應用文類": { page: "P.123", defaultFile: "30_inference_practical.html" }
+          "記敘文類": { page: "P.111", defaultFile: "26_inference_narrative.html", defaultHandout: "26_inference_narrative_handout.pdf", isReadyDefault: true, questionCount: 9 },
+          "抒情文類": { page: "P.114", defaultFile: "27_inference_lyric.html", defaultHandout: "27_inference_lyric_handout.pdf", isReadyDefault: true, questionCount: 9 },
+          "議論文類": { page: "P.117", defaultFile: "28_inference_argumentative.html", defaultHandout: "28_inference_argumentative_handout.pdf", isReadyDefault: true, questionCount: 10 },
+          "說明文類": { page: "P.120", defaultFile: "29_inference_expository.html", defaultHandout: "29_inference_expository_handout.pdf", isReadyDefault: true, questionCount: 9 },
+          "應用文類": { page: "P.123", defaultFile: "30_inference_practical.html", defaultHandout: "30_inference_practical_handout.pdf", isReadyDefault: true, questionCount: 8 }
         }
       },
       {
@@ -1268,11 +1273,11 @@
         title: "第 7 課 寫作手法篇",
         subtitle: "拆解寫作伎倆",
         units: {
-          "記敘文類": { page: "P.131", defaultFile: "31_technique_narrative.html" },
-          "抒情文類": { page: "P.134", defaultFile: "32_technique_lyric.html" },
-          "議論文類": { page: "P.137", defaultFile: "33_technique_argumentative.html" },
-          "說明文類": { page: "P.140", defaultFile: "34_technique_expository.html" },
-          "應用文類": { page: "P.143", defaultFile: "35_technique_practical.html" }
+          "記敘文類": { page: "P.131", defaultFile: "31_technique_narrative.html", defaultHandout: "31_technique_narrative_handout.pdf", isReadyDefault: true, questionCount: 8 },
+          "抒情文類": { page: "P.134", defaultFile: "32_technique_lyric.html", defaultHandout: "32_technique_lyric_handout.pdf", isReadyDefault: true, questionCount: 9 },
+          "議論文類": { page: "P.137", defaultFile: "33_technique_argumentative.html", defaultHandout: "33_technique_argumentative_handout.pdf", isReadyDefault: true, questionCount: 10 },
+          "說明文類": { page: "P.140", defaultFile: "34_technique_expository.html", defaultHandout: "34_technique_expository_handout.pdf", isReadyDefault: true, questionCount: 8 },
+          "應用文類": { page: "P.143", defaultFile: "35_technique_practical.html", defaultHandout: "35_technique_practical_handout.pdf", isReadyDefault: true, questionCount: 8 }
         }
       },
       {
@@ -1280,11 +1285,11 @@
         title: "第 8 課 圖表判讀篇",
         subtitle: "圖與文的化學作用",
         units: {
-          "記敘文類": { isRest: true, text: "休息一下吧！" },
-          "抒情文類": { isRest: true, text: "休息一下吧！" },
-          "議論文類": { isRest: true, text: "休息一下吧！" },
-          "說明文類": { page: "P.150", defaultFile: "36_chart_expository.html" },
-          "應用文類": { page: "P.156", defaultFile: "37_chart_practical.html" }
+          "記敘文類": { isRest: true, text: "會考無此分類" },
+          "抒情文類": { isRest: true, text: "會考無此分類" },
+          "議論文類": { isRest: true, text: "會考無此分類" },
+          "說明文類": { page: "P.150", defaultFile: "36_diagram_expository.html", defaultHandout: "36_diagram_expository_handout.pdf", isReadyDefault: true, questionCount: 10 },
+          "應用文類": { page: "P.156", defaultFile: "37_diagram_practical.html", defaultHandout: "37_diagram_practical_handout.pdf", isReadyDefault: true, questionCount: 10 }
         }
       }
     ];

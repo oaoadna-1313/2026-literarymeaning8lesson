@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文意新8課 ｜ 第7課 寫作手法篇（抒情文類）解說教材</title>
+  <style>
+    :root {
+      --primary-color: #831843;
+      --primary-hover: #9d174d;
+      --primary-light: #fdf2f8;
+      --accent-color: #b91c1c;
+      --success-color: #059669;
+      --success-light: #ecfdf5;
+      --error-color: #dc2626;
+      --error-light: #fef2f2;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --bg-page: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --quote-bg: #fdfbf7;
+      --quote-border: #d97706;
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Serif TC", serif, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 頂部全域導航選單 */
+    .top-navbar {
+      background: #0f172a;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      padding: 8px 20px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .top-navbar-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .top-units-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .unit-link {
+      color: #cbd5e1;
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 6px;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+
+    .unit-link:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+
+    .unit-link.active {
+      background: var(--primary-color);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .home-link {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.1);
+      transition: all 0.2s;
+    }
+    .home-link:hover {
+      background: rgba(56, 189, 248, 0.2);
+      color: #7dd3fc;
+    }
+
+    /* 標頭 Header */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .badge-chapter {
+      background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .title-text {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.5px;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .control-btn {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      padding: 6px 12px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .control-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .control-btn.active {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    /* 進度條與題號切換欄 */
+    .progress-bar-wrapper {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .progress-bar-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .q-tab {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #475569;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .q-tab:hover {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      background: var(--primary-light);
+    }
+
+    .q-tab.current {
+      border-color: var(--primary-color);
+      background: var(--primary-color);
+      color: white;
+      box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
+    }
+
+    .q-tab.correct {
+      border-color: var(--success-color);
+      background: var(--success-light);
+      color: var(--success-color);
+    }
+
+    .q-tab.correct.current {
+      background: var(--success-color);
+      color: white;
+    }
+
+    .q-tab.incorrect {
+      border-color: var(--error-color);
+      background: var(--error-light);
+      color: var(--error-color);
+    }
+
+    .q-tab.incorrect.current {
+      background: var(--error-color);
+      color: white;
+    }
+
+    .stats-badge {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: #f8fafc;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+    }
+
+    /* 主內容容器 */
+    main {
+      max-width: 900px;
+      width: 100%;
+      margin: 24px auto;
+      padding: 0 16px;
+      flex: 1;
+    }
+
+    .question-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      padding: 28px 32px;
+      margin-bottom: 30px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .question-card:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .q-num-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-color);
+    }
+
+    .category-tag {
+      background: var(--primary-light);
+      color: var(--primary-color);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    /* 文本引文區塊 */
+    .passage-box {
+      background: var(--quote-bg);
+      border-left: 5px solid var(--quote-border);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 20px 24px;
+      margin-bottom: 22px;
+      font-size: 1.15rem;
+      line-height: 2.1;
+      letter-spacing: 0.4px;
+      color: #1e293b;
+      position: relative;
+    }
+
+    .passage-author {
+      display: block;
+      margin-top: 10px;
+      text-align: right;
+      font-size: 0.95rem;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    /* 題目題幹問句 */
+    .stem-text {
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #0f172a;
+      line-height: 1.7;
+    }
+
+    /* 注釋框 */
+    .notes-box {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #475569;
+    }
+
+    .notes-title {
+      font-weight: 700;
+      color: #0369a1;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 選項列表 */
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      text-align: left;
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--primary-color);
+      background: #f8fafc;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .option-label {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #475569;
+      min-width: 32px;
+    }
+
+    .option-btn.selected-correct {
+      background: var(--success-light) !important;
+      border-color: var(--success-color) !important;
+      color: #065f46 !important;
+      font-weight: 700;
+    }
+
+    .option-btn.selected-correct .option-label {
+      color: var(--success-color);
+    }
+
+    .option-btn.selected-incorrect {
+      background: var(--error-light) !important;
+      border-color: var(--error-color) !important;
+      color: #991b1b !important;
+      font-weight: 700;
+    }
+
+    .option-btn.selected-incorrect .option-label {
+      color: var(--error-color);
+    }
+
+    .option-btn.reveal-correct {
+      border-color: var(--success-color) !important;
+      background: #f0fdf4 !important;
+      color: #166534 !important;
+      border-style: dashed !important;
+    }
+
+    /* 答題回饋橫幅 */
+    .result-banner {
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .result-banner.correct {
+      background: #ecfdf5;
+      border: 1px solid #6ee7b7;
+      color: #065f46;
+    }
+
+    .result-banner.incorrect {
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      color: #991b1b;
+    }
+
+    .btn-retry {
+      background: white;
+      border: 1px solid #cbd5e1;
+      padding: 6px 14px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-retry:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+
+    /* 詳解摺疊卡片 */
+    .explanation-container {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.4s ease-in-out;
+    }
+
+    .explanation-container.show {
+      max-height: 2500px;
+      opacity: 1;
+      transition: max-height 0.8s ease-in-out, opacity 0.4s ease-in-out;
+    }
+
+    .explanation-card {
+      background: #ffffff;
+      border: 1px solid #fed7aa;
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 15px rgba(251, 146, 60, 0.08);
+      padding: 24px;
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .explanation-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #fef3c7;
+    }
+
+    .explanation-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #9a3412;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hl-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.84rem;
+      background: #fdfbf7;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid #fed7aa;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #78350f;
+      font-weight: 600;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    /* 解題之眼線索框 */
+    .clue-box {
+      background: #fefce8;
+      border-left: 4px solid #facc15;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #854d0e;
+    }
+
+    .clue-label {
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+      color: #a16207;
+    }
+
+    /* 詳解段落 */
+    .exp-paragraph {
+      font-size: 1.1rem;
+      line-height: 2.0;
+      color: #334155;
+      margin-bottom: 18px;
+    }
+
+    /* 螢光筆高亮樣式 */
+    mark.hl-yellow {
+      background: linear-gradient(104deg, rgba(254, 240, 138, 0.2) 0.9%, rgba(254, 240, 138, 0.95) 2.4%, rgba(254, 240, 138, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #1c1917;
+      box-shadow: inset 0 -4px 0 rgba(234, 179, 8, 0.6);
+    }
+
+    mark.hl-pink {
+      background: linear-gradient(104deg, rgba(254, 205, 211, 0.2) 0.9%, rgba(254, 205, 211, 0.95) 2.4%, rgba(254, 205, 211, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #881337;
+      box-shadow: inset 0 -4px 0 rgba(244, 63, 94, 0.45);
+    }
+
+    mark.hl-green {
+      background: linear-gradient(104deg, rgba(187, 247, 208, 0.2) 0.9%, rgba(187, 247, 208, 0.95) 2.4%, rgba(187, 247, 208, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #064e3b;
+      box-shadow: inset 0 -4px 0 rgba(16, 185, 129, 0.45);
+    }
+
+    mark.hl-blue {
+      background: linear-gradient(104deg, rgba(186, 230, 253, 0.2) 0.9%, rgba(186, 230, 253, 0.95) 2.4%, rgba(186, 230, 253, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #075985;
+      box-shadow: inset 0 -4px 0 rgba(14, 165, 233, 0.45);
+    }
+
+    .passage-box.revealed mark.hl-yellow {
+      animation: pulseHighlight 1.5s infinite alternate;
+    }
+
+    @keyframes pulseHighlight {
+      0% { box-shadow: inset 0 -4px 0 rgba(234, 179, 8, 0.6); }
+      100% { box-shadow: inset 0 -10px 0 rgba(234, 179, 8, 0.8); }
+    }
+
+    /* 語譯與注釋卡片 */
+    .translation-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-top: 16px;
+      font-size: 1.02rem;
+      line-height: 1.9;
+    }
+
+    .translation-header {
+      font-weight: 700;
+      color: #0284c7;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 選項逐項剖析 */
+    .option-analysis-box {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px dashed #cbd5e1;
+    }
+
+    .analysis-item {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .analysis-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .analysis-tag.is-correct {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .analysis-tag.is-wrong {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    /* 導航切換列 */
+    .nav-buttons-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .nav-btn {
+      padding: 10px 22px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: white;
+      color: #334155;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    /* 浮動字級工具列 */
+    .floating-font-bar {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 30px;
+      padding: 6px 14px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      z-index: 90;
+    }
+
+    .font-btn {
+      background: #f1f5f9;
+      border: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    .font-btn:hover {
+      background: #e2e8f0;
+    }
+
+    /* 動畫 */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .question-card {
+        padding: 20px 16px;
+      }
+      .passage-box {
+        font-size: 1.05rem;
+        padding: 16px 18px;
+      }
+      .option-btn {
+        padding: 12px 14px;
+        font-size: 1rem;
+      }
+      .hl-legend {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部全域切換列 -->
+  <nav class="top-navbar">
+    <div class="top-navbar-container">
+      <div class="top-units-list">
+        <span style="color:#64748b;font-weight:600;margin-right:4px">單元導覽：</span>
+        <a href="31_technique_narrative.html" class="unit-link">📖 記敘文類 (8題)</a><a href="32_technique_lyric.html" class="unit-link active">🌸 抒情文類 (9題)</a><a href="33_technique_argumentative.html" class="unit-link">⚖️ 議論文類 (10題)</a><a href="34_technique_expository.html" class="unit-link">🔬 說明文類 (8題)</a><a href="35_technique_practical.html" class="unit-link">✉️ 應用文類 (8題)</a>
+      </div>
+      <div>
+        <a href="index.html" class="home-link">🏠 回總覽首頁</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 標頭 Header -->
+  <header>
+    <div class="header-container">
+      <div class="brand-title">
+        <a href="index.html" class="control-btn" style="text-decoration: none; margin-right: 6px; background: #e0e7ff; color: #1e3a8a; border-color: #c7d2fe;" title="返回教材入口總目錄">
+          <span>🏠</span> 總目錄
+        </a>
+        <span class="badge-chapter">第 7 課 寫作手法篇</span>
+        <span class="title-text">🌸 抒情文類・互動解說教材</span>
+      </div>
+      <div class="header-controls">
+        <a href="32_technique_lyric_handout.pdf" target="_blank" class="control-btn" style="text-decoration:none; background:#fffbeb; color:#b45309; border-color:#fcd34d; font-weight:700;" title="開啟本單元精編詳解講義 PDF（三色螢光筆・解題之眼・語譯全收錄）">
+          <span>📖</span> 詳解講義模式 (PDF)
+        </a>
+        <button class="control-btn" id="soundToggleBtn" onclick="toggleSound()">
+          <span id="soundIcon">🔔</span> 音效已開啟
+        </button>
+        <button class="control-btn" id="viewModeBtn" onclick="toggleViewMode()">
+          <span>📖</span> <span id="viewModeText">切換為連續模式</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 題號跳轉與統計列 -->
+  <div class="progress-bar-wrapper">
+    <div class="progress-bar-container">
+      <div class="nav-tabs" id="navTabs">
+        <!-- 由 JavaScript 動態生成題號按鈕 -->
+      </div>
+      <div class="stats-badge">
+        <span>完成度：<strong id="completedCount" style="color:var(--primary-color)">0</strong> / <span id="totalQuestionsCount">9</span> 題</span>
+        <span>正確率：<strong id="accuracyRate" style="color:var(--success-color)">-</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 主要答題容器 -->
+  <main id="questionsContainer">
+    <!-- 由 JavaScript 渲染試題內容 -->
+  </main>
+
+  <!-- 浮動輔助功能列（縮放字級、重置） -->
+  <div class="floating-font-bar">
+    <span>字級：</span>
+    <button class="font-btn" onclick="adjustFontSize(-1)" title="縮小字體">A-</button>
+    <span id="fontSizeDisplay">100%</span>
+    <button class="font-btn" onclick="adjustFontSize(1)" title="放大字體">A+</button>
+    <span style="color:#cbd5e1;margin:0 4px">|</span>
+    <button class="control-btn" style="padding:2px 8px;font-size:0.8rem;" onclick="resetAllProgress()">全部重練</button>
+  </div>
+
+  <script>
+    // 試題資料庫：抒情文類 9 題
+    const questionsData = [
+  {
+    "id": 1,
+    "source": "古希臘哲學 蘇格拉底對比手法",
+    "year": "會考精選",
+    "passage": "文章中常出現針對同一個人或同一事物，從兩種不同的觀點、角度予以形容描述以形成鮮明對比。「反正都要結婚。如果得到一個好妻子，你會非常幸福；如果你得到一個惡妻，你將成為哲學家——這對你都有好處。」（蘇格拉底）此段文句即使用此種對比手法。",
+    "passageHighlight": "「如果得到一個好妻子，你會非常幸福；<mark class=\"hl-yellow\">如果你得到一個惡妻，你將成為哲學家</mark>——這對你都有好處。」",
+    "clue": "解題之眼：同一對象（「你」），從兩種截然相反的極端假設情境（陽光 vs 黑夜）給予對稱對照之描述，形成鮮明對比。",
+    "stem": "下列選項何者亦使用「針對同一對象，從兩種不同角度描摹以形成對比」的手法？",
+    "options": [
+      "(A) 如果看見美麗的花，應感謝陽光；如果看見大樹，應感謝泥土",
+      "(B) 如果你是陽光，我是敬慕你的花；如果你是黑夜，我活在永夜",
+      "(C) 如果我望向天空，將看見雲隨著風箏飄走，而風箏的線在你手中",
+      "(D) 如果我是開水，你是茶葉，那你的香郁，必定是依賴我的無味"
+    ],
+    "answer": "B",
+    "explanation": "題幹的核心手法在於「針對同一個人事物，設定兩種對立或相反的角度（好妻 vs 惡妻）開展對比描述」。(B)中作者針對同一個第二人稱對象「你」，分別設定「如果你是陽光」與「如果你是黑夜」兩種光影完全對立的極端情境，並對應描寫自身「敬慕之花朵」與「窒息於永夜」之截然相反境遇，完美契合題幹之對比結構，故選(B)。(A)分別針對「花與陽光」、「樹與泥土」兩組不同事物；(C)為連鎖牽動之意象敘事；(D)為開水與茶葉相輔相成之互補譬喻，皆無題幹之正反二元對比。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "描寫對象為兩種不同植物（花與樹）之感恩，非同一事物之正反描寫。"
+      },
+      {
+        "option": "B",
+        "status": "正確",
+        "desc": "緊扣同一對象「你」，以陽光普照與黑夜永沉兩種二元極端形成強烈對襯。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "透過天空、雲、風箏與線之空間關聯鋪陳思念，無二元對比。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "強調兩物交互交融、相互成就之因果關係，非正反視角之反差對立。"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "source": "古典詩詞 設問修辭（提問）辨析",
+    "year": "會考精選",
+    "passage": "「何以解憂？唯有杜康。」（曹操〈短歌行〉）這句話的作者先自設問題以激發讀者疑惑，隨即自作解答，使用到設問修辭中的「提問」。",
+    "passageHighlight": "「何以解憂？<mark class=\"hl-green\">唯有杜康</mark>。」（自問自答＝提問）",
+    "clue": "解題之眼：提問必有「自問自答」；反之，「心中已有定見、答案在問題反面且不直接回答」者為「激問（反詰）」。",
+    "stem": "請問下列選項中的詩句，何者「非」使用提問修辭？",
+    "options": [
+      "(A) 不知細葉誰裁出？二月春風似剪刀",
+      "(B) 人生到處知何似？應似飛鴻踏雪泥",
+      "(C) 人生自古誰無死？留取丹心照汗青",
+      "(D) 借問酒家何處有？牧童遙指杏花村"
+    ],
+    "answer": "C",
+    "explanation": "設問修辭中，作者自問且在後句明確給出客觀答案者稱為「提問（問答）」；若作者內心早有強烈篤定之答案，表面作問實則旨在加強語氣（答案在問題反面）且並未直接回答具體人事物者稱為「激問（反詰）」。(C)文天祥「人生自古誰無死？」意在斬釘截鐵宣告「自古以來無人能免於一死（答案：人皆有一死）」，下句直接宣誓願捨生取義照耀青史，並未正面回答「誰死了」，屬典型的激問修辭，故(C)非提問，為正答。(A)問誰裁出？答：二月春風；(B)問似何物？答：飛鴻踏雪泥；(D)問酒家何在？答：牧童遙指杏花村，皆為自問自答之提問。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "提問(非選)",
+        "desc": "「不知誰裁出」自問，「二月春風似剪刀」自答，標準提問。"
+      },
+      {
+        "option": "B",
+        "status": "提問(非選)",
+        "desc": "「知何似」發問，「應似飛鴻」解答，標準提問。"
+      },
+      {
+        "option": "C",
+        "status": "激問(正選)",
+        "desc": "意在申明無人不免於一死，答案在問題之反面，為激問（反詰）。"
+      },
+      {
+        "option": "D",
+        "status": "提問(非選)",
+        "desc": "行路問酒家，後句給出牧童指點之明確解答，屬提問。"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "source": "宋·蘇軾《前赤壁賦》",
+    "year": "會考精選",
+    "passage": "蘇子曰：「……①惟江上之清風，與山間之明月，耳得之而為聲，目遇之而成色。②取之無禁，用之不竭，是③造物者之無盡藏也。而④吾與子之所共適。」",
+    "passageHighlight": "「取之無禁，用之不竭，是<mark class=\"hl-green\">③造物者之無盡藏也</mark>。而吾與子之所共適。」",
+    "clue": "解題之眼：蘇軾以超然曠達之「讚嘆歌詠口吻」，盛讚造化大自然之清風明月乃宇宙賜予人類共享、取之不盡用之不竭之無私寶藏。",
+    "stem": "根據本文文中劃線處之寫作手法說明，下列敘述何者正確？",
+    "options": [
+      "(A) ①舉例說明，強調清風、明月這兩種大自然景色的相異之處",
+      "(B) ②以誇飾修辭描寫自然景色是低廉無價值的，因此不須珍惜",
+      "(C) ③運用讚嘆的口吻，指出江山風月本就是造物者無盡的寶藏",
+      "(D) ④以倒裝句型感嘆世界上只有作者跟對方可以感悟自然美景"
+    ],
+    "answer": "C",
+    "explanation": "蘇軾在《前赤壁賦》中由變與不變之哲理化解客人的虛無之悲。劃線③「是造物者之無盡藏也」以無比開闊讚嘆之豪邁情懷，將大自然江山勝景喻為造物主最慷慨深厚、無私分享給眾生的天然寶藏，故(C)敘述完全正確。(A)①是將清風（聽覺耳得）與明月（視覺目遇）相輔相成並列，說明自然美感無所不在，非強調相異；(B)②「取之無禁，用之不竭」是形容大自然生機造化之無窮無盡，絕非貶低其低廉無價值；(D)④為順敘句型，表明此等風月乃凡夫智者皆可共同暢快享有之樂事（吾與子之所共適），並無自命不凡之獨佔感嘆。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "聲色並茂交相輝映，旨在呈現全方位感官盛宴，非分析二者差異。"
+      },
+      {
+        "option": "B",
+        "status": "錯誤",
+        "desc": "「無盡」凸顯宇宙浩瀚博大與慷慨無私，非賤視大自然。"
+      },
+      {
+        "option": "C",
+        "status": "正確",
+        "desc": "充滿豁達讚頌，把清風明月昇華為天地造化最豐盈不竭之精神恩賜。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "語序正常無倒裝，表達眾人皆可同遊造化之博大情懷。"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "source": "明代文人書齋園林札記",
+    "year": "會考精選",
+    "passage": "「庭中紫豆一叢，作花甚繁；芭蕉展葉，綠滿窗戶；紫薇久花，離離散紅。每晴晝晚陰，徙倚其下，此亦予之三友也。」",
+    "passageHighlight": "「庭中<mark class=\"hl-yellow\">紫豆</mark>一叢，作花甚繁；芭蕉展葉，<mark class=\"hl-green\">綠滿窗戶</mark>；<mark class=\"hl-pink\">紫薇</mark>久花，離離<mark class=\"hl-pink\">散紅</mark>。」",
+    "clue": "解題之眼：作者精選「紫、綠、紅」等色彩字眼，以明豔視覺色彩烘托庭院植物繁花盛開、枝葉扶疏之盎然生機。",
+    "stem": "有關此段文字的寫作手法，下列敘述何者正確？",
+    "options": [
+      "(A) 運用視覺、嗅覺等感官摹寫，描述庭園賞花之樂",
+      "(B) 先寫庭院的景象，最後三句則抒發無人同樂之感嘆",
+      "(C) 四字句造成整齊簡潔效果，句尾押韻創造節奏感",
+      "(D) 用紫、綠、紅等字，描寫繁花盛開枝葉扶疏之景"
+    ],
+    "answer": "D",
+    "explanation": "文句前三句精妙設色：「紫豆花繁」、「芭蕉綠滿窗戶」、「紫薇散紅」，連用「紫、綠、紅」等鮮妍色彩字詞進行視覺鋪陳，將花影繽紛與綠意盎然交織之夏秋庭園景致刻劃得如詩如畫，故(D)正確。(A)文中並無花草芳香氣息之嗅覺摹寫；(B)文末「此亦予之三友也」是將紫豆、芭蕉、紫薇擬為高雅益友，自得其樂，並無哀怨無人同遊之感傷；(C)各句句尾（繁、戶、紅、下、也）並無嚴格押韻。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "純為視覺之色彩與光影捕捉，通篇未涉及嗅覺氣味。"
+      },
+      {
+        "option": "B",
+        "status": "錯誤",
+        "desc": "將草木引為知心好友，充滿幽居自得之雅趣，絕非孤苦伶仃之怨嘆。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "長短句交錯相雜，尾字無規律平仄韻腳，非押韻韻文。"
+      },
+      {
+        "option": "D",
+        "status": "正確",
+        "desc": "巧用紫、綠、紅色彩詞彙，生動繪出花木扶疏、生機蓬勃之園林圖景。"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "source": "卞之琳 現代哲理詩〈斷章〉",
+    "year": "會考精選",
+    "passage": "卞之琳〈斷章〉：「你站在橋上看風景／看風景的人在樓上看你／明月裝飾了你的窗子／你裝飾了別人的夢。」",
+    "passageHighlight": "「<mark class=\"hl-yellow\">你站在橋上看風景／看風景的人在樓上看你</mark>／<mark class=\"hl-green\">明月裝飾了你的窗子／你裝飾了別人的夢</mark>。」",
+    "clue": "解題之眼：主體與客體視角反覆倒換（你在看景 vs 你成為景；月裝飾窗 vs 你裝飾夢），以迴環對應將多重空間與人際意象巧妙勾連。",
+    "stem": "關於這首詩的解讀，下列敘述何者正確？",
+    "options": [
+      "(A) 主客描寫調換，把意象一層層地緊密連接在一起",
+      "(B) 使用大量動詞，營造出兩個生動具活潑感的場景",
+      "(C) 採第一人稱觀點，讀者自然成為詩中主角看事物",
+      "(D) 句式結構回環，呈現現實風景與他人夢境的強烈衝突"
+    ],
+    "answer": "A",
+    "explanation": "卞之琳這首傳世名篇以精巧絕倫的相對論視角結構著稱。前兩句「你」本是主動看風景的人，隨即轉變為樓上觀賞者眼中被看的「風景（客體）」；後兩句明月裝飾了你的窗框，而你在他人夢境中又成為美麗的「裝飾物」。全詩藉由主體與客體的巧妙互換、層層疊套，深刻表達出宇宙萬物互為關聯、相對依存之哲理，故(A)最為精闢。(B)全詩僅少數靜態動詞（站、看、裝飾），重在凝練意境而非動感活潑；(C)全詩採用第二人稱「你」；(D)風景與夢境融會交織成優美境界，並無劇烈對立衝突。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "正確",
+        "desc": "主看與被看、裝飾與被裝飾反覆對調，意象如鎖鏈緊扣，寄託相對相融之宇宙觀。"
+      },
+      {
+        "option": "B",
+        "status": "錯誤",
+        "desc": "詩境清幽深邃沉靜，並非強調節奏喧囂熱鬧之動感。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "通篇是以第二人稱「你」引導觀照，非第一人稱自白。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "月色、樓台、窗扉與夢境合奏出和諧澄明之詩意，非矛盾衝突。"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "source": "現代哲理散文 歲月與河流",
+    "year": "會考精選",
+    "passage": "「老，不是我的仇人，是注定要相偕共遊的知己啊！既不能倒提江水，叫一條河重新流過，那不妨把足踝浸入水中，飽覽眼前風景。天地悠悠化育，四時潺潺而逝，人，原該老去。」",
+    "passageHighlight": "「<mark class=\"hl-yellow\">既不能倒提江水，叫一條河重新流過</mark>，那不妨把足踝浸入水中，飽覽眼前風景。<mark class=\"hl-green\">天地悠悠化育，四時潺潺而逝，人，原該老去</mark>。」",
+    "clue": "解題之眼：以「不能倒提江水令河流重流」作為核心譬喻，形象化比喻時光歲月如大河奔流不可逆轉，進而倡導從容接納衰老。",
+    "stem": "關於這段文字寫作手法的分析，下列敘述何者最恰當？",
+    "options": [
+      "(A) 行文用語強烈，表達不服老的抗爭精神",
+      "(B) 使用譬喻修辭，將人生時光比喻成河流",
+      "(C) 先理後例，利用具體歷史事例強化觀點",
+      "(D) 嚴密對比人與河流，凸顯人的老化極其迅速"
+    ],
+    "answer": "B",
+    "explanation": "作者將人生歲月的不可挽回與不可逆性，以「不能倒提江水，叫一條河重新流過」作生動譬喻，形象化地闡明生命如同滔滔江河順流而下，與其焦慮抗拒時光流逝，不如從容享受當下人生的優美風景，順應自然老去的自然規律，故(B)最為精闢恰當。(A)行文曠達超然，主動擁抱接納變老，絕非頑抗不服老；(C)全篇為抒情議論隨筆，並無列舉具體歷史人物事例；(D)並非對比人與河流誰速度更快，而是藉水流喻時光不可倒流。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "視老為「相偕共遊之知己」，語調祥和溫暖，非劍拔弩張之抗爭。"
+      },
+      {
+        "option": "B",
+        "status": "正確",
+        "desc": "江河東流不可復返，生動暗喻歲月不可逆，引導讀者接納生命自然節律。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "融情入理、藉景抒懷，通篇未徵引具體史實案例。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "取河流之長逝以喻時序遷流，非強調兩者速度上的差異。"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "source": "現代心理抒情散文 心靈的掙扎",
+    "year": "會考精選",
+    "passage": "「這天似乎有些異樣，像一葉扁舟在無邊的大海上，像一個人在無盡的森林裡。走路，說話，都要費很大的力氣，還不能如意。心裡是一團麻，也可以說是一團火。似乎在掙扎著，要明白些什麼，但似乎什麼也沒有明白。『一部十七史，從何處說起』，正可借來做近日的我的寫照。」",
+    "passageHighlight": "「走路，說話，都要費很大的力氣，還不能如意...<mark class=\"hl-pink\">要明白些什麼，但似乎什麼也沒有明白</mark>。」",
+    "clue": "解題之眼：分辨「比喻修辭（像扁舟、像森林、是一團麻一團火）」與「作者不加修飾之直接內心獨白抒發（要明白些什麼，但似乎什麼也沒有明白）」。",
+    "stem": "文章中，作者有直接抒發感想，也有運用譬喻手法將抽象事物具體化，下列何者為作者「直接抒發感想」的文句？",
+    "options": [
+      "(A) 像一葉扁舟在無邊的大海上",
+      "(B) 像一個人在無盡的森林裡",
+      "(C) 心裡是一團麻，也可以說是一團火",
+      "(D) 要明白些什麼，但似乎什麼也沒有明白"
+    ],
+    "answer": "D",
+    "explanation": "題目要求辨析「直接抒發感想」與「譬喻具體化手法」之區別。(A)「像一葉扁舟在無邊大海」與(B)「像一個人在無盡森林」皆帶有明喻喻詞「像」，是將孤獨無助具象化；(C)「心裡是一團麻、一團火」將混亂焦躁的心情借麻與火作暗喻；唯有(D)「要明白些什麼，但似乎什麼也沒有明白」未借助任何具體物象媒介或比喻符號，而是作者敞開心扉、直白吐露自己內心渴望求索卻徒留一片茫然無解之真實心境，屬純粹之直接抒情，故選(D)。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "譬喻手法",
+        "desc": "藉浩瀚汪洋中孤舟浮沉，具象化個體渺小無助之感。"
+      },
+      {
+        "option": "B",
+        "status": "譬喻手法",
+        "desc": "以密林迷路孤客形象，比擬心靈走不出困境之迷惘。"
+      },
+      {
+        "option": "C",
+        "status": "譬喻手法",
+        "desc": "以亂麻喻思緒紛亂，以烈火喻焦躁煎熬，皆為暗喻。"
+      },
+      {
+        "option": "D",
+        "status": "直接抒感(正選)",
+        "desc": "剝除一切物象外衣，直抒胸臆，道盡心靈探索無果之悵惘。"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "source": "劉美娜 現代新詩〈時間之外〉",
+    "year": "會考精選",
+    "passage": "劉美娜〈時間之外〉：「立可白／爭的總是關於白的純白／有時候／我們真的很在意黑與白／有時候／我們真的分不清黑與白／有時候／我們真的很討厭黑與白／雖然的是……／有時候／理想世界只有一片純白／但是的但是……／現實世界只見一片烏黑／結論……結論呢？／現實需要立可白」",
+    "passageHighlight": "「結論……結論呢？／<mark class=\"hl-green\">現實需要立可白</mark>」",
+    "clue": "解題之眼：詩末雖然自問「結論呢？」，但隨即肯定宣示「現實需要立可白」——以立可白象徵在烏黑混濁的現實泥淖中，世人仍不可放棄塗抹污濁、追求純白真理之希望，並非認為現實無可救藥。",
+    "stem": "關於這首詩的解讀，下列敘述何者錯誤？",
+    "options": [
+      "(A) 藉由「立可白」的特性，傳達出現實世界仍需要存在真理",
+      "(B) 運用排比修辭，凸顯世人對於是非黑白混淆感到無奈",
+      "(C) 使用對比手法，表達理想世界與現實世界的是非差距甚大",
+      "(D) 詩末採用設問修辭，說明作者認為現實世界已經無可救藥"
+    ],
+    "answer": "D",
+    "explanation": "詩人以文具「立可白（修正液）」能覆蓋黑色墨跡、恢復潔白紙面的物理特徵入詩。全詩反覆辯證黑與白（是非曲直），指出理想世界潔白無瑕，現實社會卻常一片烏黑晦暗。詩末以「結論呢？現實需要立可白」作結，正是強烈主張面對污濁不公之現實，人類社會更迫切需要像立可白一般撥亂反正、匡扶正義之力量，賦予世人改造社會之希望，絕非消極認定現實已經無可救藥，故(D)解讀錯誤，為正確選填。(A)(B)(C)皆深刻把握詩作主旨與手法。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "正確(非選)",
+        "desc": "立可白之「純白」隱喻真理與良知，呼籲世間不可缺少此抹正道。"
+      },
+      {
+        "option": "B",
+        "status": "正確(非選)",
+        "desc": "「有時候...在意/分不清/討厭」，三疊排比道盡人世是非之徬徨無奈。"
+      },
+      {
+        "option": "C",
+        "status": "正確(非選)",
+        "desc": "「純白理想」與「烏黑現實」強烈對照，突顯理想與實況之巨大落差。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤(正選)",
+        "desc": "呼喚立可白介入正代表積極改變現狀之期盼，非消極絕望之哀鳴。"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "source": "宋·黃庭堅〈清平樂·春歸何處〉",
+    "year": "會考精選",
+    "passage": "黃庭堅〈清平樂〉：「春歸何處？寂寞無行路。若有人知春去處，喚取歸來同住。\n春無蹤跡誰知？除非問取黃鸝。百囀無人能解，因風飛過薔薇。」",
+    "passageHighlight": "「春歸何處？寂寞無行路。<mark class=\"hl-green\">若有人知春去處，喚取歸來同住</mark>。春無蹤跡誰知？除非問取黃鸝。」",
+    "clue": "解題之眼：詞人將無形抽象之「春季」具體擬人化為一個不知去向的行人，癡情央求「喚取歸來同住」，極富惜春留春之深情與不捨。",
+    "stem": "關於這首宋詞的寫作手法，下列敘述何者正確？",
+    "options": [
+      "(A) 借景抒情，將春天的景色以及遊子的思鄉心情相互連結",
+      "(B) 將春天比擬為人，藉此呈現出對春天離去的不捨與惋惜",
+      "(C) 上半部以實景描寫春天逝去，下半部寫出詩人的浪漫幻想",
+      "(D) 作者多處自問自答，委婉傳達對於浪費光陰的自責之感"
+    ],
+    "answer": "B",
+    "explanation": "這首惜春名作最傑出之手法在於將抽象的季節流轉全面擬人化。開篇「春歸何處」將春天視為離家遠行的旅伴，幻想若有人知道春天的下落，請替我把它喊回來同宿同住；下片又問春天無影無蹤該去問誰，自作多情想向黃鸝探聽消息，黃鸝卻啼鳴百囀隨風掠過薔薇飛走。全詞透過將春擬人、與鳥對話之天真童趣與浪漫癡語，生動表達出詩人對韶華易逝、美好春光遠離的無比珍惜、眷戀與惋惜，故選(B)。(A)詞旨為純粹惜春之情，無涉遊子思鄉；(C)通篇虛構浪漫想像，非寫實實景；(D)問春天、問黃鸝皆無回音，並非自問自答，亦無自責語氣。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "抒發感時惜春之悵惘，通篇無思念故土家園之字眼。"
+      },
+      {
+        "option": "B",
+        "status": "正確",
+        "desc": "喚春同住、向黃鸝打聽，全篇擬人出神入化，惜春深情令人動容。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "上下闋皆洋溢超現實浪漫奇想，並非以客觀寫實為界。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "春去無語、黃鸝百囀無人解，皆屬有問無答之惆悵，非自問自答自責。"
+      }
+    ]
+  }
+];
+
+    let currentQuestionIndex = 0;
+    let userAnswers = {};
+    let isContinuousView = false;
+    let soundEnabled = true;
+    let currentZoom = 100;
+
+    // 音效產生器（利用 Web Audio API 合成，免載入外部 mp3）
+    const audioCtx = (window.AudioContext || window.webkitAudioContext) ? new (window.AudioContext || window.webkitAudioContext)() : null;
+
+    function playSound(type) {
+      if (!soundEnabled || !audioCtx) return;
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      if (type === 'correct') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(587.33, now); // D5
+        osc.frequency.setValueAtTime(880, now + 0.1); // A5
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+        osc.start(now);
+        osc.stop(now + 0.5);
+      } else if (type === 'incorrect') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(329.63, now); // E4
+        osc.frequency.setValueAtTime(261.63, now + 0.15); // C4
+        gain.gain.setValueAtTime(0.25, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+        osc.start(now);
+        osc.stop(now + 0.45);
+      } else if (type === 'click') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(440, now);
+        gain.gain.setValueAtTime(0.08, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+        osc.start(now);
+        osc.stop(now + 0.08);
+      }
+    }
+
+    function toggleSound() {
+      soundEnabled = !soundEnabled;
+      const btn = document.getElementById("soundToggleBtn");
+      if (soundEnabled) {
+        btn.classList.add("active");
+        btn.innerHTML = `<span id="soundIcon">🔔</span> 音效已開啟`;
+      } else {
+        btn.classList.remove("active");
+        btn.innerHTML = `<span id="soundIcon">🔕</span> 音效已靜音`;
+      }
+    }
+
+    // 切換檢視模式（單題專注 vs 連續清單）
+    function toggleViewMode() {
+      isContinuousView = !isContinuousView;
+      const btn = document.getElementById("viewModeBtn");
+      const text = document.getElementById("viewModeText");
+      if (isContinuousView) {
+        btn.classList.add("active");
+        text.innerText = "切換為專注模式";
+      } else {
+        btn.classList.remove("active");
+        text.innerText = "切換為連續模式";
+      }
+      renderView();
+    }
+
+    // 縮放字級
+    function adjustFontSize(delta) {
+      currentZoom += delta * 10;
+      if (currentZoom < 80) currentZoom = 80;
+      if (currentZoom > 140) currentZoom = 140;
+      document.getElementById("fontSizeDisplay").innerText = currentZoom + "%";
+      document.getElementById("questionsContainer").style.fontSize = (currentZoom / 100) + "rem";
+    }
+
+    // 渲染導航 Tab
+    function renderNavTabs() {
+      const container = document.getElementById("navTabs");
+      container.innerHTML = "";
+      questionsData.forEach((q, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "q-tab";
+        btn.id = `navTab_${q.id}`;
+        btn.innerText = q.id;
+        
+        if (!isContinuousView && idx === currentQuestionIndex) {
+          btn.classList.add("current");
+        }
+
+        if (userAnswers[q.id]) {
+          if (userAnswers[q.id].isCorrect) {
+            btn.classList.add("correct");
+          } else {
+            btn.classList.add("incorrect");
+          }
+        }
+
+        btn.onclick = () => {
+          playSound('click');
+          if (isContinuousView) {
+            const card = document.getElementById(`qcard_${q.id}`);
+            if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else {
+            currentQuestionIndex = idx;
+            renderView();
+          }
+        };
+
+        container.appendChild(btn);
+      });
+
+      updateStats();
+    }
+
+    // 更新統計資訊
+    function updateStats() {
+      const answeredKeys = Object.keys(userAnswers);
+      const count = answeredKeys.length;
+      document.getElementById("completedCount").innerText = count;
+      document.getElementById("totalQuestionsCount").innerText = questionsData.length;
+
+      if (count === 0) {
+        document.getElementById("accuracyRate").innerText = "-";
+        document.getElementById("accuracyRate").style.color = "var(--text-muted)";
+      } else {
+        const correctCount = answeredKeys.filter(k => userAnswers[k].isCorrect).length;
+        const rate = Math.round((correctCount / count) * 100);
+        const rateEl = document.getElementById("accuracyRate");
+        rateEl.innerText = rate + "%";
+        rateEl.style.color = rate >= 80 ? "var(--success-color)" : (rate >= 60 ? "#d97706" : "var(--error-color)");
+      }
+    }
+
+    // 產生單一題目 HTML
+    function buildQuestionCardHtml(q, idx) {
+      const userState = userAnswers[q.id];
+      const hasAnswered = !!userState;
+      const isCorrect = hasAnswered && userState.isCorrect;
+
+      const passageHtml = hasAnswered ? q.passageHighlight : q.passage;
+      const revealedClass = hasAnswered ? "revealed" : "";
+
+      let optionsHtml = q.options.map(opt => {
+        let extraClasses = "";
+        let markTag = "";
+        if (hasAnswered) {
+          if (opt.key === q.answer) {
+            if (userState.choice === opt.key) {
+              extraClasses = "selected-correct";
+              markTag = `<span style="margin-left:auto;font-weight:700;color:var(--success-color)">✓ 答對了！</span>`;
+            } else {
+              extraClasses = "reveal-correct";
+              markTag = `<span style="margin-left:auto;font-weight:700;color:var(--success-color)">✓ 正確答案</span>`;
+            }
+          } else if (userState.choice === opt.key) {
+            extraClasses = "selected-incorrect";
+            markTag = `<span style="margin-left:auto;font-weight:700;color:var(--error-color)">✗ 你的選擇</span>`;
+          }
+        }
+
+        return `
+          <button class="option-btn ${extraClasses}" 
+                  id="optBtn_${q.id}_${opt.key}" 
+                  onclick="selectAnswer(${q.id}, '${opt.key}')" 
+                  ${hasAnswered ? 'disabled' : ''}>
+            <span class="option-label">(${opt.key})</span>
+            <span class="option-content">${opt.text}</span>
+            ${markTag}
+          </button>
+        `;
+      }).join("");
+
+      let bannerHtml = "";
+      if (hasAnswered) {
+        if (isCorrect) {
+          bannerHtml = `
+            <div class="result-banner correct">
+              <span>🎉 <strong>恭喜答對！</strong> 正確答案為 (${q.answer})，精準掌握了文章的主旨核心。</span>
+              <button class="btn-retry" onclick="retryQuestion(${q.id})">🔄 重新挑戰</button>
+            </div>
+          `;
+        } else {
+          bannerHtml = `
+            <div class="result-banner incorrect">
+              <span>💡 <strong>答錯了！</strong> 你的答案是 (${userState.choice})，正確解答應為 <strong>(${q.answer})</strong>。請詳閱下方解題之眼與螢光筆分析。</span>
+              <button class="btn-retry" onclick="retryQuestion(${q.id})">🔄 重新挑戰</button>
+            </div>
+          `;
+        }
+      }
+
+      let notesHtml = "";
+      if (q.notes) {
+        notesHtml = `
+          <div class="notes-box">
+            <div class="notes-title">📌 重要詞彙注釋</div>
+            <div>${q.notes}</div>
+          </div>
+        `;
+      }
+
+      let transHtml = "";
+      if (q.translation) {
+        transHtml = `
+          <div class="translation-box">
+            <div class="translation-header">📖 題幹文言白話語譯</div>
+            <div>${q.translation}</div>
+          </div>
+        `;
+      }
+
+      let optAnalysisHtml = "";
+      if (q.optionAnalysis) {
+        optAnalysisHtml = `
+          <div class="option-analysis-box">
+            <div style="font-weight:700;color:#334155;margin-bottom:8px">🔍 各選項深入剖析：</div>
+            ${q.optionAnalysis.map(a => `
+              <div class="analysis-item">
+                <span class="analysis-tag ${a.status === 'correct' ? 'is-correct' : 'is-wrong'}">(${a.key}) ${a.status === 'correct' ? '正解' : '誤'}</span>
+                <span>${a.reason}</span>
+              </div>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      let explanationHtml = `
+        <div class="explanation-container ${hasAnswered ? 'show' : ''}" id="expContainer_${q.id}">
+          <div class="explanation-card">
+            <div class="explanation-header">
+              <div class="explanation-title">
+                <span>📚 詳解與核心文意解析</span>
+              </div>
+              <div class="hl-legend">
+                <div class="legend-item"><span class="legend-dot" style="background:#facc15"></span> 黃色：解題關鍵詞</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#f43f5e"></span> 粉紅：轉折詞／特殊標點</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#10b981"></span> 綠色：推論核心／主旨歸納</div>
+              </div>
+            </div>
+            <div class="explanation-body">
+              <div class="clue-box">
+                <div class="clue-label">🎯 【解題之眼・關鍵線索】</div>
+                <div>${q.clue}</div>
+              </div>
+
+              <div class="exp-paragraph">
+                ${q.explanation}
+              </div>
+
+              ${transHtml}
+              ${optAnalysisHtml}
+            </div>
+          </div>
+        </div>
+      `;
+
+      let navButtonsHtml = "";
+      if (!isContinuousView) {
+        const isFirst = idx === 0;
+        const isLast = idx === questionsData.length - 1;
+        navButtonsHtml = `
+          <div class="nav-buttons-container">
+            <button class="nav-btn" onclick="prevQuestion()" ${isFirst ? 'disabled' : ''}>
+              <span>⬅</span> 上一題
+            </button>
+            <div style="font-size:0.92rem;color:var(--text-muted);display:flex;align-items:center;">
+              第 <strong>${q.id}</strong> / ${questionsData.length} 題
+            </div>
+            <button class="nav-btn" onclick="nextQuestion()" ${isLast ? 'disabled' : ''}>
+              下一題 <span>➡</span>
+            </button>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="question-card" id="qcard_${q.id}">
+          <div class="question-header">
+            <div class="q-num-badge">
+              <span>第 ${q.id} 題</span>
+              <span class="category-tag">${q.category}</span>
+            </div>
+            <div style="font-size:0.88rem;color:var(--text-muted)">寫作手法篇・文意好試多</div>
+          </div>
+
+          <div class="passage-box ${revealedClass}" id="passage_${q.id}">
+            ${passageHtml}
+            ${q.author ? `<span class="passage-author">—— ${q.author}</span>` : ''}
+          </div>
+
+          <div class="stem-text">${q.stem}</div>
+
+          ${notesHtml}
+
+          <div class="options-grid">
+            ${optionsHtml}
+          </div>
+
+          ${bannerHtml}
+          ${explanationHtml}
+          ${navButtonsHtml}
+        </div>
+      `;
+    }
+
+    function renderView() {
+      const container = document.getElementById("questionsContainer");
+      if (isContinuousView) {
+        container.innerHTML = questionsData.map((q, idx) => buildQuestionCardHtml(q, idx)).join("");
+      } else {
+        const currentQ = questionsData[currentQuestionIndex];
+        container.innerHTML = buildQuestionCardHtml(currentQ, currentQuestionIndex);
+      }
+      renderNavTabs();
+    }
+
+    function selectAnswer(qid, choiceKey) {
+      const q = questionsData.find(item => item.id === qid);
+      if (!q) return;
+
+      const isCorrect = (choiceKey === q.answer);
+      userAnswers[qid] = {
+        choice: choiceKey,
+        isCorrect: isCorrect
+      };
+
+      playSound(isCorrect ? 'correct' : 'incorrect');
+      renderView();
+
+      setTimeout(() => {
+        const expEl = document.getElementById(`expContainer_${qid}`);
+        if (expEl) {
+          expEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }, 100);
+    }
+
+    function retryQuestion(qid) {
+      playSound('click');
+      delete userAnswers[qid];
+      renderView();
+    }
+
+    function resetAllProgress() {
+      if (confirm("確定要清除所有作答紀錄並重新開始嗎？")) {
+        playSound('click');
+        userAnswers = {};
+        currentQuestionIndex = 0;
+        renderView();
+      }
+    }
+
+    function prevQuestion() {
+      if (currentQuestionIndex > 0) {
+        playSound('click');
+        currentQuestionIndex--;
+        renderView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIndex < questionsData.length - 1) {
+        playSound('click');
+        currentQuestionIndex++;
+        renderView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderView();
+    });
+  </script>
+</body>
+</html>

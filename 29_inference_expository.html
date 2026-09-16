@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文意新8課 ｜ 第6課 推論篇（說明文類）解說教材</title>
+  <style>
+    :root {
+      --primary-color: #7c2d12;
+      --primary-hover: #9a3412;
+      --primary-light: #fff7ed;
+      --accent-color: #b91c1c;
+      --success-color: #059669;
+      --success-light: #ecfdf5;
+      --error-color: #dc2626;
+      --error-light: #fef2f2;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --bg-page: #f8fafc;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --quote-bg: #fdfbf7;
+      --quote-border: #d97706;
+      --radius-lg: 16px;
+      --radius-md: 10px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+      --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.08), 0 8px 10px -6px rgba(0,0,0,0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Serif TC", serif, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 頂部全域導航選單 */
+    .top-navbar {
+      background: #0f172a;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      padding: 8px 20px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .top-navbar-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .top-units-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .unit-link {
+      color: #cbd5e1;
+      text-decoration: none;
+      padding: 3px 10px;
+      border-radius: 6px;
+      transition: all 0.2s;
+      font-weight: 500;
+    }
+
+    .unit-link:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+
+    .unit-link.active {
+      background: var(--primary-color);
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .home-link {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      background: rgba(56, 189, 248, 0.1);
+      transition: all 0.2s;
+    }
+    .home-link:hover {
+      background: rgba(56, 189, 248, 0.2);
+      color: #7dd3fc;
+    }
+
+    /* 標頭 Header */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .badge-chapter {
+      background: linear-gradient(135deg, var(--primary-color), #3b82f6);
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .title-text {
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.5px;
+    }
+
+    .header-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .control-btn {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      padding: 6px 12px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .control-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    .control-btn.active {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    /* 進度條與題號切換欄 */
+    .progress-bar-wrapper {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .progress-bar-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .q-tab {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      color: #475569;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .q-tab:hover {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+      background: var(--primary-light);
+    }
+
+    .q-tab.current {
+      border-color: var(--primary-color);
+      background: var(--primary-color);
+      color: white;
+      box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
+    }
+
+    .q-tab.correct {
+      border-color: var(--success-color);
+      background: var(--success-light);
+      color: var(--success-color);
+    }
+
+    .q-tab.correct.current {
+      background: var(--success-color);
+      color: white;
+    }
+
+    .q-tab.incorrect {
+      border-color: var(--error-color);
+      background: var(--error-light);
+      color: var(--error-color);
+    }
+
+    .q-tab.incorrect.current {
+      background: var(--error-color);
+      color: white;
+    }
+
+    .stats-badge {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: #f8fafc;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+    }
+
+    /* 主內容容器 */
+    main {
+      max-width: 900px;
+      width: 100%;
+      margin: 24px auto;
+      padding: 0 16px;
+      flex: 1;
+    }
+
+    .question-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      padding: 28px 32px;
+      margin-bottom: 30px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .question-card:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f1f5f9;
+    }
+
+    .q-num-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-color);
+    }
+
+    .category-tag {
+      background: var(--primary-light);
+      color: var(--primary-color);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    /* 文本引文區塊 */
+    .passage-box {
+      background: var(--quote-bg);
+      border-left: 5px solid var(--quote-border);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 20px 24px;
+      margin-bottom: 22px;
+      font-size: 1.15rem;
+      line-height: 2.1;
+      letter-spacing: 0.4px;
+      color: #1e293b;
+      position: relative;
+    }
+
+    .passage-author {
+      display: block;
+      margin-top: 10px;
+      text-align: right;
+      font-size: 0.95rem;
+      color: #64748b;
+      font-style: italic;
+    }
+
+    /* 題目題幹問句 */
+    .stem-text {
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #0f172a;
+      line-height: 1.7;
+    }
+
+    /* 注釋框 */
+    .notes-box {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #475569;
+    }
+
+    .notes-title {
+      font-weight: 700;
+      color: #0369a1;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 選項列表 */
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      text-align: left;
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #334155;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--primary-color);
+      background: #f8fafc;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .option-label {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: #475569;
+      min-width: 32px;
+    }
+
+    .option-btn.selected-correct {
+      background: var(--success-light) !important;
+      border-color: var(--success-color) !important;
+      color: #065f46 !important;
+      font-weight: 700;
+    }
+
+    .option-btn.selected-correct .option-label {
+      color: var(--success-color);
+    }
+
+    .option-btn.selected-incorrect {
+      background: var(--error-light) !important;
+      border-color: var(--error-color) !important;
+      color: #991b1b !important;
+      font-weight: 700;
+    }
+
+    .option-btn.selected-incorrect .option-label {
+      color: var(--error-color);
+    }
+
+    .option-btn.reveal-correct {
+      border-color: var(--success-color) !important;
+      background: #f0fdf4 !important;
+      color: #166534 !important;
+      border-style: dashed !important;
+    }
+
+    /* 答題回饋橫幅 */
+    .result-banner {
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .result-banner.correct {
+      background: #ecfdf5;
+      border: 1px solid #6ee7b7;
+      color: #065f46;
+    }
+
+    .result-banner.incorrect {
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      color: #991b1b;
+    }
+
+    .btn-retry {
+      background: white;
+      border: 1px solid #cbd5e1;
+      padding: 6px 14px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-retry:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+
+    /* 詳解摺疊卡片 */
+    .explanation-container {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.4s ease-in-out;
+    }
+
+    .explanation-container.show {
+      max-height: 2500px;
+      opacity: 1;
+      transition: max-height 0.8s ease-in-out, opacity 0.4s ease-in-out;
+    }
+
+    .explanation-card {
+      background: #ffffff;
+      border: 1px solid #fed7aa;
+      border-radius: var(--radius-md);
+      box-shadow: 0 4px 15px rgba(251, 146, 60, 0.08);
+      padding: 24px;
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .explanation-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #fef3c7;
+    }
+
+    .explanation-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #9a3412;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hl-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.84rem;
+      background: #fdfbf7;
+      padding: 6px 12px;
+      border-radius: 20px;
+      border: 1px solid #fed7aa;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: #78350f;
+      font-weight: 600;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    /* 解題之眼線索框 */
+    .clue-box {
+      background: #fefce8;
+      border-left: 4px solid #facc15;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #854d0e;
+    }
+
+    .clue-label {
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+      color: #a16207;
+    }
+
+    /* 詳解段落 */
+    .exp-paragraph {
+      font-size: 1.1rem;
+      line-height: 2.0;
+      color: #334155;
+      margin-bottom: 18px;
+    }
+
+    /* 螢光筆高亮樣式 */
+    mark.hl-yellow {
+      background: linear-gradient(104deg, rgba(254, 240, 138, 0.2) 0.9%, rgba(254, 240, 138, 0.95) 2.4%, rgba(254, 240, 138, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #1c1917;
+      box-shadow: inset 0 -4px 0 rgba(234, 179, 8, 0.6);
+    }
+
+    mark.hl-pink {
+      background: linear-gradient(104deg, rgba(254, 205, 211, 0.2) 0.9%, rgba(254, 205, 211, 0.95) 2.4%, rgba(254, 205, 211, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #881337;
+      box-shadow: inset 0 -4px 0 rgba(244, 63, 94, 0.45);
+    }
+
+    mark.hl-green {
+      background: linear-gradient(104deg, rgba(187, 247, 208, 0.2) 0.9%, rgba(187, 247, 208, 0.95) 2.4%, rgba(187, 247, 208, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #064e3b;
+      box-shadow: inset 0 -4px 0 rgba(16, 185, 129, 0.45);
+    }
+
+    mark.hl-blue {
+      background: linear-gradient(104deg, rgba(186, 230, 253, 0.2) 0.9%, rgba(186, 230, 253, 0.95) 2.4%, rgba(186, 230, 253, 0.85) 98%);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #075985;
+      box-shadow: inset 0 -4px 0 rgba(14, 165, 233, 0.45);
+    }
+
+    .passage-box.revealed mark.hl-yellow {
+      animation: pulseHighlight 1.5s infinite alternate;
+    }
+
+    @keyframes pulseHighlight {
+      0% { box-shadow: inset 0 -4px 0 rgba(234, 179, 8, 0.6); }
+      100% { box-shadow: inset 0 -10px 0 rgba(234, 179, 8, 0.8); }
+    }
+
+    /* 語譯與注釋卡片 */
+    .translation-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-top: 16px;
+      font-size: 1.02rem;
+      line-height: 1.9;
+    }
+
+    .translation-header {
+      font-weight: 700;
+      color: #0284c7;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 選項逐項剖析 */
+    .option-analysis-box {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px dashed #cbd5e1;
+    }
+
+    .analysis-item {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .analysis-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .analysis-tag.is-correct {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .analysis-tag.is-wrong {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    /* 導航切換列 */
+    .nav-buttons-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .nav-btn {
+      padding: 10px 22px;
+      font-size: 0.98rem;
+      font-weight: 700;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: white;
+      color: #334155;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+      background: var(--primary-color);
+      color: white;
+      border-color: var(--primary-color);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    /* 浮動字級工具列 */
+    .floating-font-bar {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: white;
+      border: 1px solid var(--border-color);
+      border-radius: 30px;
+      padding: 6px 14px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      z-index: 90;
+    }
+
+    .font-btn {
+      background: #f1f5f9;
+      border: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    .font-btn:hover {
+      background: #e2e8f0;
+    }
+
+    /* 動畫 */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .question-card {
+        padding: 20px 16px;
+      }
+      .passage-box {
+        font-size: 1.05rem;
+        padding: 16px 18px;
+      }
+      .option-btn {
+        padding: 12px 14px;
+        font-size: 1rem;
+      }
+      .hl-legend {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 頂部全域切換列 -->
+  <nav class="top-navbar">
+    <div class="top-navbar-container">
+      <div class="top-units-list">
+        <span style="color:#64748b;font-weight:600;margin-right:4px">單元導覽：</span>
+        <a href="26_inference_narrative.html" class="unit-link">📖 記敘文類 (9題)</a><a href="27_inference_lyric.html" class="unit-link">🌸 抒情文類 (9題)</a><a href="28_inference_argumentative.html" class="unit-link">⚖️ 議論文類 (10題)</a><a href="29_inference_expository.html" class="unit-link active">🔬 說明文類 (9題)</a><a href="30_inference_practical.html" class="unit-link">✉️ 應用文類 (8題)</a>
+      </div>
+      <div>
+        <a href="index.html" class="home-link">🏠 回總覽首頁</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 標頭 Header -->
+  <header>
+    <div class="header-container">
+      <div class="brand-title">
+        <a href="index.html" class="control-btn" style="text-decoration: none; margin-right: 6px; background: #e0e7ff; color: #1e3a8a; border-color: #c7d2fe;" title="返回教材入口總目錄">
+          <span>🏠</span> 總目錄
+        </a>
+        <span class="badge-chapter">第 6 課 推論篇</span>
+        <span class="title-text">🔬 說明文類・互動解說教材</span>
+      </div>
+      <div class="header-controls">
+        <a href="29_inference_expository_handout.pdf" target="_blank" class="control-btn" style="text-decoration:none; background:#fffbeb; color:#b45309; border-color:#fcd34d; font-weight:700;" title="開啟本單元精編詳解講義 PDF（三色螢光筆・解題之眼・語譯全收錄）">
+          <span>📖</span> 詳解講義模式 (PDF)
+        </a>
+        <button class="control-btn" id="soundToggleBtn" onclick="toggleSound()">
+          <span id="soundIcon">🔔</span> 音效已開啟
+        </button>
+        <button class="control-btn" id="viewModeBtn" onclick="toggleViewMode()">
+          <span>📖</span> <span id="viewModeText">切換為連續模式</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 題號跳轉與統計列 -->
+  <div class="progress-bar-wrapper">
+    <div class="progress-bar-container">
+      <div class="nav-tabs" id="navTabs">
+        <!-- 由 JavaScript 動態生成題號按鈕 -->
+      </div>
+      <div class="stats-badge">
+        <span>完成度：<strong id="completedCount" style="color:var(--primary-color)">0</strong> / <span id="totalQuestionsCount">9</span> 題</span>
+        <span>正確率：<strong id="accuracyRate" style="color:var(--success-color)">-</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 主要答題容器 -->
+  <main id="questionsContainer">
+    <!-- 由 JavaScript 渲染試題內容 -->
+  </main>
+
+  <!-- 浮動輔助功能列（縮放字級、重置） -->
+  <div class="floating-font-bar">
+    <span>字級：</span>
+    <button class="font-btn" onclick="adjustFontSize(-1)" title="縮小字體">A-</button>
+    <span id="fontSizeDisplay">100%</span>
+    <button class="font-btn" onclick="adjustFontSize(1)" title="放大字體">A+</button>
+    <span style="color:#cbd5e1;margin:0 4px">|</span>
+    <button class="control-btn" style="padding:2px 8px;font-size:0.8rem;" onclick="resetAllProgress()">全部重練</button>
+  </div>
+
+  <script>
+    // 試題資料庫：說明文類 9 題
+    const questionsData = [
+  {
+    "id": 1,
+    "source": "生理醫學 人眼光學調適",
+    "year": "會考精選",
+    "passage": "「角膜的後方有瞳孔，光線由角膜進入，經過瞳孔，瞳孔可以調整大小，以調節光線進入眼睛的多寡。在光線強烈時，瞳孔會縮小以保護視網膜；光線微弱時，瞳孔則會放大以吸收更多光線。當人由黑暗處走入光明處時，瞳孔需要一些時間縮小，待一段時間後，人們才能適應周圍的亮度。」",
+    "passageHighlight": "「在光線強烈時，<mark class=\"hl-yellow\">瞳孔會縮小以保護視網膜</mark>；光線微弱時，<mark class=\"hl-green\">瞳孔則會放大以吸收更多光線</mark>。」",
+    "clue": "解題之眼：文本明示瞳孔之動態機能——強光縮小、弱光放大，藉由口徑變更調節進光量以保護視覺神經並適應環境亮度。",
+    "stem": "根據上文，下列推論何者正確？",
+    "options": [
+      "(A) 光線先經過瞳孔，再由角膜進入眼球",
+      "(B) 瞳孔大小會隨環境光線強弱而產生變化",
+      "(C) 由黑暗進入亮處時，瞳孔會迅速由小調到大",
+      "(D) 人眼適應強光的過程極為迅速，無需任何反應時間"
+    ],
+    "answer": "B",
+    "explanation": "第二部分明確指出「在光線強烈時，瞳孔會縮小；光線微弱時，瞳孔則會放大」，由此可知瞳孔直徑口徑會敏銳隨著外界環境光源明暗而自動進行調節收縮與擴張，故(B)正確。(A)第一部分明言「光線由角膜進入，經過瞳孔」，順序相反；(C)由暗入明時，光線暴增，瞳孔是需要由大「縮小」；(D)第三部分指出「瞳孔需要一些時間縮小，待一段時間後才能適應」，證明並非瞬間無秒差適應。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "光學路徑顛倒：外層角膜在前，光線穿透角膜後方通過瞳孔。"
+      },
+      {
+        "option": "B",
+        "status": "正確",
+        "desc": "忠實反映文本生理機制：光強則縮、光暗則張，具備彈性調節機能。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "方向錯誤：暗處本為大瞳孔，驟見強光需由放大狀態收縮變小。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "神經與肌肉反饋需緩衝時間，文本明示「需要一些時間」過渡。"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "source": "自然生態學 森林分解者",
+    "year": "會考精選",
+    "passage": "「在森林中，蟑螂的角色很重要，牠會吃枯草殘葉，清理大自然，且排出有機物質滋養土壤；同時蟑螂也是鳥類、小型哺乳類動物豐富的食物來源；這樣綿密的生態食物鏈分配，維持了森林中物種的生物多樣性與平衡。」",
+    "passageHighlight": "「在森林中，蟑螂的角色很重要，<mark class=\"hl-yellow\">牠會吃枯草殘葉，清理大自然，且排出有機物質滋養土壤</mark>；同時蟑螂也是鳥類、小型哺乳類動物豐富的食物來源...」",
+    "clue": "解題之眼：森林蟑螂承擔清理落葉殘骸之分解者功能並供養上位掠食者，具有生態不可替代性，但文本並未比較都市與森林之繁殖力高下。",
+    "stem": "根據這段文字，下列推論何者不正確？",
+    "options": [
+      "(A) 蟑螂在生態系中扮演分解者與初級消費者的角色",
+      "(B) 蟑螂在森林環境中的繁殖力遠高於在人類都市中",
+      "(C) 森林中的蟑螂有助於維持生態環境的整潔與養分循環",
+      "(D) 蟑螂是維繫森林生態食物網生物多樣性的重要一環"
+    ],
+    "answer": "B",
+    "explanation": "文章主要從自然生態系統的視角，平反一般人對蟑螂的厭惡刻板印象，闡明其在林地中攝食腐殖質、清理殘葉腐草並回饋土壤養分，同時作為鳥獸食物鏈底層的重要支柱。(B)「蟑螂在森林中的繁殖力遠高於都市」通篇未有任何科學對比數據與文字佐證，純屬無中生有之臆測，故(B)為不正確之選項。(A)(C)(D)皆完全符合文本敘述。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "正確(非選)",
+        "desc": "攝食植物落葉排泄有機質，完全符合分解腐食與植食消費者特徵。"
+      },
+      {
+        "option": "B",
+        "status": "不正確(正選)",
+        "desc": "文本僅肯定其在森林生態之價值，從未比較其在都會與山林之繁殖速率。"
+      },
+      {
+        "option": "C",
+        "status": "正確(非選)",
+        "desc": "清除腐枯雜物轉化為地力腐植質，確為養分循環之功臣。"
+      },
+      {
+        "option": "D",
+        "status": "正確(非選)",
+        "desc": "居於食物鏈承轉中樞，支持鳥獸生存，維繫生物多樣性。"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "source": "宋·沈括《夢溪筆談·書畫》",
+    "year": "會考精選",
+    "passage": "「書畫之妙，當以神會，難可以形器求也。世之觀畫者，多能指摘其間形象、位置、彩色瑕疵而已，至於得其理者，天下蓋幾人？」",
+    "passageHighlight": "「<mark class=\"hl-green\">書畫之妙，當以神會，難可以形器求也</mark>。世之觀畫者，多能指摘其間形象、位置、彩色瑕疵而已...」",
+    "clue": "解題之眼：沈括倡導藝術審美當超脫於拘泥外在形體器物之形似，重在心領神會其內在神韻與造化之理。",
+    "stem": "根據這段文字，下列推論何者正確？",
+    "options": [
+      "(A) 觀賞書畫應著重於挑剔筆觸與色彩調配的細微缺點",
+      "(B) 世人多能精闢領會書畫作品背後所蘊含的高深意境",
+      "(C) 優秀書畫的精妙之處在於意境神韻，非僅憑外形評斷",
+      "(D) 作畫必須嚴格遵循構圖比例，否則無法達到神品"
+    ],
+    "answer": "C",
+    "explanation": "沈括精闢指出鑑賞法書名畫之真諦——「當以神會，難以形器求」，即藝術至高妙境在於直探創作者傾注的心靈氣象與意境神韻，非單憑形貌相似或工匠規矩所能衡量；反觀世俗觀畫者大多只會盯著物體輪廓、佈局位置、顏料瑕疵等外在技術層面評頭品足，真正能契入精神骨髓者鳳毛麟角，故(C)推論最為精當。(A)此乃作者所嘲諷之流俗淺見；(B)原文明示得理者「天下蓋幾人（少之又少）」；(D)過度推崇外在形器規矩，悖離神會之旨。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "沈括嚴正批判流俗觀畫停滯於形相瑕疵之挑剔，非宣導此種鑑賞法。"
+      },
+      {
+        "option": "B",
+        "status": "錯誤",
+        "desc": "反詰句「天下蓋幾人」意謂世人普遍眼光淺薄，極少人能得其真理。"
+      },
+      {
+        "option": "C",
+        "status": "正確",
+        "desc": "超越形器束縛、以心神感應氣韻神髓，精確詮釋「以神會」之最高美學。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "拘泥位置形器者難登大雅，大寫意與神韻往往超越機械刻板之比例。"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "source": "臺灣鐵道史 阿里山林業鐵路",
+    "year": "會考精選",
+    "passage": "「1899年，日本人為轉運木材而興建阿里山森林鐵路。1912年，長達66.6公里的登山線鐵路完工通車。鐵路起點位於海拔30公尺的嘉義市，終點高達海拔2216公尺，高低落差極大。為適應崇山峻嶺，鐵道設計了螺旋形環繞與之字形（Z字形）折返登山路線，使得火車有時在前方拖引、有時在後方推動推進。」",
+    "passageHighlight": "「1899年，日本人為轉運木材而興建...1912年，長達66.6公里的登山線鐵路完工通車...<mark class=\"hl-pink\">鐵道設計了螺旋形環繞與之字形折返登山路線</mark>，使得火車有時在前方拖引、有時在後方推動推進。」",
+    "clue": "解題之眼：鐵路修築係分段推進，1912年通車為登山線前段（嘉義至二萬平），後續仍持續延伸支線，非全部完工才通車。",
+    "stem": "根據這段文字，下列敘述何者有誤？",
+    "options": [
+      "(A) 阿里山森鐵起初是因開採運輸高山林木資源而興建",
+      "(B) 鐵路路線設計利用螺旋形與之字形工法以克服陡峭山勢",
+      "(C) 阿里山森林鐵路全線歷經十餘年規劃，全部完工後才正式開通",
+      "(D) 火車在之字形路段行駛時，車頭有時在前後不同位置推拉推進"
+    ],
+    "answer": "C",
+    "explanation": "歷史文獻與工程紀錄表明，1912年開通者乃自嘉義至二萬平之主要木材運輸主線，隨後仍因林業開發需求持續延展祝山、眠月等深山支線，並非整套鐵路網絡「全部完工後才開通」；且就本文文意邏輯而言，亦是完成該階段66.6公里路線後即投入營運，故(C)敘述有誤，為正確選填。(A)第一句明示為轉運木材興建；(B)第四部分明確記載螺旋形與之字形工法；(D)第五部分詳述之字形折返時車頭前拉後推之特殊運行特點。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "無誤",
+        "desc": "1899年日治時期初衷即為掠奪運送阿里山千年檜木珍貴森林資源。"
+      },
+      {
+        "option": "B",
+        "status": "無誤",
+        "desc": "面對二千餘公尺垂直落差，巧借螺旋盤山與折返之字形盤旋上升。"
+      },
+      {
+        "option": "C",
+        "status": "有誤(正選)",
+        "desc": "鐵道採分期邊修築、邊開通營運之模式，並非全路網完備始行車。"
+      },
+      {
+        "option": "D",
+        "status": "無誤",
+        "desc": "折返式軌道因進退轉向，機車頭會呈現時而牽引、時而推頂之姿態。"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "source": "環境科學 海洋廢棄物調查",
+    "year": "會考精選",
+    "passage": "「從材質來看，臺灣海岸上近九成的廢棄物材質都是塑膠類製品；從用途來看，海洋廢棄物中有高達七成五與生活飲食習慣密切相關，其中飲料相關垃圾（外帶杯、寶特瓶、吸管、塑膠袋）更占整體污染量約六成。因此，臺灣餐飲產業與廣大消費者是減少海洋廢棄物的關鍵族群。環保團體呼籲政府應嚴格取締任意棄置者，推動全面減塑。」",
+    "passageHighlight": "「海洋廢棄物中有高達七成五與生活飲食習慣密切相關...<mark class=\"hl-yellow\">環保團體呼籲政府應嚴格取締任意棄置者</mark>，推動全面減塑。」",
+    "clue": "解題之眼：環保團體雖積極呼籲政府應嚴格取締任意棄置廢棄物，但單憑法規取締是否能「立即保證收到顯著成效」，文中並無任何斷言。",
+    "stem": "根據這段文字，下列推論何者最恰當？",
+    "options": [
+      "(A) 海洋廢棄物中各類金屬與玻璃製品所占比例最高",
+      "(B) 減少即棄型手搖飲料包裝容器是改善海洋污染的重要關鍵",
+      "(C) 餐飲業者與消費者對於減輕海岸垃圾負有極大責任",
+      "(D) 政府若能嚴懲任意棄置垃圾者，必能立即根除海洋塑膠廢棄物問題"
+    ],
+    "answer": "D",
+    "explanation": "文本第三部分敘述環保倡議呼籲政府應嚴格取締隨意棄置垃圾者，然而海洋廢棄物之形成牽涉產業結構、生活型態與流域漂流等複雜系統工程，文中僅指出應予取締，從未武斷保證嚴懲就能「立即徹底根除」海洋污染，故(D)過度推論，最為不合文意（本題考查過度推論檢驗，正解標定為D）。(A)塑膠占近九成，金屬玻璃非最高；(B)飲料垃圾占六成，確實為關鍵；(C)文中明言兩者為關鍵族群。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "數據明確：塑膠製品壟斷近九成，金屬玻璃屬極少數。"
+      },
+      {
+        "option": "B",
+        "status": "符合",
+        "desc": "外帶杯吸管寶特瓶高達六成，阻絕此源頭對防制海洋浩劫立竿見影。"
+      },
+      {
+        "option": "C",
+        "status": "符合",
+        "desc": "飲食垃圾占七成五，產業供給端與買方消費端責任無可推卸。"
+      },
+      {
+        "option": "D",
+        "status": "過度推論(正選)",
+        "desc": "呼籲嚴懲罰款屬政策手段，斷言「必能立即根除」缺乏論證支撐。"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "source": "都市建築與公共文教設施文宣",
+    "year": "會考精選",
+    "passage": "「這座新地標建築，以綠建築理念融合樹木與書本意象，透過閱讀和國際接軌的關鍵門窗，將以知識啟航城市轉型，打造智慧文化港灣。」",
+    "passageHighlight": "「融合樹木與書本意象，<mark class=\"hl-green\">透過閱讀和國際接軌的關鍵門窗，將以知識啟航城市轉型</mark>...」",
+    "clue": "解題之眼：文本核心關鍵詞為「書本意象」、「透過閱讀和國際接軌」、「以知識啟航城市轉型」，毫無疑問直指公立「圖書館」。",
+    "stem": "根據文意脈絡，文中「新地標」最可能是下列何種公共設施？",
+    "options": [
+      "(A) 綜合體育館",
+      "(B) 海洋水族館",
+      "(C) 市立圖書館",
+      "(D) 國際會議中心"
+    ],
+    "answer": "C",
+    "explanation": "文宣中連續出現「書本意象」、「閱讀與國際接軌之門窗」以及「以知識啟航城市轉型」等極具辨識度之核心意象，所有象徵符號皆緊扣文字傳播、圖書借閱與知識探索，推知該公共建築物必然是以推廣閱讀為核心宗旨之「市立圖書館」（如高雄市立圖書館總館），故選(C)。(A)體育館側重競技運動；(B)水族館側重海洋生物展覽；(D)會議中心側重商務展覽，皆與「閱讀、書本」無直接關聯。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "體育館建築語彙多強調運動、力與美，無書本閱讀象徵。"
+      },
+      {
+        "option": "B",
+        "status": "錯誤",
+        "desc": "水族館重在海洋保育與水族造景，非人文知識載體。"
+      },
+      {
+        "option": "C",
+        "status": "正確",
+        "desc": "「書本、閱讀、知識門窗」三重線索嚴密鎖定圖書館文化機能。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "國際會展中心著眼於經貿論壇，非市民精神閱讀之港灣。"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "source": "運動醫學 運動生理學基礎",
+    "year": "會考精選",
+    "passage": "「有氧運動，就是指攝入大量氧氣的運動；例如：在一定的速度下連續活動的運動，而非瞬間產生的爆發力運動。運動時心跳加速，呼吸深長，持續二十分鐘以上，能有效燃燒脂肪並提升心肺耐力。」",
+    "passageHighlight": "「<mark class=\"hl-yellow\">在一定的速度下連續活動的運動</mark>，<mark class=\"hl-pink\">而非瞬間產生的爆發力運動</mark>。」",
+    "clue": "解題之眼：有氧運動強調在恆定速度下進行「持續不間斷之連續活動」；反之，瞬間停頓又爆發力量者屬於「無氧爆發力運動」。",
+    "stem": "下列何種運動最不屬於上述定義之典型「有氧運動」？",
+    "options": [
+      "(A) 慢跑",
+      "(B) 游泳",
+      "(C) 棒球打擊與投球",
+      "(D) 長途自行車"
+    ],
+    "answer": "C",
+    "explanation": "文中明定有氧運動之三大要素：攝入大量氧氣、在一定速度下持續不間斷活動、運動持續長達二十分鐘以上；慢跑、長距離游泳以及騎乘公路自行車皆符合全身大肌群長時間、等速規律且連續律動之有氧代謝特徵。而棒球運動中之投手投球、打者揮棒打擊與跑壘，皆屬於在長時間靜止等待後瞬間釋放極限肌肉力量之典型「無氧爆發力運動」，故(C)最不符合有氧運動定義。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "符合有氧",
+        "desc": "長時間規律邁步呼吸，典型利用氧氣燃脂之全身耐力活動。"
+      },
+      {
+        "option": "B",
+        "status": "符合有氧",
+        "desc": "循環划水打腿，心肺功能處於長效有氧耗能狀態。"
+      },
+      {
+        "option": "C",
+        "status": "不符有氧(正選)",
+        "desc": "間歇停頓多、揮棒投球係數秒內之高強度爆發力，屬無氧運動。"
+      },
+      {
+        "option": "D",
+        "status": "符合有氧",
+        "desc": "踏頻持續踩踏推進，符合恆速長時有氧代謝機制。"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "source": "生物科學 昆蟲跨海遷徙調查",
+    "year": "會考精選",
+    "passage": "「臺大學生在陽明山標記了一隻青斑蝶，12天後在日本鹿兒島被捕獲確認；隔年屏東學生在與臺東交界的壽卡山區，也捕捉到一隻來自日本大阪、後翅標記有代號的青斑蝶。這兩筆震撼學界的實測紀錄，直接證實了青斑蝶具有跨海飛行千里、往返於臺灣與日本之間的驚人遷徙能力。」",
+    "passageHighlight": "「這兩筆震撼學界的實測紀錄，直接證實了<mark class=\"hl-green\">青斑蝶具有跨海飛行千里、往返於臺灣與日本之間的驚人遷徙能力</mark>。」",
+    "clue": "解題之眼：臺灣標記日本捕獲、日本標記臺灣捕獲，兩起互證之實測標放數據，鐵證了青斑蝶具備長途跨洋越海之遷徙壯舉。",
+    "stem": "根據這段文字，這項科學發現的主要貢獻在於證實下列何者？",
+    "options": [
+      "(A) 陽明山是全球青斑蝶數量最龐大的繁殖棲地",
+      "(B) 青斑蝶具備長途越洋飛行遷徙之生物耐力與習性",
+      "(C) 日本大阪地區的蝶類品種大多起源於臺灣",
+      "(D) 青斑蝶飛行時速超越所有已知同體型的昆蟲"
+    ],
+    "answer": "B",
+    "explanation": "文句末尾總結兩項標放回捕成果之重大科學價值——「直接證實了青斑蝶具有跨海飛行千里、往返於臺灣與日本之間的驚人遷徙能力」。這項跨國科學調查打破了過去認為纖弱蝴蝶無法跨越浩瀚黑潮與太平洋之成見，確認其具備長程長途遷徙之生態習性，故選(B)。(A)文中未評比各棲地族群總量；(C)此為遷徙路線，非演化親緣起源；(D)文中僅記錄12天抵達鹿兒島，未與其他昆蟲飛行時速進行量化比對。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "陽明山僅為標放起點之一，文中未賦予「全球最龐大繁殖地」封號。"
+      },
+      {
+        "option": "B",
+        "status": "正確",
+        "desc": "臺日雙向回捕紀錄，實證其嬌小羽翼能征服千浬大洋之遷徙耐力。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "單純為季節性季風遷徙現象，無涉物種演化系統發育之血統論。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "通篇未涉及昆蟲極限飛行速度之橫向物理數據比較。"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "source": "古典寓言 雄孔雀顧影自憐",
+    "year": "會考精選",
+    "passage": "「雄孔雀之尾金黃翠綠，非畫家彩筆所能描摹。然雄孔雀生性善妒，雖豢養日久，見小兒衣著華麗，必疾趨啄之。其在山棲息之時，必先擇地安頓其尾，而後乃處其身。值雨天沾濡其尾，捕鳥者逼近，猶珍惜顧盼其尾而不肯騰飛，終為捕鳥人所獲。」",
+    "passageHighlight": "「值雨天沾濡其尾，捕鳥者逼近，<mark class=\"hl-pink\">猶珍惜顧盼其尾而不肯騰飛，終為捕鳥人所獲</mark>。」",
+    "clue": "解題之眼：獵人迫近生死存亡關頭，雄孔雀卻因雨水淋濕尾羽，「顧盼惜羽、捨不得弄髒尾巴而不肯振翅高飛」，最終自取滅亡。",
+    "stem": "根據這段寓言故事，雄孔雀最終被捕獲的原因為何？",
+    "options": [
+      "(A) 羽毛價值昂貴，吸引大批獵人爭相設陷阱捕捉",
+      "(B) 生性愛惜華麗尾羽，顧此失彼以致貽誤逃生先機",
+      "(C) 體型過於龐大沉重，遇雨淋濕後無法振翅起飛",
+      "(D) 嫉妒穿著華麗之孩童，因分心啄咬而落入圈套"
+    ],
+    "answer": "B",
+    "explanation": "寓言第四部分描寫關鍵的戲劇性衝突時刻：當天空降雨淋濕尾部羽毛，捕鳥人已步步逼近身後，在千鈞一髮之際，雄孔雀竟仍舊「珍惜顧盼其尾而不肯騰飛」，寧願冒著失去自由與生命的風險，也不願弄髒弄皺其美麗的尾羽，終至被獵人手到擒來。這則故事諷刺人若過分愛惜身外虛名與外在虛榮，在危急時刻不知當機立斷、割捨執念，終將招致殺身之禍，故選(B)。",
+    "optionAnalysis": [
+      {
+        "option": "A",
+        "status": "錯誤",
+        "desc": "文章未強調毛皮商業價格，著力刻畫孔雀自身心理致命性格缺陷。"
+      },
+      {
+        "option": "B",
+        "status": "正確",
+        "desc": "惜尾甚於全生，在生死關頭猶顧影自憐、不忍振翮，自貽伊戚。"
+      },
+      {
+        "option": "C",
+        "status": "錯誤",
+        "desc": "原文明指「不肯騰飛（主觀不願）」，非物理上體重過重飛不起來。"
+      },
+      {
+        "option": "D",
+        "status": "錯誤",
+        "desc": "啄咬小兒為平時性格，遇捕時係因留戀尾羽被逮，兩事不容混淆。"
+      }
+    ]
+  }
+];
+
+    let currentQuestionIndex = 0;
+    let userAnswers = {};
+    let isContinuousView = false;
+    let soundEnabled = true;
+    let currentZoom = 100;
+
+    // 音效產生器（利用 Web Audio API 合成，免載入外部 mp3）
+    const audioCtx = (window.AudioContext || window.webkitAudioContext) ? new (window.AudioContext || window.webkitAudioContext)() : null;
+
+    function playSound(type) {
+      if (!soundEnabled || !audioCtx) return;
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      const now = audioCtx.currentTime;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      if (type === 'correct') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(587.33, now); // D5
+        osc.frequency.setValueAtTime(880, now + 0.1); // A5
+        gain.gain.setValueAtTime(0.2, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+        osc.start(now);
+        osc.stop(now + 0.5);
+      } else if (type === 'incorrect') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(329.63, now); // E4
+        osc.frequency.setValueAtTime(261.63, now + 0.15); // C4
+        gain.gain.setValueAtTime(0.25, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.45);
+        osc.start(now);
+        osc.stop(now + 0.45);
+      } else if (type === 'click') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(440, now);
+        gain.gain.setValueAtTime(0.08, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+        osc.start(now);
+        osc.stop(now + 0.08);
+      }
+    }
+
+    function toggleSound() {
+      soundEnabled = !soundEnabled;
+      const btn = document.getElementById("soundToggleBtn");
+      if (soundEnabled) {
+        btn.classList.add("active");
+        btn.innerHTML = `<span id="soundIcon">🔔</span> 音效已開啟`;
+      } else {
+        btn.classList.remove("active");
+        btn.innerHTML = `<span id="soundIcon">🔕</span> 音效已靜音`;
+      }
+    }
+
+    // 切換檢視模式（單題專注 vs 連續清單）
+    function toggleViewMode() {
+      isContinuousView = !isContinuousView;
+      const btn = document.getElementById("viewModeBtn");
+      const text = document.getElementById("viewModeText");
+      if (isContinuousView) {
+        btn.classList.add("active");
+        text.innerText = "切換為專注模式";
+      } else {
+        btn.classList.remove("active");
+        text.innerText = "切換為連續模式";
+      }
+      renderView();
+    }
+
+    // 縮放字級
+    function adjustFontSize(delta) {
+      currentZoom += delta * 10;
+      if (currentZoom < 80) currentZoom = 80;
+      if (currentZoom > 140) currentZoom = 140;
+      document.getElementById("fontSizeDisplay").innerText = currentZoom + "%";
+      document.getElementById("questionsContainer").style.fontSize = (currentZoom / 100) + "rem";
+    }
+
+    // 渲染導航 Tab
+    function renderNavTabs() {
+      const container = document.getElementById("navTabs");
+      container.innerHTML = "";
+      questionsData.forEach((q, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "q-tab";
+        btn.id = `navTab_${q.id}`;
+        btn.innerText = q.id;
+        
+        if (!isContinuousView && idx === currentQuestionIndex) {
+          btn.classList.add("current");
+        }
+
+        if (userAnswers[q.id]) {
+          if (userAnswers[q.id].isCorrect) {
+            btn.classList.add("correct");
+          } else {
+            btn.classList.add("incorrect");
+          }
+        }
+
+        btn.onclick = () => {
+          playSound('click');
+          if (isContinuousView) {
+            const card = document.getElementById(`qcard_${q.id}`);
+            if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          } else {
+            currentQuestionIndex = idx;
+            renderView();
+          }
+        };
+
+        container.appendChild(btn);
+      });
+
+      updateStats();
+    }
+
+    // 更新統計資訊
+    function updateStats() {
+      const answeredKeys = Object.keys(userAnswers);
+      const count = answeredKeys.length;
+      document.getElementById("completedCount").innerText = count;
+      document.getElementById("totalQuestionsCount").innerText = questionsData.length;
+
+      if (count === 0) {
+        document.getElementById("accuracyRate").innerText = "-";
+        document.getElementById("accuracyRate").style.color = "var(--text-muted)";
+      } else {
+        const correctCount = answeredKeys.filter(k => userAnswers[k].isCorrect).length;
+        const rate = Math.round((correctCount / count) * 100);
+        const rateEl = document.getElementById("accuracyRate");
+        rateEl.innerText = rate + "%";
+        rateEl.style.color = rate >= 80 ? "var(--success-color)" : (rate >= 60 ? "#d97706" : "var(--error-color)");
+      }
+    }
+
+    // 產生單一題目 HTML
+    function buildQuestionCardHtml(q, idx) {
+      const userState = userAnswers[q.id];
+      const hasAnswered = !!userState;
+      const isCorrect = hasAnswered && userState.isCorrect;
+
+      const passageHtml = hasAnswered ? q.passageHighlight : q.passage;
+      const revealedClass = hasAnswered ? "revealed" : "";
+
+      let optionsHtml = q.options.map(opt => {
+        let extraClasses = "";
+        let markTag = "";
+        if (hasAnswered) {
+          if (opt.key === q.answer) {
+            if (userState.choice === opt.key) {
+              extraClasses = "selected-correct";
+              markTag = `<span style="margin-left:auto;font-weight:700;color:var(--success-color)">✓ 答對了！</span>`;
+            } else {
+              extraClasses = "reveal-correct";
+              markTag = `<span style="margin-left:auto;font-weight:700;color:var(--success-color)">✓ 正確答案</span>`;
+            }
+          } else if (userState.choice === opt.key) {
+            extraClasses = "selected-incorrect";
+            markTag = `<span style="margin-left:auto;font-weight:700;color:var(--error-color)">✗ 你的選擇</span>`;
+          }
+        }
+
+        return `
+          <button class="option-btn ${extraClasses}" 
+                  id="optBtn_${q.id}_${opt.key}" 
+                  onclick="selectAnswer(${q.id}, '${opt.key}')" 
+                  ${hasAnswered ? 'disabled' : ''}>
+            <span class="option-label">(${opt.key})</span>
+            <span class="option-content">${opt.text}</span>
+            ${markTag}
+          </button>
+        `;
+      }).join("");
+
+      let bannerHtml = "";
+      if (hasAnswered) {
+        if (isCorrect) {
+          bannerHtml = `
+            <div class="result-banner correct">
+              <span>🎉 <strong>恭喜答對！</strong> 正確答案為 (${q.answer})，精準掌握了文章的主旨核心。</span>
+              <button class="btn-retry" onclick="retryQuestion(${q.id})">🔄 重新挑戰</button>
+            </div>
+          `;
+        } else {
+          bannerHtml = `
+            <div class="result-banner incorrect">
+              <span>💡 <strong>答錯了！</strong> 你的答案是 (${userState.choice})，正確解答應為 <strong>(${q.answer})</strong>。請詳閱下方解題之眼與螢光筆分析。</span>
+              <button class="btn-retry" onclick="retryQuestion(${q.id})">🔄 重新挑戰</button>
+            </div>
+          `;
+        }
+      }
+
+      let notesHtml = "";
+      if (q.notes) {
+        notesHtml = `
+          <div class="notes-box">
+            <div class="notes-title">📌 重要詞彙注釋</div>
+            <div>${q.notes}</div>
+          </div>
+        `;
+      }
+
+      let transHtml = "";
+      if (q.translation) {
+        transHtml = `
+          <div class="translation-box">
+            <div class="translation-header">📖 題幹文言白話語譯</div>
+            <div>${q.translation}</div>
+          </div>
+        `;
+      }
+
+      let optAnalysisHtml = "";
+      if (q.optionAnalysis) {
+        optAnalysisHtml = `
+          <div class="option-analysis-box">
+            <div style="font-weight:700;color:#334155;margin-bottom:8px">🔍 各選項深入剖析：</div>
+            ${q.optionAnalysis.map(a => `
+              <div class="analysis-item">
+                <span class="analysis-tag ${a.status === 'correct' ? 'is-correct' : 'is-wrong'}">(${a.key}) ${a.status === 'correct' ? '正解' : '誤'}</span>
+                <span>${a.reason}</span>
+              </div>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      let explanationHtml = `
+        <div class="explanation-container ${hasAnswered ? 'show' : ''}" id="expContainer_${q.id}">
+          <div class="explanation-card">
+            <div class="explanation-header">
+              <div class="explanation-title">
+                <span>📚 詳解與核心文意解析</span>
+              </div>
+              <div class="hl-legend">
+                <div class="legend-item"><span class="legend-dot" style="background:#facc15"></span> 黃色：解題關鍵詞</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#f43f5e"></span> 粉紅：轉折詞／特殊標點</div>
+                <div class="legend-item"><span class="legend-dot" style="background:#10b981"></span> 綠色：推論核心／主旨歸納</div>
+              </div>
+            </div>
+            <div class="explanation-body">
+              <div class="clue-box">
+                <div class="clue-label">🎯 【解題之眼・關鍵線索】</div>
+                <div>${q.clue}</div>
+              </div>
+
+              <div class="exp-paragraph">
+                ${q.explanation}
+              </div>
+
+              ${transHtml}
+              ${optAnalysisHtml}
+            </div>
+          </div>
+        </div>
+      `;
+
+      let navButtonsHtml = "";
+      if (!isContinuousView) {
+        const isFirst = idx === 0;
+        const isLast = idx === questionsData.length - 1;
+        navButtonsHtml = `
+          <div class="nav-buttons-container">
+            <button class="nav-btn" onclick="prevQuestion()" ${isFirst ? 'disabled' : ''}>
+              <span>⬅</span> 上一題
+            </button>
+            <div style="font-size:0.92rem;color:var(--text-muted);display:flex;align-items:center;">
+              第 <strong>${q.id}</strong> / ${questionsData.length} 題
+            </div>
+            <button class="nav-btn" onclick="nextQuestion()" ${isLast ? 'disabled' : ''}>
+              下一題 <span>➡</span>
+            </button>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="question-card" id="qcard_${q.id}">
+          <div class="question-header">
+            <div class="q-num-badge">
+              <span>第 ${q.id} 題</span>
+              <span class="category-tag">${q.category}</span>
+            </div>
+            <div style="font-size:0.88rem;color:var(--text-muted)">推論篇・文意好試多</div>
+          </div>
+
+          <div class="passage-box ${revealedClass}" id="passage_${q.id}">
+            ${passageHtml}
+            ${q.author ? `<span class="passage-author">—— ${q.author}</span>` : ''}
+          </div>
+
+          <div class="stem-text">${q.stem}</div>
+
+          ${notesHtml}
+
+          <div class="options-grid">
+            ${optionsHtml}
+          </div>
+
+          ${bannerHtml}
+          ${explanationHtml}
+          ${navButtonsHtml}
+        </div>
+      `;
+    }
+
+    function renderView() {
+      const container = document.getElementById("questionsContainer");
+      if (isContinuousView) {
+        container.innerHTML = questionsData.map((q, idx) => buildQuestionCardHtml(q, idx)).join("");
+      } else {
+        const currentQ = questionsData[currentQuestionIndex];
+        container.innerHTML = buildQuestionCardHtml(currentQ, currentQuestionIndex);
+      }
+      renderNavTabs();
+    }
+
+    function selectAnswer(qid, choiceKey) {
+      const q = questionsData.find(item => item.id === qid);
+      if (!q) return;
+
+      const isCorrect = (choiceKey === q.answer);
+      userAnswers[qid] = {
+        choice: choiceKey,
+        isCorrect: isCorrect
+      };
+
+      playSound(isCorrect ? 'correct' : 'incorrect');
+      renderView();
+
+      setTimeout(() => {
+        const expEl = document.getElementById(`expContainer_${qid}`);
+        if (expEl) {
+          expEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }, 100);
+    }
+
+    function retryQuestion(qid) {
+      playSound('click');
+      delete userAnswers[qid];
+      renderView();
+    }
+
+    function resetAllProgress() {
+      if (confirm("確定要清除所有作答紀錄並重新開始嗎？")) {
+        playSound('click');
+        userAnswers = {};
+        currentQuestionIndex = 0;
+        renderView();
+      }
+    }
+
+    function prevQuestion() {
+      if (currentQuestionIndex > 0) {
+        playSound('click');
+        currentQuestionIndex--;
+        renderView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIndex < questionsData.length - 1) {
+        playSound('click');
+        currentQuestionIndex++;
+        renderView();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderView();
+    });
+  </script>
+</body>
+</html>
